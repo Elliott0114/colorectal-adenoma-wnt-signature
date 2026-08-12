@@ -1,0 +1,16 @@
+layer	dataset	comparison	effect	expected_direction	status	n_units	coverage_reportable	specificity_p
+empirical_perturbation	GSE114059	trametinib_vs_dmso	0.07266588912575414	1	supportive_direction_only	4	True	0.25547445255474455
+empirical_perturbation	GSE114059	pri724_reversal_of_trametinib	0.17623475465927418	-1	discordant	1	True	0.9422057794220577
+empirical_perturbation	GSE67186	apc_restoration_shApc	-0.7935674812190707	-1	exploratory_low_coverage	1	False	0.0025997400259974
+empirical_perturbation	GSE67186	apc_restoration_shApc_Kras	-0.9545635185730184	-1	exploratory_low_coverage	1	False	0.0183981601839816
+empirical_perturbation	GSE67186	doxycycline_control_shRenilla	0.7124799262931516	0	control_nonzero	1	False	0.0033996600339966003
+empirical_perturbation	GSE130822	ascl2_ko_vs_resting_wt	-0.5539180021810131	-1	supportive_specific	1	True	0.005099490050994901
+empirical_perturbation	GSE171910	conditional_wnt_silencing	-0.8060946721502469	-1	supportive_specific	4	True	9.999000099990002e-05
+empirical_perturbation	GSE125472	APC_vs_WT_with_Wnt	0.7419982901360491	1	supportive_specific	3	True	9.999000099990002e-05
+empirical_perturbation	GSE125472	APC_vs_WT_without_Wnt	2.094180593351188	1	supportive_specific	3	True	9.999000099990002e-05
+empirical_perturbation	GSE135328_HCT116	tcf7l2_ko_vs_wt	-0.0890760287109842	-1	supportive_direction_only	1	True	0.2755724427557244
+empirical_perturbation	GSE135328_HT29	tcf7l2_ko_vs_wt	-1.3413836961044368	-1	supportive_specific	3	True	9.999000099990002e-05
+spatial_recapitulation	Zenodo7760264	tumor_vs_non_neoplastic_epithelium__route_score	0.4736586686993412	1	supportive_paired	6	True	0.03125
+spatial_recapitulation	Zenodo7760264	tumor_vs_non_neoplastic_epithelium__route_residual_prolif_epithelial	0.4491423511169589	1	supportive_paired	6	True	0.03125
+spatial_recapitulation	Zenodo7760264	tumor_vs_stroma__route_score	-0.03197698976562953	1	discordant	12	True	0.02099609375
+spatial_recapitulation	Zenodo7760264	tumor_vs_stroma__route_residual_prolif_epithelial	0.014717250094849296	1	supportive_direction_only	12	True	0.791015625

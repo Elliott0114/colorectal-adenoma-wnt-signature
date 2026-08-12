@@ -1,0 +1,10 @@
+{
+  "analysis": "computational_closure_validation",
+  "date": "2026-08-08",
+  "random_seed": 20260808,
+  "n_permutations": 10000,
+  "n_bootstraps": 10000,
+  "signature_genes": 100,
+  "drawing_backend": "R",
+  "claim_boundary": "multi-layer computational validation; not local experimental validation"
+}

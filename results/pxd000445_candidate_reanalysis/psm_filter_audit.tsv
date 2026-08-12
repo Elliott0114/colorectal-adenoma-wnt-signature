@@ -1,0 +1,6 @@
+metric	value
+candidate_psm_rows	5625
+candidate_rows_failed_expectation	1122
+candidate_rows_not_master_assignment	228
+candidate_rows_retained	4275
+psm_rows_total	285929

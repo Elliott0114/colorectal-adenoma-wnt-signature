@@ -1,0 +1,209 @@
+sample_id	sample_title	source_name	patient_id	age	gender	tissue	adenomadiagnosis	tnm	uicc	age_years	sex	tissue_group
+GSM3304749	789B: Tumor of Patient 789	Patient 789	789	65	Male	Tumor	Adenocarcinoma	pT4b, pN0, pMx	IIB	65	male	crc
+GSM3304750	789A: Adenoma of Patient 789	Patient 789	789	65	Male	Adenoma	Tubular Adenoma	--	--	65	male	adenoma
+GSM3304751	271C: Adjacent Mucosa of Patient 271	Patient 271	271	66	Male	Adjacent Mucosa	Benign	--	--	66	male	normal
+GSM3304752	271B: Tumor of Patient 271	Patient 271	271	66	Male	Tumor	Colonic Adenocarcinoma	pT3, pN2a, pMx	IIIB	66	male	crc
+GSM3304753	271A: Adenoma of Patient 271	Patient 271	271	66	Male	Adenoma	Tubular Adenoma	--	--	66	male	adenoma
+GSM3304754	2615C: Adjacent Mucosa of Patient 2615	Patient 2615	2615	76	Female	Adjacent Mucosa	Benign	--	--	76	female	normal
+GSM3304755	2615B: Tumor of Patient 2615	Patient 2615	2615	76	Female	Tumor	Adenocarcinoma	mpT2, pN0, pMx	I	76	female	crc
+GSM3304756	2615A: SSA of Patient 2615	Patient 2615	2615	76	Female	SSA	Sessile Serrated Adenoma	--	--	76	female	ssa
+GSM3304757	3492C: Adjacent Mucosa of Patient 3492	Patient 3492	3492	74	Female	Adjacent Mucosa	Benign	--	--	74	female	normal
+GSM3304758	3492B: Tumor of Patient 3492	Patient 3492	3492	74	Female	Tumor	Colonic Adenocarcinoma	pT2, pN1a, pMx	IIIA	74	female	crc
+GSM3304759	3492A: Adenoma of Patient 3492	Patient 3492	3492	74	Female	Adenoma	Tubulovillous Adenoma	--	--	74	female	adenoma
+GSM3304760	1487C: Adjacent Mucosa of Patient 1487	Patient 1487	1487	65	Female	Adjacent Mucosa	Benign	--	--	65	female	normal
+GSM3304761	1487B: Tumor of Patient 1487	Patient 1487	1487	65	Female	Tumor	Adenocarcinoma	pT3, pN0, pMx	IIA	65	female	crc
+GSM3304762	1467C: Adjacent Mucosa of Patient 1467	Patient 1467	1467	71	Female	Adjacent Mucosa	Benign	--	--	71	female	normal
+GSM3304763	833C: Adjacent Mucosa of Patient 833	Patient 833	833	77	Female	Adjacent Mucosa	Benign	--	--	77	female	normal
+GSM3304764	833B: Tumor of Patient 833	Patient 833	833	77	Female	Tumor	Adenocarcinoma	pT4, pN2, pMx	IIIC	77	female	crc
+GSM3304765	833A: Adenoma of Patient 833	Patient 833	833	77	Female	Adenoma	Tubular Adenoma	--	--	77	female	adenoma
+GSM3304766	7479C: Adjacent Mucosa of Patient 7479	Patient 7479	7479	40	Male	Adjacent Mucosa	Benign	--	--	40	male	normal
+GSM3304767	7479B: Tumor of Patient 7479	Patient 7479	7479	40	Male	Tumor	Adenocarcinoma	pT3, pN0, pMx	IIA	40	male	crc
+GSM3304768	7479A: Adenoma of Patient 7479	Patient 7479	7479	40	Male	Adenoma	Tubular Adenoma	--	--	40	male	adenoma
+GSM3304769	744C: Adjacent Mucosa of Patient 744	Patient 744	744	76	Female	Adjacent Mucosa	Benign	--	--	76	female	normal
+GSM3304770	744B: Tumor of Patient 744	Patient 744	744	76	Female	Tumor	Colonic Adenocarcinoma	pT3, pN1, pMx	IIIB	76	female	crc
+GSM3304771	744A: Adenoma of Patient 744	Patient 744	744	76	Female	Adenoma	Tubulovillous Adenoma	--	--	76	female	adenoma
+GSM3304772	533C: Adjacent Mucosa of Patient 533	Patient 533	533	63	Female	Adjacent Mucosa	Benign	--	--	63	female	normal
+GSM3304773	533B: Tumor of Patient 533	Patient 533	533	63	Female	Tumor	Adenocarcinoma	pT1, pN0, pMx	I	63	female	crc
+GSM3304774	533A: Adenoma of Patient 533	Patient 533	533	63	Female	Adenoma	Tubulovillous Adenoma	--	--	63	female	adenoma
+GSM3304775	4250C: Adjacent Mucosa of Patient 4250	Patient 4250	4250	77	Female	Adjacent Mucosa	Benign	--	--	77	female	normal
+GSM3304776	4250B: Tumor of Patient 4250	Patient 4250	4250	77	Female	Tumor	Adenocarcinoma	pT3, pN1, pMx	IIIB	77	female	crc
+GSM3304777	4250A: Adenoma of Patient 4250	Patient 4250	4250	77	Female	Adenoma	Tubulovillous Adenoma with High Grade Dysplasia	--	--	77	female	adenoma
+GSM3304778	4210C: Adjacent Mucosa of Patient 4210	Patient 4210	4210	59	Female	Adjacent Mucosa	Benign	--	--	59	female	normal
+GSM3304779	4210B: Tumor of Patient 4210	Patient 4210	4210	59	Female	Tumor	Adenocarcinoma	pT3, pN1, pMx	IIIB	59	female	crc
+GSM3304780	4210A: Adenoma of Patient 4210	Patient 4210	4210	59	Female	Adenoma	Tubular Adenoma	--	--	59	female	adenoma
+GSM3304781	3550C: Adjacent Mucosa of Patient 3550	Patient 3550	3550	74	Male	Adjacent Mucosa	Benign	--	--	74	male	normal
+GSM3304782	3550B: Tumor of Patient 3550	Patient 3550	3550	74	Male	Tumor	Adenocarcinoma	pT3, pN1, pMx	IIIB	74	male	crc
+GSM3304783	3550A: SSA of Patient 3550	Patient 3550	3550	74	Male	SSA	Sessile Serrated Adenoma	--	--	74	male	ssa
+GSM3304784	3251C: Adjacent Mucosa of Patient 3251	Patient 3251	3251	73	Male	Adjacent Mucosa	Benign	--	--	73	male	normal
+GSM3304785	3251B: Tumor of Patient 3251	Patient 3251	3251	73	Male	Tumor	Adenocarcinoma	pT1, pN0, pMx	I	73	male	crc
+GSM3304786	3251A: Adenoma of Patient 3251	Patient 3251	3251	73	Male	Adenoma	Tubular Adenoma with High Grade Dysplasia	--	--	73	male	adenoma
+GSM3304787	300B: Tumor of Patient 300	Patient 300	300	77	Female	Tumor	Invasive Adenocarcinoma	pT1, pN0, pMx	I	77	female	crc
+GSM3304788	300A: Adenoma of Patient 300	Patient 300	300	77	Female	Adenoma	Tubulovillous Adenoma	--	--	77	female	adenoma
+GSM3304789	2969B: Tumor of Patient 2969	Patient 2969	2969	72	Female	Tumor	Adenocarcinoma	pT4, pN1, pMx, pV1	IIIB	72	female	crc
+GSM3304790	2969A: Adenoma of Patient 2969	Patient 2969	2969	72	Female	Adenoma	Tubulovillous Adenoma	--	--	72	female	adenoma
+GSM3304791	2089C: Adjacent Mucosa of Patient 2089	Patient 2089	2089	59	Female	Adjacent Mucosa	Benign	--	--	59	female	normal
+GSM3304792	2089B: Tumor of Patient 2089	Patient 2089	2089	59	Female	Tumor	Colonic Adenocarcinoma	pT2, pN0, pMx	I	59	female	crc
+GSM3304793	2089A: Adenoma of Patient 2089	Patient 2089	2089	59	Female	Adenoma	Tubulovillous Adenoma	--	--	59	female	adenoma
+GSM3304794	119C: Adjacent Mucosa of Patient 119	Patient 119	119	77	Male	Adjacent Mucosa	Benign	--	--	77	male	normal
+GSM3304795	119B: Tumor of Patient 119	Patient 119	119	77	Male	Tumor	Adenocarcinoma	pT3, pN1, pMx	IIIB	77	male	crc
+GSM3304796	119A: Adenoma of Patient 119	Patient 119	119	77	Male	Adenoma	Tubulovillous Adenoma	--	--	77	male	adenoma
+GSM3304797	355C: Adjacent Mucosa of Patient 355	Patient 355	355	90	Female	Adjacent Mucosa	Benign	--	--	90	female	normal
+GSM3304798	355A: Adenoma of Patient 355	Patient 355	355	90	Female	Adenoma	Tubular Adenoma	--	--	90	female	adenoma
+GSM3304799	1889C: Adjacent Mucosa of Patient 1889	Patient 1889	1889	47	Female	Adjacent Mucosa	Benign	--	--	47	female	normal
+GSM3304800	1889B: Tumor of Patient 1889	Patient 1889	1889	47	Female	Tumor	Adenocarcinoma	pT4, R1pN2b, pMx	IIIC	47	female	crc
+GSM3304801	1889A: Tumor of Patient 1889	Patient 1889	1889	47	Female	Tumor	Carcinoma	--	--	47	female	crc
+GSM3304802	2743C: Adjacent Mucosa of Patient 2743	Patient 2743	2743	81	Male	Adjacent Mucosa	Benign	--	--	81	male	normal
+GSM3304803	2743B: Tumor of Patient 2743	Patient 2743	2743	81	Male	Tumor	Adenocarcinoma	pT2, pN0, pMx	I	81	male	crc
+GSM3304804	2743A: Adenoma of Patient 2743	Patient 2743	2743	81	Male	Adenoma	Tubulovillous Adenoma	--	--	81	male	adenoma
+GSM3304805	1998B: Tumor of Patient 1998	Patient 1998	1998	58	Male	Tumor	Adenocarcinoma	pT3, pN0, pMx	IIA	58	male	crc
+GSM3304806	1998A: Adenoma of Patient 1998	Patient 1998	1998	58	Male	Adenoma	Tubular Adenoma	--	--	58	male	adenoma
+GSM3304807	692C: Adjacent Mucosa of Patient 692	Patient 692	692	53	Male	Adjacent Mucosa	Benign	--	--	53	male	normal
+GSM3304808	692B: Tumor of Patient 692	Patient 692	692	53	Male	Tumor	Adenocarcinoma	pT4a, pN1, pM1	IV	53	male	crc
+GSM3304809	692A: Adenoma of Patient 692	Patient 692	692	53	Male	Adenoma	Tubulovillous Adenoma	--	--	53	male	adenoma
+GSM3304810	2505C: Adjacent Mucosa of Patient 2505	Patient 2505	2505	66	Female	Adjacent Mucosa	Benign	--	--	66	female	normal
+GSM3304811	2505A: Adenoma of Patient 2505	Patient 2505	2505	66	Female	Adenoma	Regular adenoma	--	--	66	female	adenoma
+GSM3304812	2488B: Tumor of Patient 2488	Patient 2488	2488	76	Male	Tumor	Adenocarcinoma	pT3, pN0, pMx	IIA	76	male	crc
+GSM3304813	2488A: Tumor of Patient 2488	Patient 2488	2488	76	Male	Tumor	Carcinoma	--	--	76	male	crc
+GSM3304814	1860C: Adjacent Mucosa of Patient 1860	Patient 1860	1860	72	Male	Adjacent Mucosa	Benign	--	--	72	male	normal
+GSM3304815	1860A: Adenoma of Patient 1860	Patient 1860	1860	72	Male	Adenoma	Adenomatous Polyp	--	--	72	male	adenoma
+GSM3304816	1818C: Adjacent Mucosa of Patient 1818	Patient 1818	1818	90	Female	Adjacent Mucosa	Benign	--	--	90	female	normal
+GSM3304817	1818B: Tumor of Patient 1818	Patient 1818	1818	90	Female	Tumor	Adenocarcinoma with Focal Mucinous Features	pT2, pN1, pMX	IIIA	90	female	crc
+GSM3304818	1818A: Tumor of Patient 1818	Patient 1818	1818	90	Female	Tumor	Carcinoma	--	--	90	female	crc
+GSM3304819	2818C: Adjacent Mucosa of Patient 2818	Patient 2818	2818	66	Male	Adjacent Mucosa	Benign	--	--	66	male	normal
+GSM3304820	2818B: Tumor of Patient 2818	Patient 2818	2818	66	Male	Tumor	Mucinous Adenocarcinoma	pT3, pN0, pMX	IIA	66	male	crc
+GSM3304821	2818A: Adenoma of Patient 2818	Patient 2818	2818	66	Male	Adenoma	Tubular Adenoma	--	--	66	male	adenoma
+GSM3304822	5073C: Adjacent Mucosa of Patient 5073	Patient 5073	5073	65	Male	Adjacent Mucosa	Benign	--	--	65	male	normal
+GSM3304823	5073B: Tumor of Patient 5073	Patient 5073	5073	65	Male	Tumor	Adenocarcinoma	pT3, pN0, pMX	IIA	65	male	crc
+GSM3304824	5073A: SSA of Patient 5073	Patient 5073	5073	65	Male	SSA	Sessile Serrated Adenoma	--	--	65	male	ssa
+GSM3304825	5960C: Adjacent Mucosa of Patient 5960	Patient 5960	5960	68	Male	Adjacent Mucosa	Benign	--	--	68	male	normal
+GSM3304826	5960B: Tumor of Patient 5960	Patient 5960	5960	68	Male	Tumor	Adenocarcinoma, Mucin Producing	pT3, pN0, pMX	IIA	68	male	crc
+GSM3304827	5960A: Adenoma of Patient 5960	Patient 5960	5960	68	Male	Adenoma	Adenomatous Polyp	--	--	68	male	adenoma
+GSM3304828	73C: Adjacent Mucosa of Patient 73	Patient 73	73	69	Female	Adjacent Mucosa	Benign	--	--	69	female	normal
+GSM3304829	73B: Tumor of Patient 73	Patient 73	73	69	Female	Tumor	Colonic Adenocarcinoma	pT3, pN1, pMX	IIIB	69	female	crc
+GSM3304830	3763C: Adjacent Mucosa of Patient 3763	Patient 3763	3763	58	Male	Adjacent Mucosa	Benign	--	--	58	male	normal
+GSM3304831	3763B: Tumor of Patient 3763	Patient 3763	3763	58	Male	Tumor	Adenocarcinoma	pT3a/b, pN2, pMX	IIIB	58	male	crc
+GSM3304832	3763A: Adenoma of Patient 3763	Patient 3763	3763	58	Male	Adenoma	Adenovillous Polyp	--	--	58	male	adenoma
+GSM3304833	9872C: Adjacent Mucosa of Patient 9872	Patient 9872	9872	82	Female	Adjacent Mucosa	Benign	--	--	82	female	normal
+GSM3304834	9872B: Tumor of Patient 9872	Patient 9872	9872	82	Female	Tumor	Colonic Adenocarcinoma	pT3, pN2, pMX	IIIB	82	female	crc
+GSM3304835	9872A: Adenoma of Patient 9872	Patient 9872	9872	82	Female	Adenoma	Flat Tubulovillous Adenoma	--	--	82	female	adenoma
+GSM3304836	12071C: Adjacent Mucosa of Patient 12071	Patient 12071	12071	75	Female	Adjacent Mucosa	Benign	--	--	75	female	normal
+GSM3304837	12071B: Tumor of Patient 12071	Patient 12071	12071	75	Female	Tumor	Colonic Adenocarcinoma	pT3a/b, pN0, pMX	IIA	75	female	crc
+GSM3304838	12071A: SSA of Patient 12071	Patient 12071	12071	75	Female	SSA	Sessile Serrated Adenoma	--	--	75	female	ssa
+GSM3304839	984B: Tumor of Patient 984	Patient 984	984	51	Female	Tumor	Colonic Adenocarcinoma	pT1, pN0, pMX	I	51	female	crc
+GSM3304840	984A: SSA of Patient 984	Patient 984	984	51	Female	SSA	Sessile Serrated Adenoma	--	--	51	female	ssa
+GSM3304841	449C: Adjacent Mucosa of Patient 449	Patient 449	449	53	Female	Adjacent Mucosa	Benign	--	--	53	female	normal
+GSM3304842	449B: Tumor of Patient 449	Patient 449	449	53	Female	Tumor	Colonic Adenocarcinoma	pT3, pN0, pMX	IIA	53	female	crc
+GSM3304843	449A: Adenoma of Patient 449	Patient 449	449	53	Female	Adenoma	Tubulovillous Adenoma with Low Grade Dysplasia	--	--	53	female	adenoma
+GSM3304844	974C: Adjacent Mucosa of Patient 974	Patient 974	974	58	Male	Adjacent Mucosa	Benign	--	--	58	male	normal
+GSM3304845	974B: Tumor of Patient 974	Patient 974	974	58	Male	Tumor	Colonic Adenocarcinoma	pT3, pN0, pMX	IIA	58	male	crc
+GSM3304846	974A: Adenoma of Patient 974	Patient 974	974	58	Male	Adenoma	Tubulovillous Adenoma	--	--	58	male	adenoma
+GSM3304847	921C: Adjacent Mucosa of Patient 921	Patient 921	921	58	Male	Adjacent Mucosa	Benign	--	--	58	male	normal
+GSM3304848	921B: Tumor of Patient 921	Patient 921	921	58	Male	Tumor	Invasive Adenocarcinoma	pT1, pN0, pMX	I	58	male	crc
+GSM3304849	921A: Adenoma of Patient 921	Patient 921	921	58	Male	Adenoma	Villous Adenoma with High Grade Dysplasia	--	--	58	male	adenoma
+GSM3304850	1506C: Adjacent Mucosa of Patient 1506	Patient 1506	1506	68	Male	Adjacent Mucosa	Benign	--	--	68	male	normal
+GSM3304851	1506B: Tumor of Patient 1506	Patient 1506	1506	68	Male	Tumor	Colonic Adenocarcinoma	pT3, pN2, pMX	IIIB	68	male	crc
+GSM3304852	1506A: Adenoma of Patient 1506	Patient 1506	1506	68	Male	Adenoma	Tubulovillous Adenoma with Moderate Mucosal Dysplasia	--	--	68	male	adenoma
+GSM3304853	11218B: Tumor of Patient 11218	Patient 11218	11218	84	Female	Tumor	Colonic Adenocarcinoma	pT3a/b, pN0, pMX	IIA	84	female	crc
+GSM3304854	11218A: Adenoma of Patient 11218	Patient 11218	11218	84	Female	Adenoma	Tubulovillous Adenoma with High Grade Dysplasia	--	--	84	female	adenoma
+GSM3304855	10743C: Adjacent Mucosa of Patient 10743	Patient 10743	10743	77	Male	Adjacent Mucosa	Benign	--	--	77	male	normal
+GSM3304856	10743B: Tumor of Patient 10743	Patient 10743	10743	77	Male	Tumor	Colonic Adenocarcinoma	pT3, pN2, pMX	IIIB	77	male	crc
+GSM3304857	10743A: Adenoma of Patient 10743	Patient 10743	10743	77	Male	Adenoma	Tubulovillous Adenoma with High Grade Dysplasia	--	--	77	male	adenoma
+GSM3304858	290C: Adjacent Mucosa of Patient 290	Patient 290	290	73	Male	Adjacent Mucosa	Benign	--	--	73	male	normal
+GSM3304859	290B: Tumor of Patient 290	Patient 290	290	73	Male	Tumor	Invasive Adenocarcinoma	pT2, pN0, MX	I	73	male	crc
+GSM3304860	290A: Adenoma of Patient 290	Patient 290	290	73	Male	Adenoma	Tubulovillous Adenoma with Moderate Dysplasia	--	--	73	male	adenoma
+GSM3304861	9684C: Adjacent Mucosa of Patient 9684	Patient 9684	9684	62	Male	Adjacent Mucosa	Benign	--	--	62	male	normal
+GSM3304862	9684B: Tumor of Patient 9684	Patient 9684	9684	62	Male	Tumor	Colonic Adenocarcinoma	pT2, pN1, pMX	IIIA	62	male	crc
+GSM3304863	9684A: Adenoma of Patient 9684	Patient 9684	9684	62	Male	Adenoma	Tubulovillous Adenoma	--	--	62	male	adenoma
+GSM3304864	9060C: Adjacent Mucosa of Patient 9060	Patient 9060	9060	91	Female	Adjacent Mucosa	Benign	--	--	91	female	normal
+GSM3304865	9060B: Tumor of Patient 9060	Patient 9060	9060	91	Female	Tumor	Colonic Adenocarcinoma	pT3, pN0, pMX	IIA	91	female	crc
+GSM3304866	9060A: Adenoma of Patient 9060	Patient 9060	9060	91	Female	Adenoma	Tubulovillos Adenoma with moderate cytologic atypia	--	--	91	female	adenoma
+GSM3304867	7030C: Adjacent Mucosa of Patient 7030	Patient 7030	7030	73	Male	Adjacent Mucosa	Benign	--	--	73	male	normal
+GSM3304868	7030B: Tumor of Patient 7030	Patient 7030	7030	73	Male	Tumor	Colonic Adenocarcinoma	pT3, pN1, pMX	IIIB	73	male	crc
+GSM3304869	7030A: Adenoma of Patient 7030	Patient 7030	7030	73	Male	Adenoma	Tubulovillous Adenoma	--	--	73	male	adenoma
+GSM3304870	4298C: Adjacent Mucosa of Patient 4298	Patient 4298	4298	66	Male	Adjacent Mucosa	Benign	--	--	66	male	normal
+GSM3304871	4298B: Tumor of Patient 4298	Patient 4298	4298	66	Male	Tumor	Colonic Adenocarcinoma	pT3, pN0, pMX	IIA	66	male	crc
+GSM3304872	4298A: Adenoma of Patient 4298	Patient 4298	4298	66	Male	Adenoma	Tubulovillous Adenoma	--	--	66	male	adenoma
+GSM3304873	1093C: Adjacent Mucosa of Patient 1093	Patient 1093	1093	47	Male	Adjacent Mucosa	Benign	--	--	47	male	normal
+GSM3304874	1093B: Tumor of Patient 1093	Patient 1093	1093	47	Male	Tumor	Mucinous Adenocarcinoma	pT2, pN0, pMX	I	47	male	crc
+GSM3304875	1093A: Adenoma of Patient 1093	Patient 1093	1093	47	Male	Adenoma	Adenovillous Polyp	--	--	47	male	adenoma
+GSM3304876	392C: Adjacent Mucosa of Patient 392	Patient 392	392	45	Female	Adjacent Mucosa	Benign	--	--	45	female	normal
+GSM3304877	392B: Tumor of Patient 392	Patient 392	392	45	Female	Tumor	Colonic Adenocarcinoma	pT3, pN1, pMX	IIIB	45	female	crc
+GSM3304878	392A: Adenoma of Patient 392	Patient 392	392	45	Female	Adenoma	Tubulovillous Adenoma	--	--	45	female	adenoma
+GSM3304879	3679B: Tumor of Patient 3679	Patient 3679	3679	54	Male	Tumor	Infiltrating Adenocarcinoma	pT3, pN0, pMX	IIA	54	male	crc
+GSM3304880	3679A: Adenoma of Patient 3679	Patient 3679	3679	54	Male	Adenoma	Adenomatous Polyp	--	--	54	male	adenoma
+GSM3304881	3392C: Adjacent Mucosa of Patient 3392	Patient 3392	3392	75	Female	Adjacent Mucosa	Benign	--	--	75	female	normal
+GSM3304882	3392B: Tumor of Patient 3392	Patient 3392	3392	75	Female	Tumor	Colonic Adenocarcinoma	pT3, pN1, pMX	IIIB	75	female	crc
+GSM3304883	3392A: Adenoma of Patient 3392	Patient 3392	3392	75	Female	Adenoma	Tubular Adenoma	--	--	75	female	adenoma
+GSM3304884	1865C: Adjacent Mucosa of Patient 1865	Patient 1865	1865	26	Male	Adjacent Mucosa	Benign	--	--	26	male	normal
+GSM3304885	1865B: Tumor of Patient 1865	Patient 1865	1865	26	Male	Tumor	Colonic Adenocarcinoma	pT3, pN1, pMX	IIIB	26	male	crc
+GSM3304886	1865A: SSA of Patient 1865	Patient 1865	1865	26	Male	SSA	Sessile Serrated Adenoma	--	--	26	male	ssa
+GSM3304887	5647C: Adjacent Mucosa of Patient 5647	Patient 5647	5647	74	Female	Adjacent Mucosa	Benign	--	--	74	female	normal
+GSM3304888	5647B: Tumor of Patient 5647	Patient 5647	5647	74	Female	Tumor	Adenocarcinoma with focal signet ring formation	pT1, pN0, pMX	I	74	female	crc
+GSM3304889	5647A: SSA of Patient 5647	Patient 5647	5647	74	Female	SSA	Sessile Serrated Adenoma	--	--	74	female	ssa
+GSM3304890	2866C: Adjacent Mucosa of Patient 2866	Patient 2866	2866	69	Male	Adjacent Mucosa	Benign	--	--	69	male	normal
+GSM3304891	2866B: Tumor of Patient 2866	Patient 2866	2866	69	Male	Tumor	Adenocarcinoma	pT3, pN0, pMX	IIA	69	male	crc
+GSM3304892	2866A: Adenoma of Patient 2866	Patient 2866	2866	69	Male	Adenoma	Tubulovillous Adenoma	--	--	69	male	adenoma
+GSM3304893	1716C: Adjacent Mucosa of Patient 1716	Patient 1716	1716	66	Female	Adjacent Mucosa	Benign	--	--	66	female	normal
+GSM3304894	1716B: Tumor of Patient 1716	Patient 1716	1716	66	Female	Tumor	Infiltrating Adenocarcinoma	pT3, pN1, pMX	IIIB	66	female	crc
+GSM3304895	1716A: SSA of Patient 1716	Patient 1716	1716	66	Female	SSA	Sessile Serrated Adenoma	--	--	66	female	ssa
+GSM3304896	6758C: Adjacent Mucosa of Patient 6758	Patient 6758	6758	86	Female	Adjacent Mucosa	Benign	--	--	86	female	normal
+GSM3304897	6758B: Tumor of Patient 6758	Patient 6758	6758	86	Female	Tumor	Invasive Adenocarcinoma	pT2, pN0, pMX	I	86	female	crc
+GSM3304898	6758A: Adenoma of Patient 6758	Patient 6758	6758	86	Female	Adenoma	Tubulovillous Adenoma	--	--	86	female	adenoma
+GSM3304899	6513C: Adjacent Mucosa of Patient 6513	Patient 6513	6513	75	Male	Adjacent Mucosa	Benign	--	--	75	male	normal
+GSM3304900	6513B: Tumor of Patient 6513	Patient 6513	6513	75	Male	Tumor	Mucin-producing Adenocarcinoma	pT3, pN0, pM1	IV	75	male	crc
+GSM3304901	6513A: Adenoma of Patient 6513	Patient 6513	6513	75	Male	Adenoma	Tubular Adenoma	--	--	75	male	adenoma
+GSM3304902	4733C: Adjacent Mucosa of Patient 4733	Patient 4733	4733	56	Male	Adjacent Mucosa	Benign	--	--	56	male	normal
+GSM3304903	4733B: Tumor of Patient 4733	Patient 4733	4733	56	Male	Tumor	Adenocarcinoma	pT2, pN1, pMX	IIIA	56	male	crc
+GSM3304904	4733A: Adenoma of Patient 4733	Patient 4733	4733	56	Male	Adenoma	Adenomatous Polyp with Moderate Dysplasia	--	--	56	male	adenoma
+GSM3304905	4390C: Adjacent Mucosa of Patient 4390	Patient 4390	4390	73	Female	Adjacent Mucosa	Benign	--	--	73	female	normal
+GSM3304906	4390B: Tumor of Patient 4390	Patient 4390	4390	73	Female	Tumor	Adenocarcinoma	pT3, pN0, pMX	IIA	73	female	crc
+GSM3304907	4390A: SSA of Patient 4390	Patient 4390	4390	73	Female	SSA	Sessile Serrated Adenoma	--	--	73	female	ssa
+GSM3304908	1246C: Adjacent Mucosa of Patient 1246	Patient 1246	1246	86	Female	Adjacent Mucosa	Benign	--	--	86	female	normal
+GSM3304909	1246B: Tumor of Patient 1246	Patient 1246	1246	86	Female	Tumor	Adenocarcinoma	pT3, pN0, pMX	IIA	86	female	crc
+GSM3304910	1246A: Adenoma of Patient 1246	Patient 1246	1246	86	Female	Adenoma	Tubular Adenoma	--	--	86	female	adenoma
+GSM3304911	435C: Adjacent Mucosa of Patient 435	Patient 435	435	59	Female	Adjacent Mucosa	Benign	--	--	59	female	normal
+GSM3304912	435B: Tumor of Patient 435	Patient 435	435	59	Female	Tumor	Invasive Adenocarcinoma	pT3, pNX, pMX	IIA	59	female	crc
+GSM3304913	435A: Adenoma of Patient 435	Patient 435	435	59	Female	Adenoma	Tubulovillous Adenoma	--	--	59	female	adenoma
+GSM3304914	4155C: Adjacent Mucosa of Patient 4155	Patient 4155	4155	81	Male	Adjacent Mucosa	Benign	--	--	81	male	normal
+GSM3304915	4155B: Tumor of Patient 4155	Patient 4155	4155	81	Male	Tumor	Adenocarcinoma	pT1, pN0, pMX	I	81	male	crc
+GSM3304916	4155A: Adenoma of Patient 4155	Patient 4155	4155	81	Male	Adenoma	Tubulovillous Adenoma	--	--	81	male	adenoma
+GSM3304917	2967C: Adjacent Mucosa of Patient 2967	Patient 2967	2967	78	Male	Adjacent Mucosa	Benign	--	--	78	male	normal
+GSM3304918	2967B: Tumor of Patient 2967	Patient 2967	2967	78	Male	Tumor	Infiltrating Adenocarcinoma	pT3, pN1, pM1	IV	78	male	crc
+GSM3304919	2967A: SSA of Patient 2967	Patient 2967	2967	78	Male	SSA	Sessile Serrated Adenoma	--	--	78	male	ssa
+GSM3304920	5570B: Tumor of Patient 5570	Patient 5570	5570	68	Female	Tumor	Infiltrating Adenocarcinoma	pT1, pN0, pMX	I	68	female	crc
+GSM3304921	5570A: Adenoma of Patient 5570	Patient 5570	5570	68	Female	Adenoma	Tubulovillous Adenoma	--	--	68	female	adenoma
+GSM3304922	5543C: Adjacent Mucosa of Patient 5543	Patient 5543	5543	76	Male	Adjacent Mucosa	Benign	--	--	76	male	normal
+GSM3304923	5543B: Tumor of Patient 5543	Patient 5543	5543	76	Male	Tumor	Colonic Adenocarcinoma	pT3, pN0, pMX	IIA	76	male	crc
+GSM3304924	5543A: Adenoma of Patient 5543	Patient 5543	5543	76	Male	Adenoma	Tubulovillous Adenoma	--	--	76	male	adenoma
+GSM3304925	4507C: Adjacent Mucosa of Patient 4507	Patient 4507	4507	84	Female	Adjacent Mucosa	Benign	--	--	84	female	normal
+GSM3304926	4507B: Tumor of Patient 4507	Patient 4507	4507	84	Female	Tumor	Adenocarcinoma of the Rectum	pT3, pN0, pMX	IIA	84	female	crc
+GSM3304927	4507A: Adenoma of Patient 4507	Patient 4507	4507	84	Female	Adenoma	Tubular Adenoma with High Grade Dysplasia	--	--	84	female	adenoma
+GSM3304928	25C: Adjacent Mucosa of Patient 25	Patient 25	25	66	Male	Adjacent Mucosa	Benign	--	--	66	male	normal
+GSM3304929	25B: Tumor of Patient 25	Patient 25	25	66	Male	Tumor	Infiltrating Adenocarcinoma	pT3, pN1, pMX	IIIB	66	male	crc
+GSM3304930	25A: Adenoma of Patient 25	Patient 25	25	66	Male	Adenoma	Tubular Adenoma (Sessile)	--	--	66	male	adenoma
+GSM3304931	1627C: Adjacent Mucosa of Patient 1627	Patient 1627	1627	82	Female	Adjacent Mucosa	Benign	--	--	82	female	normal
+GSM3304932	1627B: Tumor of Patient 1627	Patient 1627	1627	82	Female	Tumor	Infiltrating Adenocarcinoma	pT3, pN1, pMX	IIIB	82	female	crc
+GSM3304933	1627A: Adenoma of Patient 1627	Patient 1627	1627	82	Female	Adenoma	Tubular Adenoma	--	--	82	female	adenoma
+GSM3304934	678C: Adjacent Mucosa of Patient 678	Patient 678	678	80	Male	Adjacent Mucosa	Benign	--	--	80	male	normal
+GSM3304935	678B: Tumor of Patient 678	Patient 678	678	80	Male	Tumor	Invasive Adenocarcinoma	pT2, pN0, pMX	I	80	male	crc
+GSM3304936	678A: Adenoma of Patient 678	Patient 678	678	80	Male	Adenoma	Adenovillous Polyp	--	--	80	male	adenoma
+GSM3304937	559B: Tumor of Patient 559	Patient 559	559	75	Male	Tumor	Infiltrating Adenocarcinoma	pT3, pN0, pMX	IIA	75	male	crc
+GSM3304938	559A: Adenoma of Patient 559	Patient 559	559	75	Male	Adenoma	Tubulovillous Adenoma	--	--	75	male	adenoma
+GSM3304939	4755C: Adjacent Mucosa of Patient 4755	Patient 4755	4755	72	Female	Adjacent Mucosa	Benign	--	--	72	female	normal
+GSM3304940	4755B: Tumor of Patient 4755	Patient 4755	4755	72	Female	Tumor	Infiltrating Adenocarcinoma	pT2, pN0, pMX	I	72	female	crc
+GSM3304941	4755A: Adenoma of Patient 4755	Patient 4755	4755	72	Female	Adenoma	Tubulovillous Adenoma with Surface Atypia	--	--	72	female	adenoma
+GSM3304942	4397C: Adjacent Mucosa of Patient 4397	Patient 4397	4397	82	Female	Adjacent Mucosa	Benign	--	--	82	female	normal
+GSM3304943	4397B: Tumor of Patient 4397	Patient 4397	4397	82	Female	Tumor	Colonic Adenocarcinoma	pT3, pN1, pMX	IIIB	82	female	crc
+GSM3304944	4397A: Adenoma of Patient 4397	Patient 4397	4397	82	Female	Adenoma	Tubulovillous Adenoma	--	--	82	female	adenoma
+GSM3304945	3976C: Adjacent Mucosa of Patient 3976	Patient 3976	3976	83	Female	Adjacent Mucosa	Benign	--	--	83	female	normal
+GSM3304946	3976B: Tumor of Patient 3976	Patient 3976	3976	83	Female	Tumor	Colonic Adenocarcinoma	pT2, pN0, pMX	I	83	female	crc
+GSM3304947	3976A: Adenoma of Patient 3976	Patient 3976	3976	83	Female	Adenoma	Tubulovillous Adenoma	--	--	83	female	adenoma
+GSM3304948	3809C: Adjacent Mucosa of Patient 3809	Patient 3809	3809	71	Male	Adjacent Mucosa	Benign	--	--	71	male	normal
+GSM3304949	3809B: Tumor of Patient 3809	Patient 3809	3809	71	Male	Tumor	Infiltrating Adenocarcinoma	pT3, pN0, pMX	IIA	71	male	crc
+GSM3304950	3809A: Adenoma of Patient 3809	Patient 3809	3809	71	Male	Adenoma	Tubulovillous Adenoma	--	--	71	male	adenoma
+GSM3304951	2942C: Adjacent Mucosa of Patient 2942	Patient 2942	2942	65	Female	Adjacent Mucosa	Benign	--	--	65	female	normal
+GSM3304952	2942B: Tumor of Patient 2942	Patient 2942	2942	65	Female	Tumor	Invasive Adenocarcinoma	pT3, pN0, pMX	IIA	65	female	crc
+GSM3304953	2942A: Adenoma of Patient 2942	Patient 2942	2942	65	Female	Adenoma	Villous Adenoma with Marked Dysplasia	--	--	65	female	adenoma
+GSM3304954	2364C: Adjacent Mucosa of Patient 2364	Patient 2364	2364	80	Male	Adjacent Mucosa	Benign	--	--	80	male	normal
+GSM3304955	2364B: Tumor of Patient 2364	Patient 2364	2364	80	Male	Tumor	Invasive Adenocarcinoma	pT1, pNX, pMX	I	80	male	crc
+GSM3304956	2364A: Adenoma of Patient 2364	Patient 2364	2364	80	Male	Adenoma	Adenovillous polyp	--	--	80	male	adenoma

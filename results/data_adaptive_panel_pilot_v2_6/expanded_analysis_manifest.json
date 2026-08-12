@@ -1,0 +1,16 @@
+{
+  "analysis": "data-adaptive panel external expansion",
+  "selection_data": "Chen discovery only; no selection performed in this script",
+  "external_cohorts": [
+    "GSE8671",
+    "GSE50114",
+    "GSE41657",
+    "GSE40362",
+    "GSE72820"
+  ],
+  "ffpe_cohort": "GSE117606",
+  "platform_rule": "at least 80% of each arm mapped",
+  "normalization": "gene-wise z score across all samples within cohort",
+  "inference_unit": "patient/patient pair",
+  "figures_generated_here": false
+}

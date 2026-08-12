@@ -1,0 +1,2 @@
+signature_size_per_direction	excluded_cohort	n_samples	n_patient_clusters	n_cohorts	covariates	adenoma_coef_sd	se_patient_cluster	ci_low	ci_high	p_value	proliferation_coef_sd	proliferation_p_value	r_squared	condition_number
+50	__NONE__	203	161	5	cohort fixed effects + proliferation control	1.7410914795380725	0.1028951044440477	1.5378837772550775	1.9442991818210675	1.786065495351281e-37	0.17330027478465765	0.0004459318729050399	0.7798788833753529	11.096681017922622

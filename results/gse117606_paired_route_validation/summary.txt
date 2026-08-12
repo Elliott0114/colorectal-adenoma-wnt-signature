@@ -1,0 +1,19 @@
+GSE117606 patient-paired locked-route validation
+=================================================
+Samples: 208 from 75 deposited patient IDs; conventional adenoma=59, adjacent mucosa=65, SSA=10, CRC=74.
+The GEO series summary reports 70 patients, whereas the deposited sample titles resolve to 75 unique patient IDs; this discrepancy is retained as a source-data audit finding and does not alter the 51 complete-pair primary analysis.
+Complete conventional adenoma-adjacent mucosa pairs: 51.
+Locked k50 route paired median delta: 1.818; Wilcoxon p=7.8e-10; positive-pair fraction=0.961.
+Proliferation-adjusted paired mean delta: 1.459 (HC3 95% CI 1.110 to 1.808).
+The locked signature was transferred without re-selection; SSA and CRC were not included in the primary comparison.
+
+Current IHC panel and prespecified alternative
+- OLFM4: paired median transcript delta=2.463; q=3.78e-07; direction match=True; integrated class=P1_locked_paired_transcript_and_directional_protein_support.
+- FABP1: paired median transcript delta=-1.028; q=1.16e-06; direction match=True; integrated class=P1_locked_paired_transcript_and_directional_protein_support.
+- SOX9: paired median transcript delta=1.435; q=1.96e-08; direction match=True; integrated class=context_marker_not_locked.
+- KRT20: paired median transcript delta=-1.334; q=4.27e-08; direction match=True; integrated class=context_marker_not_locked.
+- MKI67: paired median transcript delta=0.297; q=0.0115; direction match=True; integrated class=context_marker_not_locked.
+- CTNNB1: paired median transcript delta=0.338; q=0.0736; direction match=True; integrated class=context_marker_not_locked.
+
+Interpretation boundary
+The integrated class is an exploratory wet-lab prioritization aid, not a change to the locked route or a clinical biomarker claim.

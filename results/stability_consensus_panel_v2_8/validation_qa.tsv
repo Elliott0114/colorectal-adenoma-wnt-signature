@@ -1,0 +1,8 @@
+check	passed	observed
+strict_majority_panel_has_data_derived_size	True	11
+both_arms_retained	True	{'up': 6, 'down': 5}
+heldout_auc_at_least_0_90	True	0.9238095238095239
+external_adjusted_ci_excludes_zero	True	1.3913336180817042
+ffpe_positive_fraction_at_least_0_90	True	0.9019607843137255
+apc_non_null_directions_supported	True	4/4
+tcf7l2_ko_directions_supported	True	4/4

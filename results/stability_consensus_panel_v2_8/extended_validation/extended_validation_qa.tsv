@@ -1,0 +1,10 @@
+check	passed	observed
+becker_polyp_effect_positive	True	1.633563377549725
+becker_rna_atac_axis_positive	True	0.7896810506566605
+atlas_polyp_cancer_effect_positive	True	0.8368449245378966
+atlas_polyp_leave_one_study_out_all_positive	True	1.0
+all_additional_non_null_perturbations_expected_direction	False	5/6
+spatial_all_sections_positive	True	6/6
+leave_one_gene_out_external_effect_positive	True	1.751471931512819
+leave_one_gene_out_heldout_auc_at_least_0_85	True	0.9285714285714286
+leave_one_gene_out_ffpe_positive_fraction_at_least_0_85	True	0.9019607843137255

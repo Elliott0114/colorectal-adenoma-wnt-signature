@@ -1,0 +1,8 @@
+check	pass
+discovery_validation_separation	TRUE
+both_arms_present	TRUE
+adaptive_panel_smaller_than_100	TRUE
+oof_fidelity_finite	TRUE
+heldout_all_panels_scored	TRUE
+heldout_paired_donors_present	TRUE
+figure_exports_present	TRUE

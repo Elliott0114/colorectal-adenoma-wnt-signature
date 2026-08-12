@@ -1,0 +1,24 @@
+evidence_layer	resource	accession_or_version	primary_reference_doi	public_url	raw_data_redistributed	analysis_role
+Discovery and held-out validation	Chen epithelial discovery	CELLxGENE e40c6272-af77-4a10-9385-62a398884f27 version 9da034b0-de48-47ab-97f6-21b5f2dbd1a4	10.1016/j.cell.2021.11.031	https://cellxgene.cziscience.com/collections/a48f5033-3438-4550-8574-cdff3263fdfd	no	Discovery core and grouped reduction
+Discovery and held-out validation	Chen epithelial validation	CELLxGENE d6dfdef1-406d-4efb-808c-3c5eddbfe0cb version 6f8f0b95-3779-4c0e-824d-4810c39f008c	10.1016/j.cell.2021.11.031	https://cellxgene.cziscience.com/collections/a48f5033-3438-4550-8574-cdff3263fdfd	no	Held-out validation and virtual-deletion input
+Independent transcriptomics	Sporadic adenoma cohort	GSE8671	10.1158/1541-7786.MCR-07-0267	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE8671	no	Paired adenoma-normal replication
+Independent transcriptomics	Sporadic adenoma cohort	GSE50114	10.1371/journal.pone.0087761	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE50114	no	Adenoma-normal replication
+Independent transcriptomics	Colorectal sequence cohort	GSE41657	NA	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE41657	no	Adenoma-normal replication; repository record cited because no linked primary article was verified
+Independent transcriptomics	Early colorectal sequence cohort	GSE40362	NA	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE40362	no	Adenoma-normal replication; repository record cited because no linked primary article was verified
+Independent transcriptomics	Paired adenoma cohort	GSE72820	10.1371/journal.pone.0153933	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE72820	no	Paired adenoma-normal replication
+Archival transcriptomics	Paired FFPE colorectal sequence	GSE117606	10.1016/S0959-8049(16)61552-6	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117606	no	FFPE measurability
+Single nucleus and multiome	Becker single-nucleus RNA	GSE201348	10.1038/s41588-022-01088-x	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE201348	no	Independent epithelial transfer
+Single nucleus and multiome	Becker multiome	GSE201349 and GSE201350	10.1038/s41588-022-01088-x	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE201349	no	Matched RNA-accessibility association
+Cross-sectional atlas	CRC Atlas	Zenodo 17878122	10.1016/j.ccell.2025.12.003	https://doi.org/10.5281/zenodo.17878122	no	Source-qualified cross-sectional recurrence
+Empirical perturbation	APC knockout human colon organoids	GSE125472	10.1084/jem.20180823	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE125472	no	Signed APC-WNT response
+Empirical perturbation	Conditional WNT silencing	GSE171910	10.1016/j.jcmgh.2021.12.014	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE171910	no	Signed WNT response
+Empirical perturbation	ASCL2 knockout intestinal epithelium	GSE130822	10.1016/j.stem.2019.12.011	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE130822	no	Signed ASCL2 response
+Empirical perturbation	TCF7L2 edited CRC cells	GSE135328	10.1038/s41388-020-1259-7	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE135328	no	Signed TCF7L2 response
+Empirical perturbation	MEK and WNT modulation	GSE114059	10.1038/s41467-019-09898-0	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE114059	no	Contextual pharmacological response
+Empirical perturbation	Apc restoration mouse organoids	GSE67186	10.1016/j.cell.2015.05.033	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE67186	no	Contextual Apc restoration response
+Spatial transcriptomics	CRC Visium	Zenodo 7760264	10.1038/s41698-023-00488-4	https://doi.org/10.5281/zenodo.7760264	no	Section-paired tissue localisation
+Proteomics	Colorectal mucosa adenoma cancer proteome	PXD002137	10.1021/acs.jproteome.5b00523	https://www.ebi.ac.uk/pride/archive/projects/PXD002137	no	Differential protein anchors
+Proteomics	Paired precancerous colorectal proteome	PXD000445	10.1074/mcp.M113.035105	https://www.ebi.ac.uk/pride/archive/projects/PXD000445	no	Paired protein anchors
+Proteomics	Large-scale FFPE proteome	PXD017269	10.1002/path.5420	https://www.ebi.ac.uk/pride/archive/projects/PXD017269	no	FFPE protein detectability
+Proteomics	Deep visual proteomics of adenomas	PXD046999	10.1016/j.isci.2024.110620	https://www.ebi.ac.uk/pride/archive/projects/PXD046999	no	Spatial protein detectability
+

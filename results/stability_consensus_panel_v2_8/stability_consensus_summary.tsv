@@ -1,0 +1,9 @@
+metric	value
+donor_held_out_derivations	27
+kneedle_pairs_per_derivation	6
+genes_considered_per_derivation	12
+strict_majority_minimum_folds	14
+consensus_total_genes	11
+consensus_up_genes	6
+consensus_down_genes	5
+minimum_retained_selection_frequency	0.518518518518518

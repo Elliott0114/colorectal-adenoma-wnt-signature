@@ -1,0 +1,37 @@
+# Raw and reconstructed third-party data
+data_sources/
+raw_data/
+
+# Local environments and caches
+.Rproj.user/
+.Rhistory
+.RData
+.renv/
+renv/library/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+.DS_Store
+
+# Credentials and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*
+secrets*
+
+# Transient logs, temporary exports and model checkpoints
+*.log
+tmp/
+temp/
+*.ckpt
+*.pt
+*.pth
+*.tif
+*.tiff
+
+# Office lock files
+~$*

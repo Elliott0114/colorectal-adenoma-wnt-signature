@@ -1,0 +1,30 @@
+Becker RNA-ATAC sample-level concordance analysis
+=================================================
+
+Purpose: connect Becker snRNA route-expression scores to matched multiome promoter-accessibility scores at sample level.
+Scope: this is RNA/accessibility concordance and does not claim motif deviation, enhancer activity, or direct TF binding.
+
+Matched multiome/snRNA samples: 42
+Normal/unaffected + polyp main-analysis samples: 40
+FAP normal/unaffected + polyp sensitivity samples: 36
+Disease-stage groups: {'polyp': 24, 'normal_unaffected': 16, 'crc': 2}
+
+Primary RNA-ATAC correlations:
+- normal/polyp rna_epi_wnt_stem__atac_wnt_stem: n = 40, Spearman rho = 0.832, p = 3.04e-11, BH q = 8.2e-10.
+- normal/polyp rna_epi_ca_route__atac_wnt_stem: n = 40, Spearman rho = 0.803, p = 4.47e-10, BH q = 3.02e-09.
+- normal/polyp rna_epi_ca_route__atac_wnt_tcf_ascl2_axis: n = 40, Spearman rho = 0.799, p = 6.28e-10, BH q = 3.39e-09.
+- normal/polyp rna_epi_ca_route__atac_wnt_tcf_ascl2_minus_housekeeping: n = 40, Spearman rho = 0.748, p = 2.96e-08, BH q = 8.12e-08.
+
+Primary adjusted concordance models:
+- normal/polyp rna_epi_wnt_stem_from_atac_wnt_stem: n = 40, predictor coef = 0.362, HC3 p = 2.48e-08, BH q = 1.24e-07.
+- normal/polyp rna_epi_ca_route_from_atac_wnt_stem: n = 40, predictor coef = 0.342, HC3 p = 0.011, BH q = 0.0193.
+- normal/polyp rna_epi_ca_route_from_atac_wnt_tcf_ascl2_axis: n = 40, predictor coef = 0.360, HC3 p = 0.0135, BH q = 0.0193.
+- normal/polyp rna_epi_ca_route_from_atac_wnt_tcf_ascl2_minus_housekeeping: n = 40, predictor coef = 0.117, HC3 p = 0.144, BH q = 0.144.
+
+Residualized sensitivity after lesion group, RNA proliferation, and TSS-depth adjustment:
+- rna_epi_ca_route__atac_wnt_stem: n = 40, residual Spearman rho = 0.352, p = 0.0259, BH q = 0.0479.
+- rna_epi_ca_route__atac_wnt_tcf_ascl2_axis: n = 40, residual Spearman rho = 0.350, p = 0.0266, BH q = 0.0479.
+
+Interpretation boundary:
+- Positive concordance supports a coupled expression/accessibility layer for the conventional adenoma-WNT route.
+- It should be written as sample-level multiome concordance, not chromVAR, motif binding, enhancer looping, or causality.

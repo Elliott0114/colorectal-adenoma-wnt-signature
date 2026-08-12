@@ -1,0 +1,14 @@
+order	stage	environment	command	principal_output	run_by_default
+1	Discovery pseudobulk and stability	crc-premalignant-locked	python analysis/discovery_locked_route_signature.py	results/route_signature_locked/	no
+2	Threshold-defined 287-gene core	crc-premalignant-locked	Rscript analysis/data_adaptive_gene_panel_pilot_v2_6.R	results/data_adaptive_panel_pilot_v2_6/	no
+3	Label-blind 62-gene portability audit	crc-premalignant-locked	python analysis/export_287_portability_candidates_v2_7.py	results/objective_compact_panel_v2_7/portable_protein_coding_candidate_universe.tsv	no
+4	Discovery-only compact signature	crc-premalignant-locked	Rscript analysis/select_objective_compact_panel_v2_7.R	results/objective_compact_panel_v2_7/objective_compact_panel_frozen.tsv	no
+5	Held-out and external validation	crc-premalignant-locked	python analysis/validate_objective_compact_panel_v2_7.py	results/objective_compact_panel_v2_7/	no
+6	RNA-ATAC atlas perturbation spatial and protein layers	crc-premalignant-locked	python analysis/validate_objective_panel_extended_layers_v2_7.py	results/objective_compact_panel_v2_7/extended_validation/	no
+7	Matched-alternative benchmark	crc-premalignant-locked	python analysis/benchmark_objective_panel_against_random_v2_7.py	results/objective_compact_panel_v2_7/random_benchmark/	no
+8	Virtual-deletion input preparation	crc-premalignant-locked	python analysis/prepare_genki_virtual_knockout_validation_v2_9.py	results/virtual_knockout_validation_v2_9/input/	no
+9	Dual-seed GenKI virtual deletion	crc-premalignant-virtual-ko	python analysis/run_genki_virtual_knockout_validation_v2_9.py	results/virtual_knockout_validation_v2_9/	no
+10	GenKI exact-output audit	crc-premalignant-virtual-ko	python analysis/audit_genki_reproducibility_v2_9.py	results/virtual_knockout_validation_v2_9/genki_reproducibility_summary.json	no
+11	Manuscript figure rendering	crc-premalignant-locked	Rscript analysis/plot_jtm_submission_figures_v2_8.R	figures/jtm_submission_v2.8/	yes
+12	Release integrity audit	crc-premalignant-locked	python tests/verify_release.py	standard output	yes
+

@@ -1,0 +1,2 @@
+source_file	n_raw_files	n_noncontrol_probes	n_samples	background_correction	background_offset	between_array_normalization	group_labels_used	output_file
+data_sources/GEO_sporadic_adenoma_validation/GSE50114_RAW.tar	46	41000	46	normexp	50	quantile	FALSE	results/external_sporadic_adenoma_validation/GSE50114_raw_limma_log2_quantile.tsv.gz

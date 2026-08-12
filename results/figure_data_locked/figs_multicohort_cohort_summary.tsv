@@ -1,0 +1,6 @@
+cohort	endpoint	n	n_event	stage_II	stage_III	time_months_median	source_path	source_sha256
+GSE14333	DFS	185	48	94	91	36.92	data_sources/GEO_bulk_recurrence/GSE14333/GSE14333_series_matrix.txt.gz	f2610b7190b17488a748a522d10ba20b3d8343557d0018a98dd1416ce429f00f
+GSE17536	DFS/recurrence	111	31	55	56	36.75	data_sources/GEO_bulk_recurrence/GSE17536/GSE17536_series_matrix.txt.gz	803a797b0af96f14cb7d068ad902902f0ce75482afe84fb4839bd8297ad6f39f
+GSE33113	recurrence/metastasis within 3 years	89	18	89	0	38.899383983572896	data_sources/GEO_bulk_recurrence/GSE33113/GSE33113_series_matrix.txt.gz	057da70daadaef4c341cb63b44fb3b8e8d5d3eb937eb132b583086d01cc0e75c
+GSE37892	distant metastasis-free survival	130	37	73	57	42.84188911704312	data_sources/GEO_bulk_recurrence/GSE37892/GSE37892_series_matrix.txt.gz	f602bd75ac96ca235121ca6a19b14e43b2b966056fd6d284d09df9949c619b1a
+GSE39582	RFS	453	136	253	200	49.0	data_sources/GEO_bulk_recurrence/GSE39582/GSE39582_series_matrix.txt.gz	5b88fa71c5268fa1a6ac52b062ee6e676def6c997ab4a09c36ea7acd90ef3968

@@ -1,0 +1,11 @@
+{
+  "analysis": "strict-majority stability consensus from donor-held-out paths",
+  "source_kneedle_pairs": 6,
+  "source_donor_folds": 27,
+  "frequency_threshold": "> 0.5 (strict majority)",
+  "minimum_selected_folds": 14,
+  "fixed_gene_count_used": false,
+  "validation_expression_read": false,
+  "validation_outcomes_used": false,
+  "gene_replacement_after_validation": false
+}

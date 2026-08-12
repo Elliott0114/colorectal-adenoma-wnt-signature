@@ -1,0 +1,16 @@
+metric	value
+duplicate_correlation	0.126283000657639
+stable_core_genes	287
+stable_core_up	89
+stable_core_down	198
+adaptive_up_genes	21
+adaptive_down_genes	7
+adaptive_total_genes	28
+discovery_oof_spearman_vs_full_core	0.955666192508298
+heldout_adaptive_auc	0.916666666666667
+heldout_reference_100_auc	0.928571428571429
+heldout_compact_10_auc	0.935714285714286
+heldout_adaptive_spearman_vs_full_core	0.954052149400987
+heldout_adaptive_paired_positive_fraction	0.857142857142857
+heldout_auc_difference_adaptive_minus_100_ci_low	-0.0494616869616869
+heldout_auc_difference_adaptive_minus_100_ci_high	0

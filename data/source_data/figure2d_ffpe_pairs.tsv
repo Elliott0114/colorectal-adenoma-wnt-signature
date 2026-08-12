@@ -1,0 +1,103 @@
+patient_id	tissue_group	score	n	tissue
+25	adenoma	1.14500192734191	2	Adenoma
+25	normal	-2.20369819608192	2	Adjacent mucosa
+119	adenoma	-0.129176703080748	2	Adenoma
+119	normal	-0.505680407938971	2	Adjacent mucosa
+271	adenoma	-1.02332939810219	2	Adenoma
+271	normal	-1.72545561450174	2	Adjacent mucosa
+290	adenoma	0.391963054808205	2	Adenoma
+290	normal	-0.579840918384888	2	Adjacent mucosa
+355	adenoma	-1.62858210249728	2	Adenoma
+355	normal	-1.81042385671916	2	Adjacent mucosa
+392	adenoma	0.0284091024627036	2	Adenoma
+392	normal	-2.72651085078684	2	Adjacent mucosa
+435	adenoma	-0.668047962719461	2	Adenoma
+435	normal	-2.03982000265208	2	Adjacent mucosa
+449	adenoma	0.51182670207956	2	Adenoma
+449	normal	-0.826636302601097	2	Adjacent mucosa
+533	adenoma	-0.0339175235400598	2	Adenoma
+533	normal	-1.7699713718857	2	Adjacent mucosa
+678	adenoma	0.784141828769288	2	Adenoma
+678	normal	-2.37734049955401	2	Adjacent mucosa
+692	adenoma	0.0594343515750171	2	Adenoma
+692	normal	-0.771106174070445	2	Adjacent mucosa
+744	adenoma	0.124321857499025	2	Adenoma
+744	normal	-0.737145450044959	2	Adjacent mucosa
+833	adenoma	-1.64057186929309	2	Adenoma
+833	normal	-1.22974242227038	2	Adjacent mucosa
+921	adenoma	1.26280688612282	2	Adenoma
+921	normal	-1.32236262717794	2	Adjacent mucosa
+974	adenoma	1.48879202515147	2	Adenoma
+974	normal	-1.58238356989053	2	Adjacent mucosa
+1093	adenoma	0.347532785048779	2	Adenoma
+1093	normal	-1.57088088865083	2	Adjacent mucosa
+1246	adenoma	-0.140371197742549	2	Adenoma
+1246	normal	-1.65975110865214	2	Adjacent mucosa
+1506	adenoma	2.38033095048175	2	Adenoma
+1506	normal	-1.64166766078158	2	Adjacent mucosa
+1627	adenoma	-0.184652311739608	2	Adenoma
+1627	normal	-2.04548346649704	2	Adjacent mucosa
+1860	adenoma	0.768787188991761	2	Adenoma
+1860	normal	-1.39596579709597	2	Adjacent mucosa
+2089	adenoma	0.544564100105474	2	Adenoma
+2089	normal	-1.58257036619475	2	Adjacent mucosa
+2364	adenoma	0.460729600225464	2	Adenoma
+2364	normal	-1.63853943902347	2	Adjacent mucosa
+2505	adenoma	-0.988411938098695	2	Adenoma
+2505	normal	-0.88550777243172	2	Adjacent mucosa
+2743	adenoma	-0.573287759131933	2	Adenoma
+2743	normal	-2.11527069878644	2	Adjacent mucosa
+2818	adenoma	0.305665194250268	2	Adenoma
+2818	normal	-2.00775591575908	2	Adjacent mucosa
+2866	adenoma	1.36028629255227	2	Adenoma
+2866	normal	-0.642856674635795	2	Adjacent mucosa
+2942	adenoma	1.09865336094625	2	Adenoma
+2942	normal	-1.701837435321	2	Adjacent mucosa
+3251	adenoma	2.01416156606908	2	Adenoma
+3251	normal	-0.754462648715791	2	Adjacent mucosa
+3392	adenoma	1.0392973684151	2	Adenoma
+3392	normal	-0.173597086782894	2	Adjacent mucosa
+3492	adenoma	0.146836642361905	2	Adenoma
+3492	normal	-0.920850649740407	2	Adjacent mucosa
+3763	adenoma	-0.000687737455788845	2	Adenoma
+3763	normal	-0.464773375409126	2	Adjacent mucosa
+3809	adenoma	1.59051646799151	2	Adenoma
+3809	normal	-1.34828600567315	2	Adjacent mucosa
+3976	adenoma	0.342908867809231	2	Adenoma
+3976	normal	-0.869068611985851	2	Adjacent mucosa
+4155	adenoma	1.18223363384709	2	Adenoma
+4155	normal	-2.35969158675682	2	Adjacent mucosa
+4210	adenoma	-0.614644788947288	2	Adenoma
+4210	normal	-1.29057619756775	2	Adjacent mucosa
+4250	adenoma	1.87271410846093	2	Adenoma
+4250	normal	0.956551067401745	2	Adjacent mucosa
+4298	adenoma	0.421012156972553	2	Adenoma
+4298	normal	-1.20935292079386	2	Adjacent mucosa
+4397	adenoma	-1.35842961243526	2	Adenoma
+4397	normal	-0.493193366215312	2	Adjacent mucosa
+4507	adenoma	1.55674285575231	2	Adenoma
+4507	normal	-2.10532769572774	2	Adjacent mucosa
+4733	adenoma	1.03949037937657	2	Adenoma
+4733	normal	-1.84276410330201	2	Adjacent mucosa
+4755	adenoma	0.328103107367584	2	Adenoma
+4755	normal	-1.29653657474756	2	Adjacent mucosa
+5543	adenoma	0.891056390793731	2	Adenoma
+5543	normal	-1.59357322578801	2	Adjacent mucosa
+5960	adenoma	0.996177365269546	2	Adenoma
+5960	normal	-0.985499862178023	2	Adjacent mucosa
+6513	adenoma	-0.254764423339302	2	Adenoma
+6513	normal	-1.48037711727992	2	Adjacent mucosa
+6758	adenoma	0.78282937005902	2	Adenoma
+6758	normal	-1.93356679534372	2	Adjacent mucosa
+7030	adenoma	-0.128172503380963	2	Adenoma
+7030	normal	-1.86385449068711	2	Adjacent mucosa
+7479	adenoma	0.123534986454694	2	Adenoma
+7479	normal	-1.12303227496506	2	Adjacent mucosa
+9060	adenoma	0.300400077151446	2	Adenoma
+9060	normal	-0.232596263118377	2	Adjacent mucosa
+9684	adenoma	0.311353489909133	2	Adenoma
+9684	normal	-1.23645079431674	2	Adjacent mucosa
+9872	adenoma	0.586009949887689	2	Adenoma
+9872	normal	-0.43616026814678	2	Adjacent mucosa
+10743	adenoma	0.128018964099096	2	Adenoma
+10743	normal	1.21065561137852	2	Adjacent mucosa

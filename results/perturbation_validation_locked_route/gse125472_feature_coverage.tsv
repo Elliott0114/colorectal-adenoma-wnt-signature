@@ -1,0 +1,5 @@
+dataset	feature	n_expected	n_present
+GSE125472	route_up	50	48
+GSE125472	route_down	50	49
+GSE125472	wnt_stem	7	7
+GSE125472	proliferation_control	8	8

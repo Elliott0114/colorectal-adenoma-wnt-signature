@@ -1,0 +1,10 @@
+{
+  "command": "python analysis/run_genki_virtual_knockout_validation_v2_9.py",
+  "exit_code": 0,
+  "elapsed_seconds": 123.95650124549866,
+  "files_compared": 13,
+  "files_exactly_matched": 13,
+  "all_reported_outputs_exactly_reproduced": true,
+  "verdict": "REPRODUCIBLE",
+  "notes": "All reported tabular outputs and the timing-normalized manifest were compared. Serialized model binaries were not used as scientific endpoints and were not compared."
+}

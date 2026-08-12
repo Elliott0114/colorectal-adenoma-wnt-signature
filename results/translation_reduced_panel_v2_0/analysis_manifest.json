@@ -1,0 +1,27 @@
+{
+  "analysis": "post hoc fixed 10-gene translational reduction",
+  "primary_research_readout": "100-gene discovery-locked programme",
+  "reduced_panel_status": "exploratory; no diagnostic cut-point or gene swapping",
+  "up_genes": [
+    "OLFM4",
+    "ASCL2",
+    "RNF43",
+    "NKD1",
+    "AXIN2"
+  ],
+  "down_genes": [
+    "FABP1",
+    "CA2",
+    "PCK1",
+    "LGALS4",
+    "AQP8"
+  ],
+  "random_seed": 20260710,
+  "input_sha256": {
+    "results/route_signature_locked/discovery_locked_signature_genes.tsv": "56625c3b8a1186ef1c99e7dab270c3d0b3c99819617d074f725dc880863ec1db",
+    "results/external_sporadic_adenoma_validation/sample_scores.tsv": "33f3b32ebccf0e030da6db5b0c129b629a2a3539d0c8cffa76f6ddf899a0c372",
+    "results/gse117606_paired_route_validation/sample_scores_all_cohort_scaling.tsv": "2b3c754a9269846812b4878f754ead37a6dce6bee7c4a347323004926ca5f3d0",
+    "results/public_adenoma_protein_triangulation/candidate_public_protein_evidence_matrix.tsv": "981793996116c0871c486d7aeeaa9fad0d25e6f8931e044ebbeaed7900cdc625"
+  },
+  "all_gates_pass": true
+}

@@ -1,0 +1,2 @@
+signature_size_per_direction	excluded_cohort	n_samples	n_patient_clusters	n_cohorts	adenoma_coef_sd	se_patient_cluster	ci_low	ci_high	p_value	r_squared	full_100_gene_effect_sd	retained_effect_fraction
+5	__NONE__	203	161	5	1.9058470192233594	0.07642653346893673	1.754912139050103	2.056781899396616	5.343453271180087e-57	0.7421062451102811	1.924521013305084	0.9902968094644731

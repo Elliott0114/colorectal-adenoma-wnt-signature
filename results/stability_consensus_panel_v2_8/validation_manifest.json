@@ -1,0 +1,11 @@
+{
+  "analysis": "validation of frozen strict-majority stability consensus",
+  "panel_sha256_before_validation_read": "a2c091b0c74d686bff58c9cd5a08278cf54b4589c419d491ec26fafb4c6531eb",
+  "panel_frozen_before_validation": true,
+  "gene_count_fixed": false,
+  "gene_reselection_after_validation": false,
+  "weight_fitting": false,
+  "cutpoint_optimization": false,
+  "method_refinement_status": "sensitivity analysis prompted by the negative random benchmark of the initial Kneedle-path panel",
+  "all_primary_qa_checks_passed": true
+}

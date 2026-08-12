@@ -1,0 +1,5 @@
+cell_line	clone_id	genotype	reference_clone	feature	difference_vs_WT
+HCT116	HCT116_18	KO	HCT116_3	tf_activity__TCF7L2	2.545304326367436
+HT29	HT29_57	KO	HT29_56	tf_activity__TCF7L2	-4.151301320271806
+HT29	HT29_83	KO	HT29_56	tf_activity__TCF7L2	-2.5588058381952186
+HT29	HT29_86	KO	HT29_56	tf_activity__TCF7L2	-2.66661559093891

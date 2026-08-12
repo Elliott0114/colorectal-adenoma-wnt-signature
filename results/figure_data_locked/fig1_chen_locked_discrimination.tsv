@@ -1,0 +1,3 @@
+dataset	unit	n_adenoma	n_normal	auc_adenoma_vs_normal	p_mannwhitney	cutpoint_optimized
+discovery	specimen	13	34	0.8936651583710408	3.686836244964616e-05	False
+validation	specimen	14	30	0.9285714285714286	6.097648501832198e-06	False

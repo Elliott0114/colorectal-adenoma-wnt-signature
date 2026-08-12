@@ -1,0 +1,3 @@
+dataset	panel_id	panel_label	n	spearman_rho_vs_full_287_core	p_value
+discovery	stability_consensus_11	Strict-majority stability consensus (11)	60	0.9643234231731038	3.596471586054688e-35
+validation	stability_consensus_11	Strict-majority stability consensus (11)	57	0.9373217526575058	7.509491528488986e-27

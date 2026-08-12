@@ -1,0 +1,17 @@
+{
+  "analysis": "validation of the frozen objective compact panel",
+  "objective_panel_sha256_before_validation_read": "91e564f42bdc5fb0188605b76116bcfb126e5102d62a33d6890fa67018928380",
+  "panel_frozen_before_validation": true,
+  "gene_reselection": false,
+  "weight_fitting": false,
+  "cutpoint_optimization": false,
+  "validation_layers": [
+    "Chen held-out",
+    "five independent sporadic-adenoma cohorts",
+    "GSE117606 paired FFPE",
+    "APC-knockout organoids",
+    "TCF7L2-knockout CRC clones"
+  ],
+  "previous_10_gene_panel_role": "internal comparator and reproducibility control only",
+  "one_hundred_gene_layer_included": false
+}

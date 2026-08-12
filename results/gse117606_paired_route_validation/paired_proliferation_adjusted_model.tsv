@@ -1,0 +1,2 @@
+model	n_pairs	adjusted_mean_adenoma_minus_normal	hc3_ci_low	hc3_ci_high	hc3_p_value	proliferation_delta_coefficient	proliferation_delta_p_value	condition_number
+paired_delta_route_on_paired_delta_proliferation	51	1.4590293164352772	1.1104901446475965	1.807568488222958	2.3124706556967437e-16	0.33149915932190255	0.05162125194469993	2.0458654988520535

@@ -1,0 +1,11 @@
+x	title	detail	accent	fill
+1	Discovery core	27 donors
+donor-aware FDR + bootstrap	#C85E3D	#FCF6F3
+2	Objective reduction	287 → 62 → 12 genes
+no validation labels	#356F9D	#F5F8FA
+3	Independent replication	held-out · 5 cohorts
+51 paired FFPE specimens	#D9A640	#FCF9F1
+4	Perturbation support	APC · WNT · ASCL2 · TCF7L2
+empirical + virtual	#7C6AA3	#F7F5FA
+5	Tissue context	RNA–ATAC · CRC Atlas
+spatial + protein anchors	#3F9A8B	#F3F8F7

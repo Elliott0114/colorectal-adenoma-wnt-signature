@@ -1,0 +1,6 @@
+stage_order	stage	criterion	n_features	n_adenoma_up	n_adenoma_down	validation_outcomes_used
+1	Assayed epithelial features	all discovery pseudobulk features	33698	20091	13012	False
+2	Expressed, non-technical features	not prespecified technical/exclusion genes; discovery mean expression > 0.001	6127	2184	3943	False
+3	Directionally stable features	previous criteria plus donor-bootstrap directional stability >= 0.90	2496	742	1754	False
+4	Eligible stable features	previous criteria plus 95% donor-bootstrap interval excluding zero	1504	428	1076	False
+5	Discovery-locked reference programme	50 largest absolute discovery effects in each direction	100	50	50	False

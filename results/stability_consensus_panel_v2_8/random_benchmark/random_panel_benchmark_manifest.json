@@ -1,0 +1,10 @@
+{
+  "analysis": "random benchmark of strict-majority stability consensus",
+  "panel_sha256_before_validation_read": "a2c091b0c74d686bff58c9cd5a08278cf54b4589c419d491ec26fafb4c6531eb",
+  "n_random_panels": 10000,
+  "random_seed": 20260810,
+  "random_panel_design": "6 up + 5 down without replacement from the same fixed portable candidate universe",
+  "joint_random_panels_meeting_or_exceeding_consensus": 1320,
+  "joint_empirical_p": 0.13208679132086792,
+  "gene_reselection": false
+}

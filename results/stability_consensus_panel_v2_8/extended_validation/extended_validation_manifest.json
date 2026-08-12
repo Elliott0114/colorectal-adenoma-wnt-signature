@@ -1,0 +1,9 @@
+{
+  "analysis": "extended validation of frozen strict-majority stability consensus",
+  "panel_sha256_before_validation_read": "a2c091b0c74d686bff58c9cd5a08278cf54b4589c419d491ec26fafb4c6531eb",
+  "panel_frozen_before_validation": true,
+  "gene_reselection": false,
+  "weight_fitting": false,
+  "cutpoint_optimization": false,
+  "all_strict_qa_checks_passed": false
+}

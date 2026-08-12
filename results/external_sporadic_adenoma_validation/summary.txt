@@ -1,0 +1,21 @@
+Independent sporadic colorectal adenoma validation
+==================================================
+Candidate cohorts audited: 5; eligible frozen-score cohorts: 5
+Eligible normal/adenoma samples: 68/135
+Complete paired cohorts: GSE8671 n=32; GSE72820 n=7
+
+Locked 50-up/50-down results
+- GSE8671: n=32/32; AUC=1.000; paired median delta=2.259; paired P=4.66e-10.
+- GSE50114: n=37/9; AUC=1.000; patient-clustered mean difference=2.502 (95% CI 2.253 to 2.750; P=2.43e-23).
+- GSE41657: n=51/12; AUC=0.998; patient-clustered mean difference=2.705 (95% CI 2.445 to 2.965; P=1.14e-29).
+- GSE40362: n=8/8; AUC=1.000; patient-clustered mean difference=1.654 (95% CI 1.301 to 2.006; P=5.06e-08).
+- GSE72820: n=7/7; AUC=0.735; paired median delta=0.295; paired P=0.469.
+
+One-stage cohort-fixed, patient-clustered effect: beta=1.925 SD (95% CI 1.770 to 2.079; P=3.76e-56; n=203 samples/161 patient clusters).
+Leave-one-cohort-out beta range: 1.829 to 2.037 SD.
+All nested-size one-stage effects positive: True.
+After prespecified proliferation-control adjustment: beta=1.741 SD (95% CI 1.538 to 1.944; P=1.79e-37).
+Proliferation-adjusted leave-one-cohort-out beta range: 1.584 to 1.893 SD.
+
+Interpretation boundary
+Processed public cohorts validate frozen score transport; they do not define an absolute diagnostic threshold.

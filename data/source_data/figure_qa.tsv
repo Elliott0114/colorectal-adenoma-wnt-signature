@@ -1,0 +1,9 @@
+check	pass
+all_four_formats	TRUE
+all_nonempty	TRUE
+six_main_figures	TRUE
+eight_supplementary_figures	TRUE
+figure5_within_height_limit	TRUE
+all_empirical_directions_supported	TRUE
+negative_internal_coherence_retained	TRUE
+forbidden_legacy_labels_absent	TRUE

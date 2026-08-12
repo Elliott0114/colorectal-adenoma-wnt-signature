@@ -1,0 +1,10 @@
+CRC Atlas locked-score study influence summary
+==============================================
+Studies represented: 33
+
+polyp_epithelial: full beta=0.353654; LOO range=0.325908 to 0.661193; positive in 100.0% of omissions; minimum target donors=3; omit Chen 2021 beta=0.661193 (95% CI 0.399046 to 0.923340; target donors=3).
+polyp_cancer: full beta=0.708950; LOO range=0.675584 to 1.092541; positive in 100.0% of omissions; minimum target donors=3; omit Chen 2021 beta=1.092541 (95% CI 0.735055 to 1.450027; target donors=3).
+tumor_epithelial: full beta=0.837886; LOO range=0.746301 to 0.919741; positive in 100.0% of omissions; minimum target donors=26; omit Chen 2021 beta=0.842278 (95% CI 0.702808 to 0.981749; target donors=33).
+tumor_cancer: full beta=0.534957; LOO range=0.494669 to 0.572018; positive in 100.0% of omissions; minimum target donors=158; omit Chen 2021 beta=0.505247 (95% CI 0.418879 to 0.591615; target donors=213).
+metastasis_epithelial: full beta=0.865988; LOO range=0.725885 to 0.968062; positive in 100.0% of omissions; minimum target donors=4; omit Chen 2021 beta=0.823739 (95% CI 0.465160 to 1.182317; target donors=5).
+metastasis_cancer: full beta=0.524393; LOO range=0.465093 to 0.585774; positive in 100.0% of omissions; minimum target donors=28; omit Chen 2021 beta=0.465093 (95% CI 0.185636 to 0.744550; target donors=50).

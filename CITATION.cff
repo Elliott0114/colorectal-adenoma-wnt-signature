@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this code or the frozen signature, please cite the associated manuscript and this software release."
+title: "Code and source data for a colorectal adenoma WNT-associated epithelial state"
+type: software
+version: 1.0.0
+date-released: 2026-08-12
+license: MIT
+authors:
+  - given-names: Yiming
+    family-names: Lv
+  - given-names: Xiya
+    family-names: Jia
+  - given-names: Runzhi
+    family-names: Chen
+  - given-names: Yiyi
+    family-names: Chen
+  - given-names: Sijie
+    family-names: Yin
+  - given-names: Sheng
+    family-names: Dai
+    email: daimd@zju.edu.cn
+keywords:
+  - colorectal adenoma
+  - WNT signalling
+  - transcriptomic signature
+  - multi-omics
+  - virtual deletion

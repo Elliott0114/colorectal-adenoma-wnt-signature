@@ -1,0 +1,7 @@
+locus_set	n_requested	n_present	present_genes	missing_genes	n_windows
+wnt_route_loci	7	7	LGR5,ASCL2,OLFM4,AXIN2,SOX9,EPHB2,SMOC2		280
+wnt_tcf_ascl2_axis_loci	5	5	ASCL2,TCF7L2,TCF7,LEF1,MYC		200
+immune_ifn_loci	8	8	HLA-DRA,HLA-DRB1,B2M,TAP1,STAT1,IRF1,CXCL10,CXCL11		320
+proliferation_control_loci	6	6	MKI67,TOP2A,PCNA,MCM2,MCM5,TYMS		240
+serrated_metaplasia_loci	10	10	MUC5AC,MUC6,TFF1,TFF2,TFF3,REG4,AGR2,SPINK4,KRT7,ANXA10		400
+housekeeping_control_loci	13	13	ACTB,GAPDH,RPLP0,RPL13A,TUBB,HPRT1,PPIA,RPS18,TBP,GUSB,YWHAZ,SDHA,HMBS		520

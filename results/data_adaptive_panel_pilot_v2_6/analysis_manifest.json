@@ -1,0 +1,22 @@
+{
+  "analysis": "data-adaptive minimum-sufficient gene-panel pilot",
+  "status": "exploratory; manuscript not modified",
+  "seed": 20260710,
+  "discovery_only_selection": true,
+  "discovery_samples": 37,
+  "discovery_donors": 27,
+  "limma_duplicate_correlation": 0.1263,
+  "eligibility": {
+    "limma_bh_fdr": 0.05,
+    "donor_bootstrap_direction_stability": 0.9,
+    "donor_bootstrap_ci_excludes_zero": true
+  },
+  "size_selection": {
+    "method": "grouped leave-one-donor-out forward score reconstruction plus one-SE rule",
+    "maximum_path_length_per_arm": 30,
+    "selected_up": 21,
+    "selected_down": 7
+  },
+  "validation_read_after_panel_fixed": true,
+  "comparison_panels": ["full stable core", "adaptive minimum-sufficient", "100-gene reference", "10-gene biology-guided"]
+}

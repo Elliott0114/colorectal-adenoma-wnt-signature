@@ -1,0 +1,11 @@
+{
+  "input_h5ad": "results/virtual_knockout_validation_v2_9/input/chen_validation_conventional_adenoma_balanced_raw.h5ad",
+  "matrix": "results/virtual_knockout_validation_v2_9/sctenifold_input/counts_gene_by_cell.mtx.gz",
+  "matrix_sha256": "a01621823a6082572cbc26a34874d87d126d271eb1722c339ff3c8a077aead0e",
+  "genes_sha256": "5621a53959e2a0be16c140a0a6874d39403a95e649bc9a255d797285ac11e025",
+  "cells_sha256": "7a1d899dbfbde4d81653b26c77423899e8f88ae1e9eaf044004f863fb363984b",
+  "n_genes": 2198,
+  "n_cells": 1664,
+  "orientation": "genes_by_cells",
+  "values": "raw_integer_UMI_counts"
+}

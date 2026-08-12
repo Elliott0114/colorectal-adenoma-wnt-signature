@@ -1,0 +1,3 @@
+cohort	signature_size_per_direction	covariates	n_samples	n_patient_clusters	adjusted_adenoma_coef_sd	adjusted_ci_low	adjusted_ci_high	adjusted_p_value
+GSE41657	50	age + sex	63	63	2.0705591628868936	1.8204299109508797	2.3206884148229077	2.003420919236921e-24
+GSE40362	50	age + sex	16	16	1.9407576169958978	1.3098449027683448	2.5716703312234506	9.09332657457015e-06

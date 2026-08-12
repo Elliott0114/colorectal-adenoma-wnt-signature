@@ -1,0 +1,22 @@
+{
+  "analysis_role": "computational_backend_reduction_only",
+  "input_h5ad": "results/virtual_knockout_validation_v2_9/input/chen_validation_conventional_adenoma_balanced_raw.h5ad",
+  "selection_rule": "top 800 label-blind Seurat-flavor HVGs union all measurable frozen 287-core genes, 12 panel genes, and prespecified KO targets",
+  "virtual_knockout_results_read": false,
+  "phenotype_labels_read": false,
+  "matrix": "results/virtual_knockout_validation_v2_9/sctenifold_input_compact/counts_gene_by_cell.mtx.gz",
+  "matrix_sha256": "18c02307cc41c7347fba0ce3c64a37e0e6cb237136c08adef49c26a6ef63c730",
+  "genes_sha256": "31bce073b9a36b69490ff9d4b399042126b0a353a521cbf821df08982eae2e52",
+  "cells_sha256": "7a1d899dbfbde4d81653b26c77423899e8f88ae1e9eaf044004f863fb363984b",
+  "n_genes": 1025,
+  "n_cells": 1664,
+  "n_hvg_requested": 800,
+  "n_hvg": 800,
+  "n_forced": 258,
+  "n_forced_retained": 258,
+  "n_core_retained": 257,
+  "n_panel_retained": 12,
+  "n_targets_retained": 13,
+  "orientation": "genes_by_cells",
+  "values": "raw_integer_UMI_counts"
+}

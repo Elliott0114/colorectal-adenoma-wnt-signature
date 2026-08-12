@@ -1,0 +1,21 @@
+# Virtual-knockout validation figure contract
+
+- **Core conclusion:** In an independent conventional-adenoma epithelial dataset, virtual perturbation supports coupling of the frozen 287-gene state—most clearly for ASCL2 and SOX4—to the prespecified WNT/stem regulatory context, while the frozen 12-gene panel remains a compact readout rather than a self-contained causal circuit.
+- **Figure archetype:** Quantitative grid with one dominant validation panel and quieter robustness/calibration panels.
+- **Target/output:** JTM submission; double-column width (183 mm), editable SVG/PDF, 600-dpi TIFF and 300-dpi PNG preview.
+- **Backend:** R only (`ggplot2` and `patchwork`).
+- **Final size:** 183 × 150 mm.
+- **Panel map:**
+  - **a:** Validation-only design: frozen gene sets and targets, independent input, dual-seed GenKI, matched-null testing, and empirical direction calibration.
+  - **b:** Primary aggregate enrichment of virtual-knockout impact for the measurable 287-gene core and leave-target-out 12-gene panel, relative to 10,000 matched null sets; internal panel coherence is retained as a negative control.
+  - **c:** Prespecified upstream-target results for the fixed core and panel, showing that the aggregate core result is driven by ASCL2 and SOX4 rather than by TCF7L2 alone.
+  - **d:** Robustness across two model seeds and the KL-versus-EMD sensitivity analysis.
+  - **e:** Directional calibration in eight existing real perturbation contrasts; this panel supplies direction because GenKI distances are unsigned.
+- **Evidence hierarchy:**
+  - **Hero evidence:** Aggregate matched-null enrichment for the frozen core.
+  - **Validation evidence:** Upstream-target decomposition and eight prespecified real-perturbation directions.
+  - **Controls/robustness:** Internal panel-coherence negative control, second distance metric and second model seed.
+- **Statistics:** Observed mean percentile versus 10,000 expression/detection/network-degree-matched null gene sets; one-sided empirical P values; BH correction across the three primary KL endpoints; two model seeds; Spearman rank correlations for seed and metric robustness.
+- **Source data:** Clean plotting tables exported beside the figure from the versioned GenKI outputs.
+- **Image-integrity notes:** No microscopy or raster manipulation. All panels are generated directly from tabular outputs. The PNG is a preview only; PDF/SVG preserve editable text.
+- **Reviewer risks:** GenKI is unsigned; cells fit the network but are not treated as independent biological replicates; only 257/287 core genes pass the prespecified detection rule; the panel-level EMD sensitivity is borderline; within-panel coherence is negative; single-model empirical contrasts are descriptive; no claim of clinical or experimental validation is permitted.

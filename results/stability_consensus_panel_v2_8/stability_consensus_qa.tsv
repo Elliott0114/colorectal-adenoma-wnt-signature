@@ -1,0 +1,7 @@
+check	passed
+kneedle_size_reused_without_refitting	TRUE
+strict_majority_is_data_independent_threshold	TRUE
+gene_count_not_fixed	TRUE
+both_biological_arms_retained	TRUE
+all_genes_pass_portability_gate	TRUE
+validation_outcomes_not_used	TRUE

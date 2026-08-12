@@ -1,0 +1,26 @@
+{
+  "analysis": "discovery_locked_route_signature",
+  "selection_dataset": "Chen discovery epithelial specimen pseudobulk",
+  "held_out_dataset": "Chen validation epithelial specimen pseudobulk",
+  "validation_used_for_selection": false,
+  "bootstrap_unit": "donor block",
+  "bootstrap_replicates": 1000,
+  "random_seed": 20260710,
+  "direction_stability_threshold": 0.9,
+  "signature_size": {
+    "adenoma_up": 50,
+    "adenoma_down": 50
+  },
+  "downstream_transfer": [
+    "Chen validation",
+    "Becker snRNA",
+    "CRC Atlas",
+    "GSE39582"
+  ],
+  "source_cache": "results/route_signature",
+  "becker_source_present": true,
+  "chen_source_paths": {
+    "discovery": "data_sources/Chen_Cell_2021_CELLxGENE/chen_discovery_epithelial.h5ad",
+    "validation": "data_sources/Chen_Cell_2021_CELLxGENE/chen_validation_epithelial.h5ad"
+  }
+}

@@ -1,0 +1,26 @@
+Public colorectal adenoma protein triangulation
+================================================
+Candidates audited: 104 (locked signature: 100).
+PXD002137: 16 adenomas, 8 tumor-adjacent normal mucosae, 8 CRCs; adenoma-versus-normal is unpaired.
+PXD017269: FFPE detectability only (118 adenomas); no normal comparator.
+PXD046999: nine-patient DVP detectability/risk-group enrichment only; no normal comparator.
+
+Evidence tiers
+- C_transcript_locked_not_detected_in_pxd002137: 39
+- C_incomplete_public_protein_support: 31
+- B_directional_support_and_ffpe_detectability: 11
+- D_direction_conflict: 10
+- A_directional_protein_replication_and_ffpe_detectability: 9
+- context_only_not_locked: 4
+
+Current panel and prespecified alternative
+- OLFM4 (current_primary_up_arm): tier=A_directional_protein_replication_and_ffpe_detectability; PXD002137 adjusted effect=3.443; PXD017269 detection=0.831; PXD046999 DVP detected=True.
+- FABP1 (current_primary_down_arm): tier=B_directional_support_and_ffpe_detectability; PXD002137 adjusted effect=-0.312; PXD017269 detection=1.000; PXD046999 DVP detected=True.
+- CTNNB1 (current_localization_readout): tier=context_only_not_locked; PXD002137 adjusted effect=1.072; PXD017269 detection=1.000; PXD046999 DVP detected=True.
+- MKI67 (proliferation_covariate): tier=context_only_not_locked; PXD002137 adjusted effect=2.010; PXD017269 detection=0.975; PXD046999 DVP detected=True.
+- KRT20 (prespecified_down_arm_alternative): tier=context_only_not_locked; PXD002137 adjusted effect=nan; PXD017269 detection=1.000; PXD046999 DVP detected=True.
+- SOX9 (current_context_nuclear_marker): tier=context_only_not_locked; PXD002137 adjusted effect=nan; PXD017269 detection=0.373; PXD046999 DVP detected=False.
+
+Interpretation boundary
+These results prioritize assay candidates; they do not establish causal function, diagnostic thresholds, or clinical utility.
+PXD017269 and PXD046999 contribute detectability evidence, not independent normal-versus-adenoma replication.

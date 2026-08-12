@@ -1,0 +1,5 @@
+dataset	panel_id	panel_label	n_genes	n_adenoma	n_normal	auc	p_value	median_difference	n_paired_donors	paired_median_difference	paired_p_value
+discovery	full_core_287	Full error-controlled core (287)	287	13	34	0.9411764705882353	3.7331593240692716e-06	2.5206317054430034	10	2.5338019149042803	0.005859375
+discovery	stability_consensus_11	Strict-majority stability consensus (11)	11	13	34	0.9253393665158371	8.225355982348549e-06	3.0465815095600344	10	3.010879435828199	0.009765625
+validation	full_core_287	Full error-controlled core (287)	287	14	30	0.9238095238095239	7.728161908362234e-06	3.2304528964598633	7	3.0485352881597496	0.015625
+validation	stability_consensus_11	Strict-majority stability consensus (11)	11	14	30	0.9333333333333333	4.799412235150942e-06	3.6484525108936032	7	3.0893216160559147	0.015625

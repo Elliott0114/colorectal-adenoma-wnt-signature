@@ -1,0 +1,10 @@
+dataset	score	n_pairs	median_delta_conventional_minus_normal	p_wilcoxon
+discovery	ca_route_signature	10	2.350037146565618	0.009765625
+discovery	wnt_stem	10	1.1954119525899167	0.005859375
+discovery	proliferation_control	10	-0.2821577580171416	0.064453125
+validation	ca_route_signature	7	3.039851347516296	0.015625
+validation	wnt_stem	7	1.7696340610196857	0.015625
+validation	proliferation_control	7	0.0064102363523261	0.9375
+combined	ca_route_signature	17	2.3792885235091026	0.000152587890625
+combined	wnt_stem	17	1.2512902885672064	0.0001068115234375
+combined	proliferation_control	17	-0.2364238241426313	0.17425537109375

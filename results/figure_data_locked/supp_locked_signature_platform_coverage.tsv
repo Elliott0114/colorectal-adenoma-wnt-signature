@@ -1,0 +1,10 @@
+dataset	layer	requested_up	present_up	coverage_up	requested_down	present_down	coverage_down	minimum_component_coverage	reporting_threshold	passes_reporting_threshold
+Chen discovery	epithelial specimen pseudobulk	50	50	1.0	50	50	1.0	1.0	0.8	True
+Chen held-out	epithelial specimen pseudobulk	50	50	1.0	50	50	1.0	1.0	0.8	True
+Becker	single-nucleus RNA	50	48	0.96	50	49	0.98	0.96	0.8	True
+CRC Atlas	integrated single-cell RNA	50	49	0.98	50	49	0.98	0.98	0.8	True
+GSE14333	GPL570 bulk recurrence cohort	50	46	0.92	50	47	0.94	0.92	0.8	True
+GSE17536	GPL570 bulk recurrence cohort	50	46	0.92	50	47	0.94	0.92	0.8	True
+GSE33113	GPL570 bulk recurrence cohort	50	46	0.92	50	47	0.94	0.92	0.8	True
+GSE37892	GPL570 bulk recurrence cohort	50	46	0.92	50	47	0.94	0.92	0.8	True
+GSE39582	GPL570 bulk recurrence cohort	50	46	0.92	50	47	0.94	0.92	0.8	True

@@ -1,0 +1,10 @@
+{
+  "analysis": "balanced random-panel validation benchmark",
+  "panel_sha256_before_validation_read": "91e564f42bdc5fb0188605b76116bcfb126e5102d62a33d6890fa67018928380",
+  "n_random_panels": 10000,
+  "random_seed": 20260810,
+  "random_panel_design": "6 up + 6 down without replacement from the fixed 30-up/32-down portable protein-coding universe",
+  "panel_reselection": false,
+  "joint_random_panels_meeting_or_exceeding_objective": 684,
+  "joint_empirical_p": 0.0684931506849315
+}

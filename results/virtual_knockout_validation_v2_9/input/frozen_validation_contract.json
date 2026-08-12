@@ -1,0 +1,106 @@
+{
+  "analysis_role": "validation_not_discovery",
+  "frozen_before_virtual_knockout": true,
+  "source_dataset": "Chen et al. independent validation epithelial cohort",
+  "eligible_cells": "Polyp_Type in TA, TV, or TVA",
+  "sampling": {
+    "unit": "donor",
+    "cells_per_donor": 128,
+    "seed": 20260810,
+    "phenotype_or_signature_score_used": false
+  },
+  "gene_universe": {
+    "background": "top 2000 label-blind HVGs in balanced adenoma cells",
+    "forced": "measurable frozen 287-gene core, 12-gene panel, and prespecified targets",
+    "minimum_detected_fraction": 0.01,
+    "validation_outcome_used": false
+  },
+  "frozen_sets": {
+    "core_requested_n": 287,
+    "core_measurable_n": 257,
+    "core_sha256": "f1356882ccb33ab96d296cc285c14ef782dae068176289821f12feb5ac75b5ed",
+    "panel_n": 12,
+    "panel_genes": [
+      "LGALS3",
+      "ASCL2",
+      "COX6C",
+      "SOX4",
+      "NDUFA1",
+      "SLC7A5",
+      "CYCS",
+      "AXIN2",
+      "LRRC19",
+      "SDC3",
+      "ETHE1",
+      "DPEP1"
+    ],
+    "panel_sha256": "ef14c8ec4a817ab26694038c7684f7d9427f1974d838e66069db9c79bf13bf91"
+  },
+  "prespecified_targets": {
+    "upstream_context": [
+      "TCF7L2",
+      "ASCL2",
+      "SOX4"
+    ],
+    "panel_members": [
+      "LGALS3",
+      "ASCL2",
+      "COX6C",
+      "SOX4",
+      "NDUFA1",
+      "SLC7A5",
+      "CYCS",
+      "AXIN2",
+      "LRRC19",
+      "SDC3",
+      "ETHE1",
+      "DPEP1"
+    ],
+    "all_unique": [
+      "TCF7L2",
+      "ASCL2",
+      "SOX4",
+      "LGALS3",
+      "COX6C",
+      "NDUFA1",
+      "SLC7A5",
+      "CYCS",
+      "AXIN2",
+      "LRRC19",
+      "SDC3",
+      "ETHE1",
+      "DPEP1"
+    ]
+  },
+  "model": {
+    "method": "GenKI",
+    "version": "0.2.1",
+    "model_seeds": [
+      20260810,
+      20260811
+    ],
+    "epochs": 100,
+    "pc_components": 5,
+    "edge_percentile_cutoff": 85,
+    "latent_dimensions": 2,
+    "primary_distance": "KL divergence",
+    "distance_sensitivity": "Earth mover distance",
+    "seed_handling": "fixed GenKI link split; requested initialization seed restored after the package split routine"
+  },
+  "prespecified_interpretation": {
+    "virtual_knockout_output": "unsigned network-embedding perturbation magnitude",
+    "direction_inferred_from_genki": false,
+    "direction_calibration": "existing empirical APC/WNT/TCF7L2/ASCL2 perturbations only",
+    "new_gene_nomination_allowed": false,
+    "panel_reselection_or_reweighting_allowed": false
+  },
+  "prespecified_tests": [
+    "fixed 287-core enrichment after each upstream-context knockout",
+    "leave-target-out fixed 12-panel enrichment after each upstream-context knockout",
+    "leave-target-out within-panel network coherence across the 12 panel-member knockouts",
+    "cross-seed rank stability",
+    "expression-and-network-degree-matched gene-set nulls"
+  ],
+  "matched_null_replicates": 10000,
+  "multiple_testing": "Benjamini-Hochberg within the prespecified target-by-gene-set family"
+}
