@@ -5,6 +5,8 @@ type: software
 version: 1.0.0
 date-released: 2026-08-12
 license: MIT
+repository-code: "https://github.com/Elliott0114/colorectal-adenoma-wnt-signature"
+url: "https://github.com/Elliott0114/colorectal-adenoma-wnt-signature"
 authors:
   - given-names: Yiming
     family-names: Lv
