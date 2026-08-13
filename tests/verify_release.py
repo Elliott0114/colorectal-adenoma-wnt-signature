@@ -13,6 +13,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 SIGNATURE_DIR = ROOT / "data" / "signatures"
+FINAL_FIGURE_DIR = ROOT / "figures" / "communications_biology_v1.2"
 EXPECTED_SIGNATURE_SHA256 = (
     "91e564f42bdc5fb0188605b76116bcfb126e5102d62a33d6890fa67018928380"
 )
@@ -84,6 +85,11 @@ def check_required_files() -> None:
         "data/supplementary/Supplementary_Tables_1-12.xlsx",
         "workflow/pipeline.tsv",
         "analysis/plot_jtm_submission_figures_v2_8.R",
+        "analysis/refine_communications_biology_workflows_v1_1.R",
+        "analysis/revise_communications_biology_figure1_v1_2.R",
+        "analysis/refine_communications_biology_figure_audit_fixes_v1_2.R",
+        "analysis/refine_communications_biology_alignment_v1_3.R",
+        "analysis/audit_communications_biology_figures_v1_2.R",
         "results/virtual_knockout_validation_v2_9/genki_analysis_manifest.json",
         "results/virtual_knockout_validation_v2_9/genki_reproducibility_summary.json",
     ]
@@ -100,6 +106,42 @@ def check_required_files() -> None:
     )
     missing = [path for path in required if not (ROOT / path).is_file()]
     require(not missing, "Missing required files: " + ", ".join(missing))
+
+
+def check_final_figure_package() -> None:
+    stems = [
+        "figure1_discovery_core_and_objective_reduction",
+        "figure2_independent_replication_and_ffpe",
+        "figure3_rna_atac_regulatory_support",
+        "figure4_crc_atlas_cross_sectional_recurrence",
+        "figure5_empirical_and_virtual_perturbation_support",
+        "figure6_spatial_and_protein_context",
+        "figureS1_core_composition_and_portability",
+        "figureS2_external_and_ffpe_sensitivity",
+        "figureS3_signature_transparency_and_random_benchmark",
+        "figureS4_rna_atac_robustness",
+        "figureS5_crc_atlas_source_audit",
+        "figureS6_perturbation_boundaries",
+        "figureS7_virtual_knockout_robustness",
+        "figureS8_spatial_and_protein_assayability",
+    ]
+    missing = [
+        str((FINAL_FIGURE_DIR / f"{stem}.{suffix}").relative_to(ROOT))
+        for stem in stems
+        for suffix in ("pdf", "png", "svg")
+        if not (FINAL_FIGURE_DIR / f"{stem}.{suffix}").is_file()
+    ]
+    require(not missing, "Missing final figure files: " + ", ".join(missing))
+
+    audit_path = FINAL_FIGURE_DIR / "source_data" / "figure_package_audit_summary.tsv"
+    audit = pd.read_csv(audit_path, sep="\t")
+    require(len(audit) > 0, "Final figure audit is empty")
+    require(audit["pass"].astype(bool).all(), "Final figure audit did not pass")
+
+    manifest_path = FINAL_FIGURE_DIR / "source_data" / "figure_export_manifest.tsv"
+    manifest = pd.read_csv(manifest_path, sep="\t")
+    require(len(manifest) == 56, "Expected 14 figures in four export formats")
+    require(set(manifest["figure"]) == set(stems), "Final figure manifest changed")
 
 
 def check_virtual_deletion_manifest() -> None:
@@ -155,6 +197,7 @@ def main() -> None:
     checks = [
         ("required files", check_required_files),
         ("frozen signatures", check_signatures),
+        ("final figure package", check_final_figure_package),
         ("virtual-deletion manifest", check_virtual_deletion_manifest),
         ("repository hygiene", check_repository_hygiene),
     ]
@@ -166,4 +209,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

@@ -1,0 +1,5 @@
+metric	observed
+Held-out AUC	0.935714285714286
+Held-out fidelity to 287	0.954303863106041
+External weighted AUC	0.990393852065322
+FFPE positive pairs	0.92156862745098

@@ -52,7 +52,9 @@ data/datasets.tsv      public dataset and primary-publication index
 data/signatures/       frozen 287-, 62- and 12-gene definitions
 data/source_data/      source data underlying manuscript figures
 data/supplementary/    supplementary tables workbook
-figures/manuscript/    publication figures in SVG, PDF and PNG
+figures/communications_biology_v1.2/
+                        final submission figures in SVG, PDF and PNG
+figures/manuscript/    frozen pre-layout-refinement figures retained for provenance
 results/               locked derived results and reproducibility manifests
 tests/                  release-integrity and portability checks
 workflow/               execution order and reproducibility documentation
@@ -61,7 +63,8 @@ workflow/               execution order and reproducibility documentation
 The versioned script names are retained to preserve the exact analysis trail.
 Names containing `jtm` refer to an earlier manuscript target and do not change
 the scientific content. The Communications Biology submission uses the same
-frozen v2.8 analysis outputs.
+frozen v2.8 analysis outputs, followed only by journal-specific workflow,
+typography and panel-alignment refinements.
 
 ## Quick verification
 
@@ -73,16 +76,27 @@ conda run -n crc-premalignant-locked python tests/verify_release.py
 conda run -n crc-premalignant-locked python analysis/audit_locked_environment.py
 ```
 
-To regenerate the complete figure package from the included derived results:
+To regenerate and audit the complete Communications Biology figure package
+from the included derived results:
 
 ```bash
 conda run -n crc-premalignant-locked Rscript \
-  analysis/plot_jtm_submission_figures_v2_8.R
+  analysis/refine_communications_biology_workflows_v1_1.R
+conda run -n crc-premalignant-locked Rscript \
+  analysis/revise_communications_biology_figure1_v1_2.R
+conda run -n crc-premalignant-locked Rscript \
+  analysis/refine_communications_biology_figure_audit_fixes_v1_2.R
+conda run -n crc-premalignant-locked Rscript \
+  analysis/refine_communications_biology_alignment_v1_3.R
+conda run -n crc-premalignant-locked Rscript \
+  analysis/audit_communications_biology_figures_v1_2.R
 ```
 
-The renderer exports SVG and PDF vector files, 600-dpi TIFF files, 300-dpi PNG
-files and panel-level source data. The expected execution order for full
-reanalysis is listed in [`workflow/pipeline.tsv`](workflow/pipeline.tsv).
+The renderers export SVG and PDF vector files, 600-dpi TIFF files, 300-dpi PNG
+files and panel-level source data. TIFF files are generated locally but omitted
+from Git because the corresponding vector and 300-dpi files are distributed.
+The expected execution order for full reanalysis is listed in
+[`workflow/pipeline.tsv`](workflow/pipeline.tsv).
 
 ## Full reanalysis and raw data
 

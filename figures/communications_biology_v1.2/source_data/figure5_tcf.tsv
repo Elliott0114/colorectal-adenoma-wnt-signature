@@ -1,0 +1,6 @@
+dataset	cell_line	clone_id	genotype	reduced_route_score	difference_vs_WT	expected_direction	direction_matches_expected	panel_id	panel_label	label
+GSE135328	HCT116	HCT116_18	KO	-0.261383731535146	-0.522767463070283	-1	True	objective_12	Objective Kneedle panel (12)	HCT116 · HCT116_18 · KO
+GSE135328	HT29	HT29_57	KO	-1.36187873401904	-3.18076535944801	-1	True	objective_12	Objective Kneedle panel (12)	HT29 · HT29_57 · KO
+GSE135328	HT29	HT29_62	Het	0.568487034604046	-1.25039959082492	-1	True	objective_12	Objective Kneedle panel (12)	HT29 · HT29_62 · Het
+GSE135328	HT29	HT29_83	KO	0.093563465147564	-1.7253231602814	-1	True	objective_12	Objective Kneedle panel (12)	HT29 · HT29_83 · KO
+GSE135328	HT29	HT29_86	KO	-1.11905839116154	-2.9379450165905	-1	True	objective_12	Objective Kneedle panel (12)	HT29 · HT29_86 · KO
