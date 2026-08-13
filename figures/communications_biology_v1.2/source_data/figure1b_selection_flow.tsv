@@ -1,0 +1,8 @@
+order	count	stage	criterion_note	removed_at_transition	phase
+1	33698	Assayed epithelial features	starting universe		Threshold-defined biological core
+2	6127	Expressed and technically eligible genes	mean expression >0.001 plus technical exclusions	27571	Threshold-defined biological core
+3	2496	Same-direction genes	same direction in at least 90% of whole-donor bootstraps	3631	Threshold-defined biological core
+4	1504	Non-zero bootstrap effects	whole-donor bootstrap 95% interval excludes zero	992	Threshold-defined biological core
+5	287	Threshold-defined 287-gene biological core	BH FDR at most 0.05 plus agreeing model directions	1217	Threshold-defined biological core
+6	62	Label-blind cross-platform portable genes	protein coding and detected on every validation platform	225	Label-blind portability audit
+7	12	Frozen balanced 12-gene signature	balanced leave-one-donor-out reconstruction plus Kneedle	50	Discovery-only compact readout

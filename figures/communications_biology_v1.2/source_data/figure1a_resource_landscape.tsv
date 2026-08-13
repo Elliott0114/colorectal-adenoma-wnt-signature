@@ -1,0 +1,7 @@
+order	icon_key	resource_type	displayed_scope
+1	single_cell	sc/snRNA-seq	Chen · Becker · CRC Atlas
+2	bulk_ffpe	Bulk and FFPE RNA	5 cohorts · 51 FFPE pairs
+3	multiome	Matched RNA–ATAC	40 samples · 12 patients
+4	perturbation	Perturbation RNA	6 datasets · 8 contrasts
+5	spatial	Spatial RNA	6 tissue sections
+6	proteomics	Proteomics	4 datasets

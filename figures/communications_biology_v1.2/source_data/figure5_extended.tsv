@@ -1,0 +1,7 @@
+dataset	species	model_system	comparison	feature	expected_direction	n_units	mean_difference	median_difference	bootstrap_mean_ci_low	bootstrap_mean_ci_high	n_expected_direction	p_exact_sign_two_sided	label	aligned
+GSE114059	human	patient_derived_crc_organoid	trametinib_vs_dmso	route_score	1	4	0.404636864373325	0.379612674683429	0.0700551106853506	0.739218618061299	4	0.125	Trametinib vs DMSO	TRUE
+GSE114059	human	patient_derived_crc_organoid	pri724_reversal_of_trametinib	route_score	-1	1	-0.0961480937803545	-0.0961480937803545	-0.0961480937803545	-0.0961480937803545	1	1	PRI-724 reversal	TRUE
+GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc	route_score	-1	1	-1.22790643695325	-1.22790643695325	-1.22790643695325	-1.22790643695325	1	1	Apc restoration	TRUE
+GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc_Kras	route_score	-1	1	-1.40411958170281	-1.40411958170281	-1.40411958170281	-1.40411958170281	1	1	Apc restoration + Kras	TRUE
+GSE130822	mouse	colonic_stem_cells	ascl2_ko_vs_resting_wt	route_score	-1	1	-2.06107175371662	-2.06107175371662	-2.06107175371662	-2.06107175371662	1	1	Ascl2 KO	TRUE
+GSE171910	human	conditional_crc_wnt_models	conditional_wnt_silencing	route_score	-1	4	-0.917891371725525	-0.677363980785567	-1.63497831546104	-0.441331818929972	4	0.125	Conditional WNT silencing	TRUE

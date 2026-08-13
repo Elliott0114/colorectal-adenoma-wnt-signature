@@ -1,0 +1,21 @@
+dataset	feature	n_expected	n_present	coverage_fraction	feature_label
+GSE114059	route_up	6	6	1	Signature up arm
+GSE114059	route_down	6	6	1	Signature down arm
+GSE114059	wnt_stem	7	7	1	WNT/stemness
+GSE114059	proliferation_control	8	8	1	Proliferation control
+GSE114059	epithelial_control	8	8	1	Epithelial identity control
+GSE67186	route_up	6	6	1	Signature up arm
+GSE67186	route_down	6	6	1	Signature down arm
+GSE67186	wnt_stem	7	7	1	WNT/stemness
+GSE67186	proliferation_control	8	8	1	Proliferation control
+GSE67186	epithelial_control	8	8	1	Epithelial identity control
+GSE130822	route_up	6	6	1	Signature up arm
+GSE130822	route_down	6	6	1	Signature down arm
+GSE130822	wnt_stem	7	7	1	WNT/stemness
+GSE130822	proliferation_control	8	8	1	Proliferation control
+GSE130822	epithelial_control	8	8	1	Epithelial identity control
+GSE171910	route_up	6	6	1	Signature up arm
+GSE171910	route_down	6	6	1	Signature down arm
+GSE171910	wnt_stem	7	7	1	WNT/stemness
+GSE171910	proliferation_control	8	8	1	Proliferation control
+GSE171910	epithelial_control	8	8	1	Epithelial identity control
