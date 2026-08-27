@@ -4,15 +4,19 @@ order	stage	environment	command	principal_output	run_by_default
 3	Label-blind 62-gene portability audit	crc-premalignant-locked	python analysis/export_287_portability_candidates_v2_7.py	results/objective_compact_panel_v2_7/portable_protein_coding_candidate_universe.tsv	no
 4	Discovery-only compact signature	crc-premalignant-locked	Rscript analysis/select_objective_compact_panel_v2_7.R	results/objective_compact_panel_v2_7/objective_compact_panel_frozen.tsv	no
 5	Held-out and external validation	crc-premalignant-locked	python analysis/validate_objective_compact_panel_v2_7.py	results/objective_compact_panel_v2_7/	no
-6	RNA-ATAC atlas perturbation spatial and protein layers	crc-premalignant-locked	python analysis/validate_objective_panel_extended_layers_v2_7.py	results/objective_compact_panel_v2_7/extended_validation/	no
-7	Matched-alternative benchmark	crc-premalignant-locked	python analysis/benchmark_objective_panel_against_random_v2_7.py	results/objective_compact_panel_v2_7/random_benchmark/	no
-8	Virtual-deletion input preparation	crc-premalignant-locked	python analysis/prepare_genki_virtual_knockout_validation_v2_9.py	results/virtual_knockout_validation_v2_9/input/	no
-9	Dual-seed GenKI virtual deletion	crc-premalignant-virtual-ko	python analysis/run_genki_virtual_knockout_validation_v2_9.py	results/virtual_knockout_validation_v2_9/	no
-10	GenKI exact-output audit	crc-premalignant-virtual-ko	python analysis/audit_genki_reproducibility_v2_9.py	results/virtual_knockout_validation_v2_9/genki_reproducibility_summary.json	no
-11	Base manuscript figure rendering	crc-premalignant-locked	Rscript analysis/plot_jtm_submission_figures_v2_8.R	figures/jtm_submission_v2.8/	no
-12	Communications Biology workflow layout	crc-premalignant-locked	Rscript analysis/refine_communications_biology_workflows_v1_1.R	figures/communications_biology_v1.1/	yes
-13	Figure 1 workflow and attrition layout	crc-premalignant-locked	Rscript analysis/revise_communications_biology_figure1_v1_2.R	figures/communications_biology_v1.2/	yes
-14	Targeted figure audit fixes	crc-premalignant-locked	Rscript analysis/refine_communications_biology_figure_audit_fixes_v1_2.R	figures/communications_biology_v1.2/	yes
-15	Final panel alignment	crc-premalignant-locked	Rscript analysis/refine_communications_biology_alignment_v1_3.R	figures/communications_biology_v1.2/	yes
-16	Final figure package audit	crc-premalignant-locked	Rscript analysis/audit_communications_biology_figures_v1_2.R	figures/communications_biology_v1.2/source_data/figure_package_audit_summary.tsv	yes
-17	Release integrity audit	crc-premalignant-locked	python tests/verify_release.py	standard output	yes
+6	Held-out cell-state composition and expression decomposition	crc-premalignant-locked	python analysis/cell_state_composition_decomposition_v1.py	results/cell_state_decomposition_v1/	no
+7	Independent numerical decomposition audit	crc-premalignant-locked	Rscript analysis/audit_cell_state_decomposition_v1.R	results/cell_state_decomposition_v1/independent_r_audit.tsv	yes
+8	RNA-ATAC atlas perturbation spatial and protein layers	crc-premalignant-locked	python analysis/validate_objective_panel_extended_layers_v2_7.py	results/objective_compact_panel_v2_7/extended_validation/	no
+9	Matched-alternative benchmark	crc-premalignant-locked	python analysis/benchmark_objective_panel_against_random_v2_7.py	results/objective_compact_panel_v2_7/random_benchmark/	no
+10	Virtual-deletion input preparation	crc-premalignant-locked	python analysis/prepare_genki_virtual_knockout_validation_v2_9.py	results/virtual_knockout_validation_v2_9/input/	no
+11	Dual-seed GenKI virtual deletion	crc-premalignant-virtual-ko	python analysis/run_genki_virtual_knockout_validation_v2_9.py	results/virtual_knockout_validation_v2_9/	no
+12	GenKI exact-output audit	crc-premalignant-virtual-ko	python analysis/audit_genki_reproducibility_v2_9.py	results/virtual_knockout_validation_v2_9/genki_reproducibility_summary.json	no
+13	Base manuscript figure rendering	crc-premalignant-locked	Rscript analysis/plot_jtm_submission_figures_v2_8.R	figures/jtm_submission_v2.8/	no
+14	Communications Biology workflow layout	crc-premalignant-locked	Rscript analysis/refine_communications_biology_workflows_v1_1.R	figures/communications_biology_v1.1/	yes
+15	Figure 1 workflow and attrition layout	crc-premalignant-locked	Rscript analysis/revise_communications_biology_figure1_v1_2.R	figures/communications_biology_v1.2/	yes
+16	Targeted figure audit fixes	crc-premalignant-locked	Rscript analysis/refine_communications_biology_figure_audit_fixes_v1_2.R	figures/communications_biology_v1.2/	yes
+17	Final panel alignment	crc-premalignant-locked	Rscript analysis/refine_communications_biology_alignment_v1_3.R	figures/communications_biology_v1.2/	yes
+18	Downstream figure renumbering	crc-premalignant-locked	python analysis/assemble_communications_biology_v1_3.py	figures/communications_biology_v1.2/	yes
+19	Cell-state Figure 3 rendering	crc-premalignant-locked	CELL_STATE_FIGURE_DIR=figures/communications_biology_v1.2 CELL_STATE_FIGURE_STEM=figure3_cell_state_decomposition Rscript analysis/plot_cell_state_decomposition_v1.R	figures/communications_biology_v1.2/figure3_cell_state_decomposition.*	yes
+20	Final figure package audit	crc-premalignant-locked	python analysis/audit_communications_biology_figures_v1_3.py	figures/communications_biology_v1.2/source_data/figure_package_audit_summary_v1_3.tsv	yes
+21	Release integrity audit	crc-premalignant-locked	python tests/verify_release.py	standard output	yes

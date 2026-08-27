@@ -1,0 +1,5 @@
+check	value	criterion	pass
+all_decompositions_close	2.220446049250313e-16	<=1e-10	True
+all_bootstraps_close	6.661338147750939e-16	<=1e-10	True
+primary_dataset_present	59.0	>0	True
+frozen_core_gene_count	287.0	287	True

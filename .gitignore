@@ -32,6 +32,12 @@ temp/
 *.pth
 *.tif
 *.tiff
+figures/communications_biology_v1.1/
+figures/jtm_submission_v2.6/
+figures/communications_biology_v1.2/source_data/figure1_v1_9_*
+figures/communications_biology_v1.2/source_data/figure_alignment_export_manifest.tsv
+figures/communications_biology_v1.2/source_data/figure_alignment_sessionInfo.txt
+figures/communications_biology_v1.2/source_data/figure_audit_fix_*
 
 # Office lock files
 ~$*

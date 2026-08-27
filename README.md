@@ -26,6 +26,9 @@ measurement and from downstream validation.
    pairs, producing the frozen **12-gene signature**.
 4. Only after the signature was frozen were held-out, external, FFPE,
    RNA-ATAC, atlas, perturbation, spatial and protein results evaluated.
+5. A post-freeze donor-balanced decomposition of the held-out single-cell
+   partition separated the tissue-level difference into recovered-cell
+   composition and expression changes within deposited epithelial states.
 
 The 287-gene core defines the analysed epithelial state. The 12 genes are an
 unweighted research signature for measuring that state; they are not presented
@@ -53,7 +56,7 @@ data/signatures/       frozen 287-, 62- and 12-gene definitions
 data/source_data/      source data underlying manuscript figures
 data/supplementary/    supplementary tables workbook
 figures/communications_biology_v1.2/
-                        final submission figures in SVG, PDF and PNG
+                        seven main and eight supplementary figures in SVG, PDF and PNG
 figures/manuscript/    frozen pre-layout-refinement figures retained for provenance
 results/               locked derived results and reproducibility manifests
 tests/                  release-integrity and portability checks
@@ -62,9 +65,10 @@ workflow/               execution order and reproducibility documentation
 
 The versioned script names are retained to preserve the exact analysis trail.
 Names containing `jtm` refer to an earlier manuscript target and do not change
-the scientific content. The Communications Biology submission uses the same
-frozen v2.8 analysis outputs, followed only by journal-specific workflow,
-typography and panel-alignment refinements.
+the scientific content. The Communications Biology submission retains the
+frozen v2.8 definitions and validation outputs. The later cell-state
+decomposition is explicitly post-freeze: it neither changes the 287 genes nor
+refits the 12-gene signature.
 
 ## Quick verification
 
@@ -72,7 +76,7 @@ From the repository root:
 
 ```bash
 conda env create -f environment.yml
-conda run -n crc-premalignant-locked python tests/verify_release.py
+make verify
 conda run -n crc-premalignant-locked python analysis/audit_locked_environment.py
 ```
 
@@ -80,16 +84,7 @@ To regenerate and audit the complete Communications Biology figure package
 from the included derived results:
 
 ```bash
-conda run -n crc-premalignant-locked Rscript \
-  analysis/refine_communications_biology_workflows_v1_1.R
-conda run -n crc-premalignant-locked Rscript \
-  analysis/revise_communications_biology_figure1_v1_2.R
-conda run -n crc-premalignant-locked Rscript \
-  analysis/refine_communications_biology_figure_audit_fixes_v1_2.R
-conda run -n crc-premalignant-locked Rscript \
-  analysis/refine_communications_biology_alignment_v1_3.R
-conda run -n crc-premalignant-locked Rscript \
-  analysis/audit_communications_biology_figures_v1_2.R
+make figures
 ```
 
 The renderers export SVG and PDF vector files, 600-dpi TIFF files, 300-dpi PNG
@@ -97,6 +92,20 @@ files and panel-level source data. TIFF files are generated locally but omitted
 from Git because the corresponding vector and 300-dpi files are distributed.
 The expected execution order for full reanalysis is listed in
 [`workflow/pipeline.tsv`](workflow/pipeline.tsv).
+
+## Cell-state decomposition
+
+The primary held-out 287-gene score difference was 0.556. Exact symmetric
+decomposition attributed 0.229 to recovered epithelial composition and 0.327
+to expression within matched deposited states. Excluding the disease-labelled
+neoplastic and abnormal states reduced the composition component to 0.046
+while retaining a within-state component of 0.379. These are accounting
+components, not causal mediation effects or unbiased estimates of in situ cell
+abundance.
+
+The analysis contract, Python implementation, independent base-R numerical
+audit, bootstrap outputs and panel-level source data are distributed under
+`analysis/contracts/`, `analysis/` and `results/cell_state_decomposition_v1/`.
 
 ## Full reanalysis and raw data
 
@@ -128,6 +137,8 @@ genes. Direction is supplied only by the empirical perturbation datasets.
   cells, nuclei and spots do not inflate sample size.
 - Random seeds, environment versions, input hashes and output checks are
   recorded in the result manifests.
+- All 16 reported decomposition identities were independently recomputed in
+  base R with a maximum absolute discrepancy of 2.22 × 10^-16.
 - Figure source data are distributed independently of the raw third-party data.
 
 See [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) for the evidence and

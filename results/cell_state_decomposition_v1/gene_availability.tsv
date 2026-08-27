@@ -1,0 +1,7 @@
+dataset	score	n_up_requested	n_up_present	n_down_requested	n_down_present	missing_up	missing_down
+validation	core_287	89	89	198	198		
+validation	signature_12	6	6	6	6		
+validation	proliferation_control	8	8	0	0		
+discovery	core_287	89	89	198	198		
+discovery	signature_12	6	6	6	6		
+discovery	proliferation_control	8	8	0	0		

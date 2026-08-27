@@ -19,7 +19,7 @@ attached base packages:
 [8] base     
 
 other attached packages:
-[1] ggrepel_0.9.8   ragg_1.5.2      svglite_2.2.2   tidyr_1.3.2    
+[1] ggrepel_0.9.8   tidyr_1.3.2     ragg_1.5.2      svglite_2.2.2  
 [5] scales_1.4.0    patchwork_1.3.2 ggplot2_4.0.3   dplyr_1.2.1    
 
 loaded via a namespace (and not attached):

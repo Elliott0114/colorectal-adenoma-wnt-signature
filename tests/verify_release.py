@@ -82,7 +82,7 @@ def check_required_files() -> None:
         "environment.yml",
         "environment-virtual-knockout.yml",
         "data/datasets.tsv",
-        "data/supplementary/Supplementary_Tables_1-12.xlsx",
+        "data/supplementary/Supplementary_Tables_1-13.xlsx",
         "workflow/pipeline.tsv",
         "analysis/plot_jtm_submission_figures_v2_8.R",
         "analysis/refine_communications_biology_workflows_v1_1.R",
@@ -90,6 +90,16 @@ def check_required_files() -> None:
         "analysis/refine_communications_biology_figure_audit_fixes_v1_2.R",
         "analysis/refine_communications_biology_alignment_v1_3.R",
         "analysis/audit_communications_biology_figures_v1_2.R",
+        "analysis/cell_state_composition_decomposition_v1.py",
+        "analysis/audit_cell_state_decomposition_v1.R",
+        "analysis/plot_cell_state_decomposition_v1.R",
+        "analysis/export_cell_state_decomposition_source_data_v1.py",
+        "analysis/audit_communications_biology_figures_v1_3.py",
+        "analysis/assemble_communications_biology_v1_3.py",
+        "analysis/contracts/cell_state_decomposition_v1_2026-08-27.md",
+        "results/cell_state_decomposition_v1/analysis_manifest.json",
+        "results/cell_state_decomposition_v1/analysis_qa.tsv",
+        "results/cell_state_decomposition_v1/independent_r_audit.tsv",
         "results/virtual_knockout_validation_v2_9/genki_analysis_manifest.json",
         "results/virtual_knockout_validation_v2_9/genki_reproducibility_summary.json",
     ]
@@ -112,10 +122,11 @@ def check_final_figure_package() -> None:
     stems = [
         "figure1_discovery_core_and_objective_reduction",
         "figure2_independent_replication_and_ffpe",
-        "figure3_rna_atac_regulatory_support",
-        "figure4_crc_atlas_cross_sectional_recurrence",
-        "figure5_empirical_and_virtual_perturbation_support",
-        "figure6_spatial_and_protein_context",
+        "figure3_cell_state_decomposition",
+        "figure4_rna_atac_regulatory_support",
+        "figure5_crc_atlas_cross_sectional_recurrence",
+        "figure6_empirical_and_virtual_perturbation_support",
+        "figure7_spatial_and_protein_context",
         "figureS1_core_composition_and_portability",
         "figureS2_external_and_ffpe_sensitivity",
         "figureS3_signature_transparency_and_random_benchmark",
@@ -133,15 +144,27 @@ def check_final_figure_package() -> None:
     ]
     require(not missing, "Missing final figure files: " + ", ".join(missing))
 
-    audit_path = FINAL_FIGURE_DIR / "source_data" / "figure_package_audit_summary.tsv"
+    audit_path = FINAL_FIGURE_DIR / "source_data" / "figure_package_audit_summary_v1_3.tsv"
     audit = pd.read_csv(audit_path, sep="\t")
     require(len(audit) > 0, "Final figure audit is empty")
     require(audit["pass"].astype(bool).all(), "Final figure audit did not pass")
 
-    manifest_path = FINAL_FIGURE_DIR / "source_data" / "figure_export_manifest.tsv"
+    manifest_path = FINAL_FIGURE_DIR / "source_data" / "figure_export_manifest_v1_3.tsv"
     manifest = pd.read_csv(manifest_path, sep="\t")
-    require(len(manifest) == 56, "Expected 14 figures in four export formats")
+    require(len(manifest) == 45, "Expected 15 figures in three distributed formats")
     require(set(manifest["figure"]) == set(stems), "Final figure manifest changed")
+
+    source_files = [
+        "figure3a_epithelial_proportions.tsv",
+        "figure3b_within_state_effects.tsv",
+        "figure3c_paired_donor_scores.tsv",
+        "figure3d_state_contributions.tsv",
+        "figure3e_exact_decomposition.tsv",
+        "figure3f_core_compact_concordance.tsv",
+        "figure3_source_data_manifest.tsv",
+    ]
+    missing_sources = [name for name in source_files if not (ROOT / "data" / "source_data" / name).is_file()]
+    require(not missing_sources, "Missing Figure 3 source data: " + ", ".join(missing_sources))
 
 
 def check_virtual_deletion_manifest() -> None:
@@ -160,6 +183,39 @@ def check_virtual_deletion_manifest() -> None:
         audit["all_reported_outputs_exactly_reproduced"] is True,
         "GenKI exact-output audit did not pass",
     )
+
+
+def check_cell_state_decomposition() -> None:
+    result_dir = ROOT / "results" / "cell_state_decomposition_v1"
+    qa = pd.read_csv(result_dir / "analysis_qa.tsv", sep="\t")
+    require(qa["pass"].astype(bool).all(), "Cell-state decomposition QA failed")
+
+    audit = pd.read_csv(result_dir / "independent_r_audit.tsv", sep="\t")
+    require(len(audit) == 16, "Expected 16 independently audited decompositions")
+    require(audit["pass"].astype(bool).all(), "Independent R decomposition audit failed")
+    error_columns = [
+        "closure_error_r",
+        "total_abs_error",
+        "composition_abs_error",
+        "within_state_abs_error",
+    ]
+    require(
+        audit[error_columns].abs().to_numpy().max() <= 1e-10,
+        "Independent R decomposition error exceeded 1e-10",
+    )
+
+    summary = pd.read_csv(result_dir / "decomposition_summary.tsv", sep="\t")
+    primary = summary.loc[
+        summary["dataset"].eq("validation")
+        & summary["score"].eq("core_287")
+        & summary["state_set"].eq("all_states")
+        & summary["comparison"].eq("conventional_vs_normal")
+    ]
+    require(len(primary) == 1, "Primary cell-state decomposition row is not unique")
+    row = primary.iloc[0]
+    require(abs(row["total_difference"] - 0.5561391166801103) <= 1e-12, "Primary total changed")
+    require(abs(row["composition_component"] - 0.22883273603224658) <= 1e-12, "Composition component changed")
+    require(abs(row["within_state_component"] - 0.3273063806478637) <= 1e-12, "Within-state component changed")
 
 
 def check_repository_hygiene() -> None:
@@ -198,6 +254,7 @@ def main() -> None:
         ("required files", check_required_files),
         ("frozen signatures", check_signatures),
         ("final figure package", check_final_figure_package),
+        ("cell-state decomposition", check_cell_state_decomposition),
         ("virtual-deletion manifest", check_virtual_deletion_manifest),
         ("repository hygiene", check_repository_hygiene),
     ]

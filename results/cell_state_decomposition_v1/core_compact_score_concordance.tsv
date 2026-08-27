@@ -1,0 +1,13 @@
+dataset	state_set	scope	n_donor_route_units	spearman_rho	p_value
+discovery	all_states	all_interpretable_routes	49	0.9739795918367347	5.956438591417597e-32
+discovery	all_states	conventional_and_serrated	25	0.976923076923077	6.398793451503941e-17
+discovery	all_states	normal_and_conventional	38	0.9855564066090382	2.3056301892352e-29
+discovery	canonical_states	all_interpretable_routes	49	0.9670408163265306	1.4275284108120663e-29
+discovery	canonical_states	conventional_and_serrated	25	0.9846153846153846	6.270747821504118e-19
+discovery	canonical_states	normal_and_conventional	38	0.9737389211073421	9.875268691327514e-25
+validation	all_states	all_interpretable_routes	39	0.9670040485829959	1.4309566122040788e-23
+validation	all_states	conventional_and_serrated	20	0.9759398496240601	2.3519202099227084e-13
+validation	all_states	normal_and_conventional	32	0.9659090909090909	3.688799583692866e-19
+validation	canonical_states	all_interpretable_routes	39	0.9674089068825912	1.142657577292464e-23
+validation	canonical_states	conventional_and_serrated	20	0.9789473684210527	7.148944407831842e-14
+validation	canonical_states	normal_and_conventional	32	0.9618768328445747	1.9207084403551743e-18

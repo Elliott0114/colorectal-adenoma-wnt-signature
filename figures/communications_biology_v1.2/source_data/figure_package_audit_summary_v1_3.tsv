@@ -1,0 +1,5 @@
+check	value	criterion	pass
+15 figures in PDF, PNG and SVG	45	45 files	True
+Figure 3 panel source data	7	7 files	True
+Cell-state analysis QA	all rows	pass	True
+Independent R numerical audit	16 decompositions	pass	True

@@ -35,6 +35,7 @@ Use the following terms consistently when interpreting repository outputs:
 | 12-gene result | frozen research signature or compact representation | diagnostic panel or validated biomarker |
 | Held-out Chen data | held-out subset from the source study | independent cohort |
 | Five GEO cohorts | independent transcriptomic replication | prospective clinical validation |
+| Cell-state decomposition | accounting contributions from recovered-cell composition and within-state expression | causal mediation, lineage conversion or unbiased in situ abundance |
 | RNA-ATAC | regulatory association or concordance | direct transcription-factor binding |
 | CRC Atlas | cross-sectional recurrence across states | longitudinal progression or lineage continuity |
 | Empirical perturbations | signed response support | universal causal mechanism |
@@ -54,14 +55,29 @@ virtual deletion is never used to infer the direction of biological change.
 The dual-seed rerun reproduced all 13 reported tabular outputs exactly after
 normalising non-scientific timing fields.
 
+## Cell-state decomposition
+
+The primary analysis uses the isolated Chen held-out partition. Cell scores are
+summarised first within specimen–state strata; donors are the independent units
+for effects and whole-donor bootstrap intervals. Differential abundance uses a
+propeller-style arcsine-square-root model with donor-clustered inference. The
+exact symmetric decomposition is evaluated for all deposited epithelial states
+and after exclusion of the disease-labelled neoplastic and abnormal states.
+
+The decomposition is an accounting identity. It does not identify causal
+mediation or reconstruct lineage transitions. Dissociation-derived proportions
+refer to recovered cells and are not treated as unbiased in situ abundance.
+An independent base-R implementation reproduced all 16 reported identities
+with maximum absolute error 2.22 × 10^-16.
+
 ## Reproduction tiers
 
 1. **Release integrity**: `make verify` checks gene counts, arms, checksums,
    required outputs, sensitive-content patterns and file-size limits.
 2. **Figure reproduction**: `make figures` regenerates all figures from included
-   derived result tables without downloading raw data.
+   derived result tables without downloading raw data and audits the final
+   seven-main-figure package.
 3. **Full reanalysis**: acquire public raw data, create the two environments and
    run the stages listed in `workflow/pipeline.tsv`.
 4. **Virtual-deletion rerun**: `make virtual-deletion-audit` reruns GenKI and
    compares the scientific outputs with the frozen files.
-

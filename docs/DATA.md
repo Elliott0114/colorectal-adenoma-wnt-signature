@@ -41,6 +41,16 @@ Some download and preprocessing scripts create more specific subdirectories.
 The exact paths are constants near the top of each script and are intentionally
 kept explicit for auditability.
 
+The cell-state decomposition expects these two Chen files:
+
+```text
+data_sources/Chen_Cell_2021_CELLxGENE/chen_discovery_epithelial.h5ad
+data_sources/Chen_Cell_2021_CELLxGENE/chen_validation_epithelial.h5ad
+```
+
+Their reported SHA256 values are recorded in the frozen analysis contract and
+`results/cell_state_decomposition_v1/analysis_manifest.json`.
+
 ## Licensed reference resources
 
 MSigDB Hallmark release 2026.1.Hs is not redistributed. Obtain the gene-set
@@ -54,4 +64,3 @@ likewise be downloaded from their authoritative sources.
 Where possible, the frozen scripts write source URLs, byte counts and SHA256
 hashes. A changed upstream file should be treated as a new input version rather
 than silently substituted for the reported file.
-
