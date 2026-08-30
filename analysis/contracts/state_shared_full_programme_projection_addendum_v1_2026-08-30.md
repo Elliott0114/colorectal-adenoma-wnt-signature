@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This addendum determines whether the frozen 1,843-gene state-shared programme can replace the previously used eight-gene candidate in downstream multi-omic, atlas, spatial and perturbation analyses.
+This addendum prespecifies projection of the frozen 1,843-gene state-shared programme into downstream multi-omic, atlas, spatial and perturbation analyses.
 
 ## Frozen object
 

@@ -1,4 +1,0 @@
-layer	becker_polyp_minus_normal	becker_polyp_p	rna_atac_tcf_ascl2_rho	rna_atac_tcf_ascl2_p	atlas_polyp_cancer_minus_normal	atlas_polyp_cancer_p	atlas_polyp_loo_positive_fraction	additional_perturbations_direction_supported	additional_perturbations_total	spatial_tumor_minus_epithelium	spatial_sections_positive	spatial_sections_total	spatial_p
-becker	1.894397038441723	8.278964717106467e-10	0.7992495309568481	6.277315634942611e-10									
-crc_atlas					0.8267943907720168	1.6045068144582887e-17	1.0						
-perturbation_spatial								6.0	6.0	0.9603345697189669	6.0	6.0	0.03125

@@ -1,2 +1,0 @@
-signature_size_per_direction	excluded_cohort	n_samples	n_patient_clusters	n_cohorts	covariates	adenoma_coef_sd	se_patient_cluster	ci_low	ci_high	p_value	proliferation_coef_sd	proliferation_p_value	r_squared	condition_number	panel_id	panel_label
-50	__NONE__	203	161	5	cohort fixed effects + proliferation control	1.610043715464467	0.1107448096717663	1.3913336180817042	1.8287538128472296	4.6270668010645e-31	0.19713399172275228	0.0002515389948193416	0.7057572836053108	11.096681017922618	stability_consensus_11	Strict-majority stability consensus (11)

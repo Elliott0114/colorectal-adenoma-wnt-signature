@@ -1,8 +1,0 @@
-stage	n	class
-Assayed features	33698	Discovery filter
-Expressed / non-technical	6127	Discovery filter
-Directionally stable	2496	Discovery filter
-Bootstrap CI excludes zero	1504	Discovery filter
-Error-controlled core	287	Threshold-defined core
-Portable protein-coding core	62	Portability gate
-Kneedle panel	12	Frozen panel

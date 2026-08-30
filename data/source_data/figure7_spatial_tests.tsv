@@ -1,9 +1,0 @@
-comparison	feature	n_sections	median_difference	mean_difference	n_positive	p_wilcoxon
-tumor_vs_non_neoplastic_epithelium	route_score	6	0.960334569718967	1.06839676542182	6	0.03125
-tumor_vs_non_neoplastic_epithelium	route_residual_prolif_epithelial	6	0.869085750037328	0.880089440519333	6	0.03125
-tumor_vs_non_neoplastic_epithelium	wnt_stem	6	0.419734012956994	0.421538874427288	6	0.03125
-tumor_vs_non_neoplastic_epithelium	proliferation_control	6	0.723083911427647	0.690786838204876	6	0.03125
-tumor_vs_stroma	route_score	12	-0.039870017883154	-0.083535110869255	3	0.05224609375
-tumor_vs_stroma	route_residual_prolif_epithelial	12	0.0125205899589677	-0.0316050907715755	7	0.7333984375
-tumor_vs_stroma	wnt_stem	12	0.230907589353066	0.278076953584527	11	0.0009765625
-tumor_vs_stroma	proliferation_control	12	0.386536684743606	0.389059514236655	12	0.00048828125

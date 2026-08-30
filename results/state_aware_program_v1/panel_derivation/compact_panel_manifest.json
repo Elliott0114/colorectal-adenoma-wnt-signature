@@ -1,12 +1,10 @@
 {
   "analysis": "derive_state_shared_compact_panel_v1",
   "created_utc": "2026-08-29 04:08:57 UTC",
-  "addendum_sha256": "6f6af8c34858b83d16cc4f4004c963cf4e29813ee2093201cd3cfa5404664cad",
   "input_hashes": {
     "discovery_state_pseudobulk.rds": "2c63422dd5cf8124098974fec62648bb24b546adb407ec41d794c8709cdb4c96",
     "cross_state_common_effects.tsv.gz": "a1ac4b7b67ac279782e04e386971d7463e169cbdbc24d7da4c314e34a4f3e946",
-    "portable_state_shared_candidate_universe.tsv": "bd768623e1819dcbca1e19f6d9a67c731b0ce1664f0142f26ef67dc7ed448fb0",
-    "signature_12_genes.tsv": "91e564f42bdc5fb0188605b76116bcfb126e5102d62a33d6890fa67018928380"
+    "portable_state_shared_candidate_universe.tsv": "bd768623e1819dcbca1e19f6d9a67c731b0ce1664f0142f26ef67dc7ed448fb0"
   },
   "target": "equal-arm strict state-shared programme score",
   "normalisation": "state-specific TMM log-CPM",
@@ -26,5 +24,37 @@
     "digest": "0.6.39",
     "jsonlite": "2.0.0"
   },
-  "session_info": ["R version 4.5.3 (2026-03-11)", "Platform: x86_64-conda-linux-gnu", "Running under: Ubuntu 20.04.4 LTS", "", "Matrix products: default", "BLAS/LAPACK: <USER_HOME>/miniforge3/envs/crc-premalignant-locked/lib/libopenblasp-r0.3.33.so;  LAPACK version 3.12.0", "", "Random number generation:", " RNG:     L'Ecuyer-CMRG ", " Normal:  Inversion ", " Sample:  Rejection ", " ", "locale:", " [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       ", " [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   ", " [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          ", "[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   ", "", "time zone: Etc/UTC", "tzcode source: system (glibc)", "", "attached base packages:", "[1] stats     graphics  grDevices utils     datasets  methods   base     ", "", "other attached packages:", "[1] Matrix_1.7-4 edgeR_4.8.2  limma_3.66.0", "", "loaded via a namespace (and not attached):", "[1] compiler_4.5.3  parallel_4.5.3  grid_4.5.3      locfit_1.5-9.12", "[5] digest_0.6.39   lattice_0.22-9  statmod_1.5.2  "]
+  "session_info": [
+    "R version 4.5.3 (2026-03-11)",
+    "Platform: x86_64-conda-linux-gnu",
+    "Running under: Ubuntu 20.04.4 LTS",
+    "",
+    "Matrix products: default",
+    "BLAS/LAPACK: <USER_HOME>/miniforge3/envs/crc-premalignant-locked/lib/libopenblasp-r0.3.33.so;  LAPACK version 3.12.0",
+    "",
+    "Random number generation:",
+    " RNG:     L'Ecuyer-CMRG ",
+    " Normal:  Inversion ",
+    " Sample:  Rejection ",
+    " ",
+    "locale:",
+    " [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       ",
+    " [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   ",
+    " [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          ",
+    "[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   ",
+    "",
+    "time zone: Etc/UTC",
+    "tzcode source: system (glibc)",
+    "",
+    "attached base packages:",
+    "[1] stats     graphics  grDevices utils     datasets  methods   base     ",
+    "",
+    "other attached packages:",
+    "[1] Matrix_1.7-4 edgeR_4.8.2  limma_3.66.0",
+    "",
+    "loaded via a namespace (and not attached):",
+    "[1] compiler_4.5.3  parallel_4.5.3  grid_4.5.3      locfit_1.5-9.12",
+    "[5] digest_0.6.39   lattice_0.22-9  statmod_1.5.2  "
+  ],
+  "public_release_note": "Final discovery-only reduced-readout derivation inputs."
 }

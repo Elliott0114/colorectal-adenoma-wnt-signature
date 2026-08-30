@@ -1,0 +1,4 @@
+collection	tested	discovery_fdr_0.05	heldout_fdr_0.10	replicated
+GO:BP 2026.1.Hs	3507	39	60	25
+Hallmark 2026.1.Hs	50	10	13	8
+Reactome 2026.1.Hs	1058	91	43	25

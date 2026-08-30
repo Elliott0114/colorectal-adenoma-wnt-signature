@@ -1,5 +1,0 @@
-scope	cohort	panel_id	panel_label	n	spearman_rho_vs_reference_100	p_value
-FFPE	GSE117606	stable_core_287	Error-controlled core (287)	124	0.9740424862313137	1.43185240468478e-80
-FFPE	GSE117606	adaptive_28	Adaptive minimum-sufficient (28)	124	0.8997576711250983	9.281864197391846e-46
-FFPE	GSE117606	reference_100	Current reference (100)	124	0.9999999999999998	0.0
-FFPE	GSE117606	compact_10	Biology-guided compact panel (10)	124	0.948682926829268	7.595343381973967e-63

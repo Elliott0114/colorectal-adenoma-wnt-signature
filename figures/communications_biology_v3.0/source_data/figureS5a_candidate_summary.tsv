@@ -1,0 +1,7 @@
+arm	all_six_platforms_present	stage	genes
+Adenoma-down	38	State-shared	959
+Adenoma-down	38	Platform-measurable
+protein-coding	38
+Adenoma-up	15	State-shared	884
+Adenoma-up	15	Platform-measurable
+protein-coding	15

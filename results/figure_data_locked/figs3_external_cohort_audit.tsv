@@ -1,6 +1,0 @@
-cohort	platform	n_samples	n_normal	n_adenoma	n_hyperplastic	n_crc	n_patient_ids	n_complete_normal_adenoma_pairs	processed_expression_transform	feature_selection	eligible_for_locked_score_validation	exclusion_reason
-GSE8671	GPL570	64	32	32	0	0	32	32	log2(x+1)	highest variance probe per locked gene; group labels unused	True	
-GSE50114	GPL6480	46	9	37	0	0	43	2	limma normexp(offset=50) + quantile from complete raw arrays	highest variance probe per locked gene; group labels unused	True	
-GSE41657	GPL6480	88	12	51	0	25	88	0	as deposited	highest variance probe per locked gene; group labels unused	True	
-GSE40362	GPL8432	24	8	8	8	0	24	0	as deposited	highest variance probe per locked gene; group labels unused	True	
-GSE72820	GPL11154 RNA-seq	14	7	7	0	0	7	7	log2(RPKM+1)	deposited gene symbols; group labels unused	True	

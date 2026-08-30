@@ -1,8 +1,0 @@
-check	passed	detail
-frozen_contract_validation_only	True	validation_not_discovery
-all_prespecified_targets_run	True	13/13
-two_distinct_model_seeds	True	20260810,20260811
-all_panel_genes_measurable	True	12/12
-finite_non_target_primary_impacts	True	KL impact percentiles
-matched_null_replicates_complete	True	52 tests x 10000
-empirical_direction_calibration_not_genki_signed	True	8/8 existing contrasts

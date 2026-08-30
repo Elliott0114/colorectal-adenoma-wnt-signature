@@ -1,0 +1,37 @@
+{
+  "analysis": "state_aware_pathway_replication_v1",
+  "created_utc": "2026-08-30 13:12:49 UTC",
+  "random_seed": 20260830,
+  "input_sha256": {
+    "discovery": "a1ac4b7b67ac279782e04e386971d7463e169cbdbc24d7da4c314e34a4f3e946",
+    "heldout": "ab9918f1481fcb52923133cafc64c59d16eabe3995bf46f7714da742acf95fc5",
+    "contract": "f19df7fe6ffc421477c280d64327c2ba5ffa951ab300a6e26c3be897bc9c3c9b",
+    "hallmark": "eecaf6dad908334ae885406ec72bdc0646d8917588ed7c219fac92fc5363f596"
+  },
+  "contexts": ["discovery_common", "discovery_ABS", "discovery_GOB", "discovery_TAC", "heldout_common", "heldout_ABS", "heldout_GOB", "heldout_TAC"],
+  "gene_set_size": [10, 500],
+  "primary_test": "limma::cameraPR with ranks and inter.gene.cor=0.01",
+  "leading_edge_method": "fgseaMultilevel; visualisation and network only",
+  "replication_rule": "discovery common FDR<=0.05; heldout common FDR<=0.10; >=5/6 state directions match; no supported opposite state",
+  "network": "leading-edge Jaccard >=0.25; fixed-seed Leiden modularity",
+  "n_replicated": 58,
+  "n_communities": 28,
+  "package_versions": {
+    "fgsea": "1.36.2",
+    "igraph": "2.3.3",
+    "limma": "3.66.0",
+    "msigdbr": "26.1.1",
+    "digest": "0.6.39",
+    "jsonlite": "2.0.0"
+  },
+  "output_sha256": {
+    "pathway_replication.tsv": "4686cfc20d9c3911a1f1051accc211bf37d4f5ad589f9c630f21bf906e93724a",
+    "pathway_replication_summary.tsv": "7fadf9a917b99463402b9ff1df818911edf0c20e8f6ad92a9304860823eea30b",
+    "replicated_pathway_leading_edges.tsv": "411a62adbf70bcb57ca90c845c179b8888fd39aca9df05850abe89f5b8ca5779",
+    "replicated_pathway_network_edges.tsv": "101bc7fc28dce8221b1136c5dc40b9115b02740c34b40f720412c56e57ce6873",
+    "replicated_pathway_communities.tsv": "a5c1c7e1b26933c8f8b146b9bae24bd8b8db1eb8752117bd73223c1ced213ad8",
+    "replicated_pathway_representatives.tsv": "e9b4515abeda1dec95608f765c4fd6a1fa00ae14910bda23cbc59d48f06b2272",
+    "pathway_replication_collection_summary.tsv": "404f7f3e842535ce19f9188cdaae62c8001841067578bfa370e4a93f00643b98"
+  },
+  "session_info": ["R version 4.5.3 (2026-03-11)", "Platform: x86_64-conda-linux-gnu", "Running under: Ubuntu 20.04.4 LTS", "", "Matrix products: default", "BLAS/LAPACK: <CONDA_ROOT>/envs/crc-premalignant-locked/lib/libopenblasp-r0.3.33.so;  LAPACK version 3.12.0", "", "locale:", " [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       ", " [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   ", " [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          ", "[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   ", "", "time zone: Etc/UTC", "tzcode source: system (glibc)", "", "attached base packages:", "[1] stats     graphics  grDevices utils     datasets  methods   base     ", "", "other attached packages:", "[1] msigdbr_26.1.1 limma_3.66.0   igraph_2.3.3   fgsea_1.36.2  ", "", "loaded via a namespace (and not attached):", " [1] vctrs_0.7.3         cli_3.6.6           rlang_1.3.0        ", " [4] cowplot_1.2.0       generics_0.1.4      assertthat_0.2.1   ", " [7] S7_0.2.2            data.table_1.18.4   glue_1.8.1         ", "[10] statmod_1.5.2       scales_1.4.0        grid_4.5.3         ", "[13] tibble_3.3.1        lifecycle_1.0.5     compiler_4.5.3     ", "[16] dplyr_1.2.1         codetools_0.2-20    RColorBrewer_1.1-3 ", "[19] Rcpp_1.1.2          pkgconfig_2.0.3     fastmatch_1.1-8    ", "[22] BiocParallel_1.44.0 digest_0.6.39       lattice_0.22-9     ", "[25] farver_2.1.2        R6_2.6.1            tidyselect_1.2.1   ", "[28] pillar_1.11.1       parallel_4.5.3      magrittr_2.0.5     ", "[31] Matrix_1.7-4        withr_3.0.3         tools_4.5.3        ", "[34] gtable_0.3.6        ggplot2_4.0.3      "]
+}

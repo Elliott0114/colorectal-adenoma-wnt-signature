@@ -5,104 +5,86 @@ figures for the Communications Biology manuscript:
 
 > **Within-state epithelial identity remodelling predominates over compositional change in colorectal adenomas**
 
-Release v2.1.0 reorganises the public workflow around the final biological
-object: a state-shared epithelial programme derived in absorptive, goblet and
-transit-amplifying cells.
+Release v3.0.0 follows the final manuscript structure and contains no retired
+gene-set definitions or exploratory analyses that did not meet the
+prespecified reporting gates.
 
 ## Main result
 
-The analysis separates two sources of an adenoma–normal expression difference:
+The study separates an adenoma–normal expression difference into altered
+proportions of recoverable epithelial states and transcriptional change within
+those states. Donor-aware models provide a continuous ranking of 8,221 jointly
+testable genes. Fixed false-discovery, posterior-direction and local
+false-sign criteria retain 1,843 high-confidence genes: 884 adenoma-up and 959
+adenoma-down. In the donor-disjoint partition, 98.6% of testable programme
+genes retain direction and discovery–validation effects correlate at
+Spearman rho = 0.912. Exact donor-balanced decomposition assigns 79.1% of the
+primary score difference to expression within fine states and 20.9% to changed
+fine-state proportions.
 
-1. altered proportions of recoverable epithelial states; and
-2. transcriptional change within those states.
+## Functional architecture
 
-The continuous discovery analysis contains 8,221 jointly testable genes.
-Fixed false-discovery, posterior-direction and local false-sign criteria retain
-1,843 high-confidence genes (884 adenoma-up and 959 adenoma-down). In the
-donor-disjoint partition, 98.6% of testable programme genes retain the common
-direction and discovery–validation effects correlate at Spearman ρ = 0.912.
-At the primary fine-state resolution, exact donor-balanced decomposition
-attributes 79.1% of the score difference to expression within fine states and
-20.9% to changed fine-state proportions.
-
-The programme combines focused WNT/stem regulation with broad loss of mature
-metabolic, transport and absorptive functions. Independent cohorts, paired
-FFPE tissue, epithelial atlases, matched RNA–ATAC, spatial sections and
-genetic perturbations test this frozen full programme.
+Competitive gene-set tests use the complete signed 8,221-gene ranking in the
+discovery and donor-disjoint partitions. Fifty-eight pathways satisfy the
+fixed cross-partition and cross-state replication rule. Fifty-four are
+enriched toward adenoma-down expression, showing broad loss of oxidative,
+metabolic, transport and mature epithelial functions; four are enriched
+toward adenoma-up expression. Leading-edge overlap reduces the 58 pathways to
+28 nonredundant communities. Hallmark WNT signalling is directionally positive
+in all eight contexts but does not pass the common-effect FDR thresholds, so it
+is interpreted with gene anchors, regulatory, chromatin and perturbation
+evidence rather than as a replicated pathway-level result.
 
 ## Candidate reduced readout
 
-An eight-gene candidate was derived only after the 1,843-gene programme had
-been frozen:
+An eight-gene candidate was derived only after the full programme was frozen:
 
 - adenoma-up: **EPHB2, REG1A, LTBP1, RNF43**
 - adenoma-down: **CALM2, COX6C, B2M, ACAA2**
 
-It is one tractable reduced representation of a transcriptionally redundant
-programme. Internal donor-held-out fidelity is high, whereas external
-direction-balanced random-panel benchmarking does not identify this
-combination as uniquely optimal. It is not presented as a clinically
-validated biomarker.
+It is retained in the Supplementary Information as one tractable reduced
+representation. External direction-balanced random-panel benchmarking does
+not establish unique optimality, and it is not presented as a clinical
+biomarker.
 
 ## Repository map
 
-- `analysis/` — ordered R and Python analysis scripts.
-- `analysis/contracts/` — frozen analysis contracts, including the
-  outcome-blind full-programme projection rule.
-- `workflow/pipeline.tsv` — manuscript-facing execution order.
-- `data/signatures/` — frozen ranking, high-confidence programme,
-  platform-measurable candidate universe and eight-gene candidate.
+- `analysis/` — manuscript-facing R and Python scripts.
+- `analysis/contracts/` — frozen implementation contracts.
+- `workflow/pipeline.tsv` — ordered analysis map.
+- `data/signatures/` — complete ranking, high-confidence programme,
+  platform-measurable universe and eight-gene candidate.
 - `data/datasets.tsv` — accession, primary-publication and analysis-role
   registry.
-- `results/state_aware_program_v1/` — derived state-aware results.
-- `results/state_shared_revision_v2/` — donor-disjoint, fine-state,
-  meta-analysis and reduced-readout benchmarks.
-- `figures/communications_biology_v2.1/` — six main and seven
-  supplementary figures in PDF, SVG, TIFF and PNG, with panel source data.
+- `results/state_aware_program_v1/functional_architecture_v1/` — complete
+  pathway replication results and leading-edge communities.
+- `figures/communications_biology_v3.0/` — six main and seven supplementary
+  figures in PDF, SVG, TIFF and PNG, with public panel source data.
 - `tests/verify_release.py` — release-integrity and numerical checks.
 
-## Reproduce the public analyses
+## Reproduce or verify
 
 The project is pinned to the `crc-premalignant-locked` environment.
 
 ```bash
 conda env create -f environment.yml
 make verify
-make figures
+make figures-public
 ```
 
-The complete ordered workflow is in `workflow/pipeline.tsv`. Several early
-steps require public source matrices that are not redistributed; the frozen
-derived inputs used for manuscript figures and audits are included where
-licensing permits.
-
-## Full-programme downstream projection
-
-The full programme is projected into the Becker, CRC Atlas, perturbation and
-spatial layers only when both directional arms have at least 75% feature
-coverage and neither arm has fewer than 100 measurable genes. Eligibility is
-determined from platform feature inventories before phenotype labels or
-effect estimates are inspected.
-
-Relevant entry points:
-
-```bash
-conda run -n crc-premalignant-locked python \
-  analysis/audit_state_shared_full_program_coverage_v1.py
-
-conda run -n crc-premalignant-locked python \
-  analysis/validate_state_shared_full_programme_extended_layers_v2.py
-```
+Early analytical steps require source matrices downloaded from the public
+repositories in `data/datasets.tsv`; these raw matrices are not redistributed.
+The current figures and non-identifying derived tables are committed so that
+the reported estimates can be audited without repeating every download.
 
 ## Data governance
 
-Public accession-level inputs are listed in `data/datasets.tsv`.
 Patient-level values from the self-generated DSLab series are not distributed.
-Only aggregate, non-identifying statistics are included; governed values are
-available from the corresponding author on reasonable request and subject to
-institutional requirements.
+Only aggregate, non-identifying statistics are included. Governed values and
+additional code/data details are available from the corresponding author on
+reasonable request and subject to institutional requirements.
 
 ## Citation
 
-Citation metadata are provided in `CITATION.cff`. The immutable release tag
-and commit should be cited with the associated manuscript.
+Citation metadata are in `CITATION.cff`. Cite the manuscript together with the
+immutable v3.0.0 release used in its Code Availability statement.

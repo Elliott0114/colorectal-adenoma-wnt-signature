@@ -1,2 +1,0 @@
-cohort	signature_size_per_direction	bootstrap_unit	n_bootstraps	seed	auc_bootstrap_median	auc_ci_low	auc_ci_high	median_delta_bootstrap_median	median_delta_ci_low	median_delta_ci_high
-GSE117606	50	patient_pair	5000	20260710	0.962322183775471	0.9246443675509419	0.9869281045751634	1.8182546128307675	1.5276245919616485	2.0746488016758478

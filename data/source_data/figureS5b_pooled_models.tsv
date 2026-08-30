@@ -1,5 +1,0 @@
-signature_id	model	estimate	ci_low	ci_high	readout
-state_shared_1843	One-stage	1.72679578134455	1.54705186363236	1.90653969905674	Full programme
-compact_8	One-stage	1.61832016643353	1.41544466399143	1.82119566887562	Eight-gene candidate
-state_shared_1843	Proliferation-adjusted	1.5904965769175	1.35030360283621	1.8306895509988	Full programme
-compact_8	Proliferation-adjusted	1.3416632048811	1.09980342779219	1.58352298197001	Eight-gene candidate

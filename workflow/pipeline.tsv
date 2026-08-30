@@ -3,8 +3,8 @@ order	stage	environment	command	principal_output	run_by_default
 2	Discovery state-specific mixed models	crc-premalignant-locked	Rscript analysis/state_aware_fit_discovery_models_v1.R	results/state_aware_program_v1/discovery_models/	no
 3	Cross-state common-effect integration	crc-premalignant-locked	Rscript analysis/state_aware_integrate_common_effects_v1.R	results/state_aware_program_v1/common_effects/	no
 4	Whole-donor leave-out stability	crc-premalignant-locked	Rscript analysis/state_aware_leave_one_donor_out_stability_v1.R	results/state_aware_program_v1/donor_leaveout_stability/	no
-5	Functional and regulator interpretation	crc-premalignant-locked	Rscript analysis/state_aware_interpret_common_program_v1.R	results/state_aware_program_v1/interpretation/	no
-6	Frozen programme validation	crc-premalignant-locked	Rscript analysis/state_aware_validate_frozen_program_v1.R	results/state_aware_program_v1/heldout_validation/	no
+5	Frozen programme validation	crc-premalignant-locked	Rscript analysis/state_aware_validate_frozen_program_v1.R	results/state_aware_program_v1/heldout_validation/	no
+6	Cross-partition pathway replication	crc-premalignant-locked	Rscript analysis/state_aware_pathway_replication_v1.R	results/state_aware_program_v1/functional_architecture_v1/pathway_replication/	no
 7	Donor-overlap removal and site sensitivities	crc-premalignant-locked	Rscript analysis/state_shared_revision_donor_site_v2.R	results/state_shared_revision_v2/donor_site/	no
 8	Programme-blind fine-state definition	crc-premalignant-locked	python analysis/state_shared_revision_define_fine_states_v2.py	results/state_shared_revision_v2/fine_states/	no
 9	Fine-state adjusted models and exact decomposition	crc-premalignant-locked	Rscript analysis/state_shared_revision_fine_state_models_v2.R	results/state_shared_revision_v2/fine_state_models/	no
@@ -17,5 +17,5 @@ order	stage	environment	command	principal_output	run_by_default
 16	Discovery-only reduced reconstruction	crc-premalignant-locked	Rscript analysis/derive_state_shared_compact_panel_v1.R	results/state_aware_program_v1/panel_derivation/	no
 17	Internal random-panel benchmark	crc-premalignant-locked	Rscript analysis/state_shared_revision_compact_rank_v2.R	results/state_shared_revision_v2/compact_rank/	no
 18	External random-panel benchmark	crc-premalignant-locked	python analysis/state_shared_revision_external_rank_v2.py	results/state_shared_revision_v2/external_rank/	no
-19	Public main and supplementary figure rendering	crc-premalignant-locked	make figures	figures/communications_biology_v2.1/	yes
+19	Public figure rendering	crc-premalignant-locked	make figures-public	figures/communications_biology_v3.0/	yes
 20	Release integrity audit	crc-premalignant-locked	python tests/verify_release.py	standard output	yes

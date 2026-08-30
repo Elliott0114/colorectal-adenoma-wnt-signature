@@ -1,7 +1,9 @@
 # State-shared epithelial identity remodelling: revision validation contract
 
 Date locked: 2026-08-30
+
 Target manuscript: Communications Biology major-revision candidate
+
 Parent programme: `state_aware_program_v1`
 
 ## Scope
@@ -36,7 +38,7 @@ No validation outcome may alter programme membership, gene direction, compact-pa
 
 ### 4. Current-programme composition decomposition
 
-- Decompose the frozen 1,843-gene score, not the historical 287-gene comparator.
+- Decompose the frozen 1,843-gene score defined by the final state-aware confidence rule.
 - Use donor-route means and normal-reference fine states. Report the observed total difference, composition component, within-fine-state component, and their donor-bootstrap 95% intervals.
 - Broad-state-only decomposition is a secondary comparator.
 - Gate: the within-state component is positive and larger than the composition component in the donor-disjoint validation partition.

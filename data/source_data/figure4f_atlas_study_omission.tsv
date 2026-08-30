@@ -1,3 +1,0 @@
-state	minimum	maximum	median	n_omissions	n_positive	state_label
-polyp_cancer	0.695950009700862	0.766774169655884	0.762274399152586	33	33	Polyp cancer-like
-polyp_epithelial	0.368499992364399	0.421579000935388	0.37487947198339	33	33	Polyp epithelium

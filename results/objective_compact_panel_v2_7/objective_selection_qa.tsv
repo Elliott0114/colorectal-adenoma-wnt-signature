@@ -1,8 +1,0 @@
-check	passed
-fixed_287_core_loaded	TRUE
-both_portable_candidate_arms_are_nonempty	TRUE
-donor_grouping_preserved	TRUE
-kneedle_size_is_data_derived	TRUE
-frozen_panel_is_balanced	TRUE
-all_frozen_genes_pass_portability_gate	TRUE
-validation_outcomes_not_used	TRUE

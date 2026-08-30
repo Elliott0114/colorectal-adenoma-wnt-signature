@@ -1,4 +1,0 @@
-file	analysis_role	source_url	size_bytes	sha256
-data_sources/GSE117606/GSE117606_GEO_jreumers_CRC_concurrent.rds.gz	official_processed_object_retained_not_analyzed	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE117nnn/GSE117606/suppl/GSE117606_GEO_jreumers_CRC_concurrent.rds.gz	30633704	9420ecad507ccd880abfc3b353127c30c5f80654a3f58dd353d160928dbd4f6e
-data_sources/GSE117606/GSE117606_series_matrix.txt.gz	primary_expression_and_metadata	https://ftp.ncbi.nlm.nih.gov/geo/series/GSE117nnn/GSE117606/matrix/GSE117606_series_matrix.txt.gz	21876710	1ace0c18ce38ec8c9d518085895cbe88f787eb1919741edc8d61f6f0d3e5fbfb
-data_sources/GSE117606/Homo_sapiens.gene_info.gz	gene_identifier_mapping	https://ftp.ncbi.nlm.nih.gov/gene/DATA/GENE_INFO/Mammalia/Homo_sapiens.gene_info.gz	5169804	6984f60e60b0ce8aaa1e361ff30643e654ee379ae9a00d2957824ab6b1c36e71

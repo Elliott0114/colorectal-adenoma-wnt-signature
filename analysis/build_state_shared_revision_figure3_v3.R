@@ -5,7 +5,7 @@ source("analysis/state_shared_revision_figure_utils_v3.R")
 root <- normalizePath(".", mustWork = TRUE)
 result_root <- file.path(root, "results", "state_aware_program_v1", "external_validation")
 revision_root <- file.path(root, "results", "state_shared_revision_v2", "external_meta")
-out_dir <- file.path(root, "figures", "communications_biology_v2.1")
+out_dir <- file.path(root, "figures", "communications_biology_v3.0")
 source_dir <- file.path(out_dir, "source_data")
 
 cohort_tests <- read_tsv(file.path(result_root, "external_cohort_tests.tsv")) %>%
@@ -141,13 +141,11 @@ p3e <- ggplot(coverage_long, aes(cohort, coverage, fill = arm)) +
   theme_cb() +
   theme(
     axis.text.x = element_text(angle = 35, hjust = 1),
-    legend.position = "inside",
-    legend.position.inside = c(0.04, 0.46),
-    legend.justification = c(0, 0.5),
+    legend.position = "top",
+    legend.justification = "left",
     legend.direction = "vertical",
     legend.key.height = unit(2.2, "mm"),
-    legend.key.width = unit(3.0, "mm"),
-    legend.background = element_rect(fill = scales::alpha("white", 0.86), colour = NA)
+    legend.key.width = unit(3.0, "mm")
   )
 
 figure <- (p3a | p3b) /

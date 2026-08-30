@@ -1,6 +1,0 @@
-dataset	cell_line	clone_id	genotype	reduced_route_score	difference_vs_WT	expected_direction	direction_matches_expected	panel_id	panel_label
-GSE135328	HCT116	HCT116_18	KO	-0.48560577547076006	-0.9712115509415135	-1	True	stability_consensus_11	Strict-majority stability consensus (11)
-GSE135328	HT29	HT29_57	KO	-1.194918001489562	-2.778958999320626	-1	True	stability_consensus_11	Strict-majority stability consensus (11)
-GSE135328	HT29	HT29_62	Het	0.5720637303260938	-1.0119772675049703	-1	True	stability_consensus_11	Strict-majority stability consensus (11)
-GSE135328	HT29	HT29_83	KO	0.16490556188037298	-1.4191354359506911	-1	True	stability_consensus_11	Strict-majority stability consensus (11)
-GSE135328	HT29	HT29_86	KO	-1.1260922885479732	-2.7101332863790373	-1	True	stability_consensus_11	Strict-majority stability consensus (11)

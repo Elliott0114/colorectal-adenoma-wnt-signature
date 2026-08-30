@@ -1,8 +1,0 @@
-check	pass
-selection_flow_counts	True
-balanced_reference	True
-panel_has_true_discovery_ranks	True
-panel_is_platform_complete	True
-random_panel_count	True
-random_effect_reproduces_exact_model	True
-wnt_is_top_positive_hallmark	True

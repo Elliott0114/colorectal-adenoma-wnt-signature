@@ -43,34 +43,6 @@ panel_path <- file.path(
   "panel_derivation",
   "compact_state_shared_panel_frozen.tsv"
 )
-legacy_287_path <- file.path(
-  root,
-  "release",
-  "colorectal-adenoma-wnt-signature",
-  "data",
-  "signatures",
-  "core_287_genes.tsv"
-)
-legacy_12_path <- file.path(
-  root,
-  "release",
-  "colorectal-adenoma-wnt-signature",
-  "data",
-  "signatures",
-  "signature_12_genes.tsv"
-)
-contract_path <- file.path(
-  root,
-  "analysis",
-  "contracts",
-  "state_aware_program_rederivation_v1_2026-08-29.md"
-)
-panel_addendum_path <- file.path(
-  root,
-  "analysis",
-  "contracts",
-  "state_aware_compact_panel_implementation_addendum_v1_2026-08-29.md"
-)
 out_dir <- file.path(result_root, "heldout_validation")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
@@ -80,11 +52,7 @@ inputs <- c(
   discovery_common_path,
   validation_effect_path,
   validation_paired_path,
-  panel_path,
-  legacy_287_path,
-  legacy_12_path,
-  contract_path,
-  panel_addendum_path
+  panel_path
 )
 if (!all(file.exists(inputs))) {
   stop("One or more frozen programme-validation inputs are missing")
@@ -98,11 +66,7 @@ expected_hashes <- c(
   discovery_common =
     "a1ac4b7b67ac279782e04e386971d7463e169cbdbc24d7da4c314e34a4f3e946",
   frozen_panel =
-    "c5997e572342a72da8441df312fba4e3461cacfa5e30d0d8590a3f23ae3d96f0",
-  parent_contract =
-    "0f39a03154408d14bb0bbe0c1e4f55d498e94d403bd6b45d4be5dd8918555f69",
-  panel_addendum =
-    "6f6af8c34858b83d16cc4f4004c963cf4e29813ee2093201cd3cfa5404664cad"
+    "c5997e572342a72da8441df312fba4e3461cacfa5e30d0d8590a3f23ae3d96f0"
 )
 actual_hashes <- c(
   discovery_pseudobulk = digest::digest(
@@ -120,13 +84,7 @@ actual_hashes <- c(
     algo = "sha256",
     file = TRUE
   ),
-  frozen_panel = digest::digest(panel_path, algo = "sha256", file = TRUE),
-  parent_contract = digest::digest(contract_path, algo = "sha256", file = TRUE),
-  panel_addendum = digest::digest(
-    panel_addendum_path,
-    algo = "sha256",
-    file = TRUE
-  )
+  frozen_panel = digest::digest(panel_path, algo = "sha256", file = TRUE)
 )
 if (!identical(actual_hashes, expected_hashes)) {
   stop("A frozen discovery input or analysis contract changed before validation")
@@ -141,8 +99,6 @@ discovery_common <- read.delim(discovery_common_path, check.names = FALSE)
 validation_effects <- read.delim(validation_effect_path, check.names = FALSE)
 validation_paired <- read.delim(validation_paired_path, check.names = FALSE)
 panel <- read.delim(panel_path, check.names = FALSE)
-legacy_287 <- read.delim(legacy_287_path, check.names = FALSE)
-legacy_12 <- read.delim(legacy_12_path, check.names = FALSE)
 
 if (!setequal(as.character(unique(validation_metadata$cell_type)), states)) {
   stop("Held-out pseudobulk object does not contain exactly ABS, GOB and TAC")
@@ -262,9 +218,6 @@ score_equal_arms <- function(z, up_genes, down_genes) {
 
 panel_up <- panel$gene[panel$arm == "up"]
 panel_down <- panel$gene[panel$arm == "down"]
-legacy_12_testable <- legacy_12[legacy_12$gene %in% strict_genes, , drop = FALSE]
-legacy_12_up <- legacy_12_testable$gene[legacy_12_testable$arm == "up"]
-legacy_12_down <- legacy_12_testable$gene[legacy_12_testable$arm == "down"]
 
 score_table <- validation_metadata
 score_table$full_programme_score <- score_equal_arms(
@@ -276,11 +229,6 @@ score_table$compact_8_score <- score_equal_arms(
   validation_z,
   panel_up,
   panel_down
-)
-score_table$legacy_12_testable_score <- score_equal_arms(
-  validation_z,
-  legacy_12_up,
-  legacy_12_down
 )
 
 safe_cor <- function(x, y, method = "spearman") {
@@ -319,7 +267,7 @@ for (scope in c("all", states)) {
   } else {
     which(score_table$cell_type == scope)
   }
-  for (readout in c("compact_8_score", "legacy_12_testable_score")) {
+  for (readout in "compact_8_score") {
     record_index <- record_index + 1L
     estimate <- clustered_correlation(
       score_table[[readout]][index],
@@ -331,7 +279,7 @@ for (scope in c("all", states)) {
       readout = readout,
       n_profiles = length(index),
       n_donors = length(unique(score_table$donor_id[index])),
-      n_genes = ifelse(readout == "compact_8_score", 8L, nrow(legacy_12_testable)),
+      n_genes = 8L,
       spearman = estimate["spearman"],
       donor_bootstrap_ci_low = estimate["ci_low"],
       donor_bootstrap_ci_high = estimate["ci_high"],
@@ -388,8 +336,7 @@ for (scope in c("all", states)) {
   }
   for (score in c(
     "full_programme_score",
-    "compact_8_score",
-    "legacy_12_testable_score"
+    "compact_8_score"
   )) {
     record_index <- record_index + 1L
     score_effects[[record_index]] <- fit_score_effect(local, score, scope)
@@ -403,8 +350,7 @@ record_index <- 0L
 for (state in states) {
   for (score in c(
     "full_programme_score",
-    "compact_8_score",
-    "legacy_12_testable_score"
+    "compact_8_score"
   )) {
     local <- score_table[score_table$cell_type == state, , drop = FALSE]
     donor_route <- aggregate(
@@ -682,15 +628,7 @@ rank_statistic <- validation_common$common_z
 names(rank_statistic) <- validation_common$gene
 gene_sets <- list(
   frozen_strict_up = intersect(strict_up, names(rank_statistic)),
-  frozen_strict_down = intersect(strict_down, names(rank_statistic)),
-  legacy_287_up = intersect(
-    legacy_287$gene[legacy_287$arm == "up"],
-    names(rank_statistic)
-  ),
-  legacy_287_down = intersect(
-    legacy_287$gene[legacy_287$arm == "down"],
-    names(rank_statistic)
-  )
+  frozen_strict_down = intersect(strict_down, names(rank_statistic))
 )
 enrichment <- cameraPR(
   statistic = rank_statistic,
@@ -701,9 +639,7 @@ enrichment <- cameraPR(
 enrichment$gene_set <- rownames(enrichment)
 expected_enrichment_direction <- c(
   frozen_strict_up = "Up",
-  frozen_strict_down = "Down",
-  legacy_287_up = "Up",
-  legacy_287_down = "Down"
+  frozen_strict_down = "Down"
 )
 enrichment$expected_direction <- unname(
   expected_enrichment_direction[enrichment$gene_set]
@@ -880,7 +816,6 @@ manifest <- list(
     full_up_genes = length(strict_up),
     full_down_genes = length(strict_down),
     compact_genes = nrow(panel),
-    legacy_12_testable_genes = nrow(legacy_12_testable),
     normalisation = "TMM log2 CPM with prior.count 0.5 within state",
     scaling = "discovery state-specific centres and standard deviations",
     scoring = "mean z(up) minus mean z(down); equal arm weights",

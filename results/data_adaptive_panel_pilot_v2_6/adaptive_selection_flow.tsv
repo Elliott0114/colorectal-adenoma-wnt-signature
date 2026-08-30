@@ -1,6 +1,0 @@
-stage_order	stage	n_genes	up_genes	down_genes
-1	Assayed epithelial features	33698		
-2	Expressed non-technical genes	6127		
-3	limma FDR <= 0.05	287	89	198
-4	FDR + bootstrap stable core	287	89	198
-5	Adaptive minimum-sufficient panel	28	21	7

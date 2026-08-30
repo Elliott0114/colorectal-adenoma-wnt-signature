@@ -1,5 +1,0 @@
-partition	k	scope	decomposition_type	component	estimate	ci_low	ci_high	n_donors	n_normal_donors	n_adenoma_donors
-Discovery	4	all	fine_state	Fine-state composition	0.0152934201940355	0.0034709304076145	0.0267515763816562	27	24	14
-Discovery	4	all	fine_state	Within fine states	0.060120320695752	0.0332484309781575	0.087134689973718	27	24	14
-Donor-disjoint validation	4	all	fine_state	Fine-state composition	0.0208663791416313	0.00974383215082701	0.030335500837128	23	18	12
-Donor-disjoint validation	4	all	fine_state	Within fine states	0.0790451561804283	0.0492850891085242	0.11017769032571	23	18	12

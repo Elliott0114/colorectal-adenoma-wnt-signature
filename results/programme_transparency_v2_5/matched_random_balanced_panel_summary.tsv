@@ -1,5 +1,0 @@
-metric	observed_10_gene_panel	random_median	random_q025	random_q975	empirical_percentile	one_sided_empirical_tail_ge_observed	benchmark_panels	benchmark_scope
-heldout_auc	0.9357142857142857	0.9238095238095239	0.8928571428571429	0.95	0.79	0.21007899210078992	10000	balanced 5+5 panels sampled from platform-complete top-20 genes per locked arm
-five_cohort_fixed_effect_sd	1.905847019223359	1.82284868052886	1.6721586386811542	1.9229094865666705	0.9385	0.06159384061593841	10000	balanced 5+5 panels sampled from platform-complete top-20 genes per locked arm
-ffpe_positive_pair_fraction	0.9607843137254902	0.9607843137254902	0.9215686274509803	0.9803921568627451	0.2591	0.7409259074092591	10000	balanced 5+5 panels sampled from platform-complete top-20 genes per locked arm
-jointly_meets_or_exceeds_all_three_observed_metrics	1.0					0.0093990600939906	10000	balanced 5+5 panels sampled from platform-complete top-20 genes per locked arm

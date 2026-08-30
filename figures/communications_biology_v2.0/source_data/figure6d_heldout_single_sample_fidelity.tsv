@@ -1,9 +1,0 @@
-scope	target	n_profiles	n_donors	spearman	donor_bootstrap_ci_low	donor_bootstrap_ci_high	target_label
-All states	full_programme_score	122	23	0.734552460007732	0.618810436924449	0.818879115366039	Discovery-standardised full
-All states	single_sample_full_rank_score	122	23	0.805248148674415	0.730991681063055	0.868815515537797	Single-sample full rank
-ABS	full_programme_score	44	23	0.822410147991543	0.672085865710551	0.887691423893818	Discovery-standardised full
-ABS	single_sample_full_rank_score	44	23	0.81169837914024	0.651870437599017	0.8829289665083	Single-sample full rank
-GOB	full_programme_score	39	23	0.848987854251012	0.734087666725756	0.914446223156286	Discovery-standardised full
-GOB	single_sample_full_rank_score	39	23	0.859919028340081	0.747451677530022	0.919515844083015	Single-sample full rank
-TAC	full_programme_score	39	22	0.652834008097166	0.47697827494192	0.808854803026303	Discovery-standardised full
-TAC	single_sample_full_rank_score	39	22	0.672064777327935	0.494668605087008	0.817292373177594	Single-sample full rank

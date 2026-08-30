@@ -1,5 +1,0 @@
-order	evidence_role	public_resources	data_types	independent_units	purpose	signature_status
-1	Discovery and reduction	1	epithelial scRNA-seq	60 specimens; 27 donors; 37 donor–tissue profiles	define the 287-gene core and select the 12-gene signature	gene selection permitted
-2	Internal held-out test	1	epithelial scRNA-seq	44 specimens; 24 donors; 7 paired donors	test the frozen core and signature within the source study	frozen before scoring
-3	Independent replication	7	bulk RNA, FFPE RNA and snRNA	203 samples; 161 patient clusters; 51 FFPE pairs (102 specimens)	test transfer across five cohorts, archival tissue and independent nuclei	frozen before scoring
-4	Orthogonal support and tissue context	13	RNA–ATAC, perturbation, CRC atlas, spatial RNA and proteomics	40 RNA–ATAC samples/12 patients; 398 CRC Atlas donors; 6 spatial sections	assess regulatory, perturbational, anatomical and protein-level support	frozen before scoring

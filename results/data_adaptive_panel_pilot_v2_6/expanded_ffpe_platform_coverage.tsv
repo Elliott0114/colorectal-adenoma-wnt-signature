@@ -1,5 +1,0 @@
-scope	cohort	panel_id	panel_label	requested_up	present_up	coverage_up	requested_down	present_down	coverage_down	platform_passes_80pct_each_arm	n_primary_samples	n_primary_samples_scored	all_primary_samples_pass	missing_up	missing_down
-FFPE	GSE117606	stable_core_287	Error-controlled core (287)	89	80	0.898876404494382	198	177	0.8939393939393939	True	124	124	True	IGFL4;LHFPL7;LINC00524;LINC01411;LINC01996;LINC02100;LINC02563;LNC-LBCS;MIR513A1	ATP5PD;B4GALT1-AS1;CBS;CCL14;CNTN4-AS1;COX6A1;DBNDD2;FABP5;LGALS9B;LINC02441;LRRC8D-DT;MAP2K5-DT;PHGR1;RNF5;SLC25A5;SLC9A3-OT1;SNX7-DT;STBD1;UQCRFS1;URAD;VDAC2
-FFPE	GSE117606	adaptive_28	Adaptive minimum-sufficient (28)	21	18	0.8571428571428571	7	6	0.8571428571428571	True	124	124	True	LHFPL7;LINC02563;LNC-LBCS	SLC25A5
-FFPE	GSE117606	reference_100	Current reference (100)	50	46	0.92	50	44	0.88	True	124	124	True	IFITM3;LINC01411;LINC01819;MAGEB17-AS1	COX6A1;PHGR1;SCHLAP1;SLC25A5;SLC9A3-OT1;TMSB4X
-FFPE	GSE117606	compact_10	Biology-guided compact panel (10)	5	5	1.0	5	5	1.0	True	124	124	True		

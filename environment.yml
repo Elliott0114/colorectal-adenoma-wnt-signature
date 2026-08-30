@@ -26,6 +26,7 @@ dependencies:
   - r-ragg=1.5.2
   - r-survival=3.8_6
   - r-igraph=2.3.3
+  - r-digest
   - r-lme4=1.1_38
   - r-mashr=0.2.79
   - r-matrix=1.7_4
@@ -33,6 +34,7 @@ dependencies:
   - bioconductor-decoupler=2.16.0
   - bioconductor-dreamlet=1.8.0
   - bioconductor-edger=4.8.2
+  - bioconductor-fgsea
   - bioconductor-hdf5array=1.38.0
   - bioconductor-limma=3.66.0
   - bioconductor-rhdf5=2.54.1

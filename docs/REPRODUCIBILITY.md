@@ -2,9 +2,9 @@
 
 ## Frozen biological object
 
-The primary object is a continuous 8,221-gene common-effect ranking derived
-from donor-aware models in absorptive, goblet and transit-amplifying
-epithelium. Fixed confidence criteria retain 1,843 genes:
+The primary object is a continuous 8,221-gene common-effect ranking from
+donor-aware models in absorptive, goblet and transit-amplifying epithelium.
+Fixed confidence criteria retain 1,843 genes:
 
 ```text
 common-effect FDR <= 0.05
@@ -13,26 +13,25 @@ common-effect FDR <= 0.05
 = 884 adenoma-up + 959 adenoma-down genes
 ```
 
-The observed gene count is an output of these rules, not a prespecified top-N
-cutoff.
+The gene count is the result of fixed confidence rules, not a top-N cutoff.
 
 ## Independent units
 
 - Discovery and held-out single-cell analyses: donor.
 - External transcriptomics: patient cluster or matched patient pair.
-- Becker multiome: sample with patient-aware robustness analyses.
+- Becker multiome: sample, with patient-aware robustness analyses.
 - Perturbations: donor, model, edited clone, cell line or oncogenic background.
 - Spatial transcriptomics: paired tissue section.
 
-Cells, nuclei and spots are nested measurements rather than independent
+Cells, nuclei and spots are nested observations rather than independent
 replicates.
 
 ## Identity-versus-composition analysis
 
 Fine states are learned only from normal discovery epithelium after excluding
-all programme genes, lesion labels and predefined nuisance families. All
-remaining cells are projected without refitting. Exact donor-balanced
-decomposition reconstructs the observed score difference as:
+programme genes, lesion labels and predefined nuisance families. Remaining
+cells are projected without refitting. Exact donor-balanced decomposition
+reconstructs:
 
 ```text
 total difference = fine-state composition + expression within fine states
@@ -41,6 +40,16 @@ total difference = fine-state composition + expression within fine states
 The primary four-state solution assigns 79.1% to within-state expression and
 20.9% to fine-state composition. Three- and five-state solutions are fixed
 sensitivities.
+
+## Replicated pathway architecture
+
+`cameraPR` tests the complete signed 8,221-gene ranking in discovery common,
+discovery ABS/GOB/TAC, held-out common and held-out ABS/GOB/TAC contexts.
+Replication requires discovery-common FDR <= 0.05, held-out-common FDR <= 0.10,
+agreement in at least five of six state contexts, and no state-level opposite
+direction at FDR <= 0.10. `fgsea` supplies running-enrichment and leading-edge
+coordinates only. A fixed leading-edge Jaccard threshold of 0.25 and seeded
+Leiden clustering reduce redundant pathways to communities.
 
 ## Outcome-blind full-programme projection
 
@@ -52,35 +61,23 @@ outcome-derived weighting is performed in these layers.
 
 ## Candidate reduced readout
 
-The eight-gene candidate is reconstructed from discovery profiles after the
-full programme is frozen. Platform availability reduces the candidate universe
-to 53 protein-coding genes. Donor-held-out balanced-pair reconstruction and
-the data-defined knee select four up/down pairs.
+The supplementary eight-gene candidate is reconstructed from discovery
+profiles after the full programme is frozen. Platform availability reduces the
+candidate universe to 53 protein-coding genes. Donor-held-out balanced-pair
+reconstruction and the data-defined knee select four up/down pairs. External
+random-panel benchmarking does not establish unique optimality.
 
-Direction-balanced random panels from the same measurable universe provide a
-direct benchmark. The selected candidate modestly exceeds the internal 95th
-percentile but not the external 95th percentile. It is therefore interpreted
-as one tractable representation of a redundant programme, not as a uniquely
-optimal signature.
-
-## Execution
+## Execution and governed data
 
 ```bash
 conda env create -f environment.yml
 make verify
-make figures
+make pathway
+make figures-public
 ```
 
-The full step order, environment and principal output of each analysis are in
-`workflow/pipeline.tsv`. Public accession metadata and primary publications
-are in `data/datasets.tsv`.
-
-Supplementary Figure 2g uses governed, pseudonymised patient-level values from
-the self-generated DSLab series. The rendered figure and aggregate statistics
-are included, but the public `make figures` command retains the committed
-Supplementary Figure 2 asset when those governed values are unavailable.
-
-## Governed data
-
-Patient-level DSLab values are excluded from this public release. Aggregate
-statistics used for the copy-number-composition sensitivity are included.
+The full order is in `workflow/pipeline.tsv`. Supplementary Figure 2g uses
+governed, pseudonymised patient-level DSLab values. Its public release contains
+the rendered panel context and aggregate statistics, but not patient-level
+source values. Consequently `figures-public` rebuilds only figures whose
+complete non-governed derived inputs are public.

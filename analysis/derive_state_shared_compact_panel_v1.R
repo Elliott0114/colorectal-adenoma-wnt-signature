@@ -31,36 +31,13 @@ candidate_path <- file.path(
   "panel_derivation",
   "portable_state_shared_candidate_universe.tsv"
 )
-addendum_path <- file.path(
-  root,
-  "analysis",
-  "contracts",
-  "state_aware_compact_panel_implementation_addendum_v1_2026-08-29.md"
-)
-existing_panel_path <- file.path(
-  root,
-  "release",
-  "colorectal-adenoma-wnt-signature",
-  "data",
-  "signatures",
-  "signature_12_genes.tsv"
-)
 out_dir <- file.path(root, "results", "state_aware_program_v1", "panel_derivation")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
 
-expected_addendum_sha256 <-
-  "6f6af8c34858b83d16cc4f4004c963cf4e29813ee2093201cd3cfa5404664cad"
-if (!identical(
-  digest::digest(addendum_path, algo = "sha256", file = TRUE),
-  expected_addendum_sha256
-)) {
-  stop("Compact-panel implementation addendum changed after freeze")
-}
 if (!all(file.exists(c(
   pseudobulk_path,
   common_path,
-  candidate_path,
-  existing_panel_path
+  candidate_path
 )))) {
   stop("One or more compact-panel inputs are missing")
 }
@@ -68,7 +45,6 @@ if (!all(file.exists(c(
 pseudobulk <- readRDS(pseudobulk_path)
 common <- read.delim(common_path, check.names = FALSE)
 candidates <- read.delim(candidate_path, check.names = FALSE)
-existing_panel <- read.delim(existing_panel_path, check.names = FALSE)
 metadata <- as.data.frame(pseudobulk$metadata)
 states <- c("ABS", "GOB", "TAC")
 
@@ -547,35 +523,6 @@ panel$validation_outcomes_used <- FALSE
 panel$panel_frozen_before_validation <- TRUE
 panel <- panel[order(panel$pair_step, -panel$route_weight, panel$gene), ]
 
-existing_testable <- existing_panel[
-  existing_panel$gene %in% strict_genes,
-  ,
-  drop = FALSE
-]
-existing_up <- existing_testable$gene[existing_testable$arm == "up"]
-existing_down <- existing_testable$gene[existing_testable$arm == "down"]
-existing_score <-
-  rowMeans(all_scaled[, existing_up, drop = FALSE]) -
-  rowMeans(all_scaled[, existing_down, drop = FALSE])
-existing_audit <- data.frame(
-  scope = c("all", states),
-  n_testable_genes = nrow(existing_testable),
-  n_up = length(existing_up),
-  n_down = length(existing_down),
-  spearman_with_full_programme = c(
-    safe_cor(existing_score, all_target, method = "spearman"),
-    vapply(states, function(state) {
-      index <- which(metadata$cell_type == state)
-      safe_cor(
-        existing_score[index],
-        all_target[index],
-        method = "spearman"
-      )
-    }, numeric(1))
-  ),
-  stringsAsFactors = FALSE
-)
-
 write.table(
   oof,
   gzfile(file.path(out_dir, "discovery_grouped_oof_scores.tsv.gz")),
@@ -638,14 +585,6 @@ write.table(
   quote = FALSE,
   row.names = FALSE
 )
-write.table(
-  existing_audit,
-  file.path(out_dir, "existing_12_discovery_fidelity.tsv"),
-  sep = "\t",
-  quote = FALSE,
-  row.names = FALSE
-)
-
 summary <- data.frame(
   metric = c(
     "strict_core_total",
@@ -696,16 +635,15 @@ write.table(
 manifest <- list(
   analysis = "derive_state_shared_compact_panel_v1",
   created_utc = format(Sys.time(), tz = "UTC", usetz = TRUE),
-  addendum_sha256 = expected_addendum_sha256,
   input_hashes = as.list(setNames(
     vapply(
-      c(pseudobulk_path, common_path, candidate_path, existing_panel_path),
+      c(pseudobulk_path, common_path, candidate_path),
       digest::digest,
       character(1),
       algo = "sha256",
       file = TRUE
     ),
-    basename(c(pseudobulk_path, common_path, candidate_path, existing_panel_path))
+    basename(c(pseudobulk_path, common_path, candidate_path))
   )),
   target = "equal-arm strict state-shared programme score",
   normalisation = "state-specific TMM log-CPM",

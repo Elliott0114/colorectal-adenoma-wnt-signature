@@ -1,5 +1,0 @@
-component	detail
-Matched specimens	40 normal or polyp samples from 12 patients
-Epithelial snRNA-seq	Frozen 12-gene RNA score aggregated by patient and state
-Matched ATAC-seq	WNT and TCF/ASCL2 promoter-accessibility axes
-Patient-aware association	Tissue-state, proliferation and depth adjusted; patient-clustered inference

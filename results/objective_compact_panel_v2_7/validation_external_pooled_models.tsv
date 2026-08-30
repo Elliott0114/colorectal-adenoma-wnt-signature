@@ -1,3 +1,0 @@
-signature_size_per_direction	excluded_cohort	n_samples	n_patient_clusters	n_cohorts	adenoma_coef_sd	se_patient_cluster	ci_low	ci_high	p_value	r_squared	panel_id	panel_label
-50	__NONE__	203	161	5	1.8295727332350236	0.08169538566952464	1.6682323886314125	1.9909130778386346	3.49673585170905e-51	0.6838949081906507	objective_12	Objective Kneedle panel (12)
-50	__NONE__	203	161	5	1.9058470192233594	0.07642653346893673	1.754912139050103	2.056781899396616	5.343453271180087e-57	0.7421062451102811	biology_guided_10	Previous biology-guided panel (10)

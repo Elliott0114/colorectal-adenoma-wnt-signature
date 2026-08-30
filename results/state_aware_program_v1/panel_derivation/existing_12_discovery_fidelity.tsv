@@ -1,5 +1,0 @@
-scope	n_testable_genes	n_up	n_down	spearman_with_full_programme
-all	9	3	6	0.771508372922356
-ABS	9	3	6	0.76765306122449
-GOB	9	3	6	0.859619450317125
-TAC	9	3	6	0.712717770034843

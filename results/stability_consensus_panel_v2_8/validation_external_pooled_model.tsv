@@ -1,2 +1,0 @@
-signature_size_per_direction	excluded_cohort	n_samples	n_patient_clusters	n_cohorts	adenoma_coef_sd	se_patient_cluster	ci_low	ci_high	p_value	r_squared	panel_id	panel_label
-50	__NONE__	203	161	5	1.8187000273847256	0.08289720533816371	1.6549862072426795	1.9824138475267716	4.204769439535444e-50	0.6757906185998096	stability_consensus_11	Strict-majority stability consensus (11)

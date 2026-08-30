@@ -1,0 +1,10 @@
+collection_label	stage	n_pathways
+GO Biological Process	Tested	3507
+GO Biological Process	Discovery FDR ≤ 0.05	39
+GO Biological Process	Replicated in held-out	25
+Hallmark	Tested	50
+Hallmark	Discovery FDR ≤ 0.05	10
+Hallmark	Replicated in held-out	8
+Reactome	Tested	1058
+Reactome	Discovery FDR ≤ 0.05	91
+Reactome	Replicated in held-out	25

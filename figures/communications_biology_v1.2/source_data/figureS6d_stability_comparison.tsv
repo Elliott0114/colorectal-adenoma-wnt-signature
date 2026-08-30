@@ -1,5 +1,0 @@
-panel	metric	value
-Kneedle 12	Held-out AUC	0.935714285714286
-Strict-majority 11	Held-out AUC	0.933333333333333
-Kneedle 12	FFPE positive pairs	0.92156862745098
-Strict-majority 11	FFPE positive pairs	0.901960784313726

@@ -1,6 +1,0 @@
-check	passed	observed	expected
-objective_panel_frozen_at_12_genes	True	12	12
-objective_panel_balanced	True	{'down': 6, 'up': 6}	6 up / 6 down
-biology_guided_10_chen_auc_reproduced	True	0.9357142857142857	0.9357142857142856
-biology_guided_10_external_effect_reproduced	True	1.9058470192233594	1.9058470192233596
-biology_guided_10_ffpe_delta_reproduced	True	2.533387969614041	2.533387969614041

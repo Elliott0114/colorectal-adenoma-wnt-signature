@@ -1,7 +1,0 @@
-outcome	omitted_study	state	term	estimable	n_observations	n_donors	n_target_observations	n_target_donors	n_reference_observations	n_reference_donors	coef	se_cluster	ci_low	ci_high	p_value	state_label
-score__ca_route_signature	__NONE__	polyp_epithelial	carrier_group_polyp_epithelial	TRUE	670	398	89	89	194	194	0.374806692711343	0.0652310658200931	0.246565194328139	0.503048191094548	1.82362982672204e-08	Polyp epithelium
-score__ca_route_signature	__NONE__	polyp_cancer	carrier_group_polyp_cancer	TRUE	670	398	82	82	194	194	0.762207572264974	0.0912536654311239	0.582806750881456	0.941608393648491	1.12893916655089e-15	Polyp cancer-like
-score__ca_route_signature	__NONE__	tumor_epithelial	carrier_group_tumor_epithelial	TRUE	670	398	33	33	194	194	0.130947398575932	0.0694582118788327	-0.00560448900055308	0.267499286152416	0.0601235830866918	Primary epithelium
-score__ca_route_signature	__NONE__	tumor_cancer	carrier_group_tumor_cancer	TRUE	670	398	217	217	194	194	0.4024648617948	0.0420327784581217	0.319830208766971	0.485099514822628	1.12046920681296e-19	Primary cancer-like
-score__ca_route_signature	__NONE__	metastasis_epithelial	carrier_group_metastasis_epithelial	TRUE	670	398	5	5	194	194	0.0841497163597808	0.239561840600189	-0.386818663625565	0.555118096345127	0.725575808724236	Metastasis epithelium
-score__ca_route_signature	__NONE__	metastasis_cancer	carrier_group_metastasis_cancer	TRUE	670	398	50	50	194	194	0.371663018037896	0.106831722334916	0.161636399971079	0.581689636104713	0.000559128493455522	Metastasis cancer-like

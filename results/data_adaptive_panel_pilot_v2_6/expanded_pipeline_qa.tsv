@@ -1,7 +1,0 @@
-check	passed	observed	expected
-four_fixed_panels_loaded	True	4.0	4
-no_panel_gene_duplicates	True	0.0	0
-reference_100_external_scores_reproduced	True	4.440892098500626e-16	<1e-10
-reference_100_ffpe_scores_reproduced	True	2.220446049250313e-16	<1e-10
-reference_100_external_pooled_effect_reproduced	True	1.9245210133050838	1.924521013305084
-compact_10_external_pooled_effect_reproduced	True	1.9058470192233594	1.9058470192233596

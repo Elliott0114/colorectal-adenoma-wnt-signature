@@ -1,5 +1,0 @@
-dataset	panel_id	panel_label	n	spearman_rho_vs_full_287_core	p_value
-discovery	objective_12	Objective Kneedle panel (12)	60	0.9658794109474855	1.0081862962242778e-35
-discovery	biology_guided_10	Previous biology-guided panel (10)	60	0.8304529035843292	2.2880066111390357e-16
-validation	objective_12	Objective Kneedle panel (12)	57	0.9543038631060411	1.5787827132154467e-30
-validation	biology_guided_10	Previous biology-guided panel (10)	57	0.916709878143635	1.4214725653527078e-23

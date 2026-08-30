@@ -1,8 +1,0 @@
-file	rows	columns
-figure3_source_data_manifest.tsv	7	3
-figure3a_epithelial_proportions.tsv	9	17
-figure3b_within_state_effects.tsv	8	21
-figure3c_paired_donor_scores.tsv	38	5
-figure3d_state_contributions.tsv	9	16
-figure3e_exact_decomposition.tsv	3	29
-figure3f_core_compact_concordance.tsv	32	4

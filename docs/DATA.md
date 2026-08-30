@@ -12,7 +12,6 @@ The repository does include:
 - frozen gene definitions;
 - analysis-ready, non-identifying derived result tables;
 - figure source data;
-- a supplementary workbook;
 - checksums and reproducibility manifests.
 
 Patient-level DSLab matrices, metadata and plotted source values are not
@@ -56,11 +55,10 @@ Their hashes and versions are recorded in the frozen analysis manifests.
 
 ## Licensed reference resources
 
-MSigDB Hallmark release 2026.1.Hs is not redistributed. Obtain the gene-set
-file under the applicable MSigDB terms and place it in
-`data_sources/reference_gene_sets_v2_5/`. The analysis records the release and
-SHA256 checksum. NCBI gene information and mouse-human orthology tables should
-likewise be downloaded from their authoritative sources.
+The pathway script obtains the pinned MSigDB 2026.1.Hs collections through the
+versioned `msigdbr` package; MSigDB files are not redistributed. NCBI gene
+information and mouse-human orthology tables should likewise be downloaded
+from their authoritative sources.
 
 ## Integrity
 

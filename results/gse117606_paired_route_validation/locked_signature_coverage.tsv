@@ -1,9 +1,0 @@
-cohort	signature_size_per_direction	requested_up	present_up	coverage_up	requested_down	present_down	coverage_down	proliferation_requested	proliferation_present	proliferation_coverage	passes_80pct_component_rule	normalization_scope
-GSE117606	10	10	10	1.0	10	9	0.9	8	8	1.0	True	all_cohort_samples
-GSE117606	20	20	20	1.0	20	18	0.9	8	8	1.0	True	all_cohort_samples
-GSE117606	30	30	27	0.9	30	26	0.8666666666666667	8	8	1.0	True	all_cohort_samples
-GSE117606	50	50	46	0.92	50	44	0.88	8	8	1.0	True	all_cohort_samples
-GSE117606	10	10	10	1.0	10	9	0.9	8	8	1.0	True	normal_and_adenoma_only
-GSE117606	20	20	20	1.0	20	18	0.9	8	8	1.0	True	normal_and_adenoma_only
-GSE117606	30	30	27	0.9	30	26	0.8666666666666667	8	8	1.0	True	normal_and_adenoma_only
-GSE117606	50	50	46	0.92	50	44	0.88	8	8	1.0	True	normal_and_adenoma_only

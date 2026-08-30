@@ -1,4 +1,0 @@
-partition	k	scope	decomposition_type	component	estimate	ci_low	ci_high	n_donors	n_normal_donors	n_adenoma_donors	component_label	colour_group
-validation	4	all	fine_state	total	0.0999115353220597	0.0630936438989743	0.133436317767504	23	18	12	Observed total	Other
-validation	4	all	fine_state	composition	0.0208663791416313	0.00974383215082701	0.030335500837128	23	18	12	Fine-state composition	Other
-validation	4	all	fine_state	within	0.0790451561804283	0.0492850891085242	0.11017769032571	23	18	12	Within fine states	Within

@@ -1,8 +1,0 @@
-gate	criterion	observed	pass
-five_cohort_complete_10_of_10_coverage	10/10 genes available in each of five external cohorts	5/5 cohorts; 10/10 each	True
-score_concordance	minimum external Spearman rho >= 0.80	0.8338381881582193	True
-heldout_auc_retention	held-out AUC drop <= 0.05	-0.0071428571428571175	True
-external_effect_retention	pooled effect retains >= 80% of 100-gene effect	0.9902968094644731	True
-ffpe_pair_direction	>= 90% positive paired changes and two-sided P < 0.05	0.961; P=1.25e-09	True
-prespecified_perturbation_direction	mean/clone effects follow expected direction in non-null comparisons	GSE125472 4/4; TCF7L2 KO 4/4	True
-leave_one_gene_out	all pooled effects positive and retain >= 75% of 10-gene effect	0.9857923490994993	True
