@@ -5,7 +5,7 @@ source("analysis/state_shared_revision_figure_utils_v3.R")
 root <- normalizePath(".", mustWork = TRUE)
 result_root <- file.path(root, "results", "state_aware_program_v1", "external_validation")
 revision_root <- file.path(root, "results", "state_shared_revision_v2", "external_meta")
-out_dir <- file.path(root, "figures", "communications_biology_v2.0")
+out_dir <- file.path(root, "figures", "communications_biology_v2.1")
 source_dir <- file.path(out_dir, "source_data")
 
 cohort_tests <- read_tsv(file.path(result_root, "external_cohort_tests.tsv")) %>%

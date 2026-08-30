@@ -6,8 +6,8 @@ suppressPackageStartupMessages(library(tidyr))
 root <- normalizePath(".", mustWork = TRUE)
 state_root <- file.path(root, "results", "state_aware_program_v1")
 revision_root <- file.path(root, "results", "state_shared_revision_v2")
-virtual_root <- file.path(root, "results", "virtual_knockout_validation_v2_9")
-out_dir <- file.path(root, "figures", "communications_biology_v2.0")
+full_extended_root <- file.path(state_root, "extended_validation_full_programme")
+out_dir <- file.path(root, "figures", "communications_biology_v2.1")
 source_dir <- file.path(out_dir, "source_data")
 
 save_supplement <- function(plot, number, stem, height_mm = 190) {
@@ -124,17 +124,17 @@ p5f <- ggplot(external_fidelity, aes(spearman_compact_vs_full, cohort)) +
   geom_point(size = 2.2, colour = figure_colours[["adenoma"]]) +
   geom_text(aes(label = paste0("n=", n_samples)), nudge_y = -0.22, family = figure_font, size = 1.7, colour = figure_colours[["muted"]]) +
   scale_x_continuous(limits = c(0, 1.03), breaks = c(0, 0.5, 1.0)) +
-  labs(x = "Compact-to-full Spearman correlation", y = NULL) +
+  labs(x = "Candidate-to-full Spearman correlation", y = NULL) +
   theme_cb()
 
 fig_s5 <- (p5a | p5b) / (p5c | p5d) / (p5e | p5f) + plot_annotation(tag_levels = "a")
-save_supplement(fig_s5, 5, "external_and_ffpe_sensitivities", 210)
-write_source(external_tests, source_dir, "figureS5a_external_readouts.tsv")
-write_source(pooled_plot, source_dir, "figureS5b_pooled_models.tsv")
-write_source(leaveout, source_dir, "figureS5c_adjusted_leaveout.tsv")
-write_source(ffpe_scores, source_dir, "figureS5d_ffpe_score_differences.tsv")
-write_source(ffpe_genes, source_dir, "figureS5e_ffpe_genes.tsv")
-write_source(external_fidelity, source_dir, "figureS5f_compact_full_fidelity.tsv")
+save_supplement(fig_s5, 4, "external_and_ffpe_sensitivities", 210)
+write_source(external_tests, source_dir, "figureS4a_external_readouts.tsv")
+write_source(pooled_plot, source_dir, "figureS4b_pooled_models.tsv")
+write_source(leaveout, source_dir, "figureS4c_adjusted_leaveout.tsv")
+write_source(ffpe_scores, source_dir, "figureS4d_ffpe_score_differences.tsv")
+write_source(ffpe_genes, source_dir, "figureS4e_ffpe_genes.tsv")
+write_source(external_fidelity, source_dir, "figureS4f_compact_full_fidelity.tsv")
 
 # Supplementary Figure 6: complete compact-readout derivation and benchmark audit.
 candidate_summary <- read_tsv(file.path(state_root, "panel_derivation", "candidate_universe_summary.tsv")) %>%
@@ -142,7 +142,7 @@ candidate_summary <- read_tsv(file.path(state_root, "panel_derivation", "candida
   mutate(
     arm = factor(arm, levels = c("down", "up"), labels = c("Adenoma-down", "Adenoma-up")),
     stage = factor(stage, levels = c("strict_state_shared_genes", "portable_protein_coding"),
-                   labels = c("State-shared", "Portable protein-coding"))
+                   labels = c("State-shared", "Platform-measurable protein-coding"))
   )
 p6a <- ggplot(candidate_summary, aes(stage, genes, fill = arm)) +
   geom_col(position = position_dodge(width = 0.72), width = 0.64) +
@@ -237,17 +237,17 @@ p6f <- ggplot(random_benchmark, aes(fidelity)) +
   theme_cb()
 
 fig_s6 <- (p6a | p6b) / (p6c | p6d) / (p6e | p6f) + plot_annotation(tag_levels = "a")
-save_supplement(fig_s6, 6, "compact_derivation_and_benchmarks", 210)
-write_source(candidate_summary, source_dir, "figureS6a_candidate_summary.tsv")
-write_source(state_fidelity, source_dir, "figureS6b_state_fidelity.tsv")
-write_source(selection_stability, source_dir, "figureS6c_selection_stability.tsv")
-write_source(heldout_genes, source_dir, "figureS6d_heldout_gene_effects.tsv")
-write_source(rank_effects, source_dir, "figureS6e_rank_effects.tsv")
-write_source(random_benchmark, source_dir, "figureS6f_random_benchmarks.tsv")
-write_source(benchmark_summary, source_dir, "figureS6f_benchmark_summary.tsv")
+save_supplement(fig_s6, 5, "compact_derivation_and_benchmarks", 210)
+write_source(candidate_summary, source_dir, "figureS5a_candidate_summary.tsv")
+write_source(state_fidelity, source_dir, "figureS5b_state_fidelity.tsv")
+write_source(selection_stability, source_dir, "figureS5c_selection_stability.tsv")
+write_source(heldout_genes, source_dir, "figureS5d_heldout_gene_effects.tsv")
+write_source(rank_effects, source_dir, "figureS5e_rank_effects.tsv")
+write_source(random_benchmark, source_dir, "figureS5f_random_benchmarks.tsv")
+write_source(benchmark_summary, source_dir, "figureS5f_benchmark_summary.tsv")
 
 # Supplementary Figure 7: patient-aware multi-omic, atlas, spatial and protein context.
-becker_adjusted <- read_tsv(file.path(state_root, "extended_validation", "becker", "becker_compact_8_adjusted_models.tsv")) %>%
+becker_adjusted <- read_tsv(file.path(full_extended_root, "becker", "becker_full_programme_adjusted_models.tsv")) %>%
   filter(term == "disease_stage_group_polyp", outcome %in% c("all__ca_route_signature", "epi__ca_route_signature")) %>%
   mutate(
     outcome_label = factor(recode(outcome, all__ca_route_signature = "All nuclei", epi__ca_route_signature = "Epithelial-marker positive"),
@@ -262,7 +262,7 @@ p7a <- ggplot(becker_adjusted, aes(coef, outcome_label)) +
   labs(x = "Adjusted polyp coefficient", y = NULL) +
   theme_cb()
 
-rna_atac <- read_tsv(file.path(state_root, "extended_validation", "becker_rna_atac", "becker_locked_rna_atac_patient_cluster_models.tsv")) %>%
+rna_atac <- read_tsv(file.path(full_extended_root, "becker_rna_atac", "becker_locked_rna_atac_patient_cluster_models.tsv")) %>%
   mutate(
     label = factor(
       recode(analysis_id,
@@ -280,7 +280,7 @@ p7b <- ggplot(rna_atac, aes(coef, label)) +
   labs(x = "Patient-clustered adjusted coefficient", y = NULL) +
   theme_cb()
 
-window <- read_tsv(file.path(state_root, "extended_validation", "becker_rna_atac", "becker_compact_8_regulatory_window_rna_correlations.tsv")) %>%
+window <- read_tsv(file.path(full_extended_root, "becker_rna_atac", "becker_full_programme_regulatory_window_rna_correlations.tsv")) %>%
   filter(rna_feature == "rna_epi__ca_route_signature") %>%
   mutate(
     locus = factor(recode(locus_set, wnt_route_loci = "WNT/stem loci", wnt_tcf_ascl2_axis_loci = "WNT/TCF/ASCL2 loci")),
@@ -297,7 +297,7 @@ p7c <- ggplot(window, aes(distance, spearman_rho, colour = locus, group = locus)
   theme_cb() +
   theme(axis.text.x = element_text(angle = 25, hjust = 1), legend.position = "top")
 
-atlas_support <- read_tsv(file.path(state_root, "extended_validation", "crc_atlas", "atlas_locked_state_study_support.tsv")) %>%
+atlas_support <- read_tsv(file.path(full_extended_root, "crc_atlas", "atlas_locked_state_study_support.tsv")) %>%
   filter(carrier_group %in% c("polyp_epithelial", "polyp_cancer", "tumor_epithelial", "tumor_cancer")) %>%
   mutate(
     state = recode(carrier_group, polyp_epithelial = "Polyp epi.", polyp_cancer = "Polyp cancer-like",
@@ -311,7 +311,7 @@ p7d <- ggplot(atlas_support, aes(state, study, fill = n_donors)) +
   theme_minimal(base_family = figure_font, base_size = 6.3) +
   theme(panel.grid = element_blank(), axis.text.x = element_text(angle = 30, hjust = 1), plot.margin = margin(2, 2, 2, 2, "mm"))
 
-within_study <- read_tsv(file.path(state_root, "extended_validation", "crc_atlas", "atlas_locked_within_study_contrasts.tsv")) %>%
+within_study <- read_tsv(file.path(full_extended_root, "crc_atlas", "atlas_locked_within_study_contrasts.tsv")) %>%
   filter(outcome == "score__ca_route_signature", state %in% c("polyp_epithelial", "polyp_cancer", "tumor_epithelial", "tumor_cancer")) %>%
   arrange(desc(n_target_donors)) %>%
   slice_head(n = 14) %>%
@@ -328,7 +328,7 @@ p7e <- ggplot(within_study, aes(coef, label)) +
   labs(x = "Within-study difference from normal epithelium", y = NULL) +
   theme_cb(base_size = 6.4)
 
-spatial <- read_tsv(file.path(state_root, "extended_validation", "perturbation_spatial", "spatial_compact_8_section_effects.tsv")) %>%
+spatial <- read_tsv(file.path(full_extended_root, "perturbation_spatial", "spatial_full_programme_section_effects.tsv")) %>%
   filter(comparison == "tumor_vs_non_neoplastic_epithelium", feature %in% c("route_score", "route_residual_prolif_epithelial")) %>%
   mutate(feature = factor(feature, levels = c("route_score", "route_residual_prolif_epithelial"), labels = c("Raw", "Adjusted")))
 p7f <- ggplot(spatial, aes(feature, difference, group = sample_id)) +
@@ -359,21 +359,21 @@ p7g <- ggplot(protein, aes(resource, gene, fill = role)) +
 
 fig_s7 <- (p7a | p7b) / (p7c | p7f) / (p7d | p7e) / p7g +
   plot_layout(heights = c(0.9, 0.9, 1.25, 0.7)) + plot_annotation(tag_levels = "a")
-save_supplement(fig_s7, 7, "multiomic_atlas_spatial_protein", 245)
-write_source(becker_adjusted, source_dir, "figureS7a_becker_adjusted.tsv")
-write_source(rna_atac, source_dir, "figureS7b_rna_atac_models.tsv")
-write_source(window, source_dir, "figureS7c_regulatory_windows.tsv")
-write_source(atlas_support, source_dir, "figureS7d_atlas_support.tsv")
-write_source(within_study, source_dir, "figureS7e_within_study.tsv")
-write_source(spatial, source_dir, "figureS7f_spatial_sections.tsv")
-write_source(protein, source_dir, "figureS7g_protein_context.tsv")
+save_supplement(fig_s7, 6, "multiomic_atlas_spatial_protein", 245)
+write_source(becker_adjusted, source_dir, "figureS6a_becker_adjusted.tsv")
+write_source(rna_atac, source_dir, "figureS6b_rna_atac_models.tsv")
+write_source(window, source_dir, "figureS6c_regulatory_windows.tsv")
+write_source(atlas_support, source_dir, "figureS6d_atlas_support.tsv")
+write_source(within_study, source_dir, "figureS6e_within_study.tsv")
+write_source(spatial, source_dir, "figureS6f_spatial_sections.tsv")
+write_source(protein, source_dir, "figureS6g_protein_context.tsv")
 
-# Supplementary Figure 8: complete empirical perturbations and historical virtual-deletion context.
-feature_coverage <- read_tsv(file.path(state_root, "extended_validation", "perturbation_spatial", "feature_coverage.tsv")) %>%
+# Supplementary Figure 7: complete empirical perturbation context.
+feature_coverage <- read_tsv(file.path(full_extended_root, "perturbation_spatial", "perturbation_full_programme_feature_coverage.tsv")) %>%
   filter(feature %in% c("route_up", "route_down", "wnt_stem", "proliferation_control", "epithelial_control")) %>%
   mutate(
     feature = factor(feature, levels = c("route_up", "route_down", "wnt_stem", "proliferation_control", "epithelial_control"),
-                     labels = c("Candidate up", "Candidate down", "WNT/stem", "Proliferation", "Epithelial control")),
+                     labels = c("Programme up", "Programme down", "WNT/stem", "Proliferation", "Epithelial control")),
     dataset = factor(dataset, levels = rev(unique(dataset)))
   )
 p8a <- ggplot(feature_coverage, aes(feature, dataset, fill = coverage_fraction)) +
@@ -384,14 +384,14 @@ p8a <- ggplot(feature_coverage, aes(feature, dataset, fill = coverage_fraction))
   theme_minimal(base_family = figure_font, base_size = 6.5) +
   theme(panel.grid = element_blank(), axis.text.x = element_text(angle = 28, hjust = 1), plot.margin = margin(2, 2, 2, 2, "mm"))
 
-perturbation_summary <- read_tsv(file.path(state_root, "extended_validation", "perturbation_spatial", "perturbation_effect_summary.tsv")) %>%
+perturbation_summary <- read_tsv(file.path(full_extended_root, "perturbation_spatial", "perturbation_full_programme_effect_summary.tsv")) %>%
   filter(feature == "route_score") %>%
   mutate(
     label_text = paste(dataset, gsub("_", " ", comparison), sep = " · "),
     label = factor(label_text, levels = rev(label_text)),
     match = n_expected_direction == n_units
   )
-perturbation_units <- read_tsv(file.path(state_root, "extended_validation", "perturbation_spatial", "perturbation_unit_effects.tsv")) %>%
+perturbation_units <- read_tsv(file.path(full_extended_root, "perturbation_spatial", "perturbation_full_programme_unit_effects.tsv")) %>%
   filter(feature == "route_score") %>%
   mutate(
     label_text = paste(dataset, gsub("_", " ", comparison), sep = " · "),
@@ -405,7 +405,7 @@ p8b <- ggplot(perturbation_summary, aes(mean_difference, label)) +
   geom_point(aes(colour = match), size = 2.0) +
   scale_colour_manual(values = c(`FALSE` = figure_colours[["gold"]], `TRUE` = figure_colours[["adenoma"]]), na.value = figure_colours[["grey"]]) +
   guides(colour = "none") +
-  labs(x = "Change in eight-gene score", y = NULL) +
+  labs(x = "Change in full-programme score", y = NULL) +
   theme_cb(base_size = 6.2)
 
 direction_audit <- perturbation_summary %>%
@@ -420,67 +420,30 @@ p8c <- ggplot(direction_audit, aes(fraction_expected, label)) +
   theme_cb(base_size = 6.2)
 
 apc <- read_tsv(file.path(state_root, "external_validation", "apc_organoid_effects.tsv")) %>%
-  filter(comparison %in% c("WT_withdrawal", "APC_vs_WT_without_Wnt", "genotype_by_Wnt_interaction")) %>%
+  filter(
+    signature_id == "state_shared_1843",
+    comparison %in% c("WT_withdrawal", "APC_vs_WT_without_Wnt", "genotype_by_Wnt_interaction")
+  ) %>%
   mutate(
     comparison = factor(recode(comparison,
                                WT_withdrawal = "WNT withdrawal in WT",
                                APC_vs_WT_without_Wnt = "APC-KO vs WT, WNT−",
                                genotype_by_Wnt_interaction = "Genotype × WNT"),
-                        levels = rev(c("WNT withdrawal in WT", "APC-KO vs WT, WNT−", "Genotype × WNT"))),
-    readout = factor(
-      signature_id,
-      levels = c("state_shared_1843", "compact_8"),
-      labels = c("Full", "Eight-gene")
-    )
+                        levels = rev(c("WNT withdrawal in WT", "APC-KO vs WT, WNT−", "Genotype × WNT")))
   )
-p8d <- ggplot(apc, aes(mean_difference, comparison, colour = readout, shape = readout)) +
+p8d <- ggplot(apc, aes(mean_difference, comparison)) +
   geom_vline(xintercept = 0, linetype = 2, colour = figure_colours[["muted"]], linewidth = 0.35) +
-  geom_errorbarh(aes(xmin = min_difference, xmax = max_difference), height = 0, linewidth = 0.6, position = position_dodge(width = 0.35)) +
-  geom_point(size = 2.0, position = position_dodge(width = 0.35)) +
-  scale_colour_manual(values = c("Full" = figure_colours[["grey"]], "Eight-gene" = figure_colours[["gold"]])) +
-  scale_shape_manual(values = c("Full" = 16, "Eight-gene" = 18)) +
+  geom_errorbarh(aes(xmin = min_difference, xmax = max_difference), height = 0, linewidth = 0.6, colour = figure_colours[["adenoma"]]) +
+  geom_point(size = 2.0, colour = figure_colours[["adenoma"]]) +
   labs(x = "Mean donor difference (range; n = 3)", y = NULL) +
-  theme_cb() +
-  theme(legend.position = "top", legend.text = element_text(size = 5.6))
+  theme_cb()
 
-virtual_stability <- read_tsv(file.path(virtual_root, "genki_seed_stability.tsv")) %>%
-  filter(distance_metric == "KL") %>%
-  mutate(target_group = ifelse(target %in% c("TCF7L2", "ASCL2", "SOX4"), "Upstream targets", "Historical panel genes"))
-p8e <- ggplot(virtual_stability, aes(target_group, spearman_rho_between_seeds, colour = target_group)) +
-  geom_hline(yintercept = 0.75, linetype = 2, colour = figure_colours[["muted"]], linewidth = 0.35) +
-  geom_boxplot(width = 0.52, outlier.shape = NA, fill = "white", linewidth = 0.45) +
-  geom_jitter(width = 0.10, size = 1.7, alpha = 0.75) +
-  scale_colour_manual(values = c("Upstream targets" = figure_colours[["adenoma"]], "Historical panel genes" = figure_colours[["normal"]])) +
-  guides(colour = "none") +
-  labs(x = NULL, y = "Across-seed rank correlation") +
-  theme_cb() +
-  theme(axis.text.x = element_text(angle = 20, hjust = 1))
+fig_s8 <- (p8a | p8d) / (p8b | p8c) + plot_annotation(tag_levels = "a")
+save_supplement(fig_s8, 7, "empirical_perturbation_context", 175)
+write_source(feature_coverage, source_dir, "figureS7a_perturbation_coverage.tsv")
+write_source(apc, source_dir, "figureS7b_apc_organoids.tsv")
+write_source(perturbation_summary, source_dir, "figureS7c_perturbation_summary.tsv")
+write_source(perturbation_units, source_dir, "figureS7c_perturbation_units.tsv")
+write_source(direction_audit, source_dir, "figureS7d_direction_audit.tsv")
 
-virtual_tests <- read_tsv(file.path(virtual_root, "genki_fixed_gene_set_tests.tsv")) %>%
-  filter(distance_metric == "KL", target %in% c("TCF7L2", "ASCL2", "SOX4"),
-         gene_set %in% c("measurable_fixed_287_core", "leave_target_out_fixed_12_panel")) %>%
-  mutate(
-    set_label = factor(recode(gene_set, measurable_fixed_287_core = "Historical 287", leave_target_out_fixed_12_panel = "Historical 12"),
-                       levels = c("Historical 287", "Historical 12")),
-    target = factor(target, levels = rev(c("TCF7L2", "ASCL2", "SOX4")))
-  )
-p8f <- ggplot(virtual_tests, aes(matched_z, target, colour = set_label, shape = set_label)) +
-  geom_vline(xintercept = 0, linetype = 2, colour = figure_colours[["muted"]], linewidth = 0.35) +
-  geom_point(size = 2.2, position = position_dodge(width = 0.34)) +
-  scale_colour_manual(values = c("Historical 287" = figure_colours[["grey"]], "Historical 12" = figure_colours[["gold"]])) +
-  scale_shape_manual(values = c("Historical 287" = 16, "Historical 12" = 18)) +
-  labs(x = "GenKI impact relative to matched null (z)", y = NULL) +
-  theme_cb() +
-  theme(legend.position = "top")
-
-fig_s8 <- (p8a | p8d) / (p8b | p8c) / (p8e | p8f) + plot_annotation(tag_levels = "a")
-save_supplement(fig_s8, 8, "perturbation_and_virtual_context", 215)
-write_source(feature_coverage, source_dir, "figureS8a_perturbation_coverage.tsv")
-write_source(apc, source_dir, "figureS8b_apc_organoids.tsv")
-write_source(perturbation_summary, source_dir, "figureS8c_perturbation_summary.tsv")
-write_source(perturbation_units, source_dir, "figureS8c_perturbation_units.tsv")
-write_source(direction_audit, source_dir, "figureS8d_direction_audit.tsv")
-write_source(virtual_stability, source_dir, "figureS8e_virtual_stability.tsv")
-write_source(virtual_tests, source_dir, "figureS8f_virtual_tests.tsv")
-
-cat("Supplementary Figures S5–S8 exported to ", out_dir, "\n", sep = "")
+cat("Supplementary Figures S4–S7 exported to ", out_dir, "\n", sep = "")

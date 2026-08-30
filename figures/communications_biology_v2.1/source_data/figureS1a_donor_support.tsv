@@ -1,0 +1,13 @@
+cell_type	route	n_donors	partition
+Absorptive	Adenoma	14	Discovery
+Absorptive	Normal	24	Discovery
+Goblet	Adenoma	11	Discovery
+Goblet	Normal	23	Discovery
+Transit-amplifying	Adenoma	11	Discovery
+Transit-amplifying	Normal	21	Discovery
+Absorptive	Adenoma	12	Donor-disjoint validation
+Absorptive	Normal	18	Donor-disjoint validation
+Goblet	Adenoma	10	Donor-disjoint validation
+Goblet	Normal	17	Donor-disjoint validation
+Transit-amplifying	Adenoma	10	Donor-disjoint validation
+Transit-amplifying	Normal	17	Donor-disjoint validation

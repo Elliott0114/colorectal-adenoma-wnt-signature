@@ -13,8 +13,7 @@ The repository does include:
 - analysis-ready, non-identifying derived result tables;
 - figure source data;
 - a supplementary workbook;
-- checksums and reproducibility manifests; and
-- the balanced, de-identified input used for the reported GenKI audit.
+- checksums and reproducibility manifests.
 
 Patient-level DSLab matrices, metadata and plotted source values are not
 redistributed. Aggregate DSLab statistics are included; governed patient-level

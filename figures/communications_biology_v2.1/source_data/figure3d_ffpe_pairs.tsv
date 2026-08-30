@@ -1,0 +1,103 @@
+patient_id	signature_id	patient_index	tissue_group	score
+25	state_shared_1843	35	Adjacent mucosa	-0.821726254245367
+25	state_shared_1843	35	Adenoma	-0.0820238017296969
+119	state_shared_1843	3	Adjacent mucosa	0.126675447083538
+119	state_shared_1843	3	Adenoma	-0.0901018367511986
+271	state_shared_1843	1	Adjacent mucosa	0.276690896608202
+271	state_shared_1843	1	Adenoma	-0.523227022878145
+290	state_shared_1843	10	Adjacent mucosa	0.0713858836954348
+290	state_shared_1843	10	Adenoma	0.0656538020246019
+355	state_shared_1843	6	Adjacent mucosa	-0.845460498041591
+355	state_shared_1843	6	Adenoma	-1.04659458946551
+392	state_shared_1843	43	Adjacent mucosa	-0.930272497166228
+392	state_shared_1843	43	Adenoma	0.0559709388948658
+435	state_shared_1843	30	Adjacent mucosa	-0.633420748230022
+435	state_shared_1843	30	Adenoma	0.0149578931186269
+449	state_shared_1843	45	Adjacent mucosa	-0.0832153284301933
+449	state_shared_1843	45	Adenoma	1.17028749611386
+533	state_shared_1843	19	Adjacent mucosa	-0.366163605117849
+533	state_shared_1843	19	Adenoma	-0.0217169216167496
+678	state_shared_1843	44	Adjacent mucosa	-0.451679670490572
+678	state_shared_1843	44	Adenoma	0.783943411741174
+692	state_shared_1843	9	Adjacent mucosa	-0.0250722906792636
+692	state_shared_1843	9	Adenoma	-0.0405816777463818
+744	state_shared_1843	39	Adjacent mucosa	-0.257196239649658
+744	state_shared_1843	39	Adenoma	0.540661920955694
+833	state_shared_1843	16	Adjacent mucosa	-0.301951174254198
+833	state_shared_1843	16	Adenoma	-0.0418758792852222
+921	state_shared_1843	34	Adjacent mucosa	-0.428495633769836
+921	state_shared_1843	34	Adenoma	0.304977429515961
+974	state_shared_1843	49	Adjacent mucosa	-0.504439908517848
+974	state_shared_1843	49	Adenoma	1.21404003605073
+1093	state_shared_1843	31	Adjacent mucosa	-0.442056143340723
+1093	state_shared_1843	31	Adenoma	0.208860959301689
+1246	state_shared_1843	21	Adjacent mucosa	-0.490688361920482
+1246	state_shared_1843	21	Adenoma	-0.123579072473984
+1506	state_shared_1843	51	Adjacent mucosa	-0.652936784189739
+1506	state_shared_1843	51	Adenoma	1.70238275335913
+1627	state_shared_1843	15	Adjacent mucosa	-0.552918484680163
+1627	state_shared_1843	15	Adenoma	-0.330060947464094
+1860	state_shared_1843	42	Adjacent mucosa	-0.586055840314469
+1860	state_shared_1843	42	Adenoma	0.344164890644278
+2089	state_shared_1843	14	Adjacent mucosa	0.00368094043272649
+2089	state_shared_1843	14	Adenoma	0.218787497650545
+2364	state_shared_1843	29	Adjacent mucosa	-0.197056567337764
+2364	state_shared_1843	29	Adenoma	0.447078785091879
+2505	state_shared_1843	12	Adjacent mucosa	-0.354642599257102
+2505	state_shared_1843	12	Adenoma	-0.2497064510695
+2743	state_shared_1843	40	Adjacent mucosa	-1.21899709034893
+2743	state_shared_1843	40	Adenoma	-0.395202493765513
+2818	state_shared_1843	26	Adjacent mucosa	0.0242034646032174
+2818	state_shared_1843	26	Adenoma	0.574362749590143
+2866	state_shared_1843	32	Adjacent mucosa	-0.180320946117871
+2866	state_shared_1843	32	Adenoma	0.484933999839857
+2942	state_shared_1843	27	Adjacent mucosa	-0.336948415627811
+2942	state_shared_1843	27	Adenoma	0.233637474967853
+3251	state_shared_1843	36	Adjacent mucosa	0.0640773392721403
+3251	state_shared_1843	36	Adenoma	0.821391378181218
+3392	state_shared_1843	28	Adjacent mucosa	-0.134356956652969
+3392	state_shared_1843	28	Adenoma	0.488605657116486
+3492	state_shared_1843	11	Adjacent mucosa	-0.574650876020998
+3492	state_shared_1843	11	Adenoma	-0.524826415471265
+3763	state_shared_1843	20	Adjacent mucosa	-0.148090348838645
+3763	state_shared_1843	20	Adenoma	0.218874212979772
+3809	state_shared_1843	22	Adjacent mucosa	-0.455885632900582
+3809	state_shared_1843	22	Adenoma	-0.0190718961732789
+3976	state_shared_1843	5	Adjacent mucosa	0.190082946137231
+3976	state_shared_1843	5	Adenoma	-0.02007051377011
+4155	state_shared_1843	50	Adjacent mucosa	-0.990448860720951
+4155	state_shared_1843	50	Adenoma	0.804853229953914
+4210	state_shared_1843	8	Adjacent mucosa	-0.013983968424661
+4210	state_shared_1843	8	Adenoma	-0.0624287814176056
+4250	state_shared_1843	17	Adjacent mucosa	0.579930499331975
+4250	state_shared_1843	17	Adenoma	0.892367212630021
+4298	state_shared_1843	41	Adjacent mucosa	-0.270878872199698
+4298	state_shared_1843	41	Adenoma	0.600519637812482
+4397	state_shared_1843	13	Adjacent mucosa	-0.0359422630763796
+4397	state_shared_1843	13	Adenoma	0.165723141520924
+4507	state_shared_1843	48	Adjacent mucosa	-0.454763863073394
+4507	state_shared_1843	48	Adenoma	1.21577804015089
+4733	state_shared_1843	46	Adjacent mucosa	-0.472184929852819
+4733	state_shared_1843	46	Adenoma	0.845405770261516
+4755	state_shared_1843	23	Adjacent mucosa	-0.47377104972727
+4755	state_shared_1843	23	Adenoma	0.0449515832209075
+5543	state_shared_1843	47	Adjacent mucosa	-0.835455897346543
+5543	state_shared_1843	47	Adenoma	0.6305423767527
+5960	state_shared_1843	37	Adjacent mucosa	-0.506766247575397
+5960	state_shared_1843	37	Adenoma	0.278058112065518
+6513	state_shared_1843	25	Adjacent mucosa	-0.740945013874881
+6513	state_shared_1843	25	Adenoma	-0.202235107554708
+6758	state_shared_1843	38	Adjacent mucosa	-0.657580342743062
+6758	state_shared_1843	38	Adenoma	0.139269599890557
+7030	state_shared_1843	33	Adjacent mucosa	-0.561812138072382
+7030	state_shared_1843	33	Adenoma	0.142295469092994
+7479	state_shared_1843	7	Adjacent mucosa	-0.0457442105783929
+7479	state_shared_1843	7	Adenoma	-0.183980705051258
+9060	state_shared_1843	2	Adjacent mucosa	0.532990184732709
+9060	state_shared_1843	2	Adenoma	0.108559251961556
+9684	state_shared_1843	18	Adjacent mucosa	-0.319017260517465
+9684	state_shared_1843	18	Adenoma	0.0235343349434274
+9872	state_shared_1843	24	Adjacent mucosa	0.200534899609313
+9872	state_shared_1843	24	Adenoma	0.738270690825304
+10743	state_shared_1843	4	Adjacent mucosa	0.294741987434629
+10743	state_shared_1843	4	Adenoma	0.083416613020123

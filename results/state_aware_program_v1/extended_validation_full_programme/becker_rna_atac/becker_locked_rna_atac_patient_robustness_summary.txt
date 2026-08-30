@@ -1,0 +1,8 @@
+Patient-aware Becker locked RNA-ATAC robustness
+================================================
+Primary analysis: locked_route__wnt_tss
+Samples/patients: 40/12
+Patient-clustered adjusted coefficient: 0.204459 (95% CI -0.095382 to 0.504301; P=0.161546; BH q=0.274096)
+Patient-fixed-effect coefficient with clustered SE: 0.079790 (95% CI -0.057784 to 0.217365; P=0.228062; BH q=0.293059)
+Patient-median Spearman rho: 0.559441 (patient-label permutation P=0.0606494; BH q=0.225698)
+Patient-cluster bootstrap sample-level rho: 0.615197 (95% percentile CI 0.311402 to 0.833899; 10000 valid replicates)

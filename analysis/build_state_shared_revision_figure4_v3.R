@@ -3,10 +3,10 @@
 source("analysis/state_shared_revision_figure_utils_v3.R")
 
 root <- normalizePath(".", mustWork = TRUE)
-validation_root <- file.path(root, "results", "state_aware_program_v1", "extended_validation")
+validation_root <- file.path(root, "results", "state_aware_program_v1", "extended_validation_full_programme")
 rna_atac_root <- file.path(validation_root, "becker_rna_atac")
 atlas_root <- file.path(validation_root, "crc_atlas")
-out_dir <- file.path(root, "figures", "communications_biology_v2.0")
+out_dir <- file.path(root, "figures", "communications_biology_v2.1")
 source_dir <- file.path(out_dir, "source_data")
 
 paired <- read_tsv(file.path(rna_atac_root, "becker_rna_atac_paired_scores.tsv")) %>%
@@ -14,7 +14,7 @@ paired <- read_tsv(file.path(rna_atac_root, "becker_rna_atac_paired_scores.tsv")
   mutate(tissue = ifelse(is_polyp == 1, "Polyp", "Normal / unaffected"))
 cluster_models <- read_tsv(file.path(rna_atac_root, "becker_locked_rna_atac_patient_cluster_models.tsv"))
 patient_correlations <- read_tsv(file.path(rna_atac_root, "becker_locked_rna_atac_patient_median_correlations.tsv"))
-atlas <- read_tsv(file.path(atlas_root, "atlas_compact_8_donor_scores.tsv"))
+atlas <- read_tsv(file.path(atlas_root, "atlas_full_programme_donor_scores.tsv"))
 atlas_models <- read_tsv(file.path(atlas_root, "atlas_locked_leave_one_study_out.tsv")) %>%
   mutate(estimable = tolower(as.character(estimable)) == "true")
 
@@ -26,7 +26,7 @@ p4a <- ggplot(
   geom_smooth(method = "lm", se = TRUE, colour = figure_colours[["grey"]], fill = figure_colours[["pale"]], linewidth = 0.55) +
   geom_point(size = 2.0, alpha = 0.9) +
   scale_colour_manual(values = c("Normal / unaffected" = figure_colours[["normal"]], Polyp = figure_colours[["adenoma"]])) +
-  labs(x = "WNT/stem TSS accessibility", y = "Epithelial eight-gene RNA score") +
+  labs(x = "WNT/stem TSS accessibility", y = "Epithelial full-programme score") +
   theme_cb() +
   theme(legend.position = "top", legend.justification = "left")
 
@@ -72,7 +72,7 @@ p4c <- ggplot(patient_median, aes(atac_wnt_tss, rna_score)) +
     hjust = 0, vjust = 1, family = figure_font, size = 2.0,
     colour = figure_colours[["muted"]]
   ) +
-  labs(x = "Patient-median WNT/stem accessibility", y = "Patient-median RNA score") +
+  labs(x = "Patient-median WNT/stem\naccessibility", y = "Patient-median full-programme score") +
   theme_cb()
 
 # d. Independent epithelial-atlas distribution across pathological contexts.
@@ -105,7 +105,7 @@ p4d <- ggplot(atlas_plot, aes(carrier, score__ca_route_signature, colour = carri
   geom_jitter(width = 0.14, height = 0, size = 0.65, alpha = 0.32) +
   scale_colour_manual(values = atlas_palette) +
   guides(colour = "none") +
-  labs(x = NULL, y = "Donor–study carrier score") +
+  labs(x = NULL, y = "Donor–study full-programme score") +
   theme_cb() +
   theme(axis.text.x = element_text(size = 5.2, angle = 35, hjust = 1))
 
@@ -162,7 +162,7 @@ p4f <- ggplot(atlas_omission, aes(median, state_label)) +
   geom_errorbarh(aes(xmin = minimum, xmax = maximum), height = 0, linewidth = 0.75, colour = figure_colours[["purple"]]) +
   geom_point(size = 2.3, colour = figure_colours[["purple"]]) +
   geom_text(aes(label = paste0(n_positive, "/", n_omissions, " positive")), nudge_y = -0.23, family = figure_font, size = 1.8, colour = figure_colours[["muted"]]) +
-  scale_x_continuous(limits = c(0, 1.0)) +
+  scale_x_continuous(limits = c(0, 0.4), breaks = c(0, 0.2, 0.4)) +
   labs(x = "Coefficient range after omission", y = NULL) +
   theme_cb()
 

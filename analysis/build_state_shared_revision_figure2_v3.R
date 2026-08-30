@@ -5,7 +5,7 @@ source("analysis/state_shared_revision_figure_utils_v3.R")
 root <- normalizePath(".", mustWork = TRUE)
 donor_root <- file.path(root, "results", "state_shared_revision_v2", "donor_site")
 fine_root <- file.path(root, "results", "state_shared_revision_v2", "fine_state_models")
-out_dir <- file.path(root, "figures", "communications_biology_v2.0")
+out_dir <- file.path(root, "figures", "communications_biology_v2.1")
 source_dir <- file.path(out_dir, "source_data")
 
 gene_effects <- read_tsv(file.path(donor_root, "donor_disjoint_common_gene_effects.tsv.gz")) %>%

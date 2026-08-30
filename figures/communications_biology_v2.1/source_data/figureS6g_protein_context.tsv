@@ -1,0 +1,13 @@
+gene	resource	display	role
+CA2	PXD002137 / Differential	-3.44 q 8.3e-56	Directional difference
+OLFM4	PXD002137 / Differential	+3.44 q 9.3e-04	Directional difference
+FABP1	PXD002137 / Differential	-0.31 q 0.55	Direction only
+CA2	PXD000445 / Paired	not detected	Not detected
+OLFM4	PXD000445 / Paired	+0.90 q 0.003	Directional difference
+FABP1	PXD000445 / Paired	-0.85 q 0.12	Direction only
+CA2	PXD017269 / FFPE	100%	Detectability
+OLFM4	PXD017269 / FFPE	83%	Detectability
+FABP1	PXD017269 / FFPE	100%	Detectability
+CA2	PXD046999 / DVP	detected	Detectability
+OLFM4	PXD046999 / DVP	detected	Detectability
+FABP1	PXD046999 / DVP	detected	Detectability

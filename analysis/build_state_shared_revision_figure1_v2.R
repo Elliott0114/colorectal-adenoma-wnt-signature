@@ -14,7 +14,7 @@ options(stringsAsFactors = FALSE)
 
 root <- normalizePath(".", mustWork = TRUE)
 result_root <- file.path(root, "results", "state_aware_program_v1")
-out_dir <- file.path(root, "figures", "communications_biology_v2.0")
+out_dir <- file.path(root, "figures", "communications_biology_v2.1")
 source_dir <- file.path(out_dir, "source_data")
 dir.create(source_dir, recursive = TRUE, showWarnings = FALSE)
 
@@ -99,10 +99,10 @@ pathways <- read_tsv(file.path(
 # a. Data landscape and one discovery-freeze-validation path.
 resources <- data.frame(
   order = 1:6,
-  abbreviation = c("sc", "RNA", "ATAC", "KO", "ST", "MS"),
+  abbreviation = c("sc", "RNA", "ATAC", "PERT", "ST", "MS"),
   type = c(
     "sc/snRNA-seq", "Bulk and FFPE\nRNA", "Matched\nRNA–ATAC",
-    "Genetic\nperturbation", "Spatial\nRNA", "Proteomics"
+    "Genetic and drug\nperturbation", "Spatial\nRNA", "Proteomics"
   ),
   scope = c(
     "Chen · Becker\nCRC Atlas", "5 cohorts\n51 FFPE pairs",
@@ -217,47 +217,52 @@ selection <- data.frame(
   rule = c(
     "features in discovery object",
     "expressed in ABS, GOB and TAC",
-    "FDR ≤ 0.05 · concordant sign\nlfsr ≤ 0.05"
+    "FDR ≤ 0.05\nsame sign in ABS/GOB/TAC\nlfsr ≤ 0.05"
   ),
   width = c(3.0, 2.25, 1.55),
-  y = c(3, 2, 1),
+  y = c(3.2, 2.1, 1.0),
+  half_height = c(0.40, 0.40, 0.56),
+  count_offset = c(0.10, 0.10, 0.20),
+  rule_offset = c(-0.17, -0.17, -0.28),
+  rule_size = c(1.65, 1.65, 1.42),
   fill = c(colour[["pale"]], colour[["pale_blue"]], colour[["pale_orange"]])
 )
 
 p1b <- ggplot() +
   geom_rect(
     data = selection,
-    aes(xmin = -width / 2, xmax = width / 2, ymin = y - 0.39, ymax = y + 0.39),
+    aes(xmin = -width / 2, xmax = width / 2, ymin = y - half_height, ymax = y + half_height),
     fill = selection$fill, colour = c(
       colour[["line"]], colour[["normal"]], colour[["adenoma"]]
     ), linewidth = 0.5
   ) +
   geom_text(
     data = selection,
-    aes(x = 0, y = y + 0.10, label = comma(count)),
+    aes(x = 0, y = y + count_offset, label = comma(count)),
     family = font, fontface = "bold", size = 3.0
   ) +
   geom_text(
-    data = selection, aes(x = 0, y = y - 0.17, label = rule),
-    family = font, size = 1.65, lineheight = 0.92,
+    data = selection, aes(x = 0, y = y + rule_offset, label = rule, size = rule_size),
+    family = font, lineheight = 0.82,
     colour = colour[["muted"]]
   ) +
+  scale_size_identity() +
   annotate(
-    "text", x = 0, y = 0.47, label = "884 adenoma-up · 959 adenoma-down",
+    "text", x = 0, y = 0.20, label = "884 adenoma-up · 959 adenoma-down",
     family = font, fontface = "bold", size = 2.2,
     colour = colour[["adenoma"]]
   ) +
   annotate(
-    "segment", x = 0, xend = 0, y = 2.63, yend = 2.40,
+    "segment", x = 0, xend = 0, y = 2.78, yend = 2.52,
     colour = colour[["muted"]], linewidth = 0.45,
     arrow = arrow(type = "closed", length = unit(1.25, "mm"))
   ) +
   annotate(
-    "segment", x = 0, xend = 0, y = 1.63, yend = 1.40,
+    "segment", x = 0, xend = 0, y = 1.68, yend = 1.58,
     colour = colour[["muted"]], linewidth = 0.45,
     arrow = arrow(type = "closed", length = unit(1.25, "mm"))
   ) +
-  coord_cartesian(xlim = c(-1.7, 1.7), ylim = c(0.3, 3.45), clip = "off") +
+  coord_cartesian(xlim = c(-1.7, 1.7), ylim = c(0.02, 3.68), clip = "off") +
   theme_void(base_family = font) +
   theme(plot.margin = margin(2, 3, 2, 3, "mm"))
 
@@ -282,9 +287,9 @@ p1c <- ggplot(ranking, aes(rank, common_z, colour = class)) +
     "Adenoma-up" = colour[["up"]]
   )) +
   scale_x_continuous(labels = comma, breaks = c(1, 4000, 8221)) +
-  annotate("text", x = 700, y = 12.7, label = "adenoma-down",
+  annotate("text", x = 500, y = -8.7, label = "adenoma-down", hjust = 0,
            family = font, size = 1.8, colour = colour[["down"]]) +
-  annotate("text", x = 7500, y = 12.7, label = "adenoma-up",
+  annotate("text", x = 7900, y = 11.2, label = "adenoma-up", hjust = 1,
            family = font, size = 1.8, colour = colour[["up"]]) +
   guides(colour = "none") +
   labs(x = "Common-effect gene rank", y = "Signed common effect (z)") +

@@ -1,0 +1,21 @@
+{
+  "analysis": "validate_state_shared_full_programme_extended_layers_v2",
+  "analysis_date": "2026-08-30",
+  "programme_genes": 1843,
+  "gene_reselection": false,
+  "weight_fitting": false,
+  "cutpoint_optimization": false,
+  "outcome_blind_coverage_rule_passed": true,
+  "minimum_observed_up_coverage": 0.8099547511312217,
+  "minimum_observed_down_coverage": 0.7924921793534933,
+  "input_hashes": {
+    "common_effects": "a1ac4b7b67ac279782e04e386971d7463e169cbdbc24d7da4c314e34a4f3e946",
+    "coverage_audit": "ed4449b1a8f5f4909fd93027ea9b698cefb7bf77cd533c8cad773c84dfa6daa6",
+    "analysis_addendum": "15e500264f58a7af9371e8bb2ac7e842de9c80df8a52c00f1082fbaf6c589f4f"
+  },
+  "software": {
+    "python": "3.11.15",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3"
+  }
+}

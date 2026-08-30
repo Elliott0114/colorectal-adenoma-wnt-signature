@@ -6,7 +6,7 @@ suppressPackageStartupMessages(library(tidyr))
 root <- normalizePath(".", mustWork = TRUE)
 state_root <- file.path(root, "results", "state_aware_program_v1")
 revision_root <- file.path(root, "results", "state_shared_revision_v2")
-out_dir <- file.path(root, "figures", "communications_biology_v2.0")
+out_dir <- file.path(root, "figures", "communications_biology_v2.1")
 source_dir <- file.path(out_dir, "source_data")
 
 save_supplement <- function(plot, number, stem, height_mm = 190) {
@@ -131,114 +131,8 @@ write_source(paired_comparison, source_dir, "figureS1d_paired_sensitivity.tsv")
 write_source(leaveout, source_dir, "figureS1e_leaveout.tsv")
 write_source(same_site, source_dir, "figureS1f_same_site.tsv")
 
-# Supplementary Figure 2: transparent audit of the historical 287- and 12-gene objects.
-legacy_coverage <- read_tsv(file.path(state_root, "legacy_audit", "legacy_signature_coverage_summary.tsv"))
-coverage_plot <- legacy_coverage %>%
-  filter(signature %in% c("original_287", "existing_12")) %>%
-  select(signature, frozen_genes, testable_genes, strict_state_shared) %>%
-  pivot_longer(c(frozen_genes, testable_genes, strict_state_shared), names_to = "stage", values_to = "genes") %>%
-  mutate(
-    signature = recode(signature, original_287 = "Historical 287", existing_12 = "Historical 12"),
-    stage = factor(stage, levels = c("frozen_genes", "testable_genes", "strict_state_shared"),
-                   labels = c("Frozen", "Testable in all states", "State-shared"))
-  )
-p2a <- ggplot(coverage_plot, aes(stage, genes, fill = signature)) +
-  geom_col(position = position_dodge(width = 0.72), width = 0.64) +
-  geom_text(aes(label = genes), position = position_dodge(width = 0.72), vjust = -0.35, family = figure_font, size = 1.8) +
-  scale_fill_manual(values = c("Historical 287" = figure_colours[["grey"]], "Historical 12" = figure_colours[["gold"]])) +
-  scale_y_continuous(expand = expansion(mult = c(0, 0.13))) +
-  labs(x = NULL, y = "Genes") +
-  theme_cb() +
-  theme(axis.text.x = element_text(angle = 25, hjust = 1), legend.position = "top")
 
-legacy_gene <- read_tsv(file.path(state_root, "legacy_audit", "original_287_gene_level_audit.tsv.gz")) %>%
-  filter(in_common_universe) %>%
-  mutate(expected_arm = factor(expected_arm, levels = c("down", "up"), labels = c("Adenoma-down", "Adenoma-up")))
-p2b <- ggplot(legacy_gene, aes(expected_arm, common_z, fill = expected_arm)) +
-  geom_hline(yintercept = 0, linetype = 2, linewidth = 0.35, colour = figure_colours[["muted"]]) +
-  geom_violin(width = 0.72, alpha = 0.28, colour = NA) +
-  geom_boxplot(width = 0.28, outlier.shape = NA, fill = "white", linewidth = 0.45) +
-  geom_jitter(width = 0.12, size = 0.65, alpha = 0.35) +
-  scale_fill_manual(values = c("Adenoma-down" = figure_colours[["normal"]], "Adenoma-up" = figure_colours[["adenoma"]])) +
-  guides(fill = "none") +
-  labs(x = NULL, y = "State-aware common effect (z)") +
-  theme_cb()
-
-legacy_enrichment <- read_tsv(file.path(state_root, "legacy_audit", "original_287_competitive_enrichment.tsv")) %>%
-  mutate(
-    label = recode(gene_set, original_287_up = "Historical up arm", original_287_down = "Historical down arm"),
-    evidence = -log10(FDR),
-    label = factor(label, levels = rev(c("Historical up arm", "Historical down arm")))
-  )
-p2c <- ggplot(legacy_enrichment, aes(evidence, label, colour = Direction)) +
-  geom_segment(aes(x = 0, xend = evidence, yend = label), linewidth = 0.8) +
-  geom_point(size = 2.4) +
-  scale_colour_manual(values = c(Down = figure_colours[["normal"]], Up = figure_colours[["adenoma"]])) +
-  labs(x = "−log10 competitive-enrichment FDR", y = NULL) +
-  guides(colour = "none") +
-  theme_cb()
-
-legacy_null <- read_tsv(file.path(state_root, "legacy_audit", "original_287_matched_null_summary.tsv")) %>%
-  mutate(
-    label = recode(metric,
-                   up_signed_mean_z = "Up arm", down_signed_mean_z = "Down arm", joint_signed_mean_z = "Joint"),
-    label = factor(label, levels = rev(c("Up arm", "Down arm", "Joint")))
-  )
-p2d <- ggplot(legacy_null, aes(observed, label)) +
-  geom_errorbarh(aes(xmin = null_ci_low, xmax = null_ci_high), height = 0, linewidth = 1.0, colour = figure_colours[["line"]]) +
-  geom_point(size = 2.4, colour = figure_colours[["adenoma"]]) +
-  geom_point(aes(x = null_mean), shape = 4, size = 2.0, stroke = 0.7, colour = figure_colours[["grey"]]) +
-  labs(x = "Observed signed evidence versus matched null", y = NULL) +
-  theme_cb()
-
-historical_12 <- read_tsv(file.path(state_root, "legacy_audit", "existing_12_gene_level_audit.tsv")) %>%
-  select(gene, expected_arm, posterior_mean_ABS, posterior_mean_GOB, posterior_mean_TAC) %>%
-  pivot_longer(starts_with("posterior_mean_"), names_to = "state", values_to = "effect") %>%
-  mutate(
-    state = sub("posterior_mean_", "", state),
-    gene = factor(gene, levels = rev(unique(gene))),
-    state = factor(state, levels = c("ABS", "GOB", "TAC"))
-  )
-limit12 <- max(abs(historical_12$effect), na.rm = TRUE)
-p2e <- ggplot(historical_12, aes(state, gene, fill = effect)) +
-  geom_tile(colour = "white", linewidth = 0.45) +
-  geom_text(aes(label = ifelse(is.na(effect), "NA", sprintf("%.1f", effect))), family = figure_font, size = 1.8) +
-  scale_fill_gradient2(low = figure_colours[["normal"]], mid = "white", high = figure_colours[["adenoma"]], midpoint = 0,
-                       limits = c(-limit12, limit12), na.value = figure_colours[["pale"]], name = "Posterior effect") +
-  labs(x = NULL, y = NULL) +
-  theme_minimal(base_family = figure_font, base_size = 7) +
-  theme(panel.grid = element_blank(), legend.position = "right", plot.margin = margin(2, 2, 2, 2, "mm"))
-
-legacy_membership <- legacy_coverage %>%
-  filter(signature %in% c("original_287_up", "original_287_down", "existing_12")) %>%
-  mutate(
-    label = recode(signature, original_287_up = "287 up", original_287_down = "287 down", existing_12 = "Historical 12"),
-    outside = frozen_genes - testable_genes,
-    testable_not_shared = testable_genes - strict_state_shared
-  ) %>%
-  select(label, strict_state_shared, testable_not_shared, outside) %>%
-  pivot_longer(-label, names_to = "class", values_to = "genes") %>%
-  mutate(class = factor(class, levels = c("strict_state_shared", "testable_not_shared", "outside"),
-                        labels = c("State-shared", "Other testable", "Not testable")))
-p2f <- ggplot(legacy_membership, aes(label, genes, fill = class)) +
-  geom_col(width = 0.66) +
-  scale_fill_manual(values = c("State-shared" = figure_colours[["adenoma"]],
-                               "Other testable" = figure_colours[["gold"]],
-                               "Not testable" = figure_colours[["line"]])) +
-  labs(x = NULL, y = "Genes") +
-  theme_cb() +
-  theme(axis.text.x = element_text(angle = 25, hjust = 1), legend.position = "top", legend.text = element_text(size = 5.8))
-
-fig_s2 <- (p2a | p2b) / (p2c | p2d) / (p2e | p2f) + plot_annotation(tag_levels = "a")
-save_supplement(fig_s2, 2, "historical_gene_set_audit", 210)
-write_source(coverage_plot, source_dir, "figureS2a_legacy_coverage.tsv")
-write_source(legacy_gene, source_dir, "figureS2b_legacy_gene_effects.tsv")
-write_source(legacy_enrichment, source_dir, "figureS2c_legacy_enrichment.tsv")
-write_source(legacy_null, source_dir, "figureS2d_legacy_matched_null.tsv")
-write_source(historical_12, source_dir, "figureS2e_legacy_12.tsv")
-write_source(legacy_membership, source_dir, "figureS2f_legacy_membership.tsv")
-
-# Supplementary Figure 3: fine-state resolution, model and composition sensitivities.
+# Supplementary Figure 2: fine-state resolution, model and composition sensitivities.
 p3a <- ggplot() +
   annotate("rect", xmin = 0.1, xmax = 1.55, ymin = 0.35, ymax = 1.65, fill = figure_colours[["pale_blue"]], colour = figure_colours[["normal"]], linewidth = 0.5) +
   annotate("text", x = 0.825, y = 1.30, label = "Normal discovery cells", family = figure_font, fontface = "bold", size = 2.2) +
@@ -329,37 +223,44 @@ p3f <- ggplot(purity, aes(logFC_primary, logFC_purity_adjusted, colour = cell_ty
   labs(x = "Primary gene effect", y = "Purity-adjusted gene effect") +
   theme_cb()
 
-dslab <- read_tsv(file.path(state_root, "dslab_cnv_validation", "dslab_state_shared_cnv_composition_decomposition.tsv")) %>%
-  filter(population == "conventional_adenomas", score == "state_shared_1843")
-p3g <- ggplot(dslab, aes(observed_mean, common_composition_mean)) +
-  geom_abline(slope = 1, intercept = 0, linetype = 2, colour = figure_colours[["grey"]], linewidth = 0.45) +
-  geom_point(size = 2.3, colour = figure_colours[["adenoma"]]) +
-  geom_text(aes(label = patient_token), nudge_y = 0.0012, family = figure_font, size = 1.55, colour = figure_colours[["muted"]]) +
-  labs(x = "Observed patient score", y = "Common-composition score") +
-  theme_cb()
+write_source(fine_diagnostics, source_dir, "figureS2b_fine_state_diagnostics.tsv")
+write_source(fine_effects, source_dir, "figureS2c_weighted_models.tsv")
+write_source(fraction, source_dir, "figureS2d_within_fraction.tsv")
+write_source(decomp_primary, source_dir, "figureS2e_decomposition.tsv")
+write_source(purity, source_dir, "figureS2f_purity_adjustment.tsv")
 
-dslab_stats <- read_tsv(file.path(state_root, "dslab_cnv_validation", "dslab_state_shared_cnv_validation_statistics.tsv")) %>%
-  filter(population == "conventional_adenomas", score == "state_shared_1843",
-         metric == "composition_only_range_over_observed_range")
-p3h <- ggplot(dslab_stats, aes(estimate, "Full programme")) +
-  geom_errorbarh(aes(xmin = ci_low, xmax = ci_high), height = 0, linewidth = 0.75, colour = figure_colours[["adenoma"]]) +
-  geom_point(size = 2.4, colour = figure_colours[["adenoma"]]) +
-  scale_x_continuous(labels = percent_format(accuracy = 1), limits = c(0, 0.16)) +
-  labs(x = "Score range generated by CNV composition", y = NULL) +
-  theme_cb()
+dslab_dir <- file.path(state_root, "dslab_cnv_validation")
+dslab_patient_path <- file.path(dslab_dir, "dslab_state_shared_cnv_composition_decomposition.tsv")
+dslab_stats_path <- file.path(dslab_dir, "dslab_state_shared_cnv_validation_statistics.tsv")
+if (file.exists(dslab_patient_path) && file.exists(dslab_stats_path)) {
+  dslab <- read_tsv(dslab_patient_path) %>%
+    filter(population == "conventional_adenomas", score == "state_shared_1843")
+  p3g <- ggplot(dslab, aes(observed_mean, common_composition_mean)) +
+    geom_abline(slope = 1, intercept = 0, linetype = 2, colour = figure_colours[["grey"]], linewidth = 0.45) +
+    geom_point(size = 2.3, colour = figure_colours[["adenoma"]]) +
+    geom_text(aes(label = patient_token), nudge_y = 0.0012, family = figure_font, size = 1.55, colour = figure_colours[["muted"]]) +
+    labs(x = "Observed patient score", y = "Common-composition score") +
+    theme_cb()
 
-fig_s3 <- p3a / (p3b | p3c) / (p3d | p3e) / (p3f | p3g | p3h) +
-  plot_layout(heights = c(0.48, 1, 1, 1)) + plot_annotation(tag_levels = "a")
-save_supplement(fig_s3, 3, "fine_state_and_composition_sensitivities", 240)
-write_source(fine_diagnostics, source_dir, "figureS3b_fine_state_diagnostics.tsv")
-write_source(fine_effects, source_dir, "figureS3c_weighted_models.tsv")
-write_source(fraction, source_dir, "figureS3d_within_fraction.tsv")
-write_source(decomp_primary, source_dir, "figureS3e_decomposition.tsv")
-write_source(purity, source_dir, "figureS3f_purity_adjustment.tsv")
-write_source(dslab, source_dir, "figureS3g_dslab_common_composition.tsv")
-write_source(dslab_stats, source_dir, "figureS3h_dslab_range_fraction.tsv")
+  dslab_stats <- read_tsv(dslab_stats_path) %>%
+    filter(population == "conventional_adenomas", score == "state_shared_1843",
+           metric == "composition_only_range_over_observed_range")
+  p3h <- ggplot(dslab_stats, aes(estimate, "Full programme")) +
+    geom_errorbarh(aes(xmin = ci_low, xmax = ci_high), height = 0, linewidth = 0.75, colour = figure_colours[["adenoma"]]) +
+    geom_point(size = 2.4, colour = figure_colours[["adenoma"]]) +
+    scale_x_continuous(labels = percent_format(accuracy = 1), limits = c(0, 0.16)) +
+    labs(x = "Score range generated by CNV composition", y = NULL) +
+    theme_cb()
 
-# Supplementary Figure 4: ranked pathway, regulator and anchor-gene structure.
+  fig_s3 <- p3a / (p3b | p3c) / (p3d | p3e) / (p3f | p3g | p3h) +
+    plot_layout(heights = c(0.48, 1, 1, 1)) + plot_annotation(tag_levels = "a")
+  save_supplement(fig_s3, 2, "fine_state_and_composition_sensitivities", 240)
+  write_source(dslab_stats, source_dir, "figureS2h_dslab_range_fraction.tsv")
+} else {
+  message("Supplementary Figure 2 retained from the committed release asset: its DSLab patient-level panel requires governed source values.")
+}
+
+# Supplementary Figure 3: ranked pathway, regulator and anchor-gene structure.
 pathways <- read_tsv(file.path(state_root, "interpretation", "pathway_competitive_enrichment_all.tsv.gz"))
 clean_label <- function(x) {
   x <- sub("^HALLMARK_", "", x)
@@ -440,10 +341,10 @@ p4d <- ggplot(anchors, aes(state, gene, fill = effect)) +
   theme(panel.grid = element_blank(), plot.margin = margin(2, 2, 2, 2, "mm"))
 
 fig_s4 <- (p4a | p4b) / (p4c | p4d) + plot_annotation(tag_levels = "a")
-save_supplement(fig_s4, 4, "functional_and_regulatory_structure", 175)
-write_source(hallmark, source_dir, "figureS4a_hallmark.tsv")
-write_source(functional, source_dir, "figureS4b_functional_families.tsv")
-write_source(regulators, source_dir, "figureS4c_collectri.tsv")
-write_source(anchors, source_dir, "figureS4d_anchor_genes.tsv")
+save_supplement(fig_s4, 3, "functional_and_regulatory_structure", 175)
+write_source(hallmark, source_dir, "figureS3a_hallmark.tsv")
+write_source(functional, source_dir, "figureS3b_functional_families.tsv")
+write_source(regulators, source_dir, "figureS3c_collectri.tsv")
+write_source(anchors, source_dir, "figureS3d_anchor_genes.tsv")
 
-cat("Supplementary Figures S1–S4 exported to ", out_dir, "\n", sep = "")
+cat("Supplementary Figures S1–S3 exported to ", out_dir, "\n", sep = "")

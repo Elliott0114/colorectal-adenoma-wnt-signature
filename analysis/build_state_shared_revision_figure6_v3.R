@@ -5,10 +5,9 @@ source("analysis/state_shared_revision_figure_utils_v3.R")
 root <- normalizePath(".", mustWork = TRUE)
 panel_root <- file.path(root, "results", "state_aware_program_v1", "panel_derivation")
 heldout_root <- file.path(root, "results", "state_aware_program_v1", "heldout_validation")
-external_root <- file.path(root, "results", "state_aware_program_v1", "external_validation")
 compact_root <- file.path(root, "results", "state_shared_revision_v2", "compact_rank")
 external_rank_root <- file.path(root, "results", "state_shared_revision_v2", "external_rank")
-out_dir <- file.path(root, "figures", "communications_biology_v2.0")
+out_dir <- file.path(root, "figures", "communications_biology_v2.1")
 source_dir <- file.path(out_dir, "source_data")
 
 panel <- read_tsv(file.path(panel_root, "compact_state_shared_panel_frozen.tsv"))
@@ -17,14 +16,10 @@ heldout_genes <- read_tsv(file.path(heldout_root, "heldout_compact_panel_gene_va
 heldout_fidelity <- read_tsv(file.path(compact_root, "heldout_single_sample_rank_fidelity.tsv"))
 random_internal <- read_tsv(file.path(compact_root, "random_eight_gene_benchmark.tsv"))
 random_internal_summary <- read_tsv(file.path(compact_root, "random_eight_gene_benchmark_summary.tsv"))
-external_fidelity <- read_tsv(file.path(external_rank_root, "external_rank_fidelity.tsv"))
+random_external <- read_tsv(file.path(external_rank_root, "random_eight_gene_benchmark.tsv"))
 external_random_summary <- read_tsv(file.path(external_rank_root, "random_eight_gene_benchmark_summary.tsv"))
-ffpe <- read_tsv(file.path(external_root, "ffpe_sample_scores.tsv.gz")) %>%
-  filter(tissue_group %in% c("adenoma", "normal"), signature_id == "compact_8") %>%
-  group_by(patient_id, tissue_group) %>%
-  summarise(score = mean(programme_score), .groups = "drop")
 
-# a. Objective reduction from the frozen programme to a portable candidate.
+# a. Prespecified reduction from the frozen programme to one tractable candidate.
 p6a <- ggplot() +
   annotate("rect", xmin = 0.12, xmax = 1.75, ymin = 2.55, ymax = 3.45,
            fill = figure_colours[["pale_orange"]], colour = figure_colours[["adenoma"]], linewidth = 0.5) +
@@ -47,12 +42,12 @@ p6a <- ggplot() +
            arrow = grid::arrow(type = "closed", length = grid::unit(1.5, "mm"))) +
   annotate("rect", xmin = 0.42, xmax = 1.46, ymin = 0.02, ymax = 0.70,
            fill = figure_colours[["pale_gold"]], colour = figure_colours[["gold"]], linewidth = 0.5) +
-  annotate("text", x = 0.94, y = 0.44, label = "8 genes", family = figure_font,
+  annotate("text", x = 0.94, y = 0.44, label = "8-gene candidate", family = figure_font,
            fontface = "bold", size = 2.55, colour = figure_colours[["gold"]]) +
   annotate("text", x = 0.94, y = 0.19, label = "4 balanced pairs",
            family = figure_font, size = 1.65, colour = figure_colours[["muted"]]) +
   annotate("text", x = 1.86, y = 1.60,
-           label = "Donor-held-out\nreconstruction\nKneedle + one-SE",
+           label = "Donor-held-out\nreconstruction\ndata-defined knee",
            hjust = 0, family = figure_font, size = 1.75, lineheight = 0.96,
            colour = figure_colours[["ink"]]) +
   coord_cartesian(xlim = c(0, 2.75), ylim = c(-0.05, 3.55), clip = "off") +
@@ -116,81 +111,69 @@ p6d <- ggplot(heldout_plot, aes(spearman, scope, colour = target_label, shape = 
   theme_cb() +
   theme(legend.position = "top", legend.justification = "left", legend.text = element_text(size = 5.5))
 
-# e. Internal random-panel benchmark.
-p6e <- ggplot(random_internal, aes(spearman_with_full_programme)) +
-  geom_histogram(bins = 34, fill = figure_colours[["line"]], colour = "white", linewidth = 0.25) +
-  geom_vline(xintercept = random_internal_summary$random_q95, colour = figure_colours[["normal"]], linetype = 2, linewidth = 0.65) +
-  geom_vline(xintercept = random_internal_summary$observed_compact_spearman, colour = figure_colours[["adenoma"]], linewidth = 0.75) +
-  annotate("text", x = random_internal_summary$observed_compact_spearman, y = Inf,
-           label = "observed", hjust = -0.08, vjust = 1.25, family = figure_font,
-           size = 1.75, colour = figure_colours[["adenoma"]]) +
-  annotate("text", x = random_internal_summary$random_q95, y = Inf,
-           label = "random q95", hjust = 1.05, vjust = 2.45, family = figure_font,
-           size = 1.65, colour = figure_colours[["normal"]]) +
-  labs(x = "Random eight-gene panel fidelity", y = "Panels") +
-  theme_cb()
+# e. Internal and external direction-balanced random-panel benchmarks.
+benchmark_values <- bind_rows(
+  random_internal %>%
+    transmute(context = "Donor-disjoint validation", fidelity = spearman_with_full_programme),
+  random_external %>%
+    transmute(context = "Median across external cohorts", fidelity = median_cohort_spearman)
+) %>%
+  mutate(context = factor(context, levels = c("Donor-disjoint validation", "Median across external cohorts")))
 
-# f. External single-sample fidelity with the external random benchmark shown.
-external_plot <- external_fidelity %>%
-  mutate(cohort = factor(cohort, levels = rev(c("GSE8671", "GSE50114", "GSE41657", "GSE40362", "GSE72820"))))
+benchmark_reference <- data.frame(
+  context = factor(
+    c("Donor-disjoint validation", "Median across external cohorts"),
+    levels = levels(benchmark_values$context)
+  ),
+  observed = c(
+    random_internal_summary$observed_compact_spearman,
+    external_random_summary$observed_median_cohort_spearman
+  ),
+  random_q95 = c(random_internal_summary$random_q95, external_random_summary$random_q95),
+  empirical_p = c(
+    random_internal_summary$empirical_upper_tail_p,
+    external_random_summary$empirical_upper_tail_p
+  )
+)
 
-p6f <- ggplot(external_plot, aes(spearman_compact_rank_vs_reference_full, cohort)) +
-  geom_vline(xintercept = external_random_summary$random_q95, colour = figure_colours[["normal"]], linetype = 2, linewidth = 0.55) +
-  geom_vline(xintercept = external_random_summary$observed_median_cohort_spearman, colour = figure_colours[["adenoma"]], linewidth = 0.55) +
-  geom_segment(aes(x = 0.55, xend = spearman_compact_rank_vs_reference_full, yend = cohort), colour = figure_colours[["line"]], linewidth = 0.65) +
-  geom_point(size = 2.2, colour = figure_colours[["adenoma"]]) +
-  scale_x_continuous(limits = c(0.52, 0.91), breaks = c(0.6, 0.7, 0.8, 0.9)) +
-  labs(x = "External compact-to-full fidelity", y = NULL) +
-  theme_cb()
-
-# g. Reduced readout in paired FFPE tissue.
-ffpe_pairs <- ffpe %>%
-  tidyr::pivot_wider(names_from = tissue_group, values_from = score) %>%
-  filter(!is.na(normal), !is.na(adenoma)) %>%
-  tidyr::pivot_longer(c(normal, adenoma), names_to = "tissue_group", values_to = "score") %>%
-  mutate(tissue_group = factor(tissue_group, levels = c("normal", "adenoma"), labels = c("Adjacent mucosa", "Adenoma")))
-ffpe_summary <- ffpe_pairs %>%
-  group_by(tissue_group) %>%
-  summarise(median = median(score), .groups = "drop")
-
-p6g <- ggplot(ffpe_pairs, aes(tissue_group, score, group = patient_id)) +
-  geom_line(colour = figure_colours[["line"]], linewidth = 0.35, alpha = 0.75) +
-  geom_point(aes(colour = tissue_group), size = 1.15, alpha = 0.85) +
-  geom_point(data = ffpe_summary, aes(tissue_group, median, group = 1), shape = 23,
-             size = 3.0, fill = "white", colour = figure_colours[["ink"]], stroke = 0.55) +
-  scale_colour_manual(values = c("Adjacent mucosa" = figure_colours[["normal"]], Adenoma = figure_colours[["adenoma"]])) +
-  guides(colour = "none") +
-  annotate("text", x = 1.5, y = max(ffpe_pairs$score) + 0.12,
-           label = "47/51 pairs increased", family = figure_font, size = 1.9,
-           colour = figure_colours[["muted"]]) +
-  labs(x = NULL, y = "Eight-gene FFPE score") +
-  theme_cb()
+p6e <- ggplot(benchmark_values, aes(fidelity)) +
+  geom_histogram(bins = 32, fill = figure_colours[["line"]], colour = "white", linewidth = 0.22) +
+  geom_vline(data = benchmark_reference, aes(xintercept = random_q95), colour = figure_colours[["normal"]], linetype = 2, linewidth = 0.6) +
+  geom_vline(data = benchmark_reference, aes(xintercept = observed), colour = figure_colours[["adenoma"]], linewidth = 0.7) +
+  geom_text(
+    data = benchmark_reference,
+    aes(x = observed, y = Inf, label = sprintf("Observed\nP = %.3f", empirical_p)),
+    hjust = -0.08, vjust = 1.2, family = figure_font, size = 1.6,
+    colour = figure_colours[["adenoma"]], inherit.aes = FALSE
+  ) +
+  facet_wrap(~context, ncol = 1, scales = "free_y") +
+  labs(x = "Direction-balanced random-panel fidelity", y = "Panels") +
+  theme_cb() +
+  theme(strip.text = element_text(size = 5.8, face = "bold"))
 
 top <- p6a | p6b
-middle <- p6c | p6d | p6e
-bottom <- p6f | p6g
-figure <- top / middle / bottom +
-  plot_layout(heights = c(0.92, 1, 0.9)) +
+bottom <- p6c | p6d | p6e
+figure <- top / bottom +
+  plot_layout(heights = c(0.95, 1.05)) +
   plot_annotation(tag_levels = "a")
 figure <- tagged(figure)
 
 selection_source <- data.frame(
-  stage = c("Frozen programme", "Portable candidate universe", "Balanced reduced candidate"),
+  stage = c("Frozen programme", "Measurable candidate universe", "Candidate reduced readout"),
   n_genes = c(1843, 53, 8),
-  rule = c("confidence-defined programme", "protein coding and present on six platforms", "donor-held-out Kneedle and one-SE")
+  rule = c("confidence-defined programme", "protein coding and present on six platforms", "donor-held-out data-defined knee")
 )
 write_source(selection_source, source_dir, "figure6a_reduction_path.tsv")
 write_source(gene_plot, source_dir, "figure6b_candidate_genes.tsv")
 write_source(oof_curve, source_dir, "figure6c_oof_fidelity_curve.tsv")
 write_source(heldout_plot, source_dir, "figure6d_heldout_single_sample_fidelity.tsv")
-write_source(random_internal, source_dir, "figure6e_internal_random_benchmark.tsv")
-write_source(external_plot, source_dir, "figure6f_external_fidelity.tsv")
-write_source(ffpe_pairs, source_dir, "figure6g_ffpe_pairs.tsv")
+write_source(benchmark_values, source_dir, "figure6e_random_panel_benchmark_values.tsv")
+write_source(benchmark_reference, source_dir, "figure6e_random_panel_benchmark_reference.tsv")
 
 export_cb_figure(
   figure, out_dir,
   "figure6_reduced_measurement_candidate",
-  width_mm = 178, height_mm = 205
+  width_mm = 178, height_mm = 165
 )
 
 cat("Figure 6 exported to ", out_dir, "\n", sep = "")

@@ -4,16 +4,16 @@ source("analysis/state_shared_revision_figure_utils_v3.R")
 
 root <- normalizePath(".", mustWork = TRUE)
 external_root <- file.path(root, "results", "state_aware_program_v1", "external_validation")
-extended_root <- file.path(root, "results", "state_aware_program_v1", "extended_validation", "perturbation_spatial")
-out_dir <- file.path(root, "figures", "communications_biology_v2.0")
+extended_root <- file.path(root, "results", "state_aware_program_v1", "extended_validation_full_programme", "perturbation_spatial")
+out_dir <- file.path(root, "figures", "communications_biology_v2.1")
 source_dir <- file.path(out_dir, "source_data")
 
 sample_scores <- read_tsv(file.path(external_root, "perturbation_sample_scores.tsv"))
 apc_effects <- read_tsv(file.path(external_root, "apc_organoid_effects.tsv"))
 tcf_clones <- read_tsv(file.path(external_root, "tcf7l2_clone_effects.tsv")) %>%
   mutate(direction_matches_expected = tolower(as.character(direction_matches_expected)) == "true")
-genetic_summary <- read_tsv(file.path(extended_root, "perturbation_effect_summary.tsv"))
-genetic_units <- read_tsv(file.path(extended_root, "perturbation_unit_effects.tsv"))
+genetic_summary <- read_tsv(file.path(extended_root, "perturbation_full_programme_effect_summary.tsv"))
+genetic_units <- read_tsv(file.path(extended_root, "perturbation_full_programme_unit_effects.tsv"))
 
 arrow_closed <- grid::arrow(type = "closed", length = grid::unit(1.7, "mm"))
 ellipse_data <- function(cx, cy, rx, ry, n = 180L) {
@@ -125,9 +125,12 @@ p5b <- ggplot(apc_samples, aes(condition, route_score, group = donor_id, colour 
   theme_cb() +
   theme(legend.position = "top", legend.justification = "left")
 
-# c. Prespecified APC/WNT contrasts for full and reduced readouts.
+# c. Prespecified APC/WNT contrasts for the full programme.
 apc_plot <- apc_effects %>%
-  filter(comparison %in% c("WT_withdrawal", "APC_vs_WT_without_Wnt", "genotype_by_Wnt_interaction")) %>%
+  filter(
+    signature_id == "state_shared_1843",
+    comparison %in% c("WT_withdrawal", "APC_vs_WT_without_Wnt", "genotype_by_Wnt_interaction")
+  ) %>%
   mutate(
     comparison_label = factor(
       recode(
@@ -137,21 +140,17 @@ apc_plot <- apc_effects %>%
         genotype_by_Wnt_interaction = "Genotype × WNT interaction"
       ),
       levels = rev(c("WNT withdrawal in WT", "APC-KO vs WT, WNT−", "Genotype × WNT interaction"))
-    ),
-    readout = factor(signature_id, levels = c("state_shared_1843", "compact_8"), labels = c("Full programme", "Eight-gene candidate"))
+    )
   )
 
-p5c <- ggplot(apc_plot, aes(mean_difference, comparison_label, colour = readout, shape = readout)) +
+p5c <- ggplot(apc_plot, aes(mean_difference, comparison_label)) +
   geom_vline(xintercept = 0, colour = figure_colours[["muted"]], linetype = 2, linewidth = 0.35) +
-  geom_errorbarh(aes(xmin = min_difference, xmax = max_difference), height = 0, linewidth = 0.62, position = position_dodge(width = 0.36)) +
-  geom_point(size = 2.1, position = position_dodge(width = 0.36)) +
-  scale_colour_manual(values = c("Full programme" = figure_colours[["grey"]], "Eight-gene candidate" = figure_colours[["adenoma"]])) +
-  scale_shape_manual(values = c("Full programme" = 16, "Eight-gene candidate" = 18)) +
+  geom_errorbarh(aes(xmin = min_difference, xmax = max_difference), height = 0, linewidth = 0.62, colour = figure_colours[["adenoma"]]) +
+  geom_point(size = 2.2, colour = figure_colours[["adenoma"]]) +
   labs(x = "Mean donor difference (range; n = 3)", y = NULL) +
-  theme_cb() +
-  theme(legend.position = "top", legend.justification = "left")
+  theme_cb()
 
-# d. Independent genetic interventions using the reduced readout.
+# d. Independent genetic interventions using the full programme.
 independent_labels <- c(
   apc_restoration_shApc = "Apc restoration",
   apc_restoration_shApc_Kras = "Apc restoration + Kras",
@@ -174,25 +173,26 @@ p5d <- ggplot(independent, aes(mean_difference, label)) +
              size = 1.3, alpha = 0.55, colour = figure_colours[["normal"]],
              position = position_jitter(height = 0.08, width = 0)) +
   geom_point(size = 2.25, colour = figure_colours[["normal"]]) +
-  labs(x = "Change in eight-gene score", y = NULL) +
+  labs(x = "Change in full-programme score", y = NULL) +
   theme_cb()
 
-# e. TCF7L2-edited clones, with both readout scales shown for each clone.
+# e. TCF7L2-edited clones assessed with the full programme.
 tcf_plot <- tcf_clones %>%
+  filter(signature_id == "state_shared_1843") %>%
   mutate(
-    readout = factor(signature_id, levels = c("state_shared_1843", "compact_8"), labels = c("Full programme", "Eight-gene candidate")),
-    clone = paste(cell_line, clone_id, sep = " · ")
+    clone = paste0(cell_line, " · ", clone_id, " (", genotype, ")"),
+    clone = factor(clone, levels = rev(unique(clone)))
   )
 
-p5e <- ggplot(tcf_plot, aes(readout, difference_vs_WT, group = clone, colour = cell_line)) +
-  geom_hline(yintercept = 0, colour = figure_colours[["muted"]], linetype = 2, linewidth = 0.35) +
-  geom_line(linewidth = 0.45, alpha = 0.55) +
-  geom_point(aes(shape = genotype), size = 2.0) +
+p5e <- ggplot(tcf_plot, aes(difference_vs_WT, clone, colour = cell_line, shape = genotype)) +
+  geom_vline(xintercept = 0, colour = figure_colours[["muted"]], linetype = 2, linewidth = 0.35) +
+  geom_segment(aes(x = 0, xend = difference_vs_WT, yend = clone), colour = figure_colours[["line"]], linewidth = 0.55) +
+  geom_point(size = 2.1) +
   scale_colour_manual(values = c(HCT116 = figure_colours[["purple"]], HT29 = figure_colours[["green"]])) +
   scale_shape_manual(values = c(KO = 16, Het = 17)) +
-  labs(x = NULL, y = "TCF7L2-edited clone − WT") +
+  labs(x = "TCF7L2-edited clone − WT", y = NULL) +
   theme_cb() +
-  theme(legend.position = "top", legend.justification = "left")
+  guides(colour = "none", shape = "none")
 
 middle <- p5b | p5c
 bottom <- p5d | p5e

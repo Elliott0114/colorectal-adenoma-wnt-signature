@@ -1,0 +1,21 @@
+dataset	feature	n_expected	n_present	coverage_fraction
+GSE114059	Programme up	884	808	0.914027149321267
+GSE114059	Programme down	959	887	0.924921793534932
+GSE114059	WNT/stem	7	7	1
+GSE114059	Proliferation	8	8	1
+GSE114059	Epithelial control	8	8	1
+GSE67186	Programme up	884	716	0.809954751131222
+GSE67186	Programme down	959	760	0.792492179353493
+GSE67186	WNT/stem	7	7	1
+GSE67186	Proliferation	8	8	1
+GSE67186	Epithelial control	8	8	1
+GSE130822	Programme up	884	757	0.856334841628959
+GSE130822	Programme down	959	806	0.840458811261731
+GSE130822	WNT/stem	7	7	1
+GSE130822	Proliferation	8	8	1
+GSE130822	Epithelial control	8	8	1
+GSE171910	Programme up	884	811	0.917420814479638
+GSE171910	Programme down	959	874	0.911366006256517
+GSE171910	WNT/stem	7	7	1
+GSE171910	Proliferation	8	8	1
+GSE171910	Epithelial control	8	8	1

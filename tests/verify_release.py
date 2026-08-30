@@ -12,7 +12,7 @@ from openpyxl import load_workbook
 
 ROOT = Path(__file__).resolve().parents[1]
 SIGNATURE_DIR = ROOT / "data" / "signatures"
-FIGURE_DIR = ROOT / "figures" / "communications_biology_v2.0"
+FIGURE_DIR = ROOT / "figures" / "communications_biology_v2.1"
 MAX_PUBLIC_FILE_BYTES = 50 * 1024 * 1024
 
 MAIN_FIGURES = [
@@ -25,13 +25,12 @@ MAIN_FIGURES = [
 ]
 SUPP_FIGURES = [
     "figureS1_sampling_and_donor_stability",
-    "figureS2_historical_gene_set_audit",
-    "figureS3_fine_state_and_composition_sensitivities",
-    "figureS4_functional_and_regulatory_structure",
-    "figureS5_external_and_ffpe_sensitivities",
-    "figureS6_compact_derivation_and_benchmarks",
-    "figureS7_multiomic_atlas_spatial_protein",
-    "figureS8_perturbation_and_virtual_context",
+    "figureS2_fine_state_and_composition_sensitivities",
+    "figureS3_functional_and_regulatory_structure",
+    "figureS4_external_and_ffpe_sensitivities",
+    "figureS5_compact_derivation_and_benchmarks",
+    "figureS6_multiomic_atlas_spatial_protein",
+    "figureS7_empirical_perturbation_context",
 ]
 
 
@@ -46,19 +45,19 @@ def close(observed: float, expected: float, tolerance: float = 1e-10) -> bool:
 
 def check_definitions() -> None:
     ranking = pd.read_csv(SIGNATURE_DIR / "common_effect_ranking_8221.tsv.gz", sep="\t")
-    strict = pd.read_csv(SIGNATURE_DIR / "state_aware_high_confidence_1843.tsv", sep="\t")
+    programme = pd.read_csv(SIGNATURE_DIR / "state_aware_high_confidence_1843.tsv", sep="\t")
     candidates = pd.read_csv(SIGNATURE_DIR / "portable_candidates_53.tsv", sep="\t")
-    compact = pd.read_csv(SIGNATURE_DIR / "compact_candidate_8_genes.tsv", sep="\t")
+    reduced = pd.read_csv(SIGNATURE_DIR / "compact_candidate_8_genes.tsv", sep="\t")
     require(len(ranking) == 8221, "Expected an 8,221-gene common-effect ranking")
-    require(len(strict) == 1843, "Expected 1,843 high-confidence genes")
-    require(strict["shared_direction"].value_counts().to_dict() == {"down": 959, "up": 884}, "Unexpected programme arms")
-    require(len(candidates) == 53, "Expected 53 portable candidates")
-    require(len(compact) == 8, "Expected eight compact genes")
-    require(compact["arm"].value_counts().to_dict() == {"up": 4, "down": 4}, "Compact candidate is not balanced")
-    require(set(compact["gene"]) == {"EPHB2", "REG1A", "LTBP1", "RNF43", "CALM2", "COX6C", "B2M", "ACAA2"}, "Compact membership changed")
-    require(set(compact["gene"]).issubset(set(candidates["gene"])), "Compact genes are not portable candidates")
-    require(not compact["validation_outcomes_used"].astype(bool).any(), "Validation leakage flag changed")
-    require(compact["panel_frozen_before_validation"].astype(bool).all(), "Freeze flag changed")
+    require(len(programme) == 1843, "Expected 1,843 high-confidence genes")
+    require(programme["shared_direction"].value_counts().to_dict() == {"down": 959, "up": 884}, "Unexpected programme arms")
+    require(len(candidates) == 53, "Expected 53 measurable candidates")
+    require(len(reduced) == 8, "Expected eight reduced-readout genes")
+    require(reduced["arm"].value_counts().to_dict() == {"up": 4, "down": 4}, "Reduced candidate is not balanced")
+    require(set(reduced["gene"]) == {"EPHB2", "REG1A", "LTBP1", "RNF43", "CALM2", "COX6C", "B2M", "ACAA2"}, "Reduced membership changed")
+    require(set(reduced["gene"]).issubset(set(candidates["gene"])), "Reduced genes are outside the measurable universe")
+    require(not reduced["validation_outcomes_used"].astype(bool).any(), "Validation leakage flag changed")
+    require(reduced["panel_frozen_before_validation"].astype(bool).all(), "Freeze flag changed")
 
 
 def check_principal_results() -> None:
@@ -84,9 +83,36 @@ def check_principal_results() -> None:
     full = meta.loc[meta["signature_id"].eq("state_shared_1843") & meta["excluded_cohort"].eq("__NONE__")].iloc[0]
     require(close(full["pooled_standardized_effect"], 1.90288083576639), "External pooled effect changed")
 
+    coverage = pd.read_csv(ROOT / "results/state_aware_program_v1/full_program_coverage_audit/full_programme_feature_coverage_summary.tsv", sep="\t")
+    require(len(coverage) == 4, "Expected four full-programme coverage layers")
+    require((coverage[["minimum_up_coverage", "minimum_down_coverage"]].min(axis=1) >= 0.75).all(), "An eligible projection arm fell below 75% coverage")
+
+    becker = pd.read_csv(ROOT / "results/state_aware_program_v1/extended_validation_full_programme/becker/becker_full_programme_adjusted_models.tsv", sep="\t")
+    becker_polyp = becker.loc[becker["outcome"].eq("epi__ca_route_signature") & becker["term"].eq("disease_stage_group_polyp")].iloc[0]
+    require(close(becker_polyp["coef"], 0.6729875920516115), "Becker adjusted full-programme coefficient changed")
+
+    atlas = pd.read_csv(ROOT / "results/state_aware_program_v1/extended_validation_full_programme/crc_atlas/atlas_locked_leave_one_study_out.tsv", sep="\t")
+    atlas_polyp = atlas.loc[atlas["omitted_study"].eq("__NONE__") & atlas["state"].eq("polyp_epithelial")].iloc[0]
+    require(close(atlas_polyp["coef"], 0.20995839710992545), "CRC Atlas adjusted full-programme coefficient changed")
+    atlas_loo = atlas.loc[
+        ~atlas["omitted_study"].eq("__NONE__")
+        & atlas["outcome"].eq("score__ca_route_signature")
+        & atlas["state"].eq("polyp_epithelial")
+        & atlas["estimable"].astype(bool)
+    ]
+    require(len(atlas_loo) == 33 and (atlas_loo["coef"] > 0).all(), "CRC Atlas leave-one-study-out support changed")
+
+    spatial = pd.read_csv(ROOT / "results/state_aware_program_v1/extended_validation_full_programme/perturbation_spatial/spatial_full_programme_tests.tsv", sep="\t")
+    adjusted = spatial.loc[spatial["feature"].eq("route_residual_prolif_epithelial")].iloc[0]
+    require(int(adjusted["n_sections"]) == 6 and int(adjusted["n_positive"]) == 6, "Adjusted spatial direction changed")
+    require(close(adjusted["p_wilcoxon"], 0.03125), "Adjusted spatial test changed")
+
+    apc = pd.read_csv(ROOT / "results/perturbation_validation_locked_route/gse125472_contrast_summary.tsv", sep="\t")
+    require(not apc.empty, "APC-knockout donor contrasts are missing")
+
     internal = pd.read_csv(ROOT / "results/state_shared_revision_v2/compact_rank/random_eight_gene_benchmark_summary.tsv", sep="\t").iloc[0]
     external = pd.read_csv(ROOT / "results/state_shared_revision_v2/external_rank/random_eight_gene_benchmark_summary.tsv", sep="\t").iloc[0]
-    require(internal["observed_compact_spearman"] > internal["random_q95"], "Internal compact benchmark boundary changed")
+    require(internal["observed_compact_spearman"] > internal["random_q95"], "Internal reduced-readout benchmark boundary changed")
     require(external["observed_median_cohort_spearman"] < external["random_q95"], "External non-uniqueness boundary changed")
 
 
@@ -94,12 +120,17 @@ def check_figures_and_workbooks() -> None:
     for stem in MAIN_FIGURES + SUPP_FIGURES:
         for suffix in ("pdf", "png", "svg"):
             require((FIGURE_DIR / f"{stem}.{suffix}").is_file(), f"Missing figure: {stem}.{suffix}")
-    source = load_workbook(ROOT / "data/source_data/Source_Data.xlsx", read_only=True)
-    supplement = load_workbook(ROOT / "data/supplementary/Supplementary_Tables_1-12.xlsx", read_only=True)
-    require(len(source.sheetnames) == 86, "Unexpected Source Data worksheet count")
-    require(len(supplement.sheetnames) == 72, "Unexpected supplementary worksheet count")
-    require(not any("dslab_common" in name.lower() for name in source.sheetnames), "Governed DSLab patient-level source was included")
-    require(all(any(name.startswith(f"T{number}") for name in supplement.sheetnames) for number in range(1, 13)), "A supplementary table group is missing")
+    source = load_workbook(ROOT / "data/source_data/Source_Data_v2.1.xlsx", read_only=True)
+    supplement = load_workbook(ROOT / "data/supplementary/Supplementary_Tables_1-11_v2.1.xlsx", read_only=True)
+    require(len(source.sheetnames) == 77, "Unexpected Source Data worksheet count")
+    require(len(supplement.sheetnames) == 70, "Unexpected supplementary worksheet count")
+    require("README" in source.sheetnames and "SOURCE_MAP" in source.sheetnames, "Source Data index sheets are missing")
+    require("README" in supplement.sheetnames, "Supplementary workbook README is missing")
+    require(all(any(name.startswith(f"T{number}") for name in supplement.sheetnames) for number in range(1, 12)), "A supplementary table group is missing")
+    forbidden = re.compile(r"historical|legacy|genki|virtual|287|12_gene", flags=re.IGNORECASE)
+    require(not any(forbidden.search(name) for name in source.sheetnames + supplement.sheetnames), "A retired analysis entered a current workbook")
+    source.close()
+    supplement.close()
 
 
 def check_required_files_and_hygiene() -> None:
@@ -113,6 +144,9 @@ def check_required_files_and_hygiene() -> None:
         "analysis/state_aware_integrate_common_effects_v1.R",
         "analysis/state_shared_revision_define_fine_states_v2.py",
         "analysis/state_shared_revision_fine_state_models_v2.R",
+        "analysis/audit_state_shared_full_program_coverage_v1.py",
+        "analysis/validate_state_shared_full_programme_extended_layers_v2.py",
+        "analysis/contracts/state_shared_full_programme_projection_addendum_v1_2026-08-30.md",
         "analysis/derive_state_shared_compact_panel_v1.R",
         "analysis/build_state_shared_revision_figure6_v3.R",
     ]
@@ -130,7 +164,11 @@ def check_required_files_and_hygiene() -> None:
         if forbidden_text.search(text):
             hits.append(str(path.relative_to(ROOT)))
     require(not hits, "Machine path or credential-like text found: " + ", ".join(hits))
-    require(not (ROOT / "data/source_data/figureS3g_dslab_common_composition.tsv").exists(), "Governed DSLab source file is public")
+    governed_paths = [
+        ROOT / "data/source_data/figureS2g_dslab_common_composition.tsv",
+        FIGURE_DIR / "source_data/figureS2g_dslab_common_composition.tsv",
+    ]
+    require(not any(path.exists() for path in governed_paths), "Governed DSLab source file is public")
 
 
 def main() -> None:

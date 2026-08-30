@@ -1,0 +1,2 @@
+analysis	population	score	metric	estimate	ci_low	ci_high	p_value	n_patients
+cnv_composition_decomposition	conventional_adenomas	state_shared_1843	composition_only_range_over_observed_range	0.0710780156277324	0.0300978385328558	0.128705402945692		8

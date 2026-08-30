@@ -1,0 +1,10 @@
+{
+  "analysis": "audit_state_shared_full_program_coverage_v1",
+  "decision_data": "feature identities only; no phenotypes, effects, or significance results",
+  "programme_genes": 1843,
+  "programme_arms": {
+    "up": 884,
+    "down": 959
+  },
+  "n_units": 92
+}
