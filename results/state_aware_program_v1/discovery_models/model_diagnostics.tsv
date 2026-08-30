@@ -1,0 +1,4 @@
+cell_type	n_genes	n_specimens	n_donors	n_normal_specimens	n_adenoma_specimens	n_model_errors	n_initial_model_errors	elapsed_seconds
+ABS	8221	49	27	35	14	0	0	751.633858203888
+GOB	8221	44	26	33	11	0	0	747.996576070786
+TAC	8221	41	25	30	11	0	0	729.824630737305

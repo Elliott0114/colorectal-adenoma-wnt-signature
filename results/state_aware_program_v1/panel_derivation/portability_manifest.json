@@ -1,0 +1,32 @@
+{
+  "analysis": "label-blind portability audit for the strict state-shared programme",
+  "created_utc": "2026-08-29T04:02:28.145938+00:00",
+  "input_path": "<PROJECT_ROOT>/results/state_aware_program_v1/common_effects/cross_state_common_effects.tsv.gz",
+  "input_sha256": "a1ac4b7b67ac279782e04e386971d7463e169cbdbc24d7da4c314e34a4f3e946",
+  "platforms": [
+    "GSE8671",
+    "GSE50114",
+    "GSE41657",
+    "GSE40362",
+    "GSE72820",
+    "GSE117606"
+  ],
+  "gene_annotation": "NCBI Homo_sapiens.gene_info",
+  "outcome_labels_used": false,
+  "validation_effects_used": false,
+  "eligibility_rule": "strict state-shared core; NCBI protein-coding; feature present on all five external platforms and GSE117606 FFPE",
+  "summary": [
+    {
+      "arm": "down",
+      "strict_state_shared_genes": 959,
+      "all_six_platforms_present": 38,
+      "portable_protein_coding": 38
+    },
+    {
+      "arm": "up",
+      "strict_state_shared_genes": 884,
+      "all_six_platforms_present": 15,
+      "portable_protein_coding": 15
+    }
+  ]
+}

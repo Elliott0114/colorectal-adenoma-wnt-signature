@@ -16,6 +16,10 @@ The repository does include:
 - checksums and reproducibility manifests; and
 - the balanced, de-identified input used for the reported GenKI audit.
 
+Patient-level DSLab matrices, metadata and plotted source values are not
+redistributed. Aggregate DSLab statistics are included; governed patient-level
+data are available from the corresponding author on reasonable request.
+
 ## Expected top-level raw-data directory
 
 Full reanalysis expects a `data_sources/` directory at the repository root. It
@@ -41,15 +45,15 @@ Some download and preprocessing scripts create more specific subdirectories.
 The exact paths are constants near the top of each script and are intentionally
 kept explicit for auditability.
 
-The cell-state decomposition expects these two Chen files:
+The state-aware discovery and donor-disjoint validation workflows expect these
+two Chen files:
 
 ```text
 data_sources/Chen_Cell_2021_CELLxGENE/chen_discovery_epithelial.h5ad
 data_sources/Chen_Cell_2021_CELLxGENE/chen_validation_epithelial.h5ad
 ```
 
-Their reported SHA256 values are recorded in the frozen analysis contract and
-`results/cell_state_decomposition_v1/analysis_manifest.json`.
+Their hashes and versions are recorded in the frozen analysis manifests.
 
 ## Licensed reference resources
 

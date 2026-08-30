@@ -1,0 +1,4 @@
+score	cell_type	n_donors	n_donor_site_pairs	mean_difference	median_difference	ci_low	ci_high	paired_t_p_value	wilcoxon_p_value	positive_donors	nonzero_donors	sign_test_p_value
+full_programme_score	Absorptive	7	7	2.45728341045859	2.56160754289845	0.694919331570038	4.21964748934714	0.0142877578966175	0.015625	7	7	0.015625
+full_programme_score	Goblet	4	4	1.13107329049897	1.06227610255217	-0.0396876269833259	2.30183420798126	0.0543671913711058	0.125	4	4	0.125
+full_programme_score	Transit-amplifying	5	5	0.843057455657922	0.852013076985266	-0.129104413793122	1.81521932510897	0.0737359257421717	0.125	4	5	0.375

@@ -25,4 +25,17 @@ dependencies:
   - r-svglite=2.2.2
   - r-ragg=1.5.2
   - r-survival=3.8_6
+  - r-igraph=2.3.3
+  - r-lme4=1.1_38
+  - r-mashr=0.2.79
+  - r-matrix=1.7_4
+  - r-msigdbr=26.1.1
+  - bioconductor-decoupler=2.16.0
+  - bioconductor-dreamlet=1.8.0
+  - bioconductor-edger=4.8.2
+  - bioconductor-hdf5array=1.38.0
   - bioconductor-limma=3.66.0
+  - bioconductor-rhdf5=2.54.1
+  - bioconductor-singlecellexperiment=1.32.0
+  - bioconductor-variancepartition=1.40.1
+  - bioconductor-zellkonverter=1.20.1

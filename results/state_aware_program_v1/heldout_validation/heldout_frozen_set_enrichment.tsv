@@ -1,0 +1,5 @@
+gene_set	NGenes	expected_direction	Direction	direction_matches_expectation	PValue	FDR
+frozen_strict_up	758	Up	Up	TRUE	8.33853083981905e-45	1.66770616796381e-44
+frozen_strict_down	888	Down	Down	TRUE	6.86638124011213e-45	1.66770616796381e-44
+legacy_287_up	17	Up	Up	TRUE	1.31291410405648e-08	1.31291410405648e-08
+legacy_287_down	133	Down	Down	TRUE	3.53713513076917e-31	4.7161801743589e-31

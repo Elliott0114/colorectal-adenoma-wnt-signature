@@ -1,0 +1,17 @@
+{
+  "analysis": "validate_state_shared_extended_layers_v1",
+  "analysis_date": "2026-08-29",
+  "frozen_input_hashes": {
+    "compact_panel": "c5997e572342a72da8441df312fba4e3461cacfa5e30d0d8590a3f23ae3d96f0",
+    "extended_addendum": "52d638412a71c624177af9c0a0da14e10d0d970abd66823662e25dae8747ebea"
+  },
+  "compact_readout_genes": 8,
+  "gene_reselection": false,
+  "weight_fitting": false,
+  "cutpoint_optimization": false,
+  "software": {
+    "python": "3.11.15",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3"
+  }
+}

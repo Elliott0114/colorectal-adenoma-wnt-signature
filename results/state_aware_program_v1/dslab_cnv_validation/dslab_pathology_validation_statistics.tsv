@@ -1,0 +1,32 @@
+analysis	compartment	score_metric	estimate	ci_low	ci_high	p_value	rank_auc	n_case	n_control
+primary_conventional_vs_nonadenomatous	all_epithelium	core_287_within_cohort_z	-0.06787205505522942	-1.3969993238307958	1.944846119660787	0.9432789432789432	0.525	8	5
+primary_conventional_vs_nonadenomatous	all_epithelium	signature_12_within_cohort_z	-0.9800083868469478	-2.890738711745486	2.458089185675259	1.0	0.5	8	5
+primary_conventional_vs_nonadenomatous	all_epithelium	core_287_arm_rank_score	0.0388293042787424	-0.1139634242162332	0.15440882463354363	0.7241647241647241	0.575	8	5
+primary_conventional_vs_nonadenomatous	all_epithelium	signature_12_arm_rank_score	-0.05555555555555569	-0.38888888888888906	0.11111111111111105	0.8329448329448329	0.45	8	5
+secondary_all_adenomatous_vs_nonadenomatous	all_epithelium	core_287_within_cohort_z	-0.10588656642577471	-1.4421144216755963	1.641303627602864	0.9530469530469531	0.48	10	5
+secondary_all_adenomatous_vs_nonadenomatous	all_epithelium	signature_12_within_cohort_z	-0.9800083868469478	-2.890738711745486	1.9192811739630318	0.8591408591408591	0.46	10	5
+secondary_all_adenomatous_vs_nonadenomatous	all_epithelium	core_287_arm_rank_score	0.03304108500737707	-0.1139634242162332	0.13623551853888918	0.8591408591408591	0.54	10	5
+secondary_all_adenomatous_vs_nonadenomatous	all_epithelium	signature_12_arm_rank_score	-0.05555555555555569	-0.38888888888888906	0.08333333333333326	0.7678987678987679	0.44	10	5
+primary_conventional_vs_nonadenomatous	cnv_low	core_287_within_cohort_z	-0.09152973917481247	-1.4513642591276588	1.718102886409985	1.0	0.5	8	5
+primary_conventional_vs_nonadenomatous	cnv_low	signature_12_within_cohort_z	-0.625162134433942	-2.794322780511647	1.9779860969057672	0.9432789432789432	0.475	8	5
+primary_conventional_vs_nonadenomatous	cnv_low	core_287_arm_rank_score	0.027891272273294687	-0.11061053490828779	0.14598229485869946	0.7241647241647241	0.575	8	5
+primary_conventional_vs_nonadenomatous	cnv_low	signature_12_arm_rank_score	-0.02777777777777779	-0.33333333333333337	0.08333333333333348	0.7241647241647241	0.4125	8	5
+secondary_all_adenomatous_vs_nonadenomatous	cnv_low	core_287_within_cohort_z	-0.15695218798012048	-1.537651417375713	1.278504075607209	0.7678987678987679	0.44	10	5
+secondary_all_adenomatous_vs_nonadenomatous	cnv_low	signature_12_within_cohort_z	-0.625162134433942	-2.794322780511647	1.8770325916234394	0.6786546786546787	0.42	10	5
+secondary_all_adenomatous_vs_nonadenomatous	cnv_low	core_287_arm_rank_score	0.027011689933038208	-0.11061053490828779	0.12149585745091371	0.8591408591408591	0.54	10	5
+secondary_all_adenomatous_vs_nonadenomatous	cnv_low	signature_12_arm_rank_score	-0.02777777777777779	-0.33333333333333337	0.08333333333333309	0.594072594072594	0.4	10	5
+primary_conventional_vs_nonadenomatous	cnv_high	core_287_within_cohort_z	0.0016470717361842246	-1.4253035059815662	1.8178914728647075	0.9432789432789432	0.525	8	5
+primary_conventional_vs_nonadenomatous	cnv_high	signature_12_within_cohort_z	-0.902746097562492	-2.6053453919530885	2.3796587682815677	0.9432789432789432	0.475	8	5
+primary_conventional_vs_nonadenomatous	cnv_high	core_287_arm_rank_score	0.05198047894677116	-0.125389864505033	0.16811372148450798	0.7241647241647241	0.575	8	5
+primary_conventional_vs_nonadenomatous	cnv_high	signature_12_arm_rank_score	-0.05555555555555569	-0.38888888888888906	0.13888888888888873	0.8329448329448329	0.45	8	5
+secondary_all_adenomatous_vs_nonadenomatous	cnv_high	core_287_within_cohort_z	-0.07726086276011676	-1.4439886025595408	1.6250453236249052	1.0	0.5	10	5
+secondary_all_adenomatous_vs_nonadenomatous	cnv_high	signature_12_within_cohort_z	-0.902746097562492	-2.7013195559902554	2.056142964848918	0.9530469530469531	0.48	10	5
+secondary_all_adenomatous_vs_nonadenomatous	cnv_high	core_287_arm_rank_score	0.0370417659743503	-0.125389864505033	0.15415848196747084	0.8591408591408591	0.54	10	5
+secondary_all_adenomatous_vs_nonadenomatous	cnv_high	signature_12_arm_rank_score	-0.05555555555555569	-0.38888888888888906	0.12499999999999994	0.8591408591408591	0.46	10	5
+primary_conventional_vs_nonadenomatous	cell_composition	cnv_high_fraction	-0.1685971197240952	-0.23868558006207052	-0.05394545616168239	0.029526029526029528	0.125	8	5
+secondary_all_adenomatous_vs_nonadenomatous	cell_composition	cnv_high_fraction	-0.13336433459557973	-0.21541874284758644	-0.0022648083457528223	0.05527805527805527	0.18	10	5
+primary_adjusted_for_cnv_high_fraction	all_epithelium	core_287_within_cohort_z	-0.45053604503359734	-2.215672642024857	1.3146005519576625	0.6168891483971695		8	5
+primary_adjusted_for_cnv_high_fraction	all_epithelium	signature_12_within_cohort_z	-0.43625034387821826	-3.1570099977267265	2.2845093099702902	0.7533210542338538		8	5
+compact_fidelity_within_cohort_standardisation	all_epithelium	signature_12_vs_core_287	0.914285714285714			1.8531121308926476e-06		15	0
+compact_fidelity_within_cohort_standardisation	cnv_low	signature_12_vs_core_287	0.914285714285714			1.8531121308926476e-06		15	0
+compact_fidelity_within_cohort_standardisation	cnv_high	signature_12_vs_core_287	0.8714285714285712			2.323647782163262e-05		15	0

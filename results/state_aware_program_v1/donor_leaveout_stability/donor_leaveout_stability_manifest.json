@@ -1,0 +1,31 @@
+{
+  "analysis": "state_aware_leave_one_donor_out_stability_v1",
+  "created_utc": "2026-08-29 05:05:11 UTC",
+  "input_hashes": {
+    "pseudobulk": "2c63422dd5cf8124098974fec62648bb24b546adb407ec41d794c8709cdb4c96",
+    "state_effects": "9f2ed71d3f0b01a18a07ae168abaac6249cf49c0fbe9229aaad797c3dbfc5d88",
+    "common_effects": "a1ac4b7b67ac279782e04e386971d7463e169cbdbc24d7da4c314e34a4f3e946",
+    "null_correlation": "b6e0ce7b6cc8350c18b3547883ad1ab5abe8e4f661455ca53423a0ca06d84c78",
+    "contract": "0f39a03154408d14bb0bbe0c1e4f55d498e94d403bd6b45d4be5dd8918555f69",
+    "implementation_note": "32fa283540f7971a1d5431e9e000c77f73b205afbc8d8f73b10c33ecb5344ff8"
+  },
+  "genes": 1843,
+  "donors": 27,
+  "states": ["ABS", "GOB", "TAC"],
+  "refit": {
+    "formula": "voom expression ~ route; donor repeated-measures block",
+    "normalisation": "TMM",
+    "weights": "limma::voom",
+    "donor_correlation": "limma::duplicateCorrelation consensus correlation",
+    "common_integration": "GLS using frozen full-discovery null correlation",
+    "parallel_folds": 3
+  },
+  "role": "descriptive robustness audit; primary effects remain dream mixed models",
+  "membership_changed_from_stability": false,
+  "package_versions": {
+    "edgeR": "4.8.2",
+    "limma": "3.66.0",
+    "Matrix": "1.7.4"
+  },
+  "session_info": ["R version 4.5.3 (2026-03-11)", "Platform: x86_64-conda-linux-gnu", "Running under: Ubuntu 20.04.4 LTS", "", "Matrix products: default", "BLAS/LAPACK: <USER_HOME>/miniforge3/envs/crc-premalignant-locked/lib/libopenblasp-r0.3.33.so;  LAPACK version 3.12.0", "", "locale:", " [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       ", " [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   ", " [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          ", "[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   ", "", "time zone: Etc/UTC", "tzcode source: system (glibc)", "", "attached base packages:", "[1] stats     graphics  grDevices utils     datasets  methods   base     ", "", "other attached packages:", "[1] Matrix_1.7-4 edgeR_4.8.2  limma_3.66.0", "", "loaded via a namespace (and not attached):", " [1] digest_0.6.39    tidyr_1.3.2      R6_2.6.1         tidyselect_1.2.1", " [5] lattice_0.22-9   magrittr_2.0.5   glue_1.8.1       tibble_3.3.1    ", " [9] parallel_4.5.3   pkgconfig_2.0.3  dplyr_1.2.1      generics_0.1.4  ", "[13] lifecycle_1.0.5  cli_3.6.6        grid_4.5.3       vctrs_0.7.3     ", "[17] withr_3.0.3      statmod_1.5.2    compiler_4.5.3   purrr_1.2.2     ", "[21] pillar_1.11.1    locfit_1.5-9.12  rlang_1.3.0     "]
+}

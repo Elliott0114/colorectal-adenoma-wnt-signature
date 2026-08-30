@@ -1,0 +1,25 @@
+{
+  "analysis": "state_shared_revision_external_rank_v2",
+  "created_utc": "2026-08-30T03:15:24.740134+00:00",
+  "random_seed": 20260830,
+  "input_sha256": {
+    "common_effects": "a1ac4b7b67ac279782e04e386971d7463e169cbdbc24d7da4c314e34a4f3e946",
+    "compact_panel": "c5997e572342a72da8441df312fba4e3461cacfa5e30d0d8590a3f23ae3d96f0",
+    "portable_universe": "bd768623e1819dcbca1e19f6d9a67c731b0ce1664f0142f26ef67dc7ed448fb0",
+    "reference_scores": "ec0df5b3b7ac38a8967a8bb03852fdf13751fd822b9dc807d6226f0612e07e16",
+    "contract": "b4ca3cd7bd416cd6c0a88af4f09a8a7432c6ece5c949cf8c092878d97420d3bc"
+  },
+  "score_definition": "within-sample percentile ranks among all measurable frozen programme genes; mean rank of compact up genes minus compact down genes",
+  "label_dependent_standardisation": false,
+  "random_panels": 2000,
+  "quality_gates": {
+    "all_external_cohort_rank_effects_positive": true,
+    "median_external_fidelity_exceeds_random_q95": false
+  },
+  "versions": {
+    "python": "3.11.15",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.17.1"
+  }
+}

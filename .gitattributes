@@ -4,7 +4,7 @@
 *.pdf binary
 *.png binary
 *.svg text eol=lf
-*.tsv text eol=lf
+*.tsv text eol=lf whitespace=-blank-at-eol
 *.csv text eol=lf
 *.md text eol=lf
 *.py text eol=lf

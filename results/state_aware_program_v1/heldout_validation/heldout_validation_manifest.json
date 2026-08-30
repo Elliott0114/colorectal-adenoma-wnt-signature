@@ -1,0 +1,45 @@
+{
+  "analysis": "state_aware_validate_frozen_program_v1",
+  "created_utc": "2026-08-29 04:39:20 UTC",
+  "validation_outcomes_used_for_selection": false,
+  "frozen_inputs": {
+    "discovery_pseudobulk": "2c63422dd5cf8124098974fec62648bb24b546adb407ec41d794c8709cdb4c96",
+    "validation_pseudobulk": "3adbe6ad44ef9baf7fd06d1bf6ec2b077483a3399308ed7ce6456186889b6d19",
+    "discovery_common": "a1ac4b7b67ac279782e04e386971d7463e169cbdbc24d7da4c314e34a4f3e946",
+    "frozen_panel": "c5997e572342a72da8441df312fba4e3461cacfa5e30d0d8590a3f23ae3d96f0",
+    "parent_contract": "0f39a03154408d14bb0bbe0c1e4f55d498e94d403bd6b45d4be5dd8918555f69",
+    "panel_addendum": "6f6af8c34858b83d16cc4f4004c963cf4e29813ee2093201cd3cfa5404664cad"
+  },
+  "generated_validation_inputs": {
+    "state_effects_path": "<PROJECT_ROOT>/results/state_aware_program_v1/validation_models/state_specific_primary_effects.tsv.gz",
+    "state_effects_sha256": "3e2b215fb85f3910ee331c1be963e988e5953f914abd50cf54bf070053ea1a5f",
+    "paired_effects_path": "<PROJECT_ROOT>/results/state_aware_program_v1/validation_models/state_specific_paired_sensitivity.tsv.gz",
+    "paired_effects_sha256": "18877a94d177cce43bbae078c917cf2354c8038c82fa5d10b22e58e5139eca89"
+  },
+  "score": {
+    "full_programme_genes": 1843,
+    "full_up_genes": 884,
+    "full_down_genes": 959,
+    "compact_genes": 8,
+    "legacy_12_testable_genes": 9,
+    "normalisation": "TMM log2 CPM with prior.count 0.5 within state",
+    "scaling": "discovery state-specific centres and standard deviations",
+    "scoring": "mean z(up) minus mean z(down); equal arm weights",
+    "fidelity_interval": "2,000 whole-donor bootstrap replicates"
+  },
+  "gene_level": {
+    "validation_genes": 7115,
+    "integration": "correlation-adjusted GLS across ABS, GOB and TAC",
+    "enrichment": "limma::cameraPR use.ranks=TRUE"
+  },
+  "random_seed": 20260829,
+  "package_versions": {
+    "edgeR": "4.8.2",
+    "limma": "3.66.0",
+    "lme4": "1.1.38",
+    "lmerTest": "3.2.1",
+    "mashr": "0.2.79",
+    "Matrix": "1.7.4"
+  },
+  "session_info": ["R version 4.5.3 (2026-03-11)", "Platform: x86_64-conda-linux-gnu", "Running under: Ubuntu 20.04.4 LTS", "", "Matrix products: default", "BLAS/LAPACK: <USER_HOME>/miniforge3/envs/crc-premalignant-locked/lib/libopenblasp-r0.3.33.so;  LAPACK version 3.12.0", "", "Random number generation:", " RNG:     L'Ecuyer-CMRG ", " Normal:  Inversion ", " Sample:  Rejection ", " ", "locale:", " [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       ", " [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   ", " [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          ", "[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   ", "", "time zone: Etc/UTC", "tzcode source: system (glibc)", "", "attached base packages:", "[1] stats     graphics  grDevices utils     datasets  methods   base     ", "", "other attached packages:", "[1] mashr_0.2.79   ashr_2.2-63    lmerTest_3.2-1 lme4_1.1-38    Matrix_1.7-4  ", "[6] edgeR_4.8.2    limma_3.66.0  ", "", "loaded via a namespace (and not attached):", " [1] generics_0.1.4      tidyr_1.3.2         lattice_0.22-9     ", " [4] rmeta_3.0           digest_0.6.39       magrittr_2.0.5     ", " [7] grid_4.5.3          RColorBrewer_1.1-3  mvtnorm_1.4-2      ", "[10] plyr_1.8.9          mixsqp_0.3-54       purrr_1.2.2        ", "[13] scales_1.4.0        truncnorm_1.0-9     numDeriv_2016.8-1.1", "[16] invgamma_1.2        abind_1.4-8         reformulas_0.4.4   ", "[19] Rdpack_2.6.6        cli_3.6.6           rlang_1.3.0        ", "[22] rbibutils_2.4.1     splines_4.5.3       withr_3.0.3        ", "[25] tools_4.5.3         SQUAREM_2026.1      nloptr_2.2.1       ", "[28] minqa_1.2.8         dplyr_1.2.1         ggplot2_4.0.3      ", "[31] locfit_1.5-9.12     boot_1.3-32         assertthat_0.2.1   ", "[34] vctrs_0.7.3         R6_2.6.1            lifecycle_1.0.5    ", "[37] MASS_7.3-66         irlba_2.3.7         pkgconfig_2.0.3    ", "[40] pillar_1.11.1       gtable_0.3.6        glue_1.8.1         ", "[43] Rcpp_1.1.2          statmod_1.5.2       tibble_3.3.1       ", "[46] tidyselect_1.2.1    farver_2.1.2        nlme_3.1-170       ", "[49] compiler_4.5.3      S7_0.2.2           "]
+}

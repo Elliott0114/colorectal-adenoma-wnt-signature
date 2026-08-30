@@ -1,0 +1,4 @@
+stage	n_genes	rule
+Frozen programme	1843	confidence-defined programme
+Portable candidate universe	53	protein coding and present on six platforms
+Balanced reduced candidate	8	donor-held-out Kneedle and one-SE

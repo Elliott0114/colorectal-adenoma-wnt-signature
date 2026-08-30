@@ -1,0 +1,5 @@
+signature	frozen_genes	testable_genes	expected_direction_matches	strict_state_shared	coverage_fraction
+original_287	287	163	163	149	0.56794425087108
+original_287_up	89	21	21	17	0.235955056179775
+original_287_down	198	142	142	132	0.717171717171717
+existing_12	12	9	9	9	0.75

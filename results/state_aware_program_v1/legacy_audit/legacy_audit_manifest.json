@@ -1,0 +1,91 @@
+{
+  "analysis": "state_aware_audit_legacy_signatures_v1",
+  "created_utc": "2026-08-29 03:40:01 UTC",
+  "contract_sha256": "0f39a03154408d14bb0bbe0c1e4f55d498e94d403bd6b45d4be5dd8918555f69",
+  "inputs": {
+    "cross_state_common_effects.tsv.gz": "a1ac4b7b67ac279782e04e386971d7463e169cbdbc24d7da4c314e34a4f3e946",
+    "state_specific_primary_effects.tsv.gz": "9f2ed71d3f0b01a18a07ae168abaac6249cf49c0fbe9229aaad797c3dbfc5d88",
+    "discovery_state_pseudobulk.rds": "2c63422dd5cf8124098974fec62648bb24b546adb407ec41d794c8709cdb4c96",
+    "core_287_genes.tsv": "c649ea65e6f32c667d347872bd16ec4712ef12202e359d680052b44def9cddf2",
+    "signature_12_genes.tsv": "91e564f42bdc5fb0188605b76116bcfb126e5102d62a33d6890fa67018928380"
+  },
+  "universe_genes": 8221,
+  "matched_random_replicates": 10000,
+  "matching_variables": ["mean state-specific AveExpr", "pseudobulk detection fraction"],
+  "matching_strata": "expression decile by detection quintile; documented nearest-stratum fallback",
+  "competitive_test": "limma::cameraPR, ranks, inter-gene correlation 0.01",
+  "random_seed": 20260829,
+  "coverage": [
+    {
+      "signature": "original_287",
+      "frozen_genes": 287,
+      "testable_genes": 163,
+      "expected_direction_matches": 163,
+      "strict_state_shared": 149,
+      "coverage_fraction": 0.5679
+    },
+    {
+      "signature": "original_287_up",
+      "frozen_genes": 89,
+      "testable_genes": 21,
+      "expected_direction_matches": 21,
+      "strict_state_shared": 17,
+      "coverage_fraction": 0.236
+    },
+    {
+      "signature": "original_287_down",
+      "frozen_genes": 198,
+      "testable_genes": 142,
+      "expected_direction_matches": 142,
+      "strict_state_shared": 132,
+      "coverage_fraction": 0.7172
+    },
+    {
+      "signature": "existing_12",
+      "frozen_genes": 12,
+      "testable_genes": 9,
+      "expected_direction_matches": 9,
+      "strict_state_shared": 9,
+      "coverage_fraction": 0.75
+    }
+  ],
+  "matched_summary": [
+    {
+      "metric": "up_signed_mean_z",
+      "observed": 5.5331,
+      "null_mean": 0.2672,
+      "null_sd": 0.5946,
+      "null_ci_low": -0.8527,
+      "null_ci_high": 1.4607,
+      "matched_z": 8.8558,
+      "empirical_p_one_sided": 0.0001
+    },
+    {
+      "metric": "down_signed_mean_z",
+      "observed": 6.3883,
+      "null_mean": 0.3271,
+      "null_sd": 0.2315,
+      "null_ci_low": -0.1265,
+      "null_ci_high": 0.7782,
+      "matched_z": 26.1782,
+      "empirical_p_one_sided": 0.0001
+    },
+    {
+      "metric": "joint_signed_mean_z",
+      "observed": 6.2781,
+      "null_mean": 0.3194,
+      "null_sd": 0.2154,
+      "null_ci_low": -0.0999,
+      "null_ci_high": 0.7397,
+      "matched_z": 27.6602,
+      "empirical_p_one_sided": 0.0001
+    }
+  ],
+  "package_versions": {
+    "limma": "3.66.0",
+    "Matrix": "1.7.4",
+    "digest": "0.6.39",
+    "jsonlite": "2.0.0"
+  },
+  "session_info": ["R version 4.5.3 (2026-03-11)", "Platform: x86_64-conda-linux-gnu", "Running under: Ubuntu 20.04.4 LTS", "", "Matrix products: default", "BLAS/LAPACK: <USER_HOME>/miniforge3/envs/crc-premalignant-locked/lib/libopenblasp-r0.3.33.so;  LAPACK version 3.12.0", "", "locale:", " [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       ", " [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   ", " [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          ", "[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   ", "", "time zone: Etc/UTC", "tzcode source: system (glibc)", "", "attached base packages:", "[1] stats     graphics  grDevices utils     datasets  methods   base     ", "", "other attached packages:", "[1] Matrix_1.7-4 limma_3.66.0", "", "loaded via a namespace (and not attached):", "[1] compiler_4.5.3 grid_4.5.3     digest_0.6.39  lattice_0.22-9 statmod_1.5.2 "]
+}

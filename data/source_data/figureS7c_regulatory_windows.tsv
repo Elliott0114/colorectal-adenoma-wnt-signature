@@ -1,0 +1,9 @@
+subset	locus_set	distance_bin	rna_feature	n	spearman_rho	p_spearman	q_spearman	locus	distance
+normal_polyp	wnt_route_loci	tss_core_1kb	rna_epi__ca_route_signature	40	0.794559099437148	9.31491336230427e-10	2.23557920695303e-08	WNT/stem loci	TSS 1 kb
+normal_polyp	wnt_route_loci	promoter_proximal_2_5kb	rna_epi__ca_route_signature	40	0.523827392120075	0.000522539544133334	0.0015676186324	WNT/stem loci	2–5 kb
+normal_polyp	wnt_route_loci	proximal_regulatory_10kb	rna_epi__ca_route_signature	40	0.314071294559099	0.0484236109555603	0.0774777775288965	WNT/stem loci	10 kb
+normal_polyp	wnt_route_loci	distal_flank_20kb	rna_epi__ca_route_signature	40	0.175234521575985	0.279460326516559	0.372613768688746	WNT/stem loci	20 kb
+normal_polyp	wnt_tcf_ascl2_axis_loci	tss_core_1kb	rna_epi__ca_route_signature	40	0.642401500938086	7.86475156350244e-06	4.71885093810147e-05	WNT/TCF/ASCL2 loci	TSS 1 kb
+normal_polyp	wnt_tcf_ascl2_axis_loci	promoter_proximal_2_5kb	rna_epi__ca_route_signature	40	0.120825515947467	0.457685615020841	0.523069274309533	WNT/TCF/ASCL2 loci	2–5 kb
+normal_polyp	wnt_tcf_ascl2_axis_loci	proximal_regulatory_10kb	rna_epi__ca_route_signature	40	0.109943714821764	0.499454986813922	0.544859985615188	WNT/TCF/ASCL2 loci	10 kb
+normal_polyp	wnt_tcf_ascl2_axis_loci	distal_flank_20kb	rna_epi__ca_route_signature	40	-0.298686679174484	0.061186122857339	0.0917791842860085	WNT/TCF/ASCL2 loci	20 kb

@@ -1,21 +1,20 @@
 # Manuscript-to-code map
 
-| Manuscript component | Principal code | Locked outputs |
+| Manuscript component | Principal code | Frozen outputs |
 |---|---|---|
-| Figure 1 and core definition | `data_adaptive_gene_panel_pilot_v2_6.R`, `export_287_portability_candidates_v2_7.py`, `select_objective_compact_panel_v2_7.R` | `results/data_adaptive_panel_pilot_v2_6/`, `results/objective_compact_panel_v2_7/` |
-| Held-out and external validation | `validate_objective_compact_panel_v2_7.py`, `external_sporadic_adenoma_validation.py`, `gse117606_paired_route_validation.py` | `results/objective_compact_panel_v2_7/`, `results/external_sporadic_adenoma_validation/`, `results/gse117606_paired_route_validation/` |
-| Figure 3 cell-state decomposition | `cell_state_composition_decomposition_v1.py`, `audit_cell_state_decomposition_v1.R`, `plot_cell_state_decomposition_v1.R` | `results/cell_state_decomposition_v1/`, `data/source_data/figure3*.tsv` |
-| RNA-ATAC | `becker_rna_atac_concordance.py`, `becker_locked_rna_atac_patient_robustness.py`, `becker_multiome_regulatory_window_accessibility.py` | `results/becker_multiome_regulatory_windows/` and compact-panel extended validation |
-| CRC Atlas | `atlas_locked_study_influence.py`, `validate_objective_panel_extended_layers_v2_7.py` | compact-panel extended validation and `results/figure_data_locked/` |
-| Empirical perturbations | `perturbation_validation_locked_route.py`, `computational_closure_validation.py` | `results/perturbation_validation_locked_route/`, `results/computational_closure_validation/` |
-| Virtual deletion | `prepare_genki_virtual_knockout_validation_v2_9.py`, `run_genki_virtual_knockout_validation_v2_9.py`, `audit_genki_reproducibility_v2_9.py` | `results/virtual_knockout_validation_v2_9/` |
-| Spatial and protein context | `spatial_zenodo7760264_visium_analysis.py`, `public_adenoma_protein_triangulation.py`, `pxd000445_candidate_reanalysis.py` | `results/computational_closure_validation/`, `results/public_adenoma_protein_triangulation/`, `results/pxd000445_candidate_reanalysis/` |
-| Base analytical panels | `plot_jtm_submission_figures_v2_8.R` | `figures/jtm_submission_v2.8/` and `data/source_data/` |
-| Final Communications Biology figures | `refine_communications_biology_workflows_v1_1.R`, `revise_communications_biology_figure1_v1_2.R`, `refine_communications_biology_figure_audit_fixes_v1_2.R`, `refine_communications_biology_alignment_v1_3.R` | `figures/communications_biology_v1.2/` |
-| Final figure assembly and audit | `assemble_communications_biology_v1_3.py`, `audit_communications_biology_figures_v1_3.py` | `figures/communications_biology_v1.2/source_data/*_v1_3.tsv` |
+| Fig. 1: state-aware derivation and interpretation | `state_aware_build_discovery_pseudobulk_v1.R`, `state_aware_fit_discovery_models_v1.R`, `state_aware_integrate_common_effects_v1.R`, `state_aware_leave_one_donor_out_stability_v1.R`, `state_aware_interpret_common_program_v1.R` | `results/state_aware_program_v1/discovery_*`, `common_effects/`, `donor_leaveout_stability/`, `interpretation/` |
+| Fig. 2: donor-disjoint replication and fine-state decomposition | `state_aware_validate_frozen_program_v1.R`, `state_shared_revision_donor_site_v2.R`, `state_shared_revision_define_fine_states_v2.py`, `state_shared_revision_fine_state_models_v2.R` | `results/state_aware_program_v1/heldout_validation/`, `results/state_shared_revision_v2/donor_site/`, `fine_states/`, `fine_state_models/` |
+| Fig. 3: independent cohorts and FFPE | `validate_state_shared_external_layers_v1.py`, `state_shared_revision_external_meta_v2.R` | `results/state_aware_program_v1/external_validation/`, `results/state_shared_revision_v2/external_meta/` |
+| Fig. 4: RNA-ATAC and epithelial atlas | `validate_state_shared_extended_layers_v1.py` | `results/state_aware_program_v1/extended_validation/becker*`, `crc_atlas/` |
+| Fig. 5: APC-WNT genetic perturbations | `validate_state_shared_external_layers_v1.py`, `validate_state_shared_extended_layers_v1.py` | `results/state_aware_program_v1/external_validation/`, `extended_validation/perturbation_spatial/` |
+| Fig. 6: compact eight-gene measurement | `export_state_shared_portability_candidates_v1.py`, `derive_state_shared_compact_panel_v1.R`, `state_shared_revision_compact_rank_v2.R`, `state_shared_revision_external_rank_v2.py` | `results/state_aware_program_v1/panel_derivation/`, `results/state_shared_revision_v2/compact_rank/`, `external_rank/` |
+| DSLab composition sensitivity | `run_dslab_state_shared_cnv_validation_v1.py` | aggregate statistics in `results/state_aware_program_v1/dslab_cnv_validation/`; patient-level outputs are not public |
+| Historical 287/12-gene audit | `state_aware_audit_legacy_signatures_v1.R` | `results/state_aware_program_v1/legacy_audit/` |
+| Virtual-deletion context | `prepare_genki_virtual_knockout_validation_v2_9.py`, `run_genki_virtual_knockout_validation_v2_9.py`, `audit_genki_reproducibility_v2_9.py` | `results/virtual_knockout_validation_v2_9/` |
+| Main figure rendering | `build_state_shared_revision_figure1_v2.R`, `build_state_shared_revision_figure2_v3.R` through `build_state_shared_revision_figure6_v3.R` | `figures/communications_biology_v2.0/figure1*` through `figure6*` |
+| Supplementary figure rendering | `build_state_shared_revision_supplementary_figures_s1_s4_v3.R`, `build_state_shared_revision_supplementary_figures_s5_s8_v3.R` | `figures/communications_biology_v2.0/figureS1*` through `figureS8*` |
 
-Earlier versioned scripts are retained only where the final renderer imports
-their audited visual components or where they document a necessary provenance
-step. The v2.8 gene definitions and validation outputs remain authoritative.
-The post-freeze cell-state decomposition adds a mechanistic explanation layer
-without changing the core or compact signature.
+The continuous 8,221-gene ranking is used for pathway interpretation. The
+1,843-gene subset is defined by fixed confidence rules, and the eight-gene
+candidate is derived only after the biological programme has been frozen.
+Historical 287- and 12-gene files are maintained solely for auditability.

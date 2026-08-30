@@ -1,0 +1,30 @@
+{
+  "analysis": "state_shared_revision_define_fine_states_v2",
+  "created_utc": "2026-08-30T03:59:31.377560+00:00",
+  "random_seed": 20260830,
+  "inputs_sha256": {
+    "discovery_h5ad": "2e2b5aa4909fd314ea0c6dba17f6ced16de95c1bb3317e69a3edfe2caff17440",
+    "validation_h5ad": "f51bf02885d637073743093844c1db00a173196f0e1184b37f39a5118468668d",
+    "common_effects": "a1ac4b7b67ac279782e04e386971d7463e169cbdbc24d7da4c314e34a4f3e946",
+    "contract": "b4ca3cd7bd416cd6c0a88af4f09a8a7432c6ece5c949cf8c092878d97420d3bc"
+  },
+  "normal_reference": "discovery normal cells separately within ABS, GOB and TAC",
+  "programme_genes_used_for_fine_state_definition": false,
+  "hvg_selection": "top 1,500 variance-ranked genes among genes detected in 1%-99% of normal-reference cells after fixed exclusions",
+  "fine_state_resolutions": [
+    3,
+    4,
+    5
+  ],
+  "primary_resolution": 4,
+  "programme_cell_score": "mean within-cell percentile rank of frozen up genes minus mean rank of frozen down genes",
+  "discovery_validation_overlap_removed": 1,
+  "versions": {
+    "python": "3.11.15",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.17.1",
+    "scikit_learn": "1.9.0",
+    "h5py": "3.13.0"
+  }
+}

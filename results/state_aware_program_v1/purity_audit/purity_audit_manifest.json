@@ -1,0 +1,26 @@
+{
+  "analysis": "state_aware_audit_epithelial_purity_v1",
+  "created_utc": "2026-08-29 03:51:46 UTC",
+  "input_sha256": "2e2b5aa4909fd314ea0c6dba17f6ced16de95c1bb3317e69a3edfe2caff17440",
+  "contract_sha256": "0f39a03154408d14bb0bbe0c1e4f55d498e94d403bd6b45d4be5dd8918555f69",
+  "cells_audited": 40332,
+  "states": ["ABS", "GOB", "TAC"],
+  "routes": ["normal", "conventional_adenoma"],
+  "marker_sets": {
+    "epithelial": ["EPCAM", "KRT8", "KRT18", "KRT19", "KRT20"],
+    "immune": ["PTPRC", "LST1", "TYROBP", "FCER1G", "AIF1", "CD68", "LAPTM5"],
+    "stromal": ["COL1A1", "COL1A2", "COL3A1", "DCN", "COL6A1"],
+    "endothelial": ["PECAM1", "VWF", "EMCN", "KDR", "ENG"],
+    "audit_targets": ["INPP5D", "TIMP1", "S100P", "LCN2"]
+  },
+  "assay": "raw/X integer counts",
+  "scope": "targeted contamination and co-expression audit; not a decontamination algorithm",
+  "package_versions": {
+    "Matrix": "1.7.4",
+    "SummarizedExperiment": "1.40.0",
+    "zellkonverter": "1.20.1",
+    "digest": "0.6.39",
+    "jsonlite": "2.0.0"
+  },
+  "session_info": ["R version 4.5.3 (2026-03-11)", "Platform: x86_64-conda-linux-gnu", "Running under: Ubuntu 20.04.4 LTS", "", "Matrix products: default", "BLAS/LAPACK: <USER_HOME>/miniforge3/envs/crc-premalignant-locked/lib/libopenblasp-r0.3.33.so;  LAPACK version 3.12.0", "", "locale:", " [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       ", " [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   ", " [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          ", "[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   ", "", "time zone: Etc/UTC", "tzcode source: system (glibc)", "", "attached base packages:", "[1] stats4    stats     graphics  grDevices utils     datasets  methods  ", "[8] base     ", "", "other attached packages:", " [1] zellkonverter_1.20.1        SummarizedExperiment_1.40.0", " [3] Biobase_2.70.0              GenomicRanges_1.62.1       ", " [5] Seqinfo_1.0.0               IRanges_2.44.0             ", " [7] S4Vectors_0.48.0            BiocGenerics_0.56.0        ", " [9] generics_0.1.4              MatrixGenerics_1.22.0      ", "[11] matrixStats_1.5.0           rhdf5_2.54.1               ", "[13] Matrix_1.7-4               ", "", "loaded via a namespace (and not attached):", " [1] cli_3.6.6                   rlang_1.3.0                ", " [3] png_0.1-9                   h5mread_1.2.1              ", " [5] jsonlite_2.0.0              DelayedArray_0.36.0        ", " [7] dir.expiry_1.18.0           grid_4.5.3                 ", " [9] abind_1.4-8                 filelock_1.0.3             ", "[11] SingleCellExperiment_1.32.0 Rhdf5lib_1.32.0            ", "[13] basilisk_1.22.0             compiler_4.5.3             ", "[15] Rcpp_1.1.2                  rhdf5filters_1.22.0        ", "[17] XVector_0.50.0              digest_0.6.39              ", "[19] lattice_0.22-9              reticulate_1.46.0          ", "[21] SparseArray_1.10.8          HDF5Array_1.38.0           ", "[23] parallel_4.5.3              tools_4.5.3                ", "[25] S4Arrays_1.10.1            "]
+}

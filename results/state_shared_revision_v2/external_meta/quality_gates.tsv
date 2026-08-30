@@ -1,0 +1,5 @@
+gate	passed	consequence
+random_effects_full_programme_positive	TRUE	retain independent-cohort transfer
+all_leave_one_cohort_out_full_programme_positive	TRUE	retain leave-one-cohort-out robustness
+adenoma_vs_hyperplastic_supported_in_GSE40362	TRUE	report this as a one-cohort histology boundary result
+broad_adenoma_specificity_supported	FALSE	do not describe the programme as broadly adenoma-specific without serrated and inflammatory controls

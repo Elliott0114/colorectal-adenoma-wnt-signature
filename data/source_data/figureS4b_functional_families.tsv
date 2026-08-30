@@ -1,0 +1,12 @@
+collection	gene_set	description	NGenes	Direction	PValue	FDR	strict_core_overlap	top_contributing_genes	global_fdr	interpretive_family	label_text	label	evidence
+GO:BP 2026.1.Hs	GOBP_ATP_SYNTHESIS_COUPLED_ELECTRON_TRANSPORT	The transfer of electrons through a series of electron donors and acceptors, generating energy that is ultimately used for synthesis of ATP. [ISBN:0716731363]	81	Down	1.59306341255256e-13	2.79458367471291e-10	52	COX5A;SDHD;CYCS;COX6C;NDUFAB1;GHITM;NDUFA12;NDUFB5;NDUFA6;COX7C;COX6A1;UQCRFS1	1.83701714715023e-10	mature epithelial function	Atp Synthesis Coupled Electron
+Transport	Atp Synthesis Coupled Electron
+Transport	-9.55368288231859
+GO:BP 2026.1.Hs	GOBP_OXIDATIVE_PHOSPHORYLATION	The phosphorylation of ADP to ATP that accompanies the oxidation of a metabolite through the operation of the respiratory chain. Oxidation of compounds establishes a proton gradient across the membrane, providing the energy for ATP synthesis. [ISBN:0198506732, ISBN:0471331309]	119	Down	2.06929557550012e-13	2.79458367471291e-10	67	COX5A;SDHD;CYCS;COX6C;ATP5PO;NDUFAB1;GHITM;ATP5F1C;ATP5PD;NDUFA12;NDUFB5;ATP5PF	1.83701714715023e-10	metabolic function	Oxidative Phosphorylation	Oxidative Phosphorylation	-9.55368288231859
+Reactome 2026.1.Hs	REACTOME_CELLULAR_RESPONSE_TO_HYPOXIA	Cellular response to hypoxia	52	Down	0.00123331041816429	0.0194185934467828	12	CITED2;PSMD6;HIGD1A;PSMA5;PSMA3;RPS27A;PSMB2;UBB;UBE2D1;RBX1;EGLN1;PSMB4	0.0425192747077805	stress/inflammatory	Cellular Response to Hypoxia	Cellular Response to Hypoxia	-1.71178223068051
+Reactome 2026.1.Hs	REACTOME_NERVOUS_SYSTEM_DEVELOPMENT	Nervous system development	331	Down	0.00135568246382018	0.0201595003416223	64	MYL12A;RPL5;MAGOH;RHOA;RPL6;CFL1;PFN1;PSMD6;RPL22;RPS13;CLTC;ACTB	0.0453744739222903	WNT/stem-regulatory	Nervous System Development	Nervous System Development	-1.69552023619305
+Reactome 2026.1.Hs	REACTOME_FBXL7_DOWN_REGULATES_AURKA_DURING_MITOTIC_ENTRY_AND_IN_EARLY_MITOSIS	FBXL7 down-regulates AURKA during mitotic entry and in early mitosis	36	Down	0.00178566589941241	0.0235063888070191	9	PSMD6;SKP1;PSMA5;PSMA3;RPS27A;PSMB2;UBB;RBX1;PSMB4;PSMB7;PSMC6;PSMC2	0.053284870662298	cell cycle/proliferation	Fbxl7 Down Regulates Aurka
+During Mitotic Entry and in
+Early Mitosis	Fbxl7 Down Regulates Aurka
+During Mitotic Entry and in
+Early Mitosis	-1.62881408468391

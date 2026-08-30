@@ -1,0 +1,10 @@
+metric	value
+genes_tested	8221
+one_by_one_lfsr_le_0.05	4802
+common_q_le_0.05	3341
+same_posterior_direction	5908
+strict_state_shared	1843
+strict_state_shared_up	884
+strict_state_shared_down	959
+relaxed_state_shared	2396
+heterogeneity_q_le_0.05	2434

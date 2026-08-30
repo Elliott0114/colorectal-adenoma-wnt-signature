@@ -1,74 +1,96 @@
-# Colorectal adenoma WNT-associated epithelial state
+# Colorectal adenoma epithelial identity remodelling
 
-This repository contains the analysis code, frozen gene definitions, derived
+This repository contains analysis code, frozen gene definitions, derived
 results and figure source data supporting the manuscript:
 
-> Multicohort analysis defines a reproducible epithelial state associated with
-> WNT in colorectal adenomas
+> Within-state epithelial identity remodelling predominates over compositional
+> change in colorectal adenomas
 
-The study uses previously published, de-identified datasets. No new patient or
-experimental data were generated.
+The main analysis integrates public, de-identified datasets. A self-generated
+de-identified colorectal-polyp single-cell series is used only for a
+copy-number-composition sensitivity analysis; its patient-level data are not
+distributed in this repository.
 
-## Study architecture
+## Study question
 
-The analysis deliberately separates biological definition from compact
-measurement and from downstream validation.
+A lesion-level expression difference can reflect changed proportions of
+epithelial states, changed expression within comparable states, or both. The
+analysis therefore asks whether conventional colorectal adenomas undergo a
+compartment-wide change in epithelial identity after measured cell-state
+composition is accounted for.
 
-1. A donor-aware discovery analysis identified a **287-gene core**. Membership
-   required a Benjamini-Hochberg false-discovery rate of at most 0.05,
-   directional stability of at least 0.90, a donor-bootstrap 95% interval that
-   excluded zero, and concordant model and bootstrap directions. No fixed
-   top-gene count was used.
-2. A label-blind portability audit retained **62 protein-coding genes** present
-   on five external expression platforms and one FFPE platform.
-3. A balanced, leave-one-donor-out reconstruction path represented the
-   287-gene score. The knee of its monotone fidelity curve selected six gene
-   pairs, producing the frozen **12-gene signature**.
-4. Only after the signature was frozen were held-out, external, FFPE,
-   RNA-ATAC, atlas, perturbation, spatial and protein results evaluated.
-5. A post-freeze donor-balanced decomposition of the held-out single-cell
-   partition separated the tissue-level difference into recovered-cell
-   composition and expression changes within deposited epithelial states.
+## Analysis architecture
 
-The 287-gene core defines the analysed epithelial state. The 12 genes are an
-unweighted research signature for measuring that state; they are not presented
-as a uniquely optimal classifier, a self-contained causal circuit or a
-clinically validated biomarker.
+1. Specimen-by-state pseudobulk profiles were built for absorptive, goblet and
+   transit-amplifying epithelium. Donors, rather than cells, were the biological
+   replicates.
+2. State-specific mixed-model effects were integrated into a continuous
+   8,221-gene common-effect ranking. Fixed false-discovery, posterior-direction
+   and local false-sign criteria yielded 1,843 high-confidence genes: 884
+   adenoma-up and 959 adenoma-down. No target gene count was supplied.
+3. The deposited validation partition was made donor-disjoint. Of the 1,646
+   high-confidence genes testable in all three validation states, 98.6%
+   retained the common direction; discovery and validation effects correlated
+   at rho = 0.912.
+4. Fine states were learned from normal discovery cells after exclusion of all
+   programme genes and lesion labels, then frozen before validation projection.
+   Exact donor-balanced decomposition assigned 79.1% of the primary validation
+   difference to expression within fine states and 20.9% to altered fine-state
+   proportions.
+5. Independent transcriptomic cohorts, paired FFPE tissue, matched RNA-ATAC,
+   epithelial atlases, spatial tissue sections and empirical genetic
+   perturbations tested transfer and biological context.
+6. Only after the full programme was frozen, platform availability and
+   donor-held-out reconstruction reduced it to a balanced eight-gene candidate
+   measurement. Random-panel benchmarking is retained to show that the compact
+   implementation is tractable but not uniquely optimal.
 
-## Frozen signature
+The 8,221-gene ranking and confidence-defined 1,843-gene subset describe the
+biological finding. The eight genes provide one reduced measurement; they are
+not presented as a diagnostic, a clinically validated biomarker or a closed
+regulatory circuit. The historical 287- and 12-gene sets are retained only for
+transparent supplementary comparison.
 
-The score is calculated within a dataset as:
+## Frozen definitions
+
+The full programme score uses equal-arm averaging:
 
 ```text
-mean(z[ASCL2, SOX4, SLC7A5, AXIN2, SDC3, DPEP1])
-  - mean(z[LGALS3, COX6C, NDUFA1, CYCS, LRRC19, ETHE1])
+mean(z[884 adenoma-up genes]) - mean(z[959 adenoma-down genes])
 ```
 
-All 12 genes are required in the reported analyses. The authoritative tables
-are in [`data/signatures`](data/signatures).
+The compact candidate score is:
+
+```text
+mean(z[EPHB2, REG1A, LTBP1, RNF43])
+  - mean(z[CALM2, COX6C, B2M, ACAA2])
+```
+
+Authoritative files are in [`data/signatures`](data/signatures). The compact
+set was fixed after discovery-only donor-held-out size selection; validation
+outcomes were not used for membership or panel size.
 
 ## Repository layout
 
 ```text
-analysis/              analysis and R figure-generation scripts
-data/datasets.tsv      public dataset and primary-publication index
-data/signatures/       frozen 287-, 62- and 12-gene definitions
-data/source_data/      source data underlying manuscript figures
-data/supplementary/    supplementary tables workbook
-figures/communications_biology_v1.2/
-                        seven main and eight supplementary figures in SVG, PDF and PNG
-figures/manuscript/    frozen pre-layout-refinement figures retained for provenance
-results/               locked derived results and reproducibility manifests
-tests/                  release-integrity and portability checks
-workflow/               execution order and reproducibility documentation
+analysis/               analysis and R figure-generation scripts
+analysis/contracts/     frozen analysis contracts
+data/datasets.tsv       accession and primary-publication registry
+data/signatures/        8,221-, 1,843-, 53- and 8-gene definitions
+data/source_data/       panel-level source data for public analyses
+data/supplementary/     Supplementary Tables 1-12 workbook
+figures/communications_biology_v2.0/
+                         six main and eight supplementary figures
+results/state_aware_program_v1/
+                         programme derivation and validation outputs
+results/state_shared_revision_v2/
+                         donor-disjoint, fine-state and benchmark outputs
+tests/                   release-integrity checks
+workflow/                ordered analysis map
 ```
 
-The versioned script names are retained to preserve the exact analysis trail.
-Names containing `jtm` refer to an earlier manuscript target and do not change
-the scientific content. The Communications Biology submission retains the
-frozen v2.8 definitions and validation outputs. The later cell-state
-decomposition is explicitly post-freeze: it neither changes the 287 genes nor
-refits the 12-gene signature.
+Versioned script names are retained to preserve the audit trail. Names that
+refer to an earlier manuscript target do not alter the scientific content.
 
 ## Quick verification
 
@@ -76,48 +98,38 @@ From the repository root:
 
 ```bash
 conda env create -f environment.yml
-make verify
-conda run -n crc-premalignant-locked python analysis/audit_locked_environment.py
+conda run -n crc-premalignant-locked python tests/verify_release.py
 ```
 
-To regenerate and audit the complete Communications Biology figure package
-from the included derived results:
+To regenerate the six main figures and Supplementary Figs. 5–8 from the
+distributed derived tables:
 
 ```bash
 make figures
 ```
 
-The renderers export SVG and PDF vector files, 600-dpi TIFF files, 300-dpi PNG
-files and panel-level source data. TIFF files are generated locally but omitted
-from Git because the corresponding vector and 300-dpi files are distributed.
-The expected execution order for full reanalysis is listed in
-[`workflow/pipeline.tsv`](workflow/pipeline.tsv).
+The R renderers export PDF and SVG vector files, 600-dpi TIFF files and 300-dpi
+PNG files. Supplementary Figs. 1–4 are distributed in final form; their renderer
+is retained for provenance, but Fig. 3g requires the governed DSLab patient-level
+source. Full reanalysis requires the public raw data listed in
+[`data/datasets.tsv`](data/datasets.tsv); these third-party inputs are not
+redistributed.
 
-## Cell-state decomposition
+## Self-generated data boundary
 
-The primary held-out 287-gene score difference was 0.556. Exact symmetric
-decomposition attributed 0.229 to recovered epithelial composition and 0.327
-to expression within matched deposited states. Excluding the disease-labelled
-neoplastic and abnormal states reduced the composition component to 0.046
-while retaining a within-state component of 0.379. These are accounting
-components, not causal mediation effects or unbiased estimates of in situ cell
-abundance.
+Patient-level DSLab matrices, metadata and source values are available from the
+corresponding author on reasonable request and subject to institutional
+data-governance requirements. Only aggregate statistics are distributed here.
+The source values for the patient-level panel in Supplementary Fig. 3g are
+therefore omitted from the public Source Data workbook.
 
-The analysis contract, Python implementation, independent base-R numerical
-audit, bootstrap outputs and panel-level source data are distributed under
-`analysis/contracts/`, `analysis/` and `results/cell_state_decomposition_v1/`.
+## Virtual deletion
 
-## Full reanalysis and raw data
-
-Raw third-party datasets are not redistributed. Download them from the public
-repositories listed in [`data/datasets.tsv`](data/datasets.tsv), preserve the
-directory names documented in [`docs/DATA.md`](docs/DATA.md), and then run the
-stages in [`workflow/pipeline.tsv`](workflow/pipeline.tsv). Large single-cell,
-ATAC, spatial and proteomic inputs make the full workflow substantially more
-computationally intensive than the quick verification.
-
-The GenKI virtual-deletion analysis uses a separate environment because its
-PyTorch and NumPy requirements differ from the main analysis:
+GenKI virtual deletion is supplementary, unsigned regulator-context evidence.
+It tests whether fixed target deletions preferentially affect historical gene
+sets relative to matched genes. Biological direction is supplied by empirical
+perturbation data. The analysis uses a separate environment because its PyTorch
+requirements differ from the main workflow:
 
 ```bash
 conda env create -f environment-virtual-knockout.yml
@@ -125,29 +137,24 @@ conda run -n crc-premalignant-virtual-ko python \
   analysis/audit_genki_reproducibility_v2_9.py
 ```
 
-This analysis is confirmatory and unsigned: it tests whether prespecified
-target deletions preferentially affect the frozen gene sets relative to matched
-genes. Direction is supplied only by the empirical perturbation datasets.
-
 ## Reproducibility
 
-- The signature file has SHA256
-  `91e564f42bdc5fb0188605b76116bcfb126e5102d62a33d6890fa67018928380`.
-- Patients, donors, models, clones or tissue sections are the inferential units;
-  cells, nuclei and spots do not inflate sample size.
-- Random seeds, environment versions, input hashes and output checks are
-  recorded in the result manifests.
-- All 16 reported decomposition identities were independently recomputed in
-  base R with a maximum absolute discrepancy of 2.22 × 10^-16.
-- Figure source data are distributed independently of the raw third-party data.
+- Patients, donors, patient clusters, models, clones or tissue sections are the
+  inferential units; cells, nuclei and spots are nested measurements.
+- Fine-state uncertainty uses 5,000 whole-donor bootstrap samples.
+- The compact candidate is compared with 2,000 direction-balanced portable
+  panels in donor-disjoint and external data.
+- Random seeds, input hashes, environment versions and quality gates are
+  recorded in result manifests.
+- Figure source data are distributed independently of raw third-party data.
 
-See [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) for the evidence and
-claim boundaries.
+See [`docs/REPRODUCIBILITY.md`](docs/REPRODUCIBILITY.md) for the supported
+interpretations and analysis boundaries.
 
 ## Licence and citation
 
-Code in this repository is released under the MIT License. Derived tables are
-provided for research reproducibility; source-dataset licences and terms remain
-in force. Cite both the eventual manuscript and the primary publications for
-all reused datasets. Repository citation metadata are provided in
+Code is released under the MIT License. Derived tables are provided for
+research reproducibility; source-dataset licences and terms remain in force.
+Cite the associated manuscript, this software release and the primary
+publication for every reused dataset. Citation metadata are provided in
 [`CITATION.cff`](CITATION.cff).

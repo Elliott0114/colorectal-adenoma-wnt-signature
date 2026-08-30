@@ -1,0 +1,3 @@
+gate	passed
+all_external_cohort_rank_effects_positive	True
+median_external_fidelity_exceeds_random_q95	False

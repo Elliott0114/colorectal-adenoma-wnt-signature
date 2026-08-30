@@ -1,0 +1,5 @@
+gate	passed
+compact_rank_fidelity_at_least_0.75	FALSE
+compact_rank_exceeds_random_q95	TRUE
+compact_rank_route_effect_positive_overall	TRUE
+compact_rank_route_effect_positive_all_states	TRUE

@@ -1,0 +1,4 @@
+collection	tested_gene_sets	fdr_le_0.05	global_fdr_le_0.05	up_fdr_le_0.05	down_fdr_le_0.05
+GO:BP 2026.1.Hs	2701	38	50	3	35
+Hallmark 2026.1.Hs	47	9	6	0	9
+Reactome 2026.1.Hs	803	93	56	2	91

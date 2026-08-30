@@ -1,0 +1,11 @@
+metric	value
+strict_genes	1843
+donor_leaveout_folds	27
+genes_common_sign_stability_1	1843
+genes_common_sign_stability_ge_0.90	1843
+median_common_sign_stability	1
+minimum_common_sign_stability	1
+median_minimum_state_sign_stability	1
+minimum_minimum_state_sign_stability	0.884615384615385
+median_common_effect_spearman	0.99239607752296
+minimum_common_effect_spearman	0.971848121209813

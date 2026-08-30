@@ -1,0 +1,8 @@
+dataset	species	model_system	comparison	unit_id	feature	expected_direction	difference	label
+GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc	shApc	route_score	-1	-0.371076930715459	Apc restoration
+GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc_Kras	shApc_Kras	route_score	-1	-2.25659517004047	Apc restoration + Kras
+GSE130822	mouse	colonic_stem_cells	ascl2_ko_vs_resting_wt	colonic_stem_cells	route_score	-1	-0.418366407998027	Ascl2 knockout
+GSE171910	human	conditional_crc_wnt_models	conditional_wnt_silencing	DLD1	route_score	-1	-0.28724277792959	Conditional WNT silencing
+GSE171910	human	conditional_crc_wnt_models	conditional_wnt_silencing	HT29	route_score	-1	-0.537869905885456	Conditional WNT silencing
+GSE171910	human	conditional_crc_wnt_models	conditional_wnt_silencing	L8	route_score	-1	-0.0836571653553787	Conditional WNT silencing
+GSE171910	human	conditional_crc_wnt_models	conditional_wnt_silencing	SIBC	route_score	-1	-1.01141811907524	Conditional WNT silencing

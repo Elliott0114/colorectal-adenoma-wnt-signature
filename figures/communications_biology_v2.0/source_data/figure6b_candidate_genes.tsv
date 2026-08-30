@@ -1,0 +1,17 @@
+gene	arm	donor_bootstrap_selection_frequency	partition	effect
+EPHB2	up	0.999	Discovery	0.776094511519
+EPHB2	up	0.999	Donor-disjoint validation	0.798315851640583
+CALM2	down	0.7935	Discovery	-0.980109498274215
+CALM2	down	0.7935	Donor-disjoint validation	-0.684213161851523
+REG1A	up	0.75	Discovery	6.45435182201207
+REG1A	up	0.75	Donor-disjoint validation	
+COX6C	down	0.749	Discovery	-0.740037508915188
+COX6C	down	0.749	Donor-disjoint validation	-0.878839631237383
+LTBP1	up	0.7995	Discovery	0.57182349123114
+LTBP1	up	0.7995	Donor-disjoint validation	0.0770051438581204
+B2M	down	0.593	Discovery	-0.885607080305864
+B2M	down	0.593	Donor-disjoint validation	-0.712024040763444
+RNF43	up	0.579	Discovery	1.23227112231595
+RNF43	up	0.579	Donor-disjoint validation	1.52834838506709
+ACAA2	down	0.284	Discovery	-0.713014478369503
+ACAA2	down	0.284	Donor-disjoint validation	-0.700061712651766

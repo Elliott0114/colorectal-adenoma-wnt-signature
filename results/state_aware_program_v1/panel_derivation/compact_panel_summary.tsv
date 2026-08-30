@@ -1,0 +1,17 @@
+metric	value
+strict_core_total	1843
+strict_core_up	884
+strict_core_down	959
+portable_candidate_up	15
+portable_candidate_down	38
+discovery_donors	27
+discovery_profiles	134
+maximum_pairs_evaluated	15
+selected_pairs	4
+selected_total_genes	8
+selected_oof_spearman	0.947540493023604
+selected_oof_ci_low	0.908749334953639
+selected_oof_ci_high	0.965173601759377
+one_se_pairs	4
+valid_gene_selection_bootstraps	2000
+minimum_panel_bootstrap_selection_frequency	0.284

@@ -1,0 +1,7 @@
+gate	passed
+overall_full_score_positive	TRUE
+all_state_full_scores_positive	TRUE
+strict_common_direction_at_least_0.90	TRUE
+effect_correlation_at_least_0.80	TRUE
+site_adjusted_full_score_positive	TRUE
+same_site_state_effects_positive	FALSE

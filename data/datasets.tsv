@@ -1,12 +1,12 @@
 evidence_layer	resource	accession_or_version	primary_reference_doi	public_url	raw_data_redistributed	analysis_role
-Discovery and held-out validation	Chen epithelial discovery	CELLxGENE e40c6272-af77-4a10-9385-62a398884f27 version 9da034b0-de48-47ab-97f6-21b5f2dbd1a4	10.1016/j.cell.2021.11.031	https://cellxgene.cziscience.com/collections/a48f5033-3438-4550-8574-cdff3263fdfd	no	Discovery core and grouped reduction
-Discovery and held-out validation	Chen epithelial validation	CELLxGENE d6dfdef1-406d-4efb-808c-3c5eddbfe0cb version 6f8f0b95-3779-4c0e-824d-4810c39f008c	10.1016/j.cell.2021.11.031	https://cellxgene.cziscience.com/collections/a48f5033-3438-4550-8574-cdff3263fdfd	no	Held-out validation and virtual-deletion input
+State-aware discovery	Chen epithelial discovery	CELLxGENE e40c6272-af77-4a10-9385-62a398884f27 version 9da034b0-de48-47ab-97f6-21b5f2dbd1a4	10.1016/j.cell.2021.11.031	https://cellxgene.cziscience.com/collections/a48f5033-3438-4550-8574-cdff3263fdfd	no	State-specific pseudobulk discovery and compact-readout reconstruction
+Donor-disjoint validation	Chen epithelial validation	CELLxGENE d6dfdef1-406d-4efb-808c-3c5eddbfe0cb version 6f8f0b95-3779-4c0e-824d-4810c39f008c	10.1016/j.cell.2021.11.031	https://cellxgene.cziscience.com/collections/a48f5033-3438-4550-8574-cdff3263fdfd	no	Gene-level replication, fine-state decomposition and compact-readout fidelity
 Independent transcriptomics	Sporadic adenoma cohort	GSE8671	10.1158/1541-7786.MCR-07-0267	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE8671	no	Paired adenoma-normal replication
 Independent transcriptomics	Sporadic adenoma cohort	GSE50114	10.1371/journal.pone.0087761	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE50114	no	Adenoma-normal replication
 Independent transcriptomics	Colorectal sequence cohort	GSE41657	NA	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE41657	no	Adenoma-normal replication; repository record cited because no linked primary article was verified
 Independent transcriptomics	Early colorectal sequence cohort	GSE40362	NA	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE40362	no	Adenoma-normal replication; repository record cited because no linked primary article was verified
 Independent transcriptomics	Paired adenoma cohort	GSE72820	10.1371/journal.pone.0153933	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE72820	no	Paired adenoma-normal replication
-Archival transcriptomics	Paired FFPE colorectal sequence	GSE117606	10.1016/S0959-8049(16)61552-6	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117606	no	FFPE measurability
+Archival transcriptomics	Paired FFPE colorectal sequence	GSE117606	10.1093/annonc/mdy337	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE117606	no	Paired archival-tissue transfer and compact-to-full fidelity
 Single nucleus and multiome	Becker single-nucleus RNA	GSE201348	10.1038/s41588-022-01088-x	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE201348	no	Independent epithelial transfer
 Single nucleus and multiome	Becker multiome	GSE201349 and GSE201350	10.1038/s41588-022-01088-x	https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE201349	no	Matched RNA-accessibility association
 Cross-sectional atlas	CRC Atlas	Zenodo 17878122	10.1016/j.ccell.2025.12.003	https://doi.org/10.5281/zenodo.17878122	no	Source-qualified cross-sectional recurrence
@@ -21,4 +21,4 @@ Proteomics	Colorectal mucosa adenoma cancer proteome	PXD002137	10.1021/acs.jprot
 Proteomics	Paired precancerous colorectal proteome	PXD000445	10.1074/mcp.M113.035105	https://www.ebi.ac.uk/pride/archive/projects/PXD000445	no	Paired protein anchors
 Proteomics	Large-scale FFPE proteome	PXD017269	10.1002/path.5420	https://www.ebi.ac.uk/pride/archive/projects/PXD017269	no	FFPE protein detectability
 Proteomics	Deep visual proteomics of adenomas	PXD046999	10.1016/j.isci.2024.110620	https://www.ebi.ac.uk/pride/archive/projects/PXD046999	no	Spatial protein detectability
-
+Self-generated composition sensitivity	DSLab colorectal-polyp single-cell series	15 de-identified polyps; request only	NA	Contact corresponding author	no	Copy-number-composition sensitivity; patient-level data available subject to institutional governance

@@ -1,22 +1,20 @@
 order	stage	environment	command	principal_output	run_by_default
-1	Discovery pseudobulk and stability	crc-premalignant-locked	python analysis/discovery_locked_route_signature.py	results/route_signature_locked/	no
-2	Threshold-defined 287-gene core	crc-premalignant-locked	Rscript analysis/data_adaptive_gene_panel_pilot_v2_6.R	results/data_adaptive_panel_pilot_v2_6/	no
-3	Label-blind 62-gene portability audit	crc-premalignant-locked	python analysis/export_287_portability_candidates_v2_7.py	results/objective_compact_panel_v2_7/portable_protein_coding_candidate_universe.tsv	no
-4	Discovery-only compact signature	crc-premalignant-locked	Rscript analysis/select_objective_compact_panel_v2_7.R	results/objective_compact_panel_v2_7/objective_compact_panel_frozen.tsv	no
-5	Held-out and external validation	crc-premalignant-locked	python analysis/validate_objective_compact_panel_v2_7.py	results/objective_compact_panel_v2_7/	no
-6	Held-out cell-state composition and expression decomposition	crc-premalignant-locked	python analysis/cell_state_composition_decomposition_v1.py	results/cell_state_decomposition_v1/	no
-7	Independent numerical decomposition audit	crc-premalignant-locked	Rscript analysis/audit_cell_state_decomposition_v1.R	results/cell_state_decomposition_v1/independent_r_audit.tsv	yes
-8	RNA-ATAC atlas perturbation spatial and protein layers	crc-premalignant-locked	python analysis/validate_objective_panel_extended_layers_v2_7.py	results/objective_compact_panel_v2_7/extended_validation/	no
-9	Matched-alternative benchmark	crc-premalignant-locked	python analysis/benchmark_objective_panel_against_random_v2_7.py	results/objective_compact_panel_v2_7/random_benchmark/	no
-10	Virtual-deletion input preparation	crc-premalignant-locked	python analysis/prepare_genki_virtual_knockout_validation_v2_9.py	results/virtual_knockout_validation_v2_9/input/	no
-11	Dual-seed GenKI virtual deletion	crc-premalignant-virtual-ko	python analysis/run_genki_virtual_knockout_validation_v2_9.py	results/virtual_knockout_validation_v2_9/	no
-12	GenKI exact-output audit	crc-premalignant-virtual-ko	python analysis/audit_genki_reproducibility_v2_9.py	results/virtual_knockout_validation_v2_9/genki_reproducibility_summary.json	no
-13	Base manuscript figure rendering	crc-premalignant-locked	Rscript analysis/plot_jtm_submission_figures_v2_8.R	figures/jtm_submission_v2.8/	no
-14	Communications Biology workflow layout	crc-premalignant-locked	Rscript analysis/refine_communications_biology_workflows_v1_1.R	figures/communications_biology_v1.1/	yes
-15	Figure 1 workflow and attrition layout	crc-premalignant-locked	Rscript analysis/revise_communications_biology_figure1_v1_2.R	figures/communications_biology_v1.2/	yes
-16	Targeted figure audit fixes	crc-premalignant-locked	Rscript analysis/refine_communications_biology_figure_audit_fixes_v1_2.R	figures/communications_biology_v1.2/	yes
-17	Final panel alignment	crc-premalignant-locked	Rscript analysis/refine_communications_biology_alignment_v1_3.R	figures/communications_biology_v1.2/	yes
-18	Downstream figure renumbering	crc-premalignant-locked	python analysis/assemble_communications_biology_v1_3.py	figures/communications_biology_v1.2/	yes
-19	Cell-state Figure 3 rendering	crc-premalignant-locked	CELL_STATE_FIGURE_DIR=figures/communications_biology_v1.2 CELL_STATE_FIGURE_STEM=figure3_cell_state_decomposition Rscript analysis/plot_cell_state_decomposition_v1.R	figures/communications_biology_v1.2/figure3_cell_state_decomposition.*	yes
-20	Final figure package audit	crc-premalignant-locked	python analysis/audit_communications_biology_figures_v1_3.py	figures/communications_biology_v1.2/source_data/figure_package_audit_summary_v1_3.tsv	yes
-21	Release integrity audit	crc-premalignant-locked	python tests/verify_release.py	standard output	yes
+1	Discovery state pseudobulk	crc-premalignant-locked	Rscript analysis/state_aware_build_discovery_pseudobulk_v1.R	results/state_aware_program_v1/discovery_pseudobulk/	no
+2	Discovery state-specific mixed models	crc-premalignant-locked	Rscript analysis/state_aware_fit_discovery_models_v1.R	results/state_aware_program_v1/discovery_models/	no
+3	Cross-state common-effect integration	crc-premalignant-locked	Rscript analysis/state_aware_integrate_common_effects_v1.R	results/state_aware_program_v1/common_effects/	no
+4	Whole-donor leave-out stability	crc-premalignant-locked	Rscript analysis/state_aware_leave_one_donor_out_stability_v1.R	results/state_aware_program_v1/donor_leaveout_stability/	no
+5	Functional and regulator interpretation	crc-premalignant-locked	Rscript analysis/state_aware_interpret_common_program_v1.R	results/state_aware_program_v1/interpretation/	no
+6	Frozen programme validation	crc-premalignant-locked	Rscript analysis/state_aware_validate_frozen_program_v1.R	results/state_aware_program_v1/heldout_validation/	no
+7	Donor-overlap removal and site sensitivities	crc-premalignant-locked	Rscript analysis/state_shared_revision_donor_site_v2.R	results/state_shared_revision_v2/donor_site/	no
+8	Programme-blind fine-state definition	crc-premalignant-locked	python analysis/state_shared_revision_define_fine_states_v2.py	results/state_shared_revision_v2/fine_states/	no
+9	Fine-state adjusted models and exact decomposition	crc-premalignant-locked	Rscript analysis/state_shared_revision_fine_state_models_v2.R	results/state_shared_revision_v2/fine_state_models/	no
+10	Portable candidate audit	crc-premalignant-locked	python analysis/export_state_shared_portability_candidates_v1.py	results/state_aware_program_v1/panel_derivation/	no
+11	Discovery-only compact reconstruction	crc-premalignant-locked	Rscript analysis/derive_state_shared_compact_panel_v1.R	results/state_aware_program_v1/panel_derivation/	no
+12	Independent transcriptomic and FFPE validation	crc-premalignant-locked	python analysis/validate_state_shared_external_layers_v1.py	results/state_aware_program_v1/external_validation/	no
+13	RNA-ATAC atlas perturbation and spatial validation	crc-premalignant-locked	python analysis/validate_state_shared_extended_layers_v1.py	results/state_aware_program_v1/extended_validation/	no
+14	Random-effects external synthesis	crc-premalignant-locked	Rscript analysis/state_shared_revision_external_meta_v2.R	results/state_shared_revision_v2/external_meta/	no
+15	Internal random-panel benchmark	crc-premalignant-locked	Rscript analysis/state_shared_revision_compact_rank_v2.R	results/state_shared_revision_v2/compact_rank/	no
+16	External random-panel benchmark	crc-premalignant-locked	python analysis/state_shared_revision_external_rank_v2.py	results/state_shared_revision_v2/external_rank/	no
+17	DSLab aggregate composition sensitivity	crc-premalignant-locked	python analysis/run_dslab_state_shared_cnv_validation_v1.py	results/state_aware_program_v1/dslab_cnv_validation/	no
+18	Public main and supplementary figure rendering	crc-premalignant-locked	make figures	figures/communications_biology_v2.0/	yes
+19	Release integrity audit	crc-premalignant-locked	python tests/verify_release.py	standard output	yes

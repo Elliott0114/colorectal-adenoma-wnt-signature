@@ -1,0 +1,20 @@
+{
+  "analysis": "validate_state_shared_external_layers_v1",
+  "analysis_date": "2026-08-29",
+  "frozen_input_hashes": {
+    "common_effects": "a1ac4b7b67ac279782e04e386971d7463e169cbdbc24d7da4c314e34a4f3e946",
+    "compact_panel": "c5997e572342a72da8441df312fba4e3461cacfa5e30d0d8590a3f23ae3d96f0",
+    "external_addendum": "ea0ac55c402ba70fe840b721ae878bf8a4d2028593bdf3322a894b86bd005b43"
+  },
+  "full_programme_genes": 1843,
+  "compact_readout_genes": 8,
+  "gene_reselection": false,
+  "weight_fitting": false,
+  "cutpoint_optimization": false,
+  "score": "within-dataset gene z scores; mean(up) minus mean(down)",
+  "software": {
+    "python": "3.11.15",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3"
+  }
+}

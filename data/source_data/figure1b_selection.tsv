@@ -1,0 +1,5 @@
+step	count	rule	width	y	fill
+Assayed	33703	features in discovery object	3	3	#F5F6F7
+Jointly testable	8221	expressed in ABS, GOB and TAC	2.25	2	#EDF4F8
+State-shared	1843	FDR ≤ 0.05 · concordant sign
+lfsr ≤ 0.05	1.55	1	#FBF0EC

@@ -1,0 +1,4 @@
+cell_type	n_genes	n_specimens	n_donors	n_normal_specimens	n_adenoma_specimens	n_model_errors	n_initial_model_errors	elapsed_seconds
+ABS	7115	46	24	31	15	0	0	408.237138271332
+GOB	7115	41	24	29	12	0	0	454.061902761459
+TAC	7115	41	23	29	12	0	0	432.205154895782

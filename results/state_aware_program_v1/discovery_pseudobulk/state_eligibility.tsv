@@ -1,0 +1,8 @@
+cell_type	conventional_adenoma	normal	n_paired_donors	eligible
+ABS	14	24	11	TRUE
+GOB	11	23	8	TRUE
+TAC	11	21	7	TRUE
+STM	4	12	1	FALSE
+CT	4	12	1	FALSE
+TUF	2	7	1	FALSE
+EE	0	2	0	FALSE

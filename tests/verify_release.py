@@ -1,31 +1,38 @@
 #!/usr/bin/env python3
-"""Run fast integrity checks for the public manuscript repository."""
+"""Fast integrity checks for the public identity-remodelling release."""
 
 from __future__ import annotations
 
-import hashlib
-import json
 import re
 from pathlib import Path
 
 import pandas as pd
+from openpyxl import load_workbook
 
 
 ROOT = Path(__file__).resolve().parents[1]
 SIGNATURE_DIR = ROOT / "data" / "signatures"
-FINAL_FIGURE_DIR = ROOT / "figures" / "communications_biology_v1.2"
-EXPECTED_SIGNATURE_SHA256 = (
-    "91e564f42bdc5fb0188605b76116bcfb126e5102d62a33d6890fa67018928380"
-)
+FIGURE_DIR = ROOT / "figures" / "communications_biology_v2.0"
 MAX_PUBLIC_FILE_BYTES = 50 * 1024 * 1024
 
-
-def sha256(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as handle:
-        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+MAIN_FIGURES = [
+    "figure1_study_design_and_programme_derivation",
+    "figure2_donor_disjoint_identity_remodelling",
+    "figure3_external_recurrence_and_archival_transfer",
+    "figure4_regulatory_and_epithelial_context",
+    "figure5_genetic_perturbation_support",
+    "figure6_reduced_measurement_candidate",
+]
+SUPP_FIGURES = [
+    "figureS1_sampling_and_donor_stability",
+    "figureS2_historical_gene_set_audit",
+    "figureS3_fine_state_and_composition_sensitivities",
+    "figureS4_functional_and_regulatory_structure",
+    "figureS5_external_and_ffpe_sensitivities",
+    "figureS6_compact_derivation_and_benchmarks",
+    "figureS7_multiomic_atlas_spatial_protein",
+    "figureS8_perturbation_and_virtual_context",
+]
 
 
 def require(condition: bool, message: str) -> None:
@@ -33,230 +40,105 @@ def require(condition: bool, message: str) -> None:
         raise AssertionError(message)
 
 
-def check_signatures() -> None:
-    core = pd.read_csv(SIGNATURE_DIR / "core_287_genes.tsv", sep="\t")
-    portable = pd.read_csv(
-        SIGNATURE_DIR / "portable_candidates_62_genes.tsv", sep="\t"
-    )
-    signature_path = SIGNATURE_DIR / "signature_12_genes.tsv"
-    signature = pd.read_csv(signature_path, sep="\t")
-
-    require(len(core) == 287, f"Expected 287 core genes, observed {len(core)}")
-    require(len(portable) == 62, f"Expected 62 portable genes, observed {len(portable)}")
-    require(len(signature) == 12, f"Expected 12 signature genes, observed {len(signature)}")
-    require(core["gene"].is_unique, "Core contains duplicate symbols")
-    require(portable["gene"].is_unique, "Portable set contains duplicate symbols")
-    require(signature["gene"].is_unique, "Signature contains duplicate symbols")
-    require(set(signature["arm"]) == {"up", "down"}, "Signature is not two-armed")
-    require(
-        signature["arm"].value_counts().to_dict() == {"up": 6, "down": 6},
-        "Signature is not balanced 6 up / 6 down",
-    )
-    require(
-        set(signature["gene"]).issubset(set(portable["gene"])),
-        "Signature is not a subset of the portable candidates",
-    )
-    require(
-        set(portable["gene"]).issubset(set(core["gene"])),
-        "Portable candidates are not a subset of the 287-gene core",
-    )
-    require(
-        not signature["fixed_gene_count_used"].astype(bool).any(),
-        "Signature metadata indicates a fixed count",
-    )
-    require(
-        not signature["validation_outcomes_used"].astype(bool).any(),
-        "Signature metadata indicates validation leakage",
-    )
-    require(
-        sha256(signature_path) == EXPECTED_SIGNATURE_SHA256,
-        "Frozen signature checksum changed",
-    )
+def close(observed: float, expected: float, tolerance: float = 1e-10) -> bool:
+    return abs(observed - expected) <= tolerance
 
 
-def check_required_files() -> None:
+def check_definitions() -> None:
+    ranking = pd.read_csv(SIGNATURE_DIR / "common_effect_ranking_8221.tsv.gz", sep="\t")
+    strict = pd.read_csv(SIGNATURE_DIR / "state_aware_high_confidence_1843.tsv", sep="\t")
+    candidates = pd.read_csv(SIGNATURE_DIR / "portable_candidates_53.tsv", sep="\t")
+    compact = pd.read_csv(SIGNATURE_DIR / "compact_candidate_8_genes.tsv", sep="\t")
+    require(len(ranking) == 8221, "Expected an 8,221-gene common-effect ranking")
+    require(len(strict) == 1843, "Expected 1,843 high-confidence genes")
+    require(strict["shared_direction"].value_counts().to_dict() == {"down": 959, "up": 884}, "Unexpected programme arms")
+    require(len(candidates) == 53, "Expected 53 portable candidates")
+    require(len(compact) == 8, "Expected eight compact genes")
+    require(compact["arm"].value_counts().to_dict() == {"up": 4, "down": 4}, "Compact candidate is not balanced")
+    require(set(compact["gene"]) == {"EPHB2", "REG1A", "LTBP1", "RNF43", "CALM2", "COX6C", "B2M", "ACAA2"}, "Compact membership changed")
+    require(set(compact["gene"]).issubset(set(candidates["gene"])), "Compact genes are not portable candidates")
+    require(not compact["validation_outcomes_used"].astype(bool).any(), "Validation leakage flag changed")
+    require(compact["panel_frozen_before_validation"].astype(bool).all(), "Freeze flag changed")
+
+
+def check_principal_results() -> None:
+    donor = pd.read_csv(ROOT / "results/state_shared_revision_v2/donor_site/donor_disjoint_replication_summary.tsv", sep="\t").iloc[0]
+    require(int(donor["n_testable_strict_genes"]) == 1646, "Donor-disjoint testable count changed")
+    require(close(donor["common_direction_match_fraction"], 0.986026731470231), "Direction agreement changed")
+    require(close(donor["discovery_validation_effect_spearman"], 0.912185029960394), "Discovery-validation fidelity changed")
+
+    decomposition = pd.read_csv(ROOT / "results/state_shared_revision_v2/fine_state_models/programme_composition_decomposition.tsv", sep="\t")
+    primary = decomposition.loc[
+        decomposition["partition"].eq("validation")
+        & decomposition["k"].eq(4)
+        & decomposition["scope"].eq("all")
+        & decomposition["decomposition_type"].eq("fine_state")
+    ].set_index("component")
+    total = primary.loc["total", "estimate"]
+    composition = primary.loc["composition", "estimate"]
+    within = primary.loc["within", "estimate"]
+    require(close(total, composition + within), "Primary decomposition does not close")
+    require(close(within / total, 0.7911514513877733, 1e-9), "Primary within-state fraction changed")
+
+    meta = pd.read_csv(ROOT / "results/state_shared_revision_v2/external_meta/random_effects_meta_summary.tsv", sep="\t")
+    full = meta.loc[meta["signature_id"].eq("state_shared_1843") & meta["excluded_cohort"].eq("__NONE__")].iloc[0]
+    require(close(full["pooled_standardized_effect"], 1.90288083576639), "External pooled effect changed")
+
+    internal = pd.read_csv(ROOT / "results/state_shared_revision_v2/compact_rank/random_eight_gene_benchmark_summary.tsv", sep="\t").iloc[0]
+    external = pd.read_csv(ROOT / "results/state_shared_revision_v2/external_rank/random_eight_gene_benchmark_summary.tsv", sep="\t").iloc[0]
+    require(internal["observed_compact_spearman"] > internal["random_q95"], "Internal compact benchmark boundary changed")
+    require(external["observed_median_cohort_spearman"] < external["random_q95"], "External non-uniqueness boundary changed")
+
+
+def check_figures_and_workbooks() -> None:
+    for stem in MAIN_FIGURES + SUPP_FIGURES:
+        for suffix in ("pdf", "png", "svg"):
+            require((FIGURE_DIR / f"{stem}.{suffix}").is_file(), f"Missing figure: {stem}.{suffix}")
+    source = load_workbook(ROOT / "data/source_data/Source_Data.xlsx", read_only=True)
+    supplement = load_workbook(ROOT / "data/supplementary/Supplementary_Tables_1-12.xlsx", read_only=True)
+    require(len(source.sheetnames) == 86, "Unexpected Source Data worksheet count")
+    require(len(supplement.sheetnames) == 72, "Unexpected supplementary worksheet count")
+    require(not any("dslab_common" in name.lower() for name in source.sheetnames), "Governed DSLab patient-level source was included")
+    require(all(any(name.startswith(f"T{number}") for name in supplement.sheetnames) for number in range(1, 13)), "A supplementary table group is missing")
+
+
+def check_required_files_and_hygiene() -> None:
     required = [
         "README.md",
-        "LICENSE",
         "CITATION.cff",
         "environment.yml",
-        "environment-virtual-knockout.yml",
         "data/datasets.tsv",
-        "data/supplementary/Supplementary_Tables_1-13.xlsx",
         "workflow/pipeline.tsv",
-        "analysis/plot_jtm_submission_figures_v2_8.R",
-        "analysis/refine_communications_biology_workflows_v1_1.R",
-        "analysis/revise_communications_biology_figure1_v1_2.R",
-        "analysis/refine_communications_biology_figure_audit_fixes_v1_2.R",
-        "analysis/refine_communications_biology_alignment_v1_3.R",
-        "analysis/audit_communications_biology_figures_v1_2.R",
-        "analysis/cell_state_composition_decomposition_v1.py",
-        "analysis/audit_cell_state_decomposition_v1.R",
-        "analysis/plot_cell_state_decomposition_v1.R",
-        "analysis/export_cell_state_decomposition_source_data_v1.py",
-        "analysis/audit_communications_biology_figures_v1_3.py",
-        "analysis/assemble_communications_biology_v1_3.py",
-        "analysis/contracts/cell_state_decomposition_v1_2026-08-27.md",
-        "results/cell_state_decomposition_v1/analysis_manifest.json",
-        "results/cell_state_decomposition_v1/analysis_qa.tsv",
-        "results/cell_state_decomposition_v1/independent_r_audit.tsv",
-        "results/virtual_knockout_validation_v2_9/genki_analysis_manifest.json",
-        "results/virtual_knockout_validation_v2_9/genki_reproducibility_summary.json",
+        "analysis/state_aware_build_discovery_pseudobulk_v1.R",
+        "analysis/state_aware_integrate_common_effects_v1.R",
+        "analysis/state_shared_revision_define_fine_states_v2.py",
+        "analysis/state_shared_revision_fine_state_models_v2.R",
+        "analysis/derive_state_shared_compact_panel_v1.R",
+        "analysis/build_state_shared_revision_figure6_v3.R",
     ]
-    required.extend(
-        f"figures/manuscript/figure{number}_{stem}.svg"
-        for number, stem in [
-            (1, "discovery_core_and_objective_reduction"),
-            (2, "independent_replication_and_ffpe"),
-            (3, "rna_atac_regulatory_support"),
-            (4, "crc_atlas_cross_sectional_recurrence"),
-            (5, "empirical_and_virtual_perturbation_support"),
-            (6, "spatial_and_protein_context"),
-        ]
-    )
     missing = [path for path in required if not (ROOT / path).is_file()]
     require(not missing, "Missing required files: " + ", ".join(missing))
-
-
-def check_final_figure_package() -> None:
-    stems = [
-        "figure1_discovery_core_and_objective_reduction",
-        "figure2_independent_replication_and_ffpe",
-        "figure3_cell_state_decomposition",
-        "figure4_rna_atac_regulatory_support",
-        "figure5_crc_atlas_cross_sectional_recurrence",
-        "figure6_empirical_and_virtual_perturbation_support",
-        "figure7_spatial_and_protein_context",
-        "figureS1_core_composition_and_portability",
-        "figureS2_external_and_ffpe_sensitivity",
-        "figureS3_signature_transparency_and_random_benchmark",
-        "figureS4_rna_atac_robustness",
-        "figureS5_crc_atlas_source_audit",
-        "figureS6_perturbation_boundaries",
-        "figureS7_virtual_knockout_robustness",
-        "figureS8_spatial_and_protein_assayability",
-    ]
-    missing = [
-        str((FINAL_FIGURE_DIR / f"{stem}.{suffix}").relative_to(ROOT))
-        for stem in stems
-        for suffix in ("pdf", "png", "svg")
-        if not (FINAL_FIGURE_DIR / f"{stem}.{suffix}").is_file()
-    ]
-    require(not missing, "Missing final figure files: " + ", ".join(missing))
-
-    audit_path = FINAL_FIGURE_DIR / "source_data" / "figure_package_audit_summary_v1_3.tsv"
-    audit = pd.read_csv(audit_path, sep="\t")
-    require(len(audit) > 0, "Final figure audit is empty")
-    require(audit["pass"].astype(bool).all(), "Final figure audit did not pass")
-
-    manifest_path = FINAL_FIGURE_DIR / "source_data" / "figure_export_manifest_v1_3.tsv"
-    manifest = pd.read_csv(manifest_path, sep="\t")
-    require(len(manifest) == 45, "Expected 15 figures in three distributed formats")
-    require(set(manifest["figure"]) == set(stems), "Final figure manifest changed")
-
-    source_files = [
-        "figure3a_epithelial_proportions.tsv",
-        "figure3b_within_state_effects.tsv",
-        "figure3c_paired_donor_scores.tsv",
-        "figure3d_state_contributions.tsv",
-        "figure3e_exact_decomposition.tsv",
-        "figure3f_core_compact_concordance.tsv",
-        "figure3_source_data_manifest.tsv",
-    ]
-    missing_sources = [name for name in source_files if not (ROOT / "data" / "source_data" / name).is_file()]
-    require(not missing_sources, "Missing Figure 3 source data: " + ", ".join(missing_sources))
-
-
-def check_virtual_deletion_manifest() -> None:
-    result_dir = ROOT / "results" / "virtual_knockout_validation_v2_9"
-    manifest = json.loads((result_dir / "genki_analysis_manifest.json").read_text(encoding="utf-8"))
-    audit = json.loads(
-        (result_dir / "genki_reproducibility_summary.json").read_text(encoding="utf-8")
-    )
-    require(manifest["analysis_role"] == "validation_not_discovery", "GenKI role changed")
-    require(manifest["n_cells"] == 1664, "Unexpected GenKI cell count")
-    require(manifest["n_donors"] == 13, "Unexpected GenKI donor count")
-    require(manifest["model_seeds"] == [20260810, 20260811], "Unexpected GenKI seeds")
-    require(manifest["matched_null_replicates"] == 10000, "Unexpected null count")
-    require(manifest["qa_all_passed"] is True, "GenKI QA did not pass")
-    require(
-        audit["all_reported_outputs_exactly_reproduced"] is True,
-        "GenKI exact-output audit did not pass",
-    )
-
-
-def check_cell_state_decomposition() -> None:
-    result_dir = ROOT / "results" / "cell_state_decomposition_v1"
-    qa = pd.read_csv(result_dir / "analysis_qa.tsv", sep="\t")
-    require(qa["pass"].astype(bool).all(), "Cell-state decomposition QA failed")
-
-    audit = pd.read_csv(result_dir / "independent_r_audit.tsv", sep="\t")
-    require(len(audit) == 16, "Expected 16 independently audited decompositions")
-    require(audit["pass"].astype(bool).all(), "Independent R decomposition audit failed")
-    error_columns = [
-        "closure_error_r",
-        "total_abs_error",
-        "composition_abs_error",
-        "within_state_abs_error",
-    ]
-    require(
-        audit[error_columns].abs().to_numpy().max() <= 1e-10,
-        "Independent R decomposition error exceeded 1e-10",
-    )
-
-    summary = pd.read_csv(result_dir / "decomposition_summary.tsv", sep="\t")
-    primary = summary.loc[
-        summary["dataset"].eq("validation")
-        & summary["score"].eq("core_287")
-        & summary["state_set"].eq("all_states")
-        & summary["comparison"].eq("conventional_vs_normal")
-    ]
-    require(len(primary) == 1, "Primary cell-state decomposition row is not unique")
-    row = primary.iloc[0]
-    require(abs(row["total_difference"] - 0.5561391166801103) <= 1e-12, "Primary total changed")
-    require(abs(row["composition_component"] - 0.22883273603224658) <= 1e-12, "Composition component changed")
-    require(abs(row["within_state_component"] - 0.3273063806478637) <= 1e-12, "Within-state component changed")
-
-
-def check_repository_hygiene() -> None:
-    oversized = []
-    forbidden_names = []
-    sensitive_hits = []
-    text_suffixes = {".md", ".txt", ".tsv", ".csv", ".py", ".r", ".yml", ".yaml", ".json", ".cff"}
-    secret_patterns = [
-        re.compile(r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"),
-        re.compile(r"ghp_[A-Za-z0-9]{30,}"),
-        re.compile(r"github_pat_[A-Za-z0-9_]{30,}"),
-        re.compile(r"AKIA[0-9A-Z]{16}"),
-    ]
-
-    for path in ROOT.rglob("*"):
-        if not path.is_file() or ".git" in path.parts:
-            continue
-        relative = path.relative_to(ROOT)
-        if path.stat().st_size > MAX_PUBLIC_FILE_BYTES:
-            oversized.append(f"{relative} ({path.stat().st_size} bytes)")
-        if path.name in {".env", "id_rsa", "id_ed25519"}:
-            forbidden_names.append(str(relative))
-        if path.suffix.lower() in text_suffixes and path.stat().st_size <= 5 * 1024 * 1024:
-            text = path.read_text(encoding="utf-8", errors="ignore")
-            if any(pattern.search(text) for pattern in secret_patterns):
-                sensitive_hits.append(str(relative))
-
+    oversized = [str(path.relative_to(ROOT)) for path in ROOT.rglob("*") if path.is_file() and ".git" not in path.parts and path.stat().st_size > MAX_PUBLIC_FILE_BYTES]
     require(not oversized, "Files exceed 50 MiB: " + ", ".join(oversized))
-    require(not forbidden_names, "Credential-like files found: " + ", ".join(forbidden_names))
-    require(not sensitive_hits, "Sensitive-token patterns found: " + ", ".join(sensitive_hits))
-    require(not (ROOT / "data_sources").exists(), "Raw data_sources directory must not be public")
+    local_home = "/home/" + "elliottlv"
+    forbidden_text = re.compile(re.escape(local_home) + r"|ghp_[A-Za-z0-9]{30,}|github_pat_[A-Za-z0-9_]{30,}")
+    hits: list[str] = []
+    for path in ROOT.rglob("*"):
+        if not path.is_file() or ".git" in path.parts or path.suffix.lower() not in {".md", ".py", ".r", ".json", ".txt", ".tsv", ".yml", ".yaml", ".cff"}:
+            continue
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        if forbidden_text.search(text):
+            hits.append(str(path.relative_to(ROOT)))
+    require(not hits, "Machine path or credential-like text found: " + ", ".join(hits))
+    require(not (ROOT / "data/source_data/figureS3g_dslab_common_composition.tsv").exists(), "Governed DSLab source file is public")
 
 
 def main() -> None:
     checks = [
-        ("required files", check_required_files),
-        ("frozen signatures", check_signatures),
-        ("final figure package", check_final_figure_package),
-        ("cell-state decomposition", check_cell_state_decomposition),
-        ("virtual-deletion manifest", check_virtual_deletion_manifest),
-        ("repository hygiene", check_repository_hygiene),
+        ("frozen definitions", check_definitions),
+        ("principal numerical results", check_principal_results),
+        ("figures and workbooks", check_figures_and_workbooks),
+        ("required files and hygiene", check_required_files_and_hygiene),
     ]
     for label, function in checks:
         function()

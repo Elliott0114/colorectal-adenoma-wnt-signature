@@ -1,0 +1,13 @@
+partition	route	broad_state	n_cells	n_specimens	n_donors	mean_programme_rank_score
+discovery	conventional_adenoma	ABS	8236	14	14	0.040001266
+discovery	conventional_adenoma	GOB	3908	14	14	0.10140891
+discovery	conventional_adenoma	TAC	1542	14	14	0.07542731
+discovery	normal	ABS	18391	35	24	-0.034683317
+discovery	normal	GOB	5178	35	24	0.024468282
+discovery	normal	TAC	3077	35	24	-0.023945592
+validation	conventional_adenoma	ABS	3704	14	12	0.051630344
+validation	conventional_adenoma	GOB	1487	14	12	0.14915128
+validation	conventional_adenoma	TAC	667	14	12	0.11289875
+validation	normal	ABS	20403	30	18	0.004176924
+validation	normal	GOB	4349	30	18	0.08563281
+validation	normal	TAC	3880	30	18	0.038579077

@@ -1,9 +1,9 @@
 cff-version: 1.2.0
-message: "If you use this code or the frozen signature, please cite the associated manuscript and this software release."
-title: "Code and source data for a colorectal adenoma WNT-associated epithelial state"
+message: "If you use this code or the frozen programme definitions, please cite the associated manuscript and this software release."
+title: "Code and source data for epithelial identity remodelling in colorectal adenomas"
 type: software
-version: 1.2.0
-date-released: 2026-08-27
+version: 2.0.0
+date-released: 2026-08-30
 license: MIT
 repository-code: "https://github.com/Elliott0114/colorectal-adenoma-wnt-signature"
 url: "https://github.com/Elliott0114/colorectal-adenoma-wnt-signature"
@@ -23,8 +23,9 @@ authors:
     email: daimd@zju.edu.cn
 keywords:
   - colorectal adenoma
+  - epithelial identity remodelling
+  - cell-state composition
   - WNT signalling
-  - transcriptomic signature
+  - state-aware transcriptomics
   - multi-omics
   - virtual deletion
-  - cell-state decomposition

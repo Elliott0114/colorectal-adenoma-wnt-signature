@@ -1,0 +1,28 @@
+{
+  "analysis": "state_shared_revision_external_meta_v2",
+  "created_utc": "2026-08-30 03:08:02 UTC",
+  "random_seed": 20260830,
+  "input_sha256": {
+    "cohort_tests": "c56a8fe3f13df9dde22069d4571b9630e36c5e96ff97235538f3a4d646fe22a0",
+    "sample_scores": "ec0df5b3b7ac38a8967a8bb03852fdf13751fd822b9dc807d6226f0612e07e16",
+    "contract": "b4ca3cd7bd416cd6c0a88af4f09a8a7432c6ece5c949cf8c092878d97420d3bc"
+  },
+  "meta_analysis": {
+    "effect": "patient-clustered standardized mean difference per cohort",
+    "tau_estimator": "REML",
+    "interval": "Hartung-Knapp",
+    "prediction_interval": true
+  },
+  "boundary_analyses": ["GSE40362 hyperplastic polyps", "GSE41657 low-grade adenoma, high-grade adenoma and CRC"],
+  "specificity_is_primary": false,
+  "quality_gates": {
+    "random_effects_full_programme_positive": true,
+    "all_leave_one_cohort_out_full_programme_positive": true,
+    "adenoma_vs_hyperplastic_supported_in_GSE40362": true,
+    "broad_adenoma_specificity_supported": false
+  },
+  "package_versions": {
+    "metafor": "5.0.1"
+  },
+  "session_info": ["R version 4.5.3 (2026-03-11)", "Platform: x86_64-conda-linux-gnu", "Running under: Ubuntu 20.04.4 LTS", "", "Matrix products: default", "BLAS/LAPACK: <USER_HOME>/miniforge3/envs/crc-premalignant-locked/lib/libopenblasp-r0.3.33.so;  LAPACK version 3.12.0", "", "locale:", " [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       ", " [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   ", " [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          ", "[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   ", "", "time zone: Etc/UTC", "tzcode source: system (glibc)", "", "attached base packages:", "[1] stats     graphics  grDevices utils     datasets  methods   base     ", "", "other attached packages:", "[1] metafor_5.0-1       numDeriv_2016.8-1.1 metadat_1.6-0      ", "[4] Matrix_1.7-4       ", "", "loaded via a namespace (and not attached):", "[1] compiler_4.5.3 tools_4.5.3    mathjaxr_2.0-0 nlme_3.1-170   grid_4.5.3    ", "[6] digest_0.6.39  lattice_0.22-9"]
+}

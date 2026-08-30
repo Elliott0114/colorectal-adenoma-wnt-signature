@@ -1,0 +1,3 @@
+excluded_cohort	n_samples	n_patient_clusters	n_cohorts	adenoma_coef_sd	se_patient_cluster	ci_low	ci_high	p_value	r_squared	expected_up	expected_down	score_definition	signature_id
+__NONE__	203	161	5	1.7267957813445518	0.09101411500840585	1.547051863632359	1.9065396990567447	8.497912691738263e-43	0.6092169385082762	884	959	cohort-specific all-measurable programme score	state_shared_1843
+__NONE__	203	161	5	1.6183201664335278	0.10272689360881966	1.4154446639914338	1.821195668875622	2.32967804593382e-34	0.5350802286576788	4	4	cohort-specific all-measurable programme score	compact_8
