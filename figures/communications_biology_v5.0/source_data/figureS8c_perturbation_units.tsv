@@ -1,0 +1,14 @@
+dataset	species	model_system	comparison	unit_id	feature	expected_direction	difference	label_text	label
+GSE114059	human	patient_derived_crc_organoid	trametinib_vs_dmso	PTO15T	route_score	1	-0.315286699936377	GSE114059 · trametinib vs dmso	GSE114059 · trametinib vs dmso
+GSE114059	human	patient_derived_crc_organoid	trametinib_vs_dmso	PTO19T	route_score	1	-0.144010945730951	GSE114059 · trametinib vs dmso	GSE114059 · trametinib vs dmso
+GSE114059	human	patient_derived_crc_organoid	trametinib_vs_dmso	PTO4T	route_score	1	-0.222403574394718	GSE114059 · trametinib vs dmso	GSE114059 · trametinib vs dmso
+GSE114059	human	patient_derived_crc_organoid	trametinib_vs_dmso	PTO7T	route_score	1	-0.176837303353263	GSE114059 · trametinib vs dmso	GSE114059 · trametinib vs dmso
+GSE114059	human	patient_derived_crc_organoid	pri724_reversal_of_trametinib	PTO19T	route_score	-1	0.107591452936321	GSE114059 · pri724 reversal of trametinib	GSE114059 · pri724 reversal of trametinib
+GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc	shApc	route_score	-1	-0.00834520457016913	GSE67186 · apc restoration shApc	GSE67186 · apc restoration shApc
+GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc_Kras	shApc_Kras	route_score	-1	-0.358206576175648	GSE67186 · apc restoration shApc Kras	GSE67186 · apc restoration shApc Kras
+GSE67186	mouse	in_vivo_colon_polyp	doxycycline_control_shRenilla	shRenilla	route_score	0	0.812094879398235	GSE67186 · doxycycline control shRenilla	GSE67186 · doxycycline control shRenilla
+GSE130822	mouse	colonic_stem_cells	ascl2_ko_vs_resting_wt	colonic_stem_cells	route_score	-1	-0.459152641461007	GSE130822 · ascl2 ko vs resting wt	GSE130822 · ascl2 ko vs resting wt
+GSE171910	human	conditional_crc_wnt_models	conditional_wnt_silencing	DLD1	route_score	-1	0.129215514302263	GSE171910 · conditional wnt silencing	GSE171910 · conditional wnt silencing
+GSE171910	human	conditional_crc_wnt_models	conditional_wnt_silencing	HT29	route_score	-1	-0.215311353396849	GSE171910 · conditional wnt silencing	GSE171910 · conditional wnt silencing
+GSE171910	human	conditional_crc_wnt_models	conditional_wnt_silencing	L8	route_score	-1	-0.12005824731838	GSE171910 · conditional wnt silencing	GSE171910 · conditional wnt silencing
+GSE171910	human	conditional_crc_wnt_models	conditional_wnt_silencing	SIBC	route_score	-1	-0.230026328356688	GSE171910 · conditional wnt silencing	GSE171910 · conditional wnt silencing

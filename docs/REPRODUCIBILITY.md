@@ -1,10 +1,11 @@
 # Reproducibility notes
 
-## Frozen biological object
+## Primary transcriptomic response
 
-The primary object is a continuous 8,221-gene common-effect ranking from
-donor-aware models in absorptive, goblet and transit-amplifying epithelium.
-Fixed confidence criteria retain 1,843 genes:
+The primary analytical substrate is a continuous 8,221-gene common-effect
+ranking from donor-aware models in absorptive, goblet and transit-amplifying
+epithelium. Fixed confidence criteria identify 1,843 high-confidence,
+state-shared differentially expressed genes:
 
 ```text
 common-effect FDR <= 0.05
@@ -13,7 +14,8 @@ common-effect FDR <= 0.05
 = 884 adenoma-up + 959 adenoma-down genes
 ```
 
-The gene count is the result of fixed confidence rules, not a top-N cutoff.
+The count is the consequence of the fixed rules, not a top-N cutoff. Pathway
+and network analyses use the complete 8,221-gene universe where specified.
 
 ## Independent units
 
@@ -26,19 +28,19 @@ The gene count is the result of fixed confidence rules, not a top-N cutoff.
 Cells, nuclei and spots are nested observations rather than independent
 replicates.
 
-## Identity-versus-composition analysis
+## Within-substate versus compositional analysis
 
-Fine states are learned only from normal discovery epithelium after excluding
-programme genes, lesion labels and predefined nuisance families. Remaining
-cells are projected without refitting. Exact donor-balanced decomposition
-reconstructs:
+Normal-reference epithelial substates are learned only from normal discovery
+epithelium after excluding the 1,843 high-confidence genes, lesion labels and
+predefined nuisance families. Remaining cells are projected without refitting.
+Exact donor-balanced decomposition reconstructs:
 
 ```text
-total difference = fine-state composition + expression within fine states
+total difference = substate composition + expression within substates
 ```
 
-The primary four-state solution assigns 79.1% to within-state expression and
-20.9% to fine-state composition. Three- and five-state solutions are fixed
+The primary four-substate solution assigns 79.1% to within-substate expression
+and 20.9% to substate composition. Three- and five-substate solutions are fixed
 sensitivities.
 
 ## Replicated pathway architecture
@@ -51,21 +53,34 @@ direction at FDR <= 0.10. `fgsea` supplies running-enrichment and leading-edge
 coordinates only. A fixed leading-edge Jaccard threshold of 0.25 and seeded
 Leiden clustering reduce redundant pathways to communities.
 
-## Outcome-blind full-programme projection
+## Exploratory consensus modules
 
-For Becker, CRC Atlas, perturbation and spatial analyses, platform feature
-inventories are audited before outcomes are read. A dataset is eligible when
-both programme arms have at least 75% coverage and neither arm has fewer than
-100 measurable genes. No gene selection, coefficient fitting or
-outcome-derived weighting is performed in these layers.
+Consensus WGCNA is fitted to all 8,221 testable genes after residualising the
+normal/adenoma main effect within each state. The network therefore asks how the
+same transcriptomic response is functionally organised across independent
+donors; it is not a second differential-expression screen. Modules are
+described only when their direction recurs in held-out rankings, external
+cohorts and orthogonal contexts. The corresponding scripts retain preservation,
+technical-correlation and parameter-sensitivity audits whether or not a module
+is routed to the manuscript.
+
+## Two-coordinate perturbation projection
+
+Genetic and pharmacological contrasts are projected without refitting onto two
+prespecified biological coordinates: suppression of the adenoma-up WNT/stem
+component and restoration of adenoma-down mature epithelial functions. The
+module-by-perturbation matrix records all included contrasts, including
+discordant and null responses. The analysis distinguishes selective regulatory
+suppression from coordinated reversal; it does not infer clinical efficacy.
 
 ## Candidate reduced readout
 
 The supplementary eight-gene candidate is reconstructed from discovery
-profiles after the full programme is frozen. Platform availability reduces the
-candidate universe to 53 protein-coding genes. Donor-held-out balanced-pair
-reconstruction and the data-defined knee select four up/down pairs. External
-random-panel benchmarking does not establish unique optimality.
+profiles after the high-confidence response is frozen. Platform availability
+reduces the candidate universe to 53 protein-coding genes. Donor-held-out
+balanced-pair reconstruction and the data-defined knee select four up/down
+pairs. External random-panel benchmarking does not establish unique
+optimality.
 
 ## Execution and governed data
 
@@ -73,6 +88,8 @@ random-panel benchmarking does not establish unique optimality.
 conda env create -f environment.yml
 make verify
 make pathway
+make network
+make perturbation
 make figures-public
 ```
 

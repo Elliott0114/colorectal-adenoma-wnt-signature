@@ -1,0 +1,35 @@
+{
+  "access_date": "2026-08-30",
+  "analysis": "L1000FWD dual-axis pharmacological tractability screen v1",
+  "endpoint": "https://maayanlab.cloud/l1000fwd",
+  "input": "results/state_aware_program_v1/common_effects/cross_state_common_effects.tsv.gz",
+  "input_sha256": "a1ac4b7b67ac279782e04e386971d7463e169cbdbc24d7da4c314e34a4f3e946",
+  "metadata_sha256": "8f8f91ee9885b168940ad282ab5f1abe2dc0584e276ded3b2dafe0111b22b024",
+  "n_adenoma_down": 959,
+  "n_adenoma_up": 884,
+  "n_dual_arm_recurrent_hits": 0,
+  "n_programme_genes": 1843,
+  "n_unique_opposite_perturbagens": 95,
+  "n_unique_returned_signatures": 241,
+  "q_threshold": 0.1,
+  "queries": {
+    "adenoma_up_arm": {
+      "n_opposite": 50,
+      "n_similar": 50,
+      "payload_sha256": "5bc6744065664fa0dfde7883aa6488b5f5c40c16f461358815e45c67e844c55d",
+      "result_id": "6a941b7a8c3024002de5507a"
+    },
+    "full_programme": {
+      "n_opposite": 50,
+      "n_similar": 50,
+      "payload_sha256": "0d6b5fbd5ff8cd2d95ba72d0342cbfba5fe4ed4a432f31a0b362e6b7804e385e",
+      "result_id": "6a941b608c3024002de55079"
+    },
+    "mature_function_loss_arm": {
+      "n_opposite": 50,
+      "n_similar": 50,
+      "payload_sha256": "1d489844d4df8f27153fe0916a945a021d7d02b2a34b4bdcdfe83f3f340aaf8a",
+      "result_id": "6a941b948c3024002de5507b"
+    }
+  }
+}

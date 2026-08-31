@@ -1,0 +1,42 @@
+{
+  "analysis": "adenoma_identity_reversal_target_prioritization_v1",
+  "analysis_date": "2026-08-30",
+  "contract_sha256": "08b9824cdf8605e14394cd0162393673fd383248db98d89cd2bbc4c88d97284a",
+  "input_hashes": {
+    "common": "a1ac4b7b67ac279782e04e386971d7463e169cbdbc24d7da4c314e34a4f3e946",
+    "heldout": "ab9918f1481fcb52923133cafc64c59d16eabe3995bf46f7714da742acf95fc5",
+    "pseudobulk": "2c63422dd5cf8124098974fec62648bb24b546adb407ec41d794c8709cdb4c96",
+    "collectri": "193e03a026fb80bcdaef2513fe93d40d83ff4e4309be83a2768292ee81269fe9",
+    "progeny": "fd9f1b8c25b98c61412baef2f226a652423eb580e37712ffb7b93141cbcc91e7",
+    "perturbation": "4653f1a5c2f4d28621981994a6d4763643afb760388f5171e247df75f0715eed",
+    "external_perturbation": "24efafa1d030ca34e03b700e779ccbda13e692f0bd16b46d23e3163159cc7c09"
+  },
+  "programme": {
+    "n_genes": 1843,
+    "n_up": 884,
+    "n_down": 959,
+    "gene_reselection": false,
+    "compact_readout_used_for_selection": false
+  },
+  "regulator_analysis": {
+    "method": "decoupleR ULM with complete signed CollecTRI prior",
+    "minimum_targets": 20,
+    "n_regulators_tested_discovery": 201,
+    "n_replicated": 1,
+    "n_pareto_replicated": 1,
+    "n_tier_a": 0
+  },
+  "perturbation_analysis": {
+    "primary_x": "negative change in fixed WNT/stem score",
+    "primary_y": "change in fixed adenoma-down arm score",
+    "n_comparison_groups": 11,
+    "has_wnt_only_perturbation": true,
+    "has_dual_favourable_perturbation": true,
+    "separability_supported": true
+  },
+  "software": {
+    "R": "R version 4.5.3 (2026-03-11)",
+    "decoupleR": "2.16.0",
+    "edgeR": "4.8.2"
+  }
+}

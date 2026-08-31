@@ -11,25 +11,26 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 SIGNATURE_DIR = ROOT / "data" / "signatures"
-FIGURE_DIR = ROOT / "figures" / "communications_biology_v3.0"
+FIGURE_DIR = ROOT / "figures" / "communications_biology_v5.0"
 MAX_PUBLIC_FILE_BYTES = 50 * 1024 * 1024
 
 MAIN_FIGURES = [
-    "figure1_study_design_and_programme_derivation",
-    "figure2_donor_disjoint_identity_remodelling",
-    "figure3_external_recurrence_and_archival_transfer",
-    "figure4_functional_architecture",
-    "figure5_full_programme_orthogonal_context",
-    "figure6_full_programme_perturbation_support",
+    "figure1_state_shared_derivation",
+    "figure2_within_substate_remodelling",
+    "figure3_external_tissue_recurrence",
+    "figure4_functional_module_architecture",
+    "figure5_multimodal_tissue_context",
+    "figure6_separable_perturbation_responses",
 ]
 SUPP_FIGURES = [
     "figureS1_sampling_and_donor_stability",
-    "figureS2_fine_state_and_composition_sensitivities",
+    "figureS2_substate_and_composition_sensitivities",
     "figureS3_functional_and_regulatory_structure",
-    "figureS4_external_and_ffpe_sensitivities",
-    "figureS5_reduced_readout_audit",
-    "figureS6_multiomic_atlas_spatial_protein",
-    "figureS7_empirical_perturbation_context",
+    "figureS4_wgcna_structure_and_context",
+    "figureS5_external_and_ffpe_sensitivities",
+    "figureS6_reduced_readout_audit",
+    "figureS7_multiomic_atlas_spatial_protein",
+    "figureS8_complete_perturbation_context",
 ]
 
 
@@ -122,6 +123,44 @@ def check_principal_results() -> None:
     ].iloc[0]
     require(close(full["pooled_standardized_effect"], 1.90288083576639), "External pooled effect changed")
 
+    modules = pd.read_csv(
+        ROOT / "results/state_aware_program_v1/functional_architecture_exploratory_v2_1/module_validation.tsv",
+        sep="\t",
+    )
+    require(len(modules) == 11, "Expected 11 non-grey consensus modules")
+    retained = modules.loc[modules["analysis_route_pass"].astype(bool)].copy()
+    require(
+        set(retained["module"]) == {"M02", "M03", "M04", "M05", "M06", "M09", "M10"},
+        "Direction-consistent module set changed",
+    )
+    require(retained["preservation_pass"].astype(bool).all(), "A retained module is not preserved")
+    require(
+        retained.set_index("module")["heldout_direction"].to_dict()
+        == {"M02": "Up", "M03": "Up", "M04": "Down", "M05": "Down", "M06": "Up", "M09": "Down", "M10": "Down"},
+        "Retained module directions changed",
+    )
+
+    perturbation = pd.read_csv(
+        ROOT / "results/state_aware_program_v1/identity_reversal_target_prioritization_v1/perturbation_two_component_summary.tsv",
+        sep="\t",
+    ).set_index("comparison")
+    require(
+        close(perturbation.loc["ascl2_ko_vs_resting_wt", "mean_wnt_stem_suppression"], 1.65777750338916),
+        "ASCL2 WNT/stem coordinate changed",
+    )
+    require(
+        close(perturbation.loc["ascl2_ko_vs_resting_wt", "mean_mature_function_restoration"], -0.752310309374101),
+        "ASCL2 mature-function coordinate changed",
+    )
+    require(
+        close(perturbation.loc["trametinib_vs_dmso", "mean_wnt_stem_suppression"], -0.729624078464001),
+        "Trametinib WNT/stem coordinate changed",
+    )
+    require(
+        close(perturbation.loc["trametinib_vs_dmso", "mean_mature_function_restoration"], 0.22654941097075),
+        "Trametinib mature-function coordinate changed",
+    )
+
 
 def check_figures() -> None:
     for stem in MAIN_FIGURES + SUPP_FIGURES:
@@ -129,7 +168,7 @@ def check_figures() -> None:
             path = FIGURE_DIR / f"{stem}.{suffix}"
             require(path.is_file() and path.stat().st_size > 0, f"Missing figure: {path.name}")
     source_files = list((FIGURE_DIR / "source_data").glob("figure*.tsv"))
-    require(len(source_files) >= 68, "Too few panel source-data files")
+    require(len(source_files) >= 80, "Too few panel source-data files")
     require(
         not (FIGURE_DIR / "source_data/figureS2g_dslab_common_composition.tsv").exists(),
         "Governed DSLab patient-level source is public",
@@ -137,8 +176,11 @@ def check_figures() -> None:
     for name in (
         "figure4a_pathway_replication_heatmap.tsv",
         "figure4b_running_enrichment.tsv",
-        "figure4c_pathway_network_nodes.tsv",
-        "figure4d_leading_edge_gene_heatmap.tsv",
+        "figure4c_module_rank_enrichment.tsv",
+        "figure4d_module_pathway_overlap.tsv",
+        "figure6d_two_coordinate_perturbations.tsv",
+        "figure6e_module_perturbation_responses.tsv",
+        "figureS8e_unit_direction_counts.tsv",
     ):
         require((FIGURE_DIR / "source_data" / name).is_file(), f"Missing Figure 4 source: {name}")
 
@@ -151,14 +193,18 @@ def check_release_hygiene() -> None:
         "data/datasets.tsv",
         "workflow/pipeline.tsv",
         "analysis/state_aware_pathway_replication_v1.R",
-        "analysis/build_functional_architecture_figure4_v1.R",
+        "analysis/state_aware_consensus_wgcna_v1.R",
+        "analysis/run_functional_architecture_exploratory_v2_1.R",
+        "analysis/adenoma_identity_reversal_target_prioritization_v1.R",
+        "analysis/build_communications_biology_v5_figure4.R",
+        "analysis/build_communications_biology_v5_figure6.R",
         "analysis/validate_state_shared_full_programme_extended_layers_v2.py",
     ]
     missing = [path for path in required if not (ROOT / path).is_file()]
     require(not missing, "Missing required files: " + ", ".join(missing))
 
     forbidden_path = re.compile(
-        r"287|signature_12|genki|virtual_knockout|wgcna|legacy_audit|objective_compact|stability_consensus",
+        r"287|signature_12|genki|virtual_knockout|legacy_audit|objective_compact|stability_consensus",
         flags=re.IGNORECASE,
     )
     forbidden = [

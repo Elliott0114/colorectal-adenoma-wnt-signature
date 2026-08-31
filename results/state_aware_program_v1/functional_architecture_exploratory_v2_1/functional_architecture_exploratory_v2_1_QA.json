@@ -1,0 +1,126 @@
+{
+  "analysis": "qa_functional_architecture_exploratory_v2_1",
+  "all_checks_pass": true,
+  "n_checks": 14,
+  "checks": [
+    {
+      "check": "selected_modules",
+      "pass": true,
+      "detail": [
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M09",
+        "M10"
+      ]
+    },
+    {
+      "check": "validation_columns_unique",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "check": "no_external_gate_pass",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "check": "all_selected_technical_gate_pass",
+      "pass": true,
+      "detail": 7
+    },
+    {
+      "check": "five_external_cohorts",
+      "pass": true,
+      "detail": [
+        "GSE40362",
+        "GSE41657",
+        "GSE50114",
+        "GSE72820",
+        "GSE8671"
+      ]
+    },
+    {
+      "check": "gse8671_full_annotation_coverage",
+      "pass": true,
+      "detail": 0.9073514602215508
+    },
+    {
+      "check": "all_selected_modules_projected_to_perturbations",
+      "pass": true,
+      "detail": [
+        "M02",
+        "M03",
+        "M04",
+        "M05",
+        "M06",
+        "M09",
+        "M10"
+      ]
+    },
+    {
+      "check": "sentinel_count",
+      "pass": true,
+      "detail": 16
+    },
+    {
+      "check": "sentinels_exploratory_only",
+      "pass": true,
+      "detail": [
+        "exploratory_only"
+      ]
+    },
+    {
+      "check": "no_regulatory_node",
+      "pass": true,
+      "detail": 0
+    },
+    {
+      "check": "external_replay_identical",
+      "pass": true,
+      "detail": 6
+    },
+    {
+      "check": "figure_assets_complete",
+      "pass": true,
+      "detail": {
+        "figure4_functional_architecture_wgcna_candidate_v2_1.pdf": 136982,
+        "figure4_functional_architecture_wgcna_candidate_v2_1.svg": 470722,
+        "figure4_functional_architecture_wgcna_candidate_v2_1.png": 322754,
+        "figure4_functional_architecture_wgcna_candidate_v2_1.tiff": 2270548,
+        "figureS_wgcna_structure_and_context_candidate_v2_1.pdf": 213668,
+        "figureS_wgcna_structure_and_context_candidate_v2_1.svg": 4906201,
+        "figureS_wgcna_structure_and_context_candidate_v2_1.png": 226331,
+        "figureS_wgcna_structure_and_context_candidate_v2_1.tiff": 2857720
+      }
+    },
+    {
+      "check": "integration_manifest_hashes",
+      "pass": true,
+      "detail": {
+        "observed": {
+          "integrated_summary": "c983e68d08e44a8c18d6860202d4a7b4d8b125a63824f211e91548886d78ed35",
+          "perturbation_correlations": "8b0ba980492270ac8162ada772c7fd0b397d8a21be00bd3fd75c9ae9aaae37b6",
+          "figure_pdf": "28a3063d1bf9b843621047310c55b7af4fcf16aed866b57299229c0f10ef7689",
+          "figure_svg": "a9d4e4a6f796ad2ddec98065061889b7c3c97c19715e4c7d1a252cabdc2f829e"
+        },
+        "manifest": {
+          "integrated_summary": "c983e68d08e44a8c18d6860202d4a7b4d8b125a63824f211e91548886d78ed35",
+          "perturbation_correlations": "8b0ba980492270ac8162ada772c7fd0b397d8a21be00bd3fd75c9ae9aaae37b6",
+          "figure_pdf": "28a3063d1bf9b843621047310c55b7af4fcf16aed866b57299229c0f10ef7689",
+          "figure_svg": "a9d4e4a6f796ad2ddec98065061889b7c3c97c19715e4c7d1a252cabdc2f829e"
+        }
+      }
+    },
+    {
+      "check": "reports_present",
+      "pass": true,
+      "detail": {
+        "exploratory_wgcna_integration_report_v2_1.md": 6398,
+        "wgcna_manuscript_insert_candidate_v2_1_2026-08-31.md": 6328
+      }
+    }
+  ]
+}

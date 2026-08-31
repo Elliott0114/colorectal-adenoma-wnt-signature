@@ -1,0 +1,7 @@
+node	role
+WNT	ligand
+FZD_LRP5_6	receptor
+APC_AXIN_GSK3B	destruction_complex
+beta_catenin_TCF_LEF_ASCL2	nuclear_regulation
+WNT_stem_response	response_coordinate_1
+mature_epithelial_functions	response_coordinate_2

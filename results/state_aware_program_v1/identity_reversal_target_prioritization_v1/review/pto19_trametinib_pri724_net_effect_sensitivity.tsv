@@ -1,0 +1,2 @@
+dataset	model	comparison	n_baseline_replicates	n_combination_replicates	wnt_stem_suppression	adenoma_up_arm_suppression	mature_function_restoration	proliferation_suppression	interpretation
+GSE114059	PTO19T	trametinib_plus_PRI724_vs_DMSO	2	2	-0.158054662162349	-0.0285008644708316	0.064920357265461	-1.05792250558537	post-hoc sensitivity; single CRC PDO

@@ -1,0 +1,6 @@
+step	count	rule	width	y	half_height	count_offset	rule_offset	rule_size	fill
+Assayed	33703	features in discovery object	3	3.2	0.4	0.1	-0.17	1.65	#F5F6F7
+Jointly testable	8221	expressed in ABS, GOB and TAC	2.25	2.1	0.4	0.1	-0.17	1.65	#EDF4F8
+High confidence	1843	FDR ≤ 0.05
+same sign in ABS/GOB/TAC
+lfsr ≤ 0.05	1.55	1	0.56	0.2	-0.28	1.42	#FBF0EC

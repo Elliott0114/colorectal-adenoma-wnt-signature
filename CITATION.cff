@@ -1,9 +1,9 @@
 cff-version: 1.2.0
-message: "If you use this code or the frozen programme definitions, please cite the associated manuscript and this software release."
-title: "Code and source data for epithelial identity remodelling in colorectal adenomas"
+message: "If you use this code, derived response definitions or module analyses, please cite the associated manuscript and this software release."
+title: "Code and source data for state-shared epithelial remodelling in colorectal adenomas"
 type: software
-version: 3.0.0
-date-released: 2026-08-30
+version: 4.0.0
+date-released: 2026-08-31
 license: MIT
 repository-code: "https://github.com/Elliott0114/colorectal-adenoma-wnt-signature"
 url: "https://github.com/Elliott0114/colorectal-adenoma-wnt-signature"
@@ -25,6 +25,8 @@ keywords:
   - colorectal adenoma
   - epithelial identity remodelling
   - cell-state composition
+  - weighted gene co-expression network analysis
+  - mature epithelial functions
   - WNT signalling
   - state-aware transcriptomics
   - multi-omics

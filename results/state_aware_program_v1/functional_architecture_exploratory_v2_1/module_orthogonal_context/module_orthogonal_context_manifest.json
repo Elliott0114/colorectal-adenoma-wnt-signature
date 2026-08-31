@@ -1,0 +1,29 @@
+{
+  "analysis": "state_aware_module_orthogonal_context_v1",
+  "created_utc": "2026-08-31T02:31:03.682274+00:00",
+  "random_seed": 20260830,
+  "route_column": "analysis_route_pass",
+  "descriptive_downstream": true,
+  "retained_modules": [
+    "M02",
+    "M03",
+    "M04",
+    "M05",
+    "M06",
+    "M09",
+    "M10"
+  ],
+  "interpretation": "descriptive context; cannot rescue a failed module gate",
+  "input_sha256": {
+    "consensus_modules": "f5a7023b627a5d48020d498a8267775c1aa1342c256435878fba3e658f38a7a7",
+    "context_contract": "e24e2fcbcc1ce99b145287eb6b1d0f09f27a1853c75f6152ca8df337fcdf3073",
+    "paired_rna_atac": "8a99f735077b920282f1be30e645d020c10ead492671cda5950d8eee734fcc01"
+  },
+  "software": {
+    "python": "3.11.15",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "statsmodels": "0.14.6",
+    "h5py": "3.13.0"
+  }
+}

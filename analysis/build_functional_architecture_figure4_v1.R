@@ -3,7 +3,6 @@
 source("analysis/state_shared_revision_figure_utils_v3.R")
 suppressPackageStartupMessages({
   library(igraph)
-  library(msigdbr)
 })
 
 set.seed(20260830)
@@ -46,6 +45,7 @@ clean_pathway <- function(value) {
   value <- gsub("Atp", "ATP", value, fixed = TRUE)
   value <- gsub("Tca", "TCA", value, fixed = TRUE)
   value <- gsub("Nadh", "NADH", value, fixed = TRUE)
+  value <- gsub("Mtorc1", "mTORC1", value, fixed = TRUE)
   value <- gsub("Jak Stat", "JAK–STAT", value, fixed = TRUE)
   value
 }
@@ -151,11 +151,16 @@ p4a <- ggplot(heatmap_data, aes(state_axis, display_label, fill = signed_evidenc
     panel.border = element_rect(fill = NA, colour = figure_colours[["line"]], linewidth = 0.3)
   )
 
-hallmark_frame <- msigdbr(species = "Homo sapiens", collection = "H")
-hallmark_sets <- lapply(
-  split(hallmark_frame$gene_symbol, hallmark_frame$gs_name),
-  unique
-)
+read_gmt <- function(path) {
+  fields <- strsplit(readLines(path, encoding = "UTF-8"), "\t", fixed = TRUE)
+  sets <- lapply(fields, function(value) unique(value[-c(1L, 2L)]))
+  names(sets) <- vapply(fields, `[[`, character(1), 1L)
+  sets
+}
+hallmark_sets <- read_gmt(file.path(
+  root, "data_sources", "reference_gene_sets_v2_5",
+  "h.all.v2026.1.Hs.symbols.gmt"
+))
 curve_candidates <- pathway_summary %>%
   filter(replicated, collection == "Hallmark 2026.1.Hs") %>%
   arrange(discovery_common_fdr) %>%

@@ -1,0 +1,8 @@
+regulators_tested	201
+replicated_regulators	1
+pareto_replicated_regulators	1
+tier_a_regulators	0
+perturbation_groups	11
+has_wnt_only_perturbation	TRUE
+has_dual_favourable_perturbation	TRUE
+separability_supported	TRUE

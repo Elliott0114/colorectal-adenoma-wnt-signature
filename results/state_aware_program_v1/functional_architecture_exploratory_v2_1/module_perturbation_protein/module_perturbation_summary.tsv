@@ -1,0 +1,78 @@
+module	dataset	species	model_system	comparison	n_units	mean_module_reversal	median_module_reversal	bootstrap_mean_ci_low	bootstrap_mean_ci_high	n_positive_reversal	all_units_positive_reversal	p_exact_sign_two_sided	interpretation_role
+M02	GSE114059	human	patient_derived_crc_organoid	pri724_reversal_of_trametinib	1	0.1432993315709793	0.1432993315709793	0.1432993315709793	0.1432993315709793	1	True	1.0	causal or pathway perturbation
+M02	GSE114059	human	patient_derived_crc_organoid	trametinib_vs_dmso	4	-0.040681518577024414	-0.05440161805772134	-0.08464839484012039	0.0170054571667685	1	False	0.625	causal or pathway perturbation
+M02	GSE125472	human	isogenic_human_colon_organoid	wnt_rspo_withdrawal_in_APC_KO	3	0.029010481716495822	0.13414713266139935	-0.24604822392585443	0.19893253641394257	2	False	1.0	causal or pathway perturbation
+M02	GSE125472	human	isogenic_human_colon_organoid	wnt_rspo_withdrawal_in_WT	3	0.35725951133884554	0.5055929706849085	-0.14245109713292256	0.7086366604645508	2	False	1.0	causal or pathway perturbation
+M02	GSE130822	mouse	colonic_stem_cells	ascl2_ko_vs_resting_wt	1	0.9085816373761336	0.9085816373761336	0.9085816373761336	0.9085816373761336	1	True	1.0	causal or pathway perturbation
+M02	GSE135328	human	crc_cell_line_clone	tcf7l2_KO_vs_WT	4	0.1562051545688963	0.16844095190846337	0.050114958065387356	0.2593633776513695	3	False	0.625	causal or pathway perturbation
+M02	GSE135328	human	crc_cell_line_clone	tcf7l2_heterozygous_vs_WT	1	-0.07622607241407378	-0.07622607241407378	-0.07622607241407378	-0.07622607241407378	0	False	1.0	dosage sensitivity
+M02	GSE171910	human	conditional_crc_wnt_models	conditional_wnt_silencing	4	0.10658963653002354	0.08578107758472434	-0.07667890713513316	0.31066673914047943	3	False	0.625	causal or pathway perturbation
+M02	GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc	1	0.20980088256468774	0.20980088256468774	0.20980088256468774	0.20980088256468774	1	True	1.0	causal or pathway perturbation
+M02	GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc_Kras	1	-0.06027268848081074	-0.06027268848081074	-0.06027268848081074	-0.06027268848081074	0	False	1.0	causal or pathway perturbation
+M02	GSE67186	mouse	in_vivo_colon_polyp	doxycycline_control_shRenilla	1	0.3718565415453323	0.3718565415453323	0.3718565415453323	0.3718565415453323	1	True	1.0	control
+M03	GSE114059	human	patient_derived_crc_organoid	pri724_reversal_of_trametinib	1	-0.026516544599778147	-0.026516544599778147	-0.026516544599778147	-0.026516544599778147	0	False	1.0	causal or pathway perturbation
+M03	GSE114059	human	patient_derived_crc_organoid	trametinib_vs_dmso	4	-0.033565467989819936	-0.04019745713880307	-0.0543414704419215	-0.009558387199890411	1	False	0.625	causal or pathway perturbation
+M03	GSE125472	human	isogenic_human_colon_organoid	wnt_rspo_withdrawal_in_APC_KO	3	-0.05159954032379956	-0.024363587380121843	-0.2040924934118331	0.07365745982055626	1	False	1.0	causal or pathway perturbation
+M03	GSE125472	human	isogenic_human_colon_organoid	wnt_rspo_withdrawal_in_WT	3	0.4839644390108547	0.4433858856077661	0.28586367450045	0.7226437569243481	3	True	0.25	causal or pathway perturbation
+M03	GSE130822	mouse	colonic_stem_cells	ascl2_ko_vs_resting_wt	1	1.2440974190963343	1.2440974190963343	1.2440974190963343	1.2440974190963343	1	True	1.0	causal or pathway perturbation
+M03	GSE135328	human	crc_cell_line_clone	tcf7l2_KO_vs_WT	4	0.1534979162149007	0.18919684352343855	-0.02491342985747996	0.29621033497874344	3	False	0.625	causal or pathway perturbation
+M03	GSE135328	human	crc_cell_line_clone	tcf7l2_heterozygous_vs_WT	1	-0.12748179739977722	-0.12748179739977722	-0.12748179739977722	-0.12748179739977722	0	False	1.0	dosage sensitivity
+M03	GSE171910	human	conditional_crc_wnt_models	conditional_wnt_silencing	4	0.002075052859808321	-0.06512919375917474	-0.0827689239029035	0.14710712202021956	1	False	0.625	causal or pathway perturbation
+M03	GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc	1	-0.0936732924784327	-0.0936732924784327	-0.0936732924784327	-0.0936732924784327	0	False	1.0	causal or pathway perturbation
+M03	GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc_Kras	1	-0.14152955340340326	-0.14152955340340326	-0.14152955340340326	-0.14152955340340326	0	False	1.0	causal or pathway perturbation
+M03	GSE67186	mouse	in_vivo_colon_polyp	doxycycline_control_shRenilla	1	-0.24378412754125373	-0.24378412754125373	-0.24378412754125373	-0.24378412754125373	0	False	1.0	control
+M04	GSE114059	human	patient_derived_crc_organoid	pri724_reversal_of_trametinib	1	-0.1110648740188458	-0.1110648740188458	-0.1110648740188458	-0.1110648740188458	0	False	1.0	causal or pathway perturbation
+M04	GSE114059	human	patient_derived_crc_organoid	trametinib_vs_dmso	4	0.1407977916278619	0.12842213302223154	0.10701467089498651	0.17640005501320927	4	True	0.125	causal or pathway perturbation
+M04	GSE125472	human	isogenic_human_colon_organoid	wnt_rspo_withdrawal_in_APC_KO	3	0.20154562506364912	0.24173415728859304	0.03576582625430675	0.3271368916480475	3	True	0.25	causal or pathway perturbation
+M04	GSE125472	human	isogenic_human_colon_organoid	wnt_rspo_withdrawal_in_WT	3	0.02991520100290601	-0.15255979043991832	-0.37048405036304466	0.612789443811681	1	False	1.0	causal or pathway perturbation
+M04	GSE130822	mouse	colonic_stem_cells	ascl2_ko_vs_resting_wt	1	-0.7517771343436104	-0.7517771343436104	-0.7517771343436104	-0.7517771343436104	0	False	1.0	causal or pathway perturbation
+M04	GSE135328	human	crc_cell_line_clone	tcf7l2_KO_vs_WT	4	-0.02648484467824682	-0.02807960384864988	-0.0838830806594062	0.030913391302912558	2	False	1.0	causal or pathway perturbation
+M04	GSE135328	human	crc_cell_line_clone	tcf7l2_heterozygous_vs_WT	1	0.0670853849310069	0.0670853849310069	0.0670853849310069	0.0670853849310069	1	True	1.0	dosage sensitivity
+M04	GSE171910	human	conditional_crc_wnt_models	conditional_wnt_silencing	4	-0.042446437217803834	-0.042470456233142044	-0.10087322885557046	0.016004373435301002	1	False	0.625	causal or pathway perturbation
+M04	GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc	1	-0.07852089073755239	-0.07852089073755239	-0.07852089073755239	-0.07852089073755239	0	False	1.0	causal or pathway perturbation
+M04	GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc_Kras	1	0.34711143386769305	0.34711143386769305	0.34711143386769305	0.34711143386769305	1	True	1.0	causal or pathway perturbation
+M04	GSE67186	mouse	in_vivo_colon_polyp	doxycycline_control_shRenilla	1	-0.6738435883517779	-0.6738435883517779	-0.6738435883517779	-0.6738435883517779	0	False	1.0	control
+M05	GSE114059	human	patient_derived_crc_organoid	pri724_reversal_of_trametinib	1	0.05786425382988214	0.05786425382988214	0.05786425382988214	0.05786425382988214	1	True	1.0	causal or pathway perturbation
+M05	GSE114059	human	patient_derived_crc_organoid	trametinib_vs_dmso	4	0.08007125543875701	0.08326839200415345	0.015749888067313728	0.1443926228102003	3	False	0.625	causal or pathway perturbation
+M05	GSE125472	human	isogenic_human_colon_organoid	wnt_rspo_withdrawal_in_APC_KO	3	0.31536312118228144	0.2308959422002537	0.15769267259833786	0.5575007487482528	3	True	0.25	causal or pathway perturbation
+M05	GSE125472	human	isogenic_human_colon_organoid	wnt_rspo_withdrawal_in_WT	3	-0.148557079574056	-0.29421493193315706	-0.6415987480858735	0.4901424412968625	1	False	1.0	causal or pathway perturbation
+M05	GSE130822	mouse	colonic_stem_cells	ascl2_ko_vs_resting_wt	1	-1.27135946131532	-1.27135946131532	-1.27135946131532	-1.27135946131532	0	False	1.0	causal or pathway perturbation
+M05	GSE135328	human	crc_cell_line_clone	tcf7l2_KO_vs_WT	4	-0.07361348519997053	-0.08367279711110867	-0.1982393935429956	0.06107173505419268	1	False	0.625	causal or pathway perturbation
+M05	GSE135328	human	crc_cell_line_clone	tcf7l2_heterozygous_vs_WT	1	-0.07024951296165935	-0.07024951296165935	-0.07024951296165935	-0.07024951296165935	0	False	1.0	dosage sensitivity
+M05	GSE171910	human	conditional_crc_wnt_models	conditional_wnt_silencing	4	-0.14802412998931144	-0.19964111178481442	-0.22646629639805282	-0.017964981785067113	1	False	0.625	causal or pathway perturbation
+M05	GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc	1	-0.22124476495521345	-0.22124476495521345	-0.22124476495521345	-0.22124476495521345	0	False	1.0	causal or pathway perturbation
+M05	GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc_Kras	1	0.07138914683308636	0.07138914683308636	0.07138914683308636	0.07138914683308636	1	True	1.0	causal or pathway perturbation
+M05	GSE67186	mouse	in_vivo_colon_polyp	doxycycline_control_shRenilla	1	-0.5363377928899313	-0.5363377928899313	-0.5363377928899313	-0.5363377928899313	0	False	1.0	control
+M06	GSE114059	human	patient_derived_crc_organoid	pri724_reversal_of_trametinib	1	0.02799658711240438	0.02799658711240438	0.02799658711240438	0.02799658711240438	1	True	1.0	causal or pathway perturbation
+M06	GSE114059	human	patient_derived_crc_organoid	trametinib_vs_dmso	4	0.03430840135235289	0.026037910781164172	0.018230079893287704	0.05572997039538699	4	True	0.125	causal or pathway perturbation
+M06	GSE125472	human	isogenic_human_colon_organoid	wnt_rspo_withdrawal_in_APC_KO	3	0.22061870696602962	0.3230103807308565	-0.10979483079358743	0.44864057096081983	2	False	1.0	causal or pathway perturbation
+M06	GSE125472	human	isogenic_human_colon_organoid	wnt_rspo_withdrawal_in_WT	3	0.3208110990506189	0.3295074834871047	0.22923761491589204	0.4036881987488599	3	True	0.25	causal or pathway perturbation
+M06	GSE130822	mouse	colonic_stem_cells	ascl2_ko_vs_resting_wt	1	1.4227581699492378	1.4227581699492378	1.4227581699492378	1.4227581699492378	1	True	1.0	causal or pathway perturbation
+M06	GSE135328	human	crc_cell_line_clone	tcf7l2_KO_vs_WT	4	0.05350029669175117	0.09514358900196074	-0.2038696392733242	0.27101707117214846	3	False	0.625	causal or pathway perturbation
+M06	GSE135328	human	crc_cell_line_clone	tcf7l2_heterozygous_vs_WT	1	-0.1250410114685619	-0.1250410114685619	-0.1250410114685619	-0.1250410114685619	0	False	1.0	dosage sensitivity
+M06	GSE171910	human	conditional_crc_wnt_models	conditional_wnt_silencing	4	-0.17176317231261368	-0.12259431654653127	-0.4295046591381585	0.03680945874684867	1	False	0.625	causal or pathway perturbation
+M06	GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc	1	-0.17881197431510776	-0.17881197431510776	-0.17881197431510776	-0.17881197431510776	0	False	1.0	causal or pathway perturbation
+M06	GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc_Kras	1	-0.3459896508469534	-0.3459896508469534	-0.3459896508469534	-0.3459896508469534	0	False	1.0	causal or pathway perturbation
+M06	GSE67186	mouse	in_vivo_colon_polyp	doxycycline_control_shRenilla	1	-0.07378933618919374	-0.07378933618919374	-0.07378933618919374	-0.07378933618919374	0	False	1.0	control
+M09	GSE114059	human	patient_derived_crc_organoid	pri724_reversal_of_trametinib	1	0.09345917817311855	0.09345917817311855	0.09345917817311855	0.09345917817311855	1	True	1.0	causal or pathway perturbation
+M09	GSE114059	human	patient_derived_crc_organoid	trametinib_vs_dmso	4	0.28938119034951104	0.3262769451235278	0.11630625333538568	0.4624561273636364	4	True	0.125	causal or pathway perturbation
+M09	GSE125472	human	isogenic_human_colon_organoid	wnt_rspo_withdrawal_in_APC_KO	3	0.28985414519589175	0.32695005455090176	0.11240578858809713	0.43020659244867626	3	True	0.25	causal or pathway perturbation
+M09	GSE125472	human	isogenic_human_colon_organoid	wnt_rspo_withdrawal_in_WT	3	-0.7205068780242526	-0.9599711175329146	-1.3190912962093266	0.11754177966948365	1	False	1.0	causal or pathway perturbation
+M09	GSE130822	mouse	colonic_stem_cells	ascl2_ko_vs_resting_wt	1	-1.219836213822251	-1.219836213822251	-1.219836213822251	-1.219836213822251	0	False	1.0	causal or pathway perturbation
+M09	GSE135328	human	crc_cell_line_clone	tcf7l2_KO_vs_WT	4	-0.5661600315904003	-0.48476302811153393	-0.7808456942221611	-0.40406661205761096	0	False	0.125	causal or pathway perturbation
+M09	GSE135328	human	crc_cell_line_clone	tcf7l2_heterozygous_vs_WT	1	0.12382862157924363	0.12382862157924363	0.12382862157924363	0.12382862157924363	1	True	1.0	dosage sensitivity
+M09	GSE171910	human	conditional_crc_wnt_models	conditional_wnt_silencing	4	-0.7015016588787987	-0.7925052091800688	-1.003177351639457	-0.380743220520505	0	False	0.125	causal or pathway perturbation
+M09	GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc	1	-0.9492512753245744	-0.9492512753245744	-0.9492512753245744	-0.9492512753245744	0	False	1.0	causal or pathway perturbation
+M09	GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc_Kras	1	-1.2058964627748499	-1.2058964627748499	-1.2058964627748499	-1.2058964627748499	0	False	1.0	causal or pathway perturbation
+M09	GSE67186	mouse	in_vivo_colon_polyp	doxycycline_control_shRenilla	1	-0.4109226896038557	-0.4109226896038557	-0.4109226896038557	-0.4109226896038557	0	False	1.0	control
+M10	GSE114059	human	patient_derived_crc_organoid	pri724_reversal_of_trametinib	1	-0.019376556613247664	-0.019376556613247664	-0.019376556613247664	-0.019376556613247664	0	False	1.0	causal or pathway perturbation
+M10	GSE114059	human	patient_derived_crc_organoid	trametinib_vs_dmso	4	0.20918507074902565	0.18271282002264944	0.16250213465998042	0.28234025756444703	4	True	0.125	causal or pathway perturbation
+M10	GSE125472	human	isogenic_human_colon_organoid	wnt_rspo_withdrawal_in_APC_KO	3	0.31785375973605823	0.19397563070897644	0.07770387782912797	0.6818817706700703	3	True	0.25	causal or pathway perturbation
+M10	GSE125472	human	isogenic_human_colon_organoid	wnt_rspo_withdrawal_in_WT	3	0.032316688230268543	-0.11666112891489772	-0.4359134141119457	0.6495246077176491	1	False	1.0	causal or pathway perturbation
+M10	GSE130822	mouse	colonic_stem_cells	ascl2_ko_vs_resting_wt	1	-1.1827935547155826	-1.1827935547155826	-1.1827935547155826	-1.1827935547155826	0	False	1.0	causal or pathway perturbation
+M10	GSE135328	human	crc_cell_line_clone	tcf7l2_KO_vs_WT	4	0.23091254446120946	0.20993327498399406	0.17156408600378548	0.31124027239584884	4	True	0.125	causal or pathway perturbation
+M10	GSE135328	human	crc_cell_line_clone	tcf7l2_heterozygous_vs_WT	1	-0.1078828211850165	-0.1078828211850165	-0.1078828211850165	-0.1078828211850165	0	False	1.0	dosage sensitivity
+M10	GSE171910	human	conditional_crc_wnt_models	conditional_wnt_silencing	4	-0.08123653450977313	-0.020669466085671478	-0.275639842268088	0.0733191742579833	2	False	1.0	causal or pathway perturbation
+M10	GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc	1	-0.14717473878298454	-0.14717473878298454	-0.14717473878298454	-0.14717473878298454	0	False	1.0	causal or pathway perturbation
+M10	GSE67186	mouse	in_vivo_colon_polyp	apc_restoration_shApc_Kras	1	0.2152002188440188	0.2152002188440188	0.2152002188440188	0.2152002188440188	1	True	1.0	causal or pathway perturbation
+M10	GSE67186	mouse	in_vivo_colon_polyp	doxycycline_control_shRenilla	1	-0.5298770340612563	-0.5298770340612563	-0.5298770340612563	-0.5298770340612563	0	False	1.0	control

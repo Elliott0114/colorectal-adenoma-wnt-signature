@@ -1,0 +1,32 @@
+{
+  "analysis": "state_aware_module_external_validation_v1",
+  "created_utc": "2026-08-31T02:21:21.416425+00:00",
+  "random_seed": 20260830,
+  "route_eligible_modules": [
+    "M02",
+    "M03",
+    "M04",
+    "M05",
+    "M06",
+    "M09",
+    "M10"
+  ],
+  "route_column": "analysis_route_pass",
+  "full_gpl570_mapping_rows": 11544,
+  "modules_passing_external_gate": [],
+  "module_score": "direction-oriented mean of all measurable cohort-z-scored genes",
+  "coverage_gate": "at least 50% and at least 15 genes",
+  "meta_analysis": "Paule-Mandel random effects retained as audit only; the frozen REML-Knapp-Hartung gate is applied by state_aware_module_meta_analysis_v1.R",
+  "input_sha256": {
+    "consensus_modules": "ad8834c51fa2fd8949d85d96c31d1aebf650bac370dfe38b13a2e7360b234578",
+    "module_selection": "29779c50ed6f7a6bdfd4c5b44f76d3a4c2324a8ba6d00d2c3d9b47bd1ed02a8f",
+    "downstream_addendum": "32343afe117d09007066fbe01f8fbe7cf4a11ee628dbe6a121f0f814968da3bb",
+    "gpl570_full_annotation": "d7cd44352127b1e34f3a720ebea86093ef255a38f1612a85a2962b71bde8f394"
+  },
+  "software": {
+    "python": "3.11.15",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "statsmodels": "CPython 0.14.6"
+  }
+}

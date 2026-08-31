@@ -1,0 +1,96 @@
+pert_id	pert_desc	hit__full_programme	best_q__full_programme	best_rank__full_programme	n_signatures__full_programme	hit__adenoma_up_arm	best_q__adenoma_up_arm	best_rank__adenoma_up_arm	n_signatures__adenoma_up_arm	hit__mature_function_loss_arm	best_q__mature_function_loss_arm	best_rank__mature_function_loss_arm	n_signatures__mature_function_loss_arm	dual_arm_recurrent_hit	n_supported_queries	supported_queries	n_supported_cell_lines	supported_cell_lines	ht29_support	best_q_any_query
+BRD-A36630025	-666	True	0.0264667048712699	8.0	1	True	0.0386233905543328	1.0	2	False			0	False	2	full_programme,adenoma_up_arm	2	PC3,SW620	False	0.0264667048712699
+BRD-K74148702	curcumin	True	0.0134664422959262	3.0	1	False	0.367565871006184	9.0	0	True	0.00160901906874229	15.0	1	False	2	full_programme,mature_function_loss_arm	1	HT29	True	0.00160901906874229
+BRD-K53423944	6-[4-(3-chlorophenyl)piperazin-1-yl]-3-cyclohexylpyrimidine-2,4(1H,3H)-dione	True	0.058106121784828	6.0	1	False	0.895433336569442	25.0	0	True	0.0142227760656482	38.0	1	False	2	full_programme,mature_function_loss_arm	1	HT29	True	0.0142227760656482
+BRD-K19216856	(-)-Gallocatechin gallate	True	0.000229881224630493	1.0	1	False	0.841443710370253	14.0	0	True	1.82161407002882e-05	1.0	1	False	2	full_programme,mature_function_loss_arm	1	A549	False	1.82161407002882e-05
+BRD-K26304855	-666	True	0.0600631550899458	7.0	1	False			0	True	0.000787756380004938	11.0	1	False	2	full_programme,mature_function_loss_arm	1	VCAP	False	0.000787756380004938
+BRD-K84203638	-666	True	0.0101201972656801	2.0	2	False	0.222271379913009	8.0	0	False			0	False	1	full_programme	2	A375,HT29	True	0.0101201972656801
+BRD-K08554278	Hoechst  33342 (cell permeable) (BisBenzimide)	True	0.0264667048712699	13.0	1	False			0	False			0	False	1	full_programme	1	PC3	False	0.0264667048712699
+BRD-A94377914	-666	False			0	False			0	True	0.00430720179162411	14.0	3	False	1	mature_function_loss_arm	3	A375,HT29,PC3	True	0.00430720179162411
+BRD-K61662457	CAY10594	False			0	False			0	True	0.0104549079677261	33.0	2	False	1	mature_function_loss_arm	2	HT29,LOVO	True	0.0104549079677261
+BRD-K68548958	-666	False			0	False			0	True	0.00175418069497548	13.0	2	False	1	mature_function_loss_arm	2	HCT116,SW620	False	0.00175418069497548
+BRD-K04887706	Akti-1/2	False			0	False			0	True	0.00747615246826296	42.0	1	False	1	mature_function_loss_arm	1	HT29	True	0.00747615246826296
+BRD-K56343971	PLX-4032	False			0	False			0	True	0.0236725592402101	45.0	1	False	1	mature_function_loss_arm	1	HT29	True	0.0236725592402101
+BRD-K13800121	parecoxib na	False	0.616110644739712	31.0	0	False			0	True	2.4722343026426e-05	2.0	1	False	1	mature_function_loss_arm	1	VCAP	False	2.4722343026426e-05
+BRD-K60070073	-666	False			0	False			0	True	3.00079211486882e-05	5.0	1	False	1	mature_function_loss_arm	1	VCAP	False	3.00079211486882e-05
+BRD-K55216615	-666	False			0	False			0	True	0.0001139964998474	4.0	1	False	1	mature_function_loss_arm	1	PC3	False	0.0001139964998474
+BRD-K87964538	-666	False	1.0	43.0	0	False			0	True	0.000159717877515759	8.0	1	False	1	mature_function_loss_arm	1	PC3	False	0.000159717877515759
+BRD-K99451608	L469480	False	0.526720562725714	14.0	0	False			0	True	0.000177641778242761	3.0	1	False	1	mature_function_loss_arm	1	A549	False	0.000177641778242761
+BRD-K97764662	P2499	False			0	False			0	True	0.000221092670991651	7.0	1	False	1	mature_function_loss_arm	1	VCAP	False	0.000221092670991651
+BRD-A19037878	-666	False			0	False			0	True	0.000249721214786486	12.0	1	False	1	mature_function_loss_arm	1	MCF7	False	0.000249721214786486
+BRD-K12867552	-666	False			0	False			0	True	0.000758461215104791	6.0	1	False	1	mature_function_loss_arm	1	A375	False	0.000758461215104791
+BRD-K92991072	PAC 1	False			0	False			0	True	0.00130516389969677	9.0	1	False	1	mature_function_loss_arm	1	A549	False	0.00130516389969677
+BRD-K19111024	Clofibric acid	False	0.175521907484926	11.0	0	False			0	True	0.00224758933846484	20.0	1	False	1	mature_function_loss_arm	1	VCAP	False	0.00224758933846484
+BRD-K04218075	-666	False			0	False			0	True	0.00242188343210866	10.0	1	False	1	mature_function_loss_arm	1	MCF7	False	0.00242188343210866
+BRD-U29336476	-666	False			0	False			0	True	0.00347771446471689	23.0	1	False	1	mature_function_loss_arm	1	MCF7	False	0.00347771446471689
+BRD-K83643280	BG FA 0953	False			0	False			0	True	0.0038531971636964	46.0	1	False	1	mature_function_loss_arm	1	VCAP	False	0.0038531971636964
+BRD-K69516039	MLS-0435541.0001	False			0	False			0	True	0.00391888777059195	44.0	1	False	1	mature_function_loss_arm	1	PC3	False	0.00391888777059195
+BRD-K80622725	STK397047	False			0	False			0	True	0.00407080020752317	27.0	1	False	1	mature_function_loss_arm	1	A375	False	0.00407080020752317
+BRD-K17415526	Tyrphostin B44, (+) enantiomer	False			0	False			0	True	0.0049210635662583	30.0	1	False	1	mature_function_loss_arm	1	PC3	False	0.0049210635662583
+BRD-K99532291	SPB02303	False			0	False			0	True	0.0049210635662583	29.0	1	False	1	mature_function_loss_arm	1	VCAP	False	0.0049210635662583
+BRD-A73741725	EXEMESTANE	False	1.0	44.0	0	False			0	True	0.00553962039060032	17.0	1	False	1	mature_function_loss_arm	1	VCAP	False	0.00553962039060032
+BRD-K22503835	-666	False	1.0	17.0	0	False			0	True	0.00634085933513705	19.0	1	False	1	mature_function_loss_arm	1	NPC	False	0.00634085933513705
+BRD-K54233340	Dorsomorphin dihydrochloride	False			0	False			0	True	0.00644355235964107	25.0	1	False	1	mature_function_loss_arm	1	RMUGS	False	0.00644355235964107
+BRD-K06666320	-666	False	1.0	25.0	0	False			0	True	0.00651422306258505	16.0	1	False	1	mature_function_loss_arm	1	HCC515	False	0.00651422306258505
+BRD-K16485616	S1122	False			0	False			0	True	0.00651422306258505	18.0	1	False	1	mature_function_loss_arm	1	ASC	False	0.00651422306258505
+BRD-A19037878	trichostatin-a	False			0	False			0	True	0.00680571478146459	22.0	1	False	1	mature_function_loss_arm	1	MCF7	False	0.00680571478146459
+BRD-A72180425	-666	False			0	False			0	True	0.00725675493340899	35.0	1	False	1	mature_function_loss_arm	1	MCF7	False	0.00725675493340899
+BRD-K51290057	Ch 55	False			0	False			0	True	0.00820277210049047	41.0	1	False	1	mature_function_loss_arm	1	VCAP	False	0.00820277210049047
+BRD-K23282736	-666	False	1.0	33.0	0	False			0	True	0.00855649729165381	34.0	1	False	1	mature_function_loss_arm	1	VCAP	False	0.00855649729165381
+BRD-A31107743	89671	False			0	False			0	True	0.0101510420763959	21.0	1	False	1	mature_function_loss_arm	1	A375	False	0.0101510420763959
+BRD-K05562558	-666	False			0	False			0	True	0.0102982565184911	47.0	1	False	1	mature_function_loss_arm	1	PC3	False	0.0102982565184911
+BRD-K61718261	NCGC00182361-01	False	1.0	23.0	0	False			0	True	0.0118656841902255	40.0	1	False	1	mature_function_loss_arm	1	PC3	False	0.0118656841902255
+BRD-K68336408	Tyrphostin AG 1478	False	1.0	29.0	0	False			0	True	0.0122970011478892	26.0	1	False	1	mature_function_loss_arm	1	MCF7	False	0.0122970011478892
+BRD-K88544581	CI 976	False			0	False			0	True	0.0141439325209759	24.0	1	False	1	mature_function_loss_arm	1	A375	False	0.0141439325209759
+BRD-K15475572	MLS-0390837.0001	False			0	False			0	True	0.0147436518580308	36.0	1	False	1	mature_function_loss_arm	1	HA1E	False	0.0147436518580308
+BRD-K20287671	-666	False	0.98452714128614	18.0	0	False			0	True	0.0153597077013687	39.0	1	False	1	mature_function_loss_arm	1	MCF7	False	0.0153597077013687
+BRD-K69840642	HDAC6 inhibitor ISOX	False			0	False			0	True	0.0170312436255164	31.0	1	False	1	mature_function_loss_arm	1	LOVO	False	0.0170312436255164
+BRD-K22503835	Scriptaid	False			0	False			0	True	0.029210601156893	49.0	1	False	1	mature_function_loss_arm	1	PC3	False	0.029210601156893
+BRD-K52522949	-666	False			0	False			0	True	0.0352184801335641	37.0	1	False	1	mature_function_loss_arm	1	HCC515	False	0.0352184801335641
+BRD-A02481876	Importazole	False			0	True	0.0619864131733488	4.0	1	False			0	False	1	adenoma_up_arm	1	HCC515	False	0.0619864131733488
+BRD-A11087911	-666	False			0	False			0	True	0.0892507573500042	50.0	1	False	1	mature_function_loss_arm	1	PC3	False	0.0892507573500042
+BRD-K17110974	aristolochic acid	False			0	False	0.102003265305374	3.0	0	False			0	False	0		0		False	0.102003265305374
+BRD-K81814927	-666	False	0.13155414198623	5.0	0	False	0.496136232020771	10.0	0	False			0	False	0		0		False	0.13155414198623
+BRD-K70578146	dactinomycin	False	1.0	42.0	0	False	0.145521361399118	6.0	0	False			0	False	0		0		False	0.145521361399118
+BRD-K84203638	4-[(1-methyl-2-oxo-1,2-dihydroquinolin-4-yl)oxy]-N-(4-methylpyridin-2-yl)butanamide	False	0.239034609858261	15.0	0	False	1.0	29.0	0	False			0	False	0		0		False	0.239034609858261
+BRD-A35588707	TENIPOSIDE	False	0.266593334656656	9.0	0	False	0.369803600992377	12.0	0	False			0	False	0		0		False	0.266593334656656
+BRD-A59985574	T542500	False	0.266593334656656	12.0	0	False	0.620314965021878	18.0	0	False			0	False	0		0		False	0.266593334656656
+BRD-K87909389	Flavopiridol:Alvocidib, HMR-1275, L868275	False			0	False	0.288455522844948	7.0	0	False			0	False	0		0		False	0.288455522844948
+BRD-K17210248	S1216	False	0.322198296175362	10.0	0	False			0	False			0	False	0		0		False	0.322198296175362
+BRD-A48237631	MITOMYCIN C	False			0	False	0.428148996384222	11.0	0	False			0	False	0		0		False	0.428148996384222
+BRD-K79390395	-666	False			0	False	0.437820783956928	13.0	0	False			0	False	0		0		False	0.437820783956928
+BRD-A63667919	Methylergometrine maleate	False			0	False	0.540357891763512	20.0	0	False			0	False	0		0		False	0.540357891763512
+BRD-K98490050	AMSACRINE	False			0	False	0.540357891763512	16.0	0	False			0	False	0		0		False	0.540357891763512
+BRD-K83670234	-666	False	0.746559899970241	37.0	0	False			0	False			0	False	0		0		False	0.746559899970241
+BRD-K66634822	-666	False	1.0	26.0	0	False	0.822452984987521	21.0	0	False			0	False	0		0		False	0.822452984987521
+BRD-A30437061	-666	False	0.83558268759655	19.0	0	False	1.0	28.0	0	False			0	False	0		0		False	0.83558268759655
+BRD-K23412959	NCGC00165188-01	False			0	False	0.841443710370253	26.0	0	False			0	False	0		0		False	0.841443710370253
+BRD-A46747628	Ouabain	False			0	False	0.852309264556166	19.0	0	False			0	False	0		0		False	0.852309264556166
+BRD-K09854848	-666	False	0.944013251577444	28.0	0	False			0	False			0	False	0		0		False	0.944013251577444
+BRD-K10846167	N-((1H-naphtho[2,3-d]imidazol-2-yl)methyl)-2-morpholino-9-(thiophen-3-yl)-9H-purin-6-amine	False			0	False	0.989840532964379	27.0	0	False			0	False	0		0		False	0.989840532964379
+BRD-A11706664	EI-332	False	1.0	30.0	0	False			0	False			0	False	0		0		False	1.0
+BRD-A37959677	ESTRONE	False	1.0	24.0	0	False			0	False			0	False	0		0		False	1.0
+BRD-A63583287	-666	False			0	False	1.0	39.0	0	False			0	False	0		0		False	1.0
+BRD-A87606379	NADOLOL	False	1.0	47.0	0	False			0	False			0	False	0		0		False	1.0
+BRD-K00317371	-666	False	1.0	45.0	0	False	1.0	42.0	0	False			0	False	0		0		False	1.0
+BRD-K02607075	-666	False	1.0	20.0	0	False			0	False			0	False	0		0		False	1.0
+BRD-K04546108	JAK3 Inhibitor VI	False	1.0	27.0	0	False			0	False			0	False	0		0		False	1.0
+BRD-K12357156	AG 490	False	1.0	35.0	0	False	1.0	34.0	0	False			0	False	0		0		False	1.0
+BRD-K19894101	MST- 312	False	1.0	46.0	0	False			0	False			0	False	0		0		False	1.0
+BRD-K31450967	-666	False	1.0	39.0	0	False			0	False			0	False	0		0		False	1.0
+BRD-K32636001	MLS-0437446.0001	False	1.0	49.0	0	False	1.0	37.0	0	False			0	False	0		0		False	1.0
+BRD-K32710582	EI-247	False			0	False	1.0	49.0	0	False			0	False	0		0		False	1.0
+BRD-K54687541	3-isobutyl-6-{4-[3-(trifluoromethyl)phenyl]piperazin-1-yl}pyrimidine-2,4(1H,3H)-dione	False			0	False	1.0	33.0	0	False			0	False	0		0		False	1.0
+BRD-K56653679	-666	False			0	False	1.0	40.0	0	False			0	False	0		0		False	1.0
+BRD-K61496577	-666	False			0	False	1.0	35.0	0	False			0	False	0		0		False	1.0
+BRD-K67439147	-666	False			0	False	1.0	22.0	0	False			0	False	0		0		False	1.0
+BRD-K72381041	-666	False	1.0	38.0	0	False			0	False			0	False	0		0		False	1.0
+BRD-K77547509	3-cyclohexyl-6-{4-[3-(trifluoromethyl)phenyl]piperazin-1-yl}pyrimidine-2,4(1H,3H)-dione	False	1.0	48.0	0	False			0	False			0	False	0		0		False	1.0
+BRD-K79090631	CGP60474:MLS000911536, SMR000463552	False			0	False	1.0	30.0	0	False			0	False	0		0		False	1.0
+BRD-K81249836	-666	False			0	False	1.0	45.0	0	False			0	False	0		0		False	1.0
+BRD-K85853281	-666	False	1.0	41.0	0	False			0	False			0	False	0		0		False	1.0
+BRD-K88317944	VU0420364-1	False	1.0	32.0	0	False			0	False			0	False	0		0		False	1.0
+BRD-K92571446	WZ3105	False	1.0	40.0	0	False			0	False			0	False	0		0		False	1.0
+BRD-K95858622	NCGC00182609-01	False	1.0	34.0	0	False			0	False			0	False	0		0		False	1.0
+BRD-K99749624	S1003	False	1.0	50.0	0	False			0	False			0	False	0		0		False	1.0
+BRD-M86331534	BJM-ctd2-9	False			0	False	1.0	48.0	0	False			0	False	0		0		False	1.0

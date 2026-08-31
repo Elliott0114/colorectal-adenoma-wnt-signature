@@ -1,0 +1,11 @@
+comparison	display	axis	n_units	n_favourable	fraction_favourable
+conditional_wnt_silencing	WNT off	Mature-function restoration	4	2	0.5
+conditional_wnt_silencing	WNT off	WNT/stem suppression	4	4	1
+tcf7l2_KO_vs_WT	TCF7L2 KO	Mature-function restoration	4	2	0.5
+tcf7l2_KO_vs_WT	TCF7L2 KO	WNT/stem suppression	4	3	0.75
+trametinib_vs_dmso	Trametinib	Mature-function restoration	4	4	1
+trametinib_vs_dmso	Trametinib	WNT/stem suppression	4	0	0
+wnt_rspo_withdrawal_in_APC_KO	WNT− / APC-KO	Mature-function restoration	3	3	1
+wnt_rspo_withdrawal_in_APC_KO	WNT− / APC-KO	WNT/stem suppression	3	2	0.666666666666667
+wnt_rspo_withdrawal_in_WT	WNT− / WT	Mature-function restoration	3	1	0.333333333333333
+wnt_rspo_withdrawal_in_WT	WNT− / WT	WNT/stem suppression	3	3	1

@@ -1,0 +1,64 @@
+module	dataset	species	model_system	comparison	n_units	mean_module_reversal	median_module_reversal	bootstrap_mean_ci_low	bootstrap_mean_ci_high	n_positive_reversal	all_units_positive_reversal	p_exact_sign_two_sided	interpretation_role	consistent_n3
+M02	GSE114059	human	patient_derived_crc_organoid	PRI-724	1	0.143299331570979	0.143299331570979	0.143299331570979	0.143299331570979	1	True	1	causal or pathway perturbation	FALSE
+M02	GSE114059	human	patient_derived_crc_organoid	Trametinib	4	-0.0406815185770244	-0.0544016180577213	-0.0846483948401204	0.0170054571667685	1	False	0.625	causal or pathway perturbation	FALSE
+M02	GSE125472	human	isogenic_human_colon_organoid	WNT− / APC-KO	3	0.0290104817164958	0.134147132661399	-0.246048223925854	0.198932536413943	2	False	1	causal or pathway perturbation	FALSE
+M02	GSE125472	human	isogenic_human_colon_organoid	WNT− / WT	3	0.357259511338846	0.505592970684908	-0.142451097132923	0.708636660464551	2	False	1	causal or pathway perturbation	FALSE
+M02	GSE130822	mouse	colonic_stem_cells	ASCL2 KO	1	0.908581637376134	0.908581637376134	0.908581637376134	0.908581637376134	1	True	1	causal or pathway perturbation	FALSE
+M02	GSE135328	human	crc_cell_line_clone	TCF7L2 KO	4	0.156205154568896	0.168440951908463	0.0501149580653874	0.25936337765137	3	False	0.625	causal or pathway perturbation	FALSE
+M02	GSE171910	human	conditional_crc_wnt_models	WNT off	4	0.106589636530024	0.0857810775847243	-0.0766789071351332	0.310666739140479	3	False	0.625	causal or pathway perturbation	FALSE
+M02	GSE67186	mouse	in_vivo_colon_polyp	APC restore	1	0.209800882564688	0.209800882564688	0.209800882564688	0.209800882564688	1	True	1	causal or pathway perturbation	FALSE
+M02	GSE67186	mouse	in_vivo_colon_polyp	APC restore + Kras	1	-0.0602726884808107	-0.0602726884808107	-0.0602726884808107	-0.0602726884808107	0	False	1	causal or pathway perturbation	FALSE
+M03	GSE114059	human	patient_derived_crc_organoid	PRI-724	1	-0.0265165445997781	-0.0265165445997781	-0.0265165445997781	-0.0265165445997781	0	False	1	causal or pathway perturbation	FALSE
+M03	GSE114059	human	patient_derived_crc_organoid	Trametinib	4	-0.0335654679898199	-0.0401974571388031	-0.0543414704419215	-0.00955838719989041	1	False	0.625	causal or pathway perturbation	FALSE
+M03	GSE125472	human	isogenic_human_colon_organoid	WNT− / APC-KO	3	-0.0515995403237996	-0.0243635873801218	-0.204092493411833	0.0736574598205563	1	False	1	causal or pathway perturbation	FALSE
+M03	GSE125472	human	isogenic_human_colon_organoid	WNT− / WT	3	0.483964439010855	0.443385885607766	0.28586367450045	0.722643756924348	3	True	0.25	causal or pathway perturbation	TRUE
+M03	GSE130822	mouse	colonic_stem_cells	ASCL2 KO	1	1.24409741909633	1.24409741909633	1.24409741909633	1.24409741909633	1	True	1	causal or pathway perturbation	FALSE
+M03	GSE135328	human	crc_cell_line_clone	TCF7L2 KO	4	0.153497916214901	0.189196843523439	-0.02491342985748	0.296210334978743	3	False	0.625	causal or pathway perturbation	FALSE
+M03	GSE171910	human	conditional_crc_wnt_models	WNT off	4	0.00207505285980832	-0.0651291937591747	-0.0827689239029035	0.14710712202022	1	False	0.625	causal or pathway perturbation	FALSE
+M03	GSE67186	mouse	in_vivo_colon_polyp	APC restore	1	-0.0936732924784327	-0.0936732924784327	-0.0936732924784327	-0.0936732924784327	0	False	1	causal or pathway perturbation	FALSE
+M03	GSE67186	mouse	in_vivo_colon_polyp	APC restore + Kras	1	-0.141529553403403	-0.141529553403403	-0.141529553403403	-0.141529553403403	0	False	1	causal or pathway perturbation	FALSE
+M04	GSE114059	human	patient_derived_crc_organoid	PRI-724	1	-0.111064874018846	-0.111064874018846	-0.111064874018846	-0.111064874018846	0	False	1	causal or pathway perturbation	FALSE
+M04	GSE114059	human	patient_derived_crc_organoid	Trametinib	4	0.140797791627862	0.128422133022232	0.107014670894987	0.176400055013209	4	True	0.125	causal or pathway perturbation	TRUE
+M04	GSE125472	human	isogenic_human_colon_organoid	WNT− / APC-KO	3	0.201545625063649	0.241734157288593	0.0357658262543067	0.327136891648047	3	True	0.25	causal or pathway perturbation	TRUE
+M04	GSE125472	human	isogenic_human_colon_organoid	WNT− / WT	3	0.029915201002906	-0.152559790439918	-0.370484050363045	0.612789443811681	1	False	1	causal or pathway perturbation	FALSE
+M04	GSE130822	mouse	colonic_stem_cells	ASCL2 KO	1	-0.75177713434361	-0.75177713434361	-0.75177713434361	-0.75177713434361	0	False	1	causal or pathway perturbation	FALSE
+M04	GSE135328	human	crc_cell_line_clone	TCF7L2 KO	4	-0.0264848446782468	-0.0280796038486499	-0.0838830806594062	0.0309133913029126	2	False	1	causal or pathway perturbation	FALSE
+M04	GSE171910	human	conditional_crc_wnt_models	WNT off	4	-0.0424464372178038	-0.042470456233142	-0.10087322885557	0.016004373435301	1	False	0.625	causal or pathway perturbation	FALSE
+M04	GSE67186	mouse	in_vivo_colon_polyp	APC restore	1	-0.0785208907375524	-0.0785208907375524	-0.0785208907375524	-0.0785208907375524	0	False	1	causal or pathway perturbation	FALSE
+M04	GSE67186	mouse	in_vivo_colon_polyp	APC restore + Kras	1	0.347111433867693	0.347111433867693	0.347111433867693	0.347111433867693	1	True	1	causal or pathway perturbation	FALSE
+M05	GSE114059	human	patient_derived_crc_organoid	PRI-724	1	0.0578642538298821	0.0578642538298821	0.0578642538298821	0.0578642538298821	1	True	1	causal or pathway perturbation	FALSE
+M05	GSE114059	human	patient_derived_crc_organoid	Trametinib	4	0.080071255438757	0.0832683920041535	0.0157498880673137	0.1443926228102	3	False	0.625	causal or pathway perturbation	FALSE
+M05	GSE125472	human	isogenic_human_colon_organoid	WNT− / APC-KO	3	0.315363121182281	0.230895942200254	0.157692672598338	0.557500748748253	3	True	0.25	causal or pathway perturbation	TRUE
+M05	GSE125472	human	isogenic_human_colon_organoid	WNT− / WT	3	-0.148557079574056	-0.294214931933157	-0.641598748085873	0.490142441296863	1	False	1	causal or pathway perturbation	FALSE
+M05	GSE130822	mouse	colonic_stem_cells	ASCL2 KO	1	-1.27135946131532	-1.27135946131532	-1.27135946131532	-1.27135946131532	0	False	1	causal or pathway perturbation	FALSE
+M05	GSE135328	human	crc_cell_line_clone	TCF7L2 KO	4	-0.0736134851999705	-0.0836727971111087	-0.198239393542996	0.0610717350541927	1	False	0.625	causal or pathway perturbation	FALSE
+M05	GSE171910	human	conditional_crc_wnt_models	WNT off	4	-0.148024129989311	-0.199641111784814	-0.226466296398053	-0.0179649817850671	1	False	0.625	causal or pathway perturbation	FALSE
+M05	GSE67186	mouse	in_vivo_colon_polyp	APC restore	1	-0.221244764955213	-0.221244764955213	-0.221244764955213	-0.221244764955213	0	False	1	causal or pathway perturbation	FALSE
+M05	GSE67186	mouse	in_vivo_colon_polyp	APC restore + Kras	1	0.0713891468330864	0.0713891468330864	0.0713891468330864	0.0713891468330864	1	True	1	causal or pathway perturbation	FALSE
+M06	GSE114059	human	patient_derived_crc_organoid	PRI-724	1	0.0279965871124044	0.0279965871124044	0.0279965871124044	0.0279965871124044	1	True	1	causal or pathway perturbation	FALSE
+M06	GSE114059	human	patient_derived_crc_organoid	Trametinib	4	0.0343084013523529	0.0260379107811642	0.0182300798932877	0.055729970395387	4	True	0.125	causal or pathway perturbation	TRUE
+M06	GSE125472	human	isogenic_human_colon_organoid	WNT− / APC-KO	3	0.22061870696603	0.323010380730856	-0.109794830793587	0.44864057096082	2	False	1	causal or pathway perturbation	FALSE
+M06	GSE125472	human	isogenic_human_colon_organoid	WNT− / WT	3	0.320811099050619	0.329507483487105	0.229237614915892	0.40368819874886	3	True	0.25	causal or pathway perturbation	TRUE
+M06	GSE130822	mouse	colonic_stem_cells	ASCL2 KO	1	1.42275816994924	1.42275816994924	1.42275816994924	1.42275816994924	1	True	1	causal or pathway perturbation	FALSE
+M06	GSE135328	human	crc_cell_line_clone	TCF7L2 KO	4	0.0535002966917512	0.0951435890019607	-0.203869639273324	0.271017071172148	3	False	0.625	causal or pathway perturbation	FALSE
+M06	GSE171910	human	conditional_crc_wnt_models	WNT off	4	-0.171763172312614	-0.122594316546531	-0.429504659138158	0.0368094587468487	1	False	0.625	causal or pathway perturbation	FALSE
+M06	GSE67186	mouse	in_vivo_colon_polyp	APC restore	1	-0.178811974315108	-0.178811974315108	-0.178811974315108	-0.178811974315108	0	False	1	causal or pathway perturbation	FALSE
+M06	GSE67186	mouse	in_vivo_colon_polyp	APC restore + Kras	1	-0.345989650846953	-0.345989650846953	-0.345989650846953	-0.345989650846953	0	False	1	causal or pathway perturbation	FALSE
+M09	GSE114059	human	patient_derived_crc_organoid	PRI-724	1	0.0934591781731186	0.0934591781731186	0.0934591781731186	0.0934591781731186	1	True	1	causal or pathway perturbation	FALSE
+M09	GSE114059	human	patient_derived_crc_organoid	Trametinib	4	0.289381190349511	0.326276945123528	0.116306253335386	0.462456127363636	4	True	0.125	causal or pathway perturbation	TRUE
+M09	GSE125472	human	isogenic_human_colon_organoid	WNT− / APC-KO	3	0.289854145195892	0.326950054550902	0.112405788588097	0.430206592448676	3	True	0.25	causal or pathway perturbation	TRUE
+M09	GSE125472	human	isogenic_human_colon_organoid	WNT− / WT	3	-0.720506878024253	-0.959971117532915	-1.31909129620933	0.117541779669484	1	False	1	causal or pathway perturbation	FALSE
+M09	GSE130822	mouse	colonic_stem_cells	ASCL2 KO	1	-1.21983621382225	-1.21983621382225	-1.21983621382225	-1.21983621382225	0	False	1	causal or pathway perturbation	FALSE
+M09	GSE135328	human	crc_cell_line_clone	TCF7L2 KO	4	-0.5661600315904	-0.484763028111534	-0.780845694222161	-0.404066612057611	0	False	0.125	causal or pathway perturbation	FALSE
+M09	GSE171910	human	conditional_crc_wnt_models	WNT off	4	-0.701501658878799	-0.792505209180069	-1.00317735163946	-0.380743220520505	0	False	0.125	causal or pathway perturbation	FALSE
+M09	GSE67186	mouse	in_vivo_colon_polyp	APC restore	1	-0.949251275324574	-0.949251275324574	-0.949251275324574	-0.949251275324574	0	False	1	causal or pathway perturbation	FALSE
+M09	GSE67186	mouse	in_vivo_colon_polyp	APC restore + Kras	1	-1.20589646277485	-1.20589646277485	-1.20589646277485	-1.20589646277485	0	False	1	causal or pathway perturbation	FALSE
+M10	GSE114059	human	patient_derived_crc_organoid	PRI-724	1	-0.0193765566132477	-0.0193765566132477	-0.0193765566132477	-0.0193765566132477	0	False	1	causal or pathway perturbation	FALSE
+M10	GSE114059	human	patient_derived_crc_organoid	Trametinib	4	0.209185070749026	0.182712820022649	0.16250213465998	0.282340257564447	4	True	0.125	causal or pathway perturbation	TRUE
+M10	GSE125472	human	isogenic_human_colon_organoid	WNT− / APC-KO	3	0.317853759736058	0.193975630708976	0.077703877829128	0.68188177067007	3	True	0.25	causal or pathway perturbation	TRUE
+M10	GSE125472	human	isogenic_human_colon_organoid	WNT− / WT	3	0.0323166882302685	-0.116661128914898	-0.435913414111946	0.649524607717649	1	False	1	causal or pathway perturbation	FALSE
+M10	GSE130822	mouse	colonic_stem_cells	ASCL2 KO	1	-1.18279355471558	-1.18279355471558	-1.18279355471558	-1.18279355471558	0	False	1	causal or pathway perturbation	FALSE
+M10	GSE135328	human	crc_cell_line_clone	TCF7L2 KO	4	0.230912544461209	0.209933274983994	0.171564086003785	0.311240272395849	4	True	0.125	causal or pathway perturbation	TRUE
+M10	GSE171910	human	conditional_crc_wnt_models	WNT off	4	-0.0812365345097731	-0.0206694660856715	-0.275639842268088	0.0733191742579833	2	False	1	causal or pathway perturbation	FALSE
+M10	GSE67186	mouse	in_vivo_colon_polyp	APC restore	1	-0.147174738782985	-0.147174738782985	-0.147174738782985	-0.147174738782985	0	False	1	causal or pathway perturbation	FALSE
+M10	GSE67186	mouse	in_vivo_colon_polyp	APC restore + Kras	1	0.215200218844019	0.215200218844019	0.215200218844019	0.215200218844019	1	True	1	causal or pathway perturbation	FALSE

@@ -1,0 +1,21 @@
+{
+  "analysis": "state_aware_module_meta_analysis_v1",
+  "created_utc": "2026-08-31 02:21:24 UTC",
+  "model": "metafor REML random effects with Knapp-Hartung inference",
+  "route_column": "analysis_route_pass",
+  "external_gate": "at least three coverage-eligible cohorts; pooled 95% CI above zero; all leave-one-cohort-out estimates above zero",
+  "modules_tested": ["M02", "M03", "M04", "M05", "M06", "M09", "M10"],
+  "modules_passing_external_gate": [],
+  "input_sha256": {
+    "module_summary": "29779c50ed6f7a6bdfd4c5b44f76d3a4c2324a8ba6d00d2c3d9b47bd1ed02a8f",
+    "cohort_effects": "d1304aaf7ef07a34dbf10fd1016efe048f8a8c3ea19bcb13b392d4d94dcc4870",
+    "downstream_addendum": "32343afe117d09007066fbe01f8fbe7cf4a11ee628dbe6a121f0f814968da3bb"
+  },
+  "package_versions": {
+    "R": "4.5.3",
+    "metafor": "5.0.1",
+    "digest": "0.6.39",
+    "jsonlite": "2.0.0"
+  },
+  "session_info": ["R version 4.5.3 (2026-03-11)", "Platform: x86_64-conda-linux-gnu", "Running under: Ubuntu 20.04.4 LTS", "", "Matrix products: default", "BLAS/LAPACK: $CONDA_PREFIX/lib/libopenblasp-r0.3.33.so;  LAPACK version 3.12.0", "", "locale:", " [1] LC_CTYPE=C.UTF-8       LC_NUMERIC=C           LC_TIME=C.UTF-8       ", " [4] LC_COLLATE=C.UTF-8     LC_MONETARY=C.UTF-8    LC_MESSAGES=C.UTF-8   ", " [7] LC_PAPER=C.UTF-8       LC_NAME=C              LC_ADDRESS=C          ", "[10] LC_TELEPHONE=C         LC_MEASUREMENT=C.UTF-8 LC_IDENTIFICATION=C   ", "", "time zone: Etc/UTC", "tzcode source: system (glibc)", "", "attached base packages:", "[1] stats     graphics  grDevices utils     datasets  methods   base     ", "", "other attached packages:", "[1] metafor_5.0-1       numDeriv_2016.8-1.1 metadat_1.6-0      ", "[4] Matrix_1.7-4        jsonlite_2.0.0      digest_0.6.39      ", "", "loaded via a namespace (and not attached):", "[1] compiler_4.5.3 tools_4.5.3    mathjaxr_2.0-0 nlme_3.1-170   grid_4.5.3    ", "[6] lattice_0.22-9"]
+}

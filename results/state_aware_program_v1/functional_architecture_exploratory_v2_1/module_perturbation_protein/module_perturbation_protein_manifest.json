@@ -1,0 +1,57 @@
+{
+  "analysis": "state_aware_module_perturbation_protein_v1",
+  "created_utc": "2026-08-31T02:32:55.564704+00:00",
+  "random_seed": 20260830,
+  "modules_entering_analysis": [
+    "M02",
+    "M03",
+    "M04",
+    "M05",
+    "M06",
+    "M09",
+    "M10"
+  ],
+  "route_column": "analysis_route_pass",
+  "descriptive_downstream": true,
+  "modules_routed_main": [],
+  "sentinel_proteins": [
+    "S100A11",
+    "CUX1",
+    "GTF2I",
+    "UBAP2",
+    "COX7A2",
+    "COX5A",
+    "CHP1",
+    "CLTC",
+    "SH3BGRL2",
+    "TNRC18",
+    "CRTC1",
+    "MYO9B",
+    "SEC11A",
+    "NXPE4",
+    "UFM1",
+    "PCTP"
+  ],
+  "regulatory_nodes": [],
+  "input_sha256": {
+    "consensus_modules": "f5a7023b627a5d48020d498a8267775c1aa1342c256435878fba3e658f38a7a7",
+    "module_validation_before_final_routing": "887175227e0e624d5a3da19e2bec049523a985a77ea0ac31a8b3c137882c9d52",
+    "sentinel_candidate_base": "79069234707d9cc0c20d9146d7125e7beca1bcac30d8d4a6aeb3bb35353b99cd",
+    "regulator_evidence": "fc24ca602725ac5cfcaa7e7a0926eb89cf1ed0fc727e82416aec18f7e62aa501",
+    "two_component_summary": "c3a4b5867decc1fec070dc282a09c5a02396e0fcdf7492c6a71791e00533fdc8",
+    "module_community_overlap": "1a5c3f6087f2bab51d61b82f2a0ddbc0b717ec5528b6592d82880bfce635d378",
+    "pathway_summary": "7fadf9a917b99463402b9ff1df818911edf0c20e8f6ad92a9304860823eea30b",
+    "downstream_addendum": "32343afe117d09007066fbe01f8fbe7cf4a11ee628dbe6a121f0f814968da3bb",
+    "routing_addendum": "5bc6ce76afd550e5d22c05a1e2a60e34aa6382d28a7eb13d63afc55f46b5653c"
+  },
+  "output_sha256": {
+    "module_validation": "f3f979eb76dbca88f8b51f5ae8bd24b9360a8ab5ac0371ad02d5ed01a771a898",
+    "protein_priorities": "4c7bae70d732ae525e37880935d5a71276c847b63e58fa74857c50f0340de271"
+  },
+  "software": {
+    "python": "3.11.15",
+    "numpy": "1.26.4",
+    "pandas": "2.3.3",
+    "scipy": "1.17.1"
+  }
+}
